@@ -1,0 +1,9 @@
+D:\a_Projects\FuTai\FuTai.Web\obj\Debug\ResolveAssemblyReference.cache
+D:\a_Projects\FuTai\FuTai.Web\bin\FuTai.Web.dll
+D:\a_Projects\FuTai\FuTai.Web\bin\FuTai.Web.pdb
+D:\a_Projects\FuTai\FuTai.Web\bin\FuTai.Component.dll
+D:\a_Projects\FuTai\FuTai.Web\bin\FuTai.Component.pdb
+D:\a_Projects\FuTai\FuTai.Web\obj\Debug\FuTai.Web.dll
+D:\a_Projects\FuTai\FuTai.Web\obj\Debug\FuTai.Web.pdb
+D:\a_Projects\FuTai\FuTai.Web\bin\log4net.dll
+D:\a_Projects\FuTai\FuTai.Web\bin\AjaxPro.2.dll

@@ -1,0 +1,49 @@
+路径:
+无论是后台代码, 还是前端文件(aspx, js, css)中, 人工代码全部使用"/"开头, 即相对于网站根目录的
+1)图片位置:
+        /images/***.jpg
+        /dataimg/***.jpg
+2)脚本位置:
+        /js/***.js
+3)样式路径:
+        /style/***.css
+4)页面路径:
+        /***.aspx, /***/***.aspx(ashx)
+        
+        
+编码:
+页面全部以UTF8(65001)保存; http输出编码为GB2312;
+
+缓存:
+(参考***.aspx.cs中, *** 方法)
+
+
+安全:
+1)特定流程, 注意防止表单重复提交, 防刷
+
+
+图片:
+尽量压缩后再放入项目, 有利于源代码管理的效率和页面的打开速度
+
+html:
+1)不要出现<div class="clearfix" />, 应为<div class="clearfix"></div>. (工具中应该可以设置);
+
+js:
+1)存放:
+    通用的脚本放在/js/ 路径下;
+    特定页面内的脚本, 如果过长, 考虑另建js文件存放; 命名与存放路径, 与页面相同, 如"/TerminalMap.aspx", 对应的脚本文件为"/TerminalMap.js";
+2)命名:
+    变量, 函数命名: camel命名, 如getUserName(), var userName等; 全局变量, 以"_"开头, 如 var _userName;
+    类命名: Pascal命名, 如Validator;
+    文件名: 采用jquery建议的命名方式, 参考现有"/js/"目录下的文件命名方式;
+3)一般情况下, 用jquery的ready方法替换body.onload;
+
+sql
+1)命名:
+表 t_TableName
+存储过程 csp_ModuleName_SPName
+
+cs
+1)命名: 类, 接口, 委托, 非私有成员, 方法参数的命名方式尽量遵从.NET框架命名规范
+另外, 类的私有成员变量, 以"_"开头, 如 private string _userName;静态私有成员变量以"s_"开头;
+2)页面必须全部继承自BasePage类

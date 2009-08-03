@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuTai.Web", "FuTai.Web\FuTai.Web.csproj", "{84DFC28C-C386-47DD-86C3-ADD187C84119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuTai.Admin", "FuTai.Admin\FuTai.Admin.csproj", "{1C396BCE-1275-4083-B5B0-6D73174C365F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuTai.Component", "FuTai.Component\FuTai.Component.csproj", "{5084CE4B-31F6-495D-9774-9DB1435EBFD3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{F3723B75-790E-4DF2-94D1-7521374A3E97}"
+	ProjectSection(SolutionItems) = preProject
+		字典.txt = 字典.txt
+		开发规范.txt = 开发规范.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Default|Any CPU = Default|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{84DFC28C-C386-47DD-86C3-ADD187C84119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84DFC28C-C386-47DD-86C3-ADD187C84119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84DFC28C-C386-47DD-86C3-ADD187C84119}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{84DFC28C-C386-47DD-86C3-ADD187C84119}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{84DFC28C-C386-47DD-86C3-ADD187C84119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84DFC28C-C386-47DD-86C3-ADD187C84119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C396BCE-1275-4083-B5B0-6D73174C365F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C396BCE-1275-4083-B5B0-6D73174C365F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C396BCE-1275-4083-B5B0-6D73174C365F}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C396BCE-1275-4083-B5B0-6D73174C365F}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{1C396BCE-1275-4083-B5B0-6D73174C365F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C396BCE-1275-4083-B5B0-6D73174C365F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5084CE4B-31F6-495D-9774-9DB1435EBFD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5084CE4B-31F6-495D-9774-9DB1435EBFD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5084CE4B-31F6-495D-9774-9DB1435EBFD3}.Default|Any CPU.ActiveCfg = Debug|Any CPU
+		{5084CE4B-31F6-495D-9774-9DB1435EBFD3}.Default|Any CPU.Build.0 = Debug|Any CPU
+		{5084CE4B-31F6-495D-9774-9DB1435EBFD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5084CE4B-31F6-495D-9774-9DB1435EBFD3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,8 @@
+D:\Depository\DotNET\FuTai\FuTai.Component\obj\Debug\ResolveAssemblyReference.cache
+D:\a_Projects\FuTai\FuTai.Component\obj\Debug\ResolveAssemblyReference.cache
+D:\a_Projects\FuTai\FuTai.Component\bin\Debug\FuTai.Component.dll.config
+D:\a_Projects\FuTai\FuTai.Component\bin\Debug\FuTai.Component.dll
+D:\a_Projects\FuTai\FuTai.Component\bin\Debug\FuTai.Component.pdb
+D:\a_Projects\FuTai\FuTai.Component\obj\Debug\FuTai.Component.dll
+D:\a_Projects\FuTai\FuTai.Component\obj\Debug\FuTai.Component.pdb
+D:\a_Projects\FuTai\FuTai.Component\bin\Debug\log4net.dll

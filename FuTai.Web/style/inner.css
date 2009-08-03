@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+.left
+{
+	display:inline;
+}
+
+.inner_main
+{
+padding:13px; padding-top:0; background:#FFFFFF; width:784px; float:right;
+}
+
+.SiteMap p
+{
+line-height:35px; height:35px; 
+}
+
+.box1
+{
+border:1px solid #BEAC8D; _height:100px; min-height:100px;
+}
+
+.box1 h2
+{
+background:url(../images/inner_h2.gif) repeat-x;
+}
+
+.box1 h2 span
+{
+background:url(../images/inner_h2_icon.gif) no-repeat left; display:block; height:28px; color:#74572D; font-size:14px; line-height:28px; padding-left:24px; margin-left:10px;
+}
+
+.box1 .cont
+{
+padding:20px;
+}
+
+.inner_hr
+{
+background:url(../images/inner_hr.jpg) no-repeat center; height:15px; overflow:hidden;
+}
+
+.inner_list1 li
+{
+float:left; width:33%; height:260px;
+}
+
+.inner_list1 li img
+{
+display:block; margin:0 auto;
+}
+
+.inner_list1 li p
+{
+text-align:center; line-height:22px;
+}
+
+.fdjbtn
+{
+padding-top:10px;
+}
+
+.ItemListSearch
+{
+}
+
+.ItemListSearch li
+{
+	float:left; margin-right:10px; display:inline; line-height:22px;
+}
+
+.ItemListSearch li .input1
+{
+	height:19px; line-height:17px;
+}
+
+.ItemListSearch li .btn1Style
+{
+	height:22px;
+}
+
+.Icon_gift
+{
+	background:url(../images/icon_gift.gif) no-repeat left; line-height:22px; padding-left:22px;
+}
+
+.TypeSelect
+{
+	height:40px; float:left;
+}
+
+.TypeSelect ul li,.TypeSelect h4,.TypeSelect .vhr
+{
+	float:left; line-height:40px;
+}
+
+.TypeSelect ul li
+{
+	margin-right:10px;
+}
+
+.TypeSelect .grayfont1
+{
+	background:url(../images/gray_square.gif) no-repeat left; padding-left:13px; display:block;
+}
+
+.TypeSelect ul
+{
+	padding-right:10px;
+}
+
+.PageSelect
+{
+	height:40px; float:right; 
+}
+
+.PageSelect span
+{
+	
+}
+
+.PageSelect li
+{
+	float:left; display:inline; margin:0 2px;
+}
+
+.PageSelect input
+{
+	height:19px; line-height:17px;
+}
+
+.PageSelect li
+{
+	padding-top:10px;
+}
