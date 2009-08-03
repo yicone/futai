@@ -41,8 +41,9 @@ namespace FuTai.Web
             decimal? np2 = (decimal.TryParse(price2, out p2)) ? (decimal?)p2 : null;
 
             int t1, t2;
-            int? type1 = (int.TryParse(typeIdCollection[0], out t1)) ? (int?)t1 : null;
-            int? type2 = (int.TryParse(typeIdCollection[1], out t2)) ? (int?)t2 : null;
+            int? type1 = (typeIdCollection.Length > 0 && int.TryParse(typeIdCollection[0], out t1)) ? (int?)t1 : null;
+
+            int? type2 = (typeIdCollection.Length > 1 && int.TryParse(typeIdCollection[1], out t2)) ? (int?)t2 : null;
 
             FuTaiDataContext cxt = new FuTaiDataContext();
 

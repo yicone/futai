@@ -163,20 +163,6 @@ namespace FuTai.Component
 			return ((ISingleResult<search_SearchDiamondOrnament_个结果>)(result.ReturnValue));
 		}
 		
-		[Function(Name="dbo.search_SearchDiamondRing")]
-		public int SearchDiamondRing([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchGoldOrnament")]
-		public int SearchGoldOrnament([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[Function(Name="dbo.search_SearchJewel")]
 		public ISingleResult<search_SearchJewel_个结果> SearchJewel([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
 		{
@@ -189,6 +175,20 @@ namespace FuTai.Component
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
 			return ((ISingleResult<search_SearchPairRing_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.search_SearchDiamondRing")]
+		public ISingleResult<search_SearchDiamondRing_个结果> SearchDiamondRing([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
+			return ((ISingleResult<search_SearchDiamondRing_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.search_SearchGoldOrnament")]
+		public ISingleResult<search_SearchGoldOrnament_个结果> SearchGoldOrnament([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
+			return ((ISingleResult<search_SearchGoldOrnament_个结果>)(result.ReturnValue));
 		}
 	}
 	
@@ -1864,6 +1864,292 @@ namespace FuTai.Component
 		private System.Nullable<System.DateTime> _CreateDate;
 		
 		public search_SearchPairRing_个结果()
+		{
+		}
+		
+		[Column(Storage="_GoldOrnamentId", DbType="Int NOT NULL")]
+		public int GoldOrnamentId
+		{
+			get
+			{
+				return this._GoldOrnamentId;
+			}
+			set
+			{
+				if ((this._GoldOrnamentId != value))
+				{
+					this._GoldOrnamentId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
+		public string OrnamentType
+		{
+			get
+			{
+				return this._OrnamentType;
+			}
+			set
+			{
+				if ((this._OrnamentType != value))
+				{
+					this._OrnamentType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type1", DbType="Int")]
+		public System.Nullable<int> Type1
+		{
+			get
+			{
+				return this._Type1;
+			}
+			set
+			{
+				if ((this._Type1 != value))
+				{
+					this._Type1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type2", DbType="Int")]
+		public System.Nullable<int> Type2
+		{
+			get
+			{
+				return this._Type2;
+			}
+			set
+			{
+				if ((this._Type2 != value))
+				{
+					this._Type2 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductId", DbType="Int NOT NULL")]
+		public int ProductId
+		{
+			get
+			{
+				return this._ProductId;
+			}
+			set
+			{
+				if ((this._ProductId != value))
+				{
+					this._ProductId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string ProductType
+		{
+			get
+			{
+				return this._ProductType;
+			}
+			set
+			{
+				if ((this._ProductType != value))
+				{
+					this._ProductType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Money")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreateDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_SearchDiamondRing_个结果
+	{
+		
+		private int _DiamondRingId;
+		
+		private string _StockNumber;
+		
+		private System.Nullable<int> _Type1;
+		
+		private int _ProductId;
+		
+		private string _ProductType;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		public search_SearchDiamondRing_个结果()
+		{
+		}
+		
+		[Column(Storage="_DiamondRingId", DbType="Int NOT NULL")]
+		public int DiamondRingId
+		{
+			get
+			{
+				return this._DiamondRingId;
+			}
+			set
+			{
+				if ((this._DiamondRingId != value))
+				{
+					this._DiamondRingId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_StockNumber", DbType="VarChar(20)")]
+		public string StockNumber
+		{
+			get
+			{
+				return this._StockNumber;
+			}
+			set
+			{
+				if ((this._StockNumber != value))
+				{
+					this._StockNumber = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Type1", DbType="Int")]
+		public System.Nullable<int> Type1
+		{
+			get
+			{
+				return this._Type1;
+			}
+			set
+			{
+				if ((this._Type1 != value))
+				{
+					this._Type1 = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductId", DbType="Int NOT NULL")]
+		public int ProductId
+		{
+			get
+			{
+				return this._ProductId;
+			}
+			set
+			{
+				if ((this._ProductId != value))
+				{
+					this._ProductId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string ProductType
+		{
+			get
+			{
+				return this._ProductType;
+			}
+			set
+			{
+				if ((this._ProductType != value))
+				{
+					this._ProductType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Money")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreateDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_SearchGoldOrnament_个结果
+	{
+		
+		private int _GoldOrnamentId;
+		
+		private string _OrnamentType;
+		
+		private System.Nullable<int> _Type1;
+		
+		private System.Nullable<int> _Type2;
+		
+		private int _ProductId;
+		
+		private string _ProductType;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		public search_SearchGoldOrnament_个结果()
 		{
 		}
 		

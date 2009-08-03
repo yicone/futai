@@ -18,14 +18,40 @@
             // 默认选中分类中的第一项
             $('div.TypeSelect ul').find('li:first a').attr('class', '');
 
+            searchProduct();
+
+            $('#button2').click(function() {
+                searchProduct();
+            });
+            // TODO: 三个排序按钮的触发搜索的实现
+        });
+
+        function searchProduct() {
             var typeIdCollection = [];
             $('div.TypeSelect').find('li a[class=""]').each(function() {
-                typeIdCollection.push($(this).attr('typeid'));
+                var typeId = $(this).attr('typeid');
+                typeIdCollection.push(typeId);
             });
-
+            
             var query = new Query();
+            query.price1 = $('#textfield').val();
+            query.price2 = $('#textfield2').val();
+            // TODO: 可能需要class来确定排序字段和升/降序
+            //            query.sort =
+            //            query.order =
+            
+            var productType = '<%= this.ProductType %>';
             search(productType, query, typeIdCollection);
-        });
+        }
+
+        function switchType($link) {
+            $link.parent().siblings().find('a').each(function() {
+                $(this).attr('class', 'grayfont1');
+            });
+            $link.attr('class', '');
+
+            searchProduct();
+        }
 
     </script>
 
@@ -178,7 +204,7 @@
                     <li>
                         <input type="text" size="5" id="textfield2" class="input1" name="textfield2" /></li>
                     <li>
-                        <input type="submit" value="确定" id="button2" name="button2" class="btn1Style" /></li>
+                        <input type="button" value="确定" id="button2" name="button2" class="btn1Style" /></li>
                     <li><a href="#">
                         <img width="45" height="22" src="/images/itemsearch_b1.gif" /></a></li>
                     <li><a href="#">
@@ -329,7 +355,8 @@
          <h4>{$T.category.name}：</h4>
          <ul>
              {#foreach $T.category.list as record}
-                 <li><a href="#" class="grayfont1" typeId="{$T.record.typeId}" onclick="{$T.record.onclick}">{$T.record.item}</a></li>
+                 <%--<li><a href="#" class="grayfont1" typeId="{$T.record.typeId}" onclick="{$T.record.onclick}">{$T.record.item}</a></li>--%>
+                 <li><a href="#" class="grayfont1" typeId="{$T.record.typeId}" onclick="javascript:switchType($(this));">{$T.record.item}</a></li>
              {#/for}
          </ul>
          {#/for}
