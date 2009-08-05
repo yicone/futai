@@ -32,14 +32,14 @@
                 var typeId = $(this).attr('typeid');
                 typeIdCollection.push(typeId);
             });
-            
+
             var query = new Query();
             query.price1 = $('#textfield').val();
             query.price2 = $('#textfield2').val();
             // TODO: 可能需要class来确定排序字段和升/降序
             //            query.sort =
             //            query.order =
-            
+
             var productType = '<%= this.ProductType %>';
             search(productType, query, typeIdCollection);
         }
@@ -227,112 +227,8 @@
                 </ul>
                 <div class="clearfix">
                 </div>
-                <div class="inner_hr">
-                </div>
-                <ul class="inner_list1">
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:<span class="redfont1">¥1760.00</span><br />
-                            女款:<span class="redfont1">¥2750.00</span><br />
-                            <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
-                    </li>
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:<span class="redfont1">¥1760.00</span><br />
-                            女款:<span class="redfont1">¥2750.00</span><br />
-                            <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
-                    </li>
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:<span class="redfont1">¥1760.00</span><br />
-                            女款:<span class="redfont1">¥2750.00</span><br />
-                            <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
-                    </li>
-                </ul>
-                <div class="pageselect">
-                </div>
-                <div class="clearfix">
-                </div>
-                <div class="inner_hr">
-                </div>
-                <ul class="inner_list1">
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:¥1760.00<br />
-                            女款:¥2750.00<br />
-                            不论材质（铂金，K金）都可订做
-                        </p>
-                    </li>
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:¥1760.00<br />
-                            女款:¥2750.00<br />
-                            不论材质（铂金，K金）都可订做
-                        </p>
-                    </li>
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:¥1760.00<br />
-                            女款:¥2750.00<br />
-                            不论材质（铂金，K金）都可订做
-                        </p>
-                    </li>
-                </ul>
-                <div class="clearfix">
-                </div>
-                <div class="inner_hr">
-                </div>
-                <ul class="inner_list1">
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:¥1760.00<br />
-                            女款:¥2750.00<br />
-                            不论材质（铂金，K金）都可订做
-                        </p>
-                    </li>
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:¥1760.00<br />
-                            女款:¥2750.00<br />
-                            不论材质（铂金，K金）都可订做
-                        </p>
-                    </li>
-                    <li>
-                        <img src="/images/product_img.jpg" />
-                        <img class="fdjbtn" src="/images/icon_fdj.gif" />
-                        <p>
-                            <a href="#"><strong>情定伦敦</strong></a><br />
-                            男款:¥1760.00<br />
-                            女款:¥2750.00<br />
-                            不论材质（铂金，K金）都可订做
-                        </p>
-                    </li>
-                </ul>
-                <div class="clearfix">
+                <div id="product-list">
+                    <%-- 模板生成 --%>
                 </div>
                 <ul class="PageSelect">
                     <li>1/50</li>
@@ -360,5 +256,30 @@
              {#/for}
          </ul>
          {#/for}
+    </textarea>
+    <textarea id="product-list-template" style="display: none">
+        {#foreach $T.productList as record}
+        <%--如果是每行的第一项--%>
+        {#if $T.record$index % 3 == 0}
+        <div class="inner_hr">
+        </div>
+        <ul class="inner_list1">
+        {#/if}
+             <li>
+                <img src="/images/product_img.jpg" />
+                <img class="fdjbtn" src="/images/icon_fdj.gif" />
+                <p>
+                    <a href="#"><strong>情定伦敦</strong></a><br />
+                    男款:<span class="redfont1">¥1760.00</span><br />
+                    女款:<span class="redfont1">¥2750.00</span><br />
+                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
+            </li>
+        <%--如果是每行最后一项, 或者是列表的最后一项--%>
+        {#if ($T.record$index + 1) % 3 == 0 || $T.record$index + 1 == $T.record$total}
+        </ul>
+        <div class="clearfix">
+        </div>
+        {#/if}
+        {#/for}
     </textarea>
 </asp:Content>

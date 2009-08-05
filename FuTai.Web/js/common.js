@@ -147,6 +147,15 @@ function search(productType, query, typeIdCollection) {
     result = MyAjax.Search(productType, query.price1, query.price2, query.sort, query.order, typeIdCollection);
 
     if (!result.error) {
-        alert(result.value);
+        if (!result.error) {
+            var list = result.value;
+            
+            for (var i = 0; i < list.length; i++) {
+                var product = list[i];
+                product.index = i;
+            }
+            
+            renderTemplate('product-list', { 'productList': list });
+        }
     }
 }
