@@ -149,13 +149,8 @@ function search(productType, query, typeIdCollection) {
     if (!result.error) {
         if (!result.error) {
             var list = result.value;
-            
-            for (var i = 0; i < list.length; i++) {
-                var product = list[i];
-                product.index = i;
-            }
-            
-            renderTemplate('product-list', { 'productList': list });
+
+            return list;
         }
     }
 }

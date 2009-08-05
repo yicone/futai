@@ -7,6 +7,10 @@
     <script type="text/javascript" src="/js/jquery.jtemplates-0.7.5.pack.js"></script>
 
     <script type="text/javascript">
+        var _productList;
+        var _pageNo = 1;
+        var _pageCount = 0;
+        var _pageSize = 9;
         $(document).ready(function() {
             var productType = '<%= this.ProductType %>';
             var list = getCategoryList(productType);
@@ -24,6 +28,20 @@
                 searchProduct();
             });
             // TODO: 三个排序按钮的触发搜索的实现
+
+            $('.next-page-link').click(function() {
+                showPage(++_pageNo, _pageSize);
+            });
+            $('.prev-page-link').click(function() {
+                showPage(--_pageNo, _pageSize);
+            });
+            $('#pager-go').click(function() {
+                var $txtPageNo = $('#txtPageNo');
+                var pageNo = $txtPageNo.val();
+                if (/\d/.test(pageNo)) {
+                    showPage(pageNo);
+                }
+            });
         });
 
         function searchProduct() {
@@ -34,14 +52,44 @@
             });
 
             var query = new Query();
-            query.price1 = $('#textfield').val();
-            query.price2 = $('#textfield2').val();
+            query.price1 = $('#price1').val();
+            query.price2 = $('#price2').val();
             // TODO: 可能需要class来确定排序字段和升/降序
             //            query.sort =
             //            query.order =
 
             var productType = '<%= this.ProductType %>';
-            search(productType, query, typeIdCollection);
+            // 搜索. 搜索结果缓存到全局变量!
+            _productList = search(productType, query, typeIdCollection);
+            
+            // 计算页数
+            _pageCount = Math.ceil(_productList.length / _pageSize);
+            if (_pageCount < 0) _pageCount = 0;
+
+            renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+
+            $('li.pager').text('1/' + _pageCount);
+        }
+
+        function showPage(pageNo) {
+            if (!_productList) {
+                searchProduct();
+                return;
+            }
+
+            // 修正参数
+            if (pageNo < 1) pageNo = 1;
+            if (_pageCount == 0)  pageNo = 1;
+            if (pageNo > _pageCount) pageNo = _pageCount;
+//            console.log(pageNo);
+            // 将修正的结果缓存
+            _pageNo = pageNo;
+
+            $('li.pager').text(pageNo + '/' + _pageCount);
+
+            var pageBegin = (pageNo - 1) * _pageSize;
+            
+            renderTemplate('product-list', { 'productList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize });
         }
 
         function switchType($link) {
@@ -199,10 +247,10 @@
                 <ul class="ItemListSearch">
                     <li>价格：</li>
                     <li>
-                        <input type="text" size="5" id="textfield" class="input1" name="textfield" /></li>
+                        <input type="text" size="5" id="price1" class="input1" /></li>
                     <li>-</li>
                     <li>
-                        <input type="text" size="5" id="textfield2" class="input1" name="textfield2" /></li>
+                        <input type="text" size="5" id="price2" class="input1" /></li>
                     <li>
                         <input type="button" value="确定" id="button2" name="button2" class="btn1Style" /></li>
                     <li><a href="#">
@@ -219,10 +267,10 @@
                     <!-- 模板生成 -->
                 </div>
                 <ul class="PageSelect">
-                    <li>1/50</li>
-                    <li><a href="#">
+                    <li class="pager">1/50</li>
+                    <li><a class="prev-page-link" href="javascript:void(0);">
                         <img src="/images/pageselect_left.gif" /></a></li>
-                    <li><a href="#">
+                    <li><a class="next-page-link" href="javascript:void(0);">
                         <img src="/images/pageselect_next.gif" /></a></li>
                 </ul>
                 <div class="clearfix">
@@ -231,14 +279,14 @@
                     <%-- 模板生成 --%>
                 </div>
                 <ul class="PageSelect">
-                    <li>1/50</li>
-                    <li><a href="#">
+                    <li class="pager">1/50</li>
+                    <li><a class="prev-page-link" href="javascript:void(0);">
                         <img src="/images/pageselect_left.gif" /></a></li>
-                    <li><a href="#">
+                    <li><a class="next-page-link" href="javascript:void(0);">
                         <img src="/images/pageselect_next.gif" /></a></li>
                     <li>
-                        <input type="text" size="2" id="textfield" class="input1" name="textfield" /></li>
-                    <li><a href="#">
+                        <input type="text" size="2" id="txtPageNo" class="input1" name="textfield" /></li>
+                    <li><a id="pager-go" href="javascript:void(0);">
                         <img src="/images/pageselect_comfirm.gif" /></a></li>
                 </ul>
             </div>
@@ -258,9 +306,9 @@
          {#/for}
     </textarea>
     <textarea id="product-list-template" style="display: none">
-        {#foreach $T.productList as record}
+        {#foreach $T.productList as record begin=$T.pageBegin count=$T.pageSize}
         <%--如果是每行的第一项--%>
-        {#if $T.record$index % 3 == 0}
+        {#if $T.record$index % 3 == 0 || $T.record$first}
         <div class="inner_hr">
         </div>
         <ul class="inner_list1">
@@ -275,7 +323,7 @@
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>
-        {#if ($T.record$index + 1) % 3 == 0 || $T.record$index + 1 == $T.record$total}
+        {#if ($T.record$index + 1) % 3 == 0 || $T.record$last}
         </ul>
         <div class="clearfix">
         </div>
