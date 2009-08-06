@@ -317,9 +317,9 @@
                 <img src="/images/product_img.jpg" />
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
-                    <a href="#"><strong>情定伦敦</strong></a><br />
-                    男款:<span class="redfont1">¥1760.00</span><br />
-                    女款:<span class="redfont1">¥2750.00</span><br />
+                    <a href="#"><strong>{$T.record.ProductId}</strong></a><br />
+                    男款:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    女款:<span class="redfont1">¥{$T.record.Price}</span><br />
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>

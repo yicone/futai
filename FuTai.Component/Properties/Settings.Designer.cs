@@ -32,15 +32,5 @@ namespace FuTai.Component.Properties {
                 return ((string)(this["FuTaiConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=FuTai;Integrated Security=True")]
-        public string FuTaiConnectionString1 {
-            get {
-                return ((string)(this["FuTaiConnectionString1"]));
-            }
-        }
     }
 }

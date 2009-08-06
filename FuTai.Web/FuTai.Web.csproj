@@ -220,6 +220,9 @@
     <Content Include="SearchHandler.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="sql\create_db.sql" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="flash\" />
   </ItemGroup>

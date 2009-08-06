@@ -33,7 +33,7 @@ namespace FuTai.Component
     #endregion
 		
 		public FuTaiDataContext() : 
-				base(global::FuTai.Component.Properties.Settings.Default.FuTaiConnectionString1, mappingSource)
+				base(global::FuTai.Component.Properties.Settings.Default.FuTaiConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
