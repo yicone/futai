@@ -42,6 +42,59 @@ function renderProductType(key) {
     }
 }
 
+var _header=new Array();
+_header["Diamond"]="Diamond";
+_header["Default"]="Index";
+_header["RingBracket"]="RingBracket";
+_header["DiamondRing"]="DiamondRing";
+_header["PairRing"]="PairRing";
+_header["DiamondOrnament"]="DiamondOrnament";
+_header["GoldOrnament"]="GoldOrnament";
+_header["Jewel"]="Jewel";
+_header["HighLevelProduct"]="JP";
+_header["About"]="About";
+var Header={   //头操作
+    Init:function()
+    {
+        var file=GetFile();
+        if (file=="ProductList")
+            file=getUrlParam("productType");
+            
+        this.SetMenu(file);
+    },
+    SetMenu:function(name)
+    {
+        $("a","#topNav").each(function(){
+            $(this).removeClass();
+        });
+        var NowHead=_header[name];
+        $("#"+NowHead).addClass("now");
+    }
+}
+
+function GetFile()  //取文件名
+{
+	var loca=window.location.toString();
+	var newReg=/\/(\w+)(.aspx)/;
+	var mathArray=loca.match(newReg);
+	if (mathArray==null)
+		return null
+	else
+		return unescape(mathArray[1]);
+}
+
+function getUrlParam(name)  //取值
+{ 
+	  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	  var r = window.location.search.substr(1).match(reg);
+	  if (r != null) 
+		return unescape(r[2]); 
+	  else 
+		return "Default";
+}
+
+
+
 var Category = function(name) {
     this.name = name;
     this.list = [];
