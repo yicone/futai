@@ -36,9 +36,9 @@ a:hover
 	text-decoration:underline;
 }
 
-p,li
+p,li,td
 {
-	font-size:12px; line-height:18px;
+	font-size:12px; line-height:25px; color:#626262;
 }
 
 .clearfix
@@ -68,7 +68,13 @@ border:1px solid #BEAC8D; font-size:12px;
 
 .btn1Style
 {
-background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF;
+	background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF; height:23px; line-height:22px;
+}
+
+.btn2Style
+{
+	background:url(../images/btn_buy.gif) no-repeat left #A40000; border:1px solid #FF0000; font-size:12px; color:#FFFFFF; height:23px; line-height:22px; padding-left:15px;
+	#padding-left:0;
 }
 
 .redfont1
@@ -81,6 +87,10 @@ background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF;
 	color:#7D7D7D;
 }
 
+.breakfont
+{
+	text-decoration:line-through;
+}
 .More
 {
 	float:right;
@@ -129,7 +139,7 @@ background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF;
 
 .cartInfo
 {
-	color:#FFF; float:right; background:url(../images/cart_icon1.gif) no-repeat left top; text-indent:15px; margin-top:8px;
+	color:#FFF; float:right; background:url(../images/cart_icon1.gif) no-repeat left top; text-indent:15px; margin-top:8px; line-height:18px;
 }
 
 .searchBox
@@ -174,7 +184,7 @@ background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF;
 
 .banner img
 {
-	display:block;
+	display:block; border:none
 }
 
 /*body*/
@@ -277,6 +287,15 @@ background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF;
 	padding:20px 32px; background:#FFF; height:90px; overflow:hidden;
 }
 
+.bottomMenu li
+{
+	line-height:18px;
+}
+
+.bottomMenu p
+{
+	line-height:20px;
+}
 .i_bottom_icon1
 {
 	background:url(../images/i_bottom_icon1.gif) no-repeat left; padding-left:20px; color:#AC0000;
@@ -289,7 +308,7 @@ background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF;
 
 .AddInfo
 {
-	width:160px; float:left; margin-right:20px; display:inline;
+	width:160px; float:left; margin-right:15px; #margin-right:20px; display:inline;
 }
 
 .bottomMenuLst

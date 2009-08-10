@@ -11,6 +11,10 @@
 	width:164px; float:right; display:inline; 
 }
 
+p,li,td
+{
+	font-size:12px; line-height:18px;
+}
 /*middle*/
 .middle
 {

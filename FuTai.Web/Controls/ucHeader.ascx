@@ -1,27 +1,27 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucHeader.ascx.cs" Inherits="FuTai.Web.Controls.ucHeader" %>
 <div class="head">
     <div class="logo">
-        <img height="70" width="200" src="images/logo.jpg" /></div>
+        <img height="70" width="200" src="/images/logo.jpg" /></div>
     <div class="userMenu">
         <p>
-            <a href="#">登录</a>|<a href="#">注册</a>|<a href="#">我的帐户</a>|<a href="#">购物车</a>|<a
+            <a href="#">登录</a>|<a href="#">注册</a>|<a href="/Account/MyAccount.aspx">我的帐户</a>|<a href="/ProduceCart.aspx">购物车</a>|<a
                 href="#">个性定制订单查询</a>|<a href="#">帮助中心</a>|<a href="#">体验中心</a></p>
     </div>
     <div class="bookNum">
-        <img src="images/booknum.jpg" /></div>
+        <img src="/images/booknum.jpg" /></div>
     <div class="clearfix">
     </div>
     <ul class="topNav">
-        <li><a href="#">首 页</a></li>
-        <li><a href="/ProductList.aspx?productType=Diamond">裸 钻</a></li>
-        <li><a href="/ProductList.aspx?productType=RingBracket">戒 托</a></li>
-        <li><a href="/ProductList.aspx?productType=DiamondRing">钻 戒</a></li>
-        <li><a href="/ProductList.aspx?productType=PairRing">对 戒</a></li>
-        <li><a href="/ProductList.aspx?productType=DiamondOrnament">钻 饰</a></li>
-        <li><a href="/ProductList.aspx?productType=GoldOrnament">金 饰</a></li>
-        <li><a href="/ProductList.aspx?productType=Jewel">珠 宝</a></li>
-        <li><a href="#">福泰精品</a></li>
-        <li><a href="#">关于福泰</a></li>
+        <li><a id="Index" href="/Default.aspx">首 页</a></li>
+        <li><a id="Diamond" href="/ProductList.aspx?productType=Diamond">裸 钻</a></li>
+        <li><a id="RingBracket" href="/ProductList.aspx?productType=RingBracket">戒 托</a></li>
+        <li><a id="DiamondRing" href="/ProductList.aspx?productType=DiamondRing">钻 戒</a></li>
+        <li><a id="PairRing" href="/ProductList.aspx?productType=PairRing">对 戒</a></li>
+        <li><a id="DiamondOrnament" href="/ProductList.aspx?productType=DiamondOrnament">钻 饰</a></li>
+        <li><a id="GoldOrnament" href="/ProductList.aspx?productType=GoldOrnament">金 饰</a></li>
+        <li><a id="Jewel" href="/ProductList.aspx?productType=Jewel">珠 宝</a></li>
+        <li><a id="JP" href="/HighLevelProduct.aspx">福泰精品</a></li>
+        <li><a id="About" href="/About.aspx">关于福泰</a></li>
     </ul>
     <p class="cartInfo">
         购物车中<br />
@@ -55,6 +55,7 @@
         </p>
     </div>
     <div class="banner">
-        <img src="images/banner.jpg" />
+        <img id='adv' src="/images/banner.jpg" usemap="#Map" />
+        <map name="Map" id="Map"><area shape="rect" coords="958,68,979,89" href="#" onclick="document.getElementById('adv').style.display='none'" /></map>
     </div>
 </div>

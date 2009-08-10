@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+.custom_main1
+{
+	background:#FFF; _height:400px; min-height:400px;
+}
+
+.step1_left
+{
+	padding-left:112px; margin-top:66px; float:left; display:inline; padding-bottom:15px;
+}
+
+.step1_right
+{
+	float:right; padding-right:88px; margin-top:85px; display:inline;
+}
+
+.step1_right .getCustom
+{
+	margin-left:100px;
+	margin-top:58px;
+}
+
+.cartStep
+{
+text-align:center; height:75px; line-height:75px; font-size:14px; font-weight:bold; color:#74572D;
+}
+
+.cartBtnbox
+{
+padding:10px 0;
+}
+
+.cartBox
+{
+margin:15px;
+}
+
+.cartTable th
+{
+background:#D0C4AD;
+}
+
+.cartTable th,.cartTable td
+{
+padding:10px;
+}
+
+.cartTable
+{
+color:#74572D; font-size:12px; border-collapse:collapse;
+}
+
+.cartTable td
+{
+border:1px solid #D0C4AD; text-align:center;
+}
+
+.cartTable2
+{
+color:#74572D; margin:10px 0;
+}
+
+.cartTable2 td
+{
+padding:10px;
+}
+
+.product_img
+{
+	background:url(../images/custom_imgbg.gif); width:285px; height:213px; margin:0 auto; text-align:center;
+}
+
+.product_img img
+{
+	margin-top:16px;
+}
+
+.product_detail
+{
+	line-height:30px;
+}
+
+.box1 h3
+{
+	font-size:14px; color:#74572D; line-height:40px;
+}
+
+.custom_leftbox
+{
+width:484px; float:left;
+}
+
+.custom_rightbox
+{
+width:290px; float:right;
+}
+
+.custom_rightbox .box2
+{
+background:#ECE8DF; height:684px; border:1px solid #BEAC8D;
+}
+
+.custom_rightbox .box2 p
+{
+padding:30px; line-height:24px;
+}

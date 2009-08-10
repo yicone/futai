@@ -1,0 +1,206 @@
+@charset "utf-8";
+/* CSS Document */
+
+.aboutft
+{
+	background:url(../images/aboutft_bg.jpg) no-repeat right top #FFF; padding-top:150px; padding-bottom:68px;
+}
+
+.aboutft .cont
+{
+	padding:0 65px;
+}
+
+.aboutft .cont p
+{
+	padding:15px 0;
+}
+
+.school_left
+{
+	width:515px; float:left;
+}
+
+.school_left .box1 .cont
+{
+	padding-top:27px; padding-bottom:27px;
+}
+
+.school_left .box1
+{
+	margin-bottom:10px;
+}
+
+.school_right
+{
+	width:256px; float:right;
+}
+
+.school_detail p
+{
+	text-indent:2em; line-height:18px; padding:10px 0; line-height:25px;
+}
+
+.school_detail h4
+{
+	padding-top:10px;
+}
+
+.school_cont1 img
+{
+	float:left; display:inline;
+}
+
+.school_cont1 p
+{
+	float:right; width:284px; display:inline; line-height:20px;
+}
+
+.box1 .school_cont2
+{
+	padding:24px 20px;
+}
+.school_cont2 td
+{
+	line-height:20px;
+}
+
+.school_cont2 .inner_hr3
+{
+	margin:10px 0; 
+}
+
+.school_box
+{
+	background:url(../images/school_boxbg.jpg) no-repeat top; border:1px solid #BEAC8D; margin-top:10px; overflow:hidden; height:617px;
+}
+
+.school_box .cont
+{
+	padding:0 20px; padding-top:410px;
+}
+
+.myaccount_cont .inner_hr
+{
+	margin:10px 0;
+}
+
+.myaccount_table1 th,.myaccount_table2 th
+{
+	background:url(../images/myaccount_table.gif) no-repeat left #D0C4AE; background-position:30px 10px; border-bottom:1px solid #FFF; text-align:left; color:#7D0000; font-size:12px; height:37px; line-height:37px; padding-left:55px; 
+}
+
+.myaccount_table1 td
+{
+	background:#EBE4D6; height:35px; line-height:35px; border-bottom:1px solid #FFF;
+}
+
+.myaccount_table2
+{
+	border:1px solid #D0C4AE;
+}
+
+.myaccount_table2 td
+{
+	padding:10px 0;
+}
+
+.myaccount_table2 td.vhr
+{
+	background:url(../images/v_hr.jpg) no-repeat left;
+}
+
+.classic_cont
+{
+	background:url(../images/classic_bg.jpg) top no-repeat #000; height:421px; position:relative;
+}
+
+.classic_cont .div1
+{
+	position:absolute; width:202px; height:330px; left:89px; top:126px;
+}
+
+.classic_cont td
+{
+	line-height:18px;
+}
+
+.classic_cont .div2
+{
+	width:324px; height:400px; left:404px; top:63px; position:absolute;
+}
+
+.classic_cont .div2 p
+{
+	padding-top:50px; line-height:18px; 
+}
+
+.tabSelect2
+{
+	float:right; margin-top:4px;
+}
+
+.tabSelect2 li
+{
+	float:left; width:73px; height:24px; background:url(../images/inner_tabselect2_btn.gif); margin-right:6px; text-align:center; font-weight:100; line-height:24px;
+}
+
+.tabSelect2 li a
+{
+	color:#FFF;
+}
+
+.tabSelect2 li.now
+{
+	background:url(../images/inner_tabselect2_now.gif);
+}
+
+.tabSelect2 li.now a
+{
+	color:#74572D;
+}
+
+.box1 .series_miancont
+{
+	padding-top:20px; padding-bottom:20px;
+}
+
+.series_left
+{
+	width:456px; float:left;
+}
+
+.series_right
+{
+	width:232px; float:right;
+}
+
+.series_right .cont
+{
+	padding:10px;
+}
+
+.inner_list1 li
+{
+	height:240px;
+}
+
+.itemNum
+{
+	line-height:30px;
+}
+
+.series_cont,.series_cont2
+{
+	background:#ECE8DF;
+}
+
+.series_cont td
+{
+	border-bottom:1px dashed #A0A0A0; line-height:18px; padding:10px 0;
+}
+
+.series_miancont .inner_hr
+{
+	margin:10px 0;
+}

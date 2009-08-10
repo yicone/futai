@@ -62,9 +62,9 @@
             <li><span>支付相关问题</span></li>
         </ul>
     </div>
-    <div class="clearfix">
-    </div>
-    <div>
+    <div class="clearfix"></div>
+</div>
+<div>
     <table cellspacing="10" cellpadding="0" border="0" align="center">
         <tbody>
             <tr>
@@ -80,9 +80,12 @@
             </tr>
         </tbody>
     </table>
-    </div>
+</div>
     <p align="center" class="copyright">
         版权所有上海福泰珠宝首饰有限公司，相关公司产品信息非本站许可，不得用于商业用途<br />
         Copyright All rights reserved.</p>
     <br />
-</div>
+
+        </div>
+        <div class="clearfix">
+        </div>
