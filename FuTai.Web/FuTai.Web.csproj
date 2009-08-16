@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -63,13 +63,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -131,13 +124,6 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="HighLevelProduct.aspx.cs">
-      <DependentUpon>HighLevelProduct.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="HighLevelProduct.aspx.designer.cs">
-      <DependentUpon>HighLevelProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="PayMent\InfoDesposite.aspx.cs">
       <DependentUpon>InfoDesposite.aspx</DependentUpon>
@@ -308,14 +294,12 @@
     <Content Include="style\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Account\MyAccount.aspx" />
     <Content Include="Controls\ucLeft.ascx" />
     <Content Include="CustomBuy\CustomBuyCzt.aspx" />
     <Content Include="CustomBuy\CustomBuyCzuan.aspx" />
     <Content Include="CustomBuy\CustomPay.aspx" />
     <Content Include="flash\MyMovie.swf" />
-    <Content Include="HighLevelProduct.aspx" />
     <Content Include="Img.xml" />
     <Content Include="obj\Debug\FuTai.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\FuTai.Web.dll" />
@@ -380,9 +364,6 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
