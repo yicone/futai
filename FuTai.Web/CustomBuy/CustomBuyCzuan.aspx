@@ -35,9 +35,89 @@
         	<div class="box1">
        	    <h2><p>搜不到您要的钻石? 福泰帮您<a href="#" class="redfont1">全球搜钻</a></p><span>站内搜钻</span></h2>
                 <div class="cont">
-                <p align="center">
-                <img src="../images/custom_getimg.jpg" width="723" height="404" />
-                </p>
+                	<table width="723" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">形状</span></td>
+        <td width="80%"><ul class="list">
+			<li><a href="#" class="nowimg">圆形</a></li>
+			<li><a href="#" class="norimg">异形</a></li>
+		</ul>
+		<div class="clear"></div></td>
+      </tr>
+    </table></td>
+    <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">颜色</span></td>
+        <td width="80%"><img src="../images/XXbar_01.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td width="50%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">克拉</span></td>
+        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" /></td>
+      </tr>
+    </table></td>
+    <td width="50%" height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">净度</span></td>
+        <td width="80%"><img src="../images/XXbar_02.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">价格</span></td>
+        <td width="80%"><img src="../images/lxxbar_02.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+    <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">切工</span></td>
+        <td width="80%"><img src="../images/XXbar_03.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">荧光</span></td>
+        <td width="80%"><img src="../images/lxxbar_03.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+    <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">抛光</span></td>
+        <td width="80%"><img src="../images/XXbar_04.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">地区</span></td>
+        <td width="80%"><img src="../images/lxxbar_04.jpg" width="268" /></td>
+      </tr>
+    </table></td>
+    <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="20%" valign="top"><span class="tipname">对称</span></td>
+        <td width="80%"><img src="../images/XXbar_05.jpg" width="268" height="74" /></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="left" valign="top"><input type="button" class="btn1Style" value="手动输入条件" />&nbsp;&nbsp;
+      <input type="button" class="btn1Style" value="简化条件" />&nbsp;&nbsp;
+      <input type="button" class="btn1Style" value="重置" />
+      &nbsp;&nbsp;快速搜索：<a href="#" class="redl">克拉钻</a> <a href="#" class="redl">3EX钻</a> <a href="#" class="redl">30分钻</a> <a href="#" class="redl">50分钻</a> <a href="#" class="redl">国检钻石</a></td>
+    </tr>
+</table>
+
                 </div>
             </div>
             <div class="hr"></div>
