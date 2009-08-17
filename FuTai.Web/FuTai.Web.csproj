@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -63,11 +63,11 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\MyAccount.aspx.cs">
+    <Compile Include="App_Data\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\MyAccount.aspx.designer.cs">
+    <Compile Include="App_Data\MyAccount.aspx.designer.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="BasePage.cs">
@@ -294,13 +294,14 @@
     <Content Include="style\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Account\MyAccount.aspx" />
+    <Content Include="App_Data\MyAccount.aspx" />
     <Content Include="Controls\ucLeft.ascx" />
     <Content Include="CustomBuy\CustomBuyCzt.aspx" />
     <Content Include="CustomBuy\CustomBuyCzuan.aspx" />
     <Content Include="CustomBuy\CustomPay.aspx" />
     <Content Include="flash\MyMovie.swf" />
     <Content Include="Img.xml" />
+    <Content Include="js\CustomSear.js" />
     <Content Include="obj\Debug\FuTai.Web.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\FuTai.Web.dll" />
     <Content Include="obj\Debug\FuTai.Web.pdb" />
@@ -329,7 +330,7 @@
     <None Include="style\.svn\text-base\style.css.svn-base" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Account\" />
     <Folder Include="obj\.svn\prop-base\" />
     <Folder Include="obj\.svn\props\" />
     <Folder Include="obj\.svn\text-base\" />
@@ -364,6 +365,9 @@
           <IISUrl>
           </IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
