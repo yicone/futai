@@ -1,6 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
+td img{ border:none}
 .custom_main1
 {
 	background:#FFF; _height:400px; min-height:400px;

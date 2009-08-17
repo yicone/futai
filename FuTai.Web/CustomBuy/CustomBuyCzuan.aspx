@@ -4,6 +4,7 @@
 <asp:Content ContentPlaceHolderID="cphHead" ID="Content1" runat="server">
     <link type="text/css" rel="stylesheet" href="/style/custom.css" />
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
+    <script type="text/javascript" src="../js/CustomSear.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
 
@@ -50,7 +51,7 @@
     <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">颜色</span></td>
-        <td width="80%"><img src="../images/XXbar_01.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/XXbar_01.jpg" width="268" height="74" border="0" usemap="#Color" /></td>
       </tr>
     </table></td>
   </tr>
@@ -58,13 +59,13 @@
     <td width="50%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">克拉</span></td>
-        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" /></td>
+        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" border="0" usemap="#KLK" /></td>
       </tr>
     </table></td>
     <td width="50%" height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">净度</span></td>
-        <td width="80%"><img src="../images/XXbar_02.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/XXbar_02.jpg" width="268" height="74" border="0" usemap="#JD" /></td>
       </tr>
     </table></td>
   </tr>
@@ -72,13 +73,13 @@
     <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">价格</span></td>
-        <td width="80%"><img src="../images/lxxbar_02.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/lxxbar_02.jpg" width="268" height="74" border="0" usemap="#Price" /></td>
       </tr>
     </table></td>
     <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">切工</span></td>
-        <td width="80%"><img src="../images/XXbar_03.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/XXbar_03.jpg" width="268" height="74" border="0" usemap="#qie" /></td>
       </tr>
     </table></td>
   </tr>
@@ -86,13 +87,13 @@
     <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">荧光</span></td>
-        <td width="80%"><img src="../images/lxxbar_03.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/lxxbar_03.jpg" usemap="#YD" /></td>
       </tr>
     </table></td>
     <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">抛光</span></td>
-        <td width="80%"><img src="../images/XXbar_04.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/XXbar_04.jpg" usemap="#PaoLight" /></td>
       </tr>
     </table></td>
   </tr>
@@ -106,7 +107,7 @@
     <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">对称</span></td>
-        <td width="80%"><img src="../images/XXbar_05.jpg" width="268" height="74" /></td>
+        <td width="80%"><img src="../images/XXbar_05.jpg" usemap="#DC" /></td>
       </tr>
     </table></td>
   </tr>
@@ -819,6 +820,84 @@ D </td>
     	<div class="clearfix"></div>
       
 </asp:PlaceHolder>
+
+<map name="Color" id="Color">
+  <area shape="rect" coords="8,0,42,42" href="javascript:CustomOpt.SetColor('J')" />
+  <area shape="rect" coords="42,1,80,42" href="javascript:CustomOpt.SetColor('I')" />
+  <area shape="rect" coords="80,1,115,42" href="javascript:CustomOpt.SetColor('H')" />
+  <area shape="rect" coords="115,0,153,42" href="javascript:CustomOpt.SetColor('G')" />
+  <area shape="rect" coords="153,1,187,42" href="javascript:CustomOpt.SetColor('F')" />
+  <area shape="rect" coords="187,0,223,42" href="javascript:CustomOpt.SetColor('E')" />
+  <area shape="rect" coords="223,0,258,43" href="javascript:CustomOpt.SetColor('D')" />
+</map>
+<map name="JD" id="JD">
+  <area shape="rect" coords="9,1,59,43" href="javascript:CustomOpt.SetClarity('SI')" />
+  <area shape="rect" coords="59,1,108,43" href="javascript:CustomOpt.SetClarity('VS')" />
+  <area shape="rect" coords="108,1,157,43" href="javascript:CustomOpt.SetClarity('WS')" />
+    <area shape="rect" coords="157,1,208,42" href="javascript:CustomOpt.SetClarity('IF')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetClarity('FL')" />
+</map>
+<map name="qie" id="qie">
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetCut('P')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetCut('F')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetCut('G')" />
+	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetCut('VG')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetCut('EX')" />
+</map>
+<map name="PaoLight" id="PaoLight">
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetPolishing('P')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetPolishing('F')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetPolishing('G')" />
+	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetPolishing('VG')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetPolishing('EX')" />
+</map>
+<map name="DC" id="DC">
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetSymmetry('P')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetSymmetry('F')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetSymmetry('G')" />
+	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetSymmetry('VG')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetSymmetry('EX')" />
+</map>
+<map name="YD" id="YD">
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetFluorescence('N')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetFluorescence('F')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetFluorescence('M')" />
+  <area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetFluorescence('S')" />
+  <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetFluorescence('VS')" />
+</map>
+<map name="KLK" id="KLK">
+  <area shape="rect" coords="8,2,36,42" href="javascript:CustomOpt.SetCarat(0.23,0.33)" />
+  <area shape="rect" coords="37,2,61,42" href="javascript:CustomOpt.SetCarat(0.34,0.63)" />
+  <area shape="rect" coords="62,2,88,42" href="javascript:CustomOpt.SetCarat(0.64,1)" />
+  <area shape="rect" coords="124,2,162,42" href="javascript:CustomOpt.SetCarat(1.01,1.33)" />
+  <area shape="rect" coords="162,1,203,43" href="javascript:CustomOpt.SetCarat(1.34,1.63)" />
+  <area shape="rect" coords="88,2,123,41" href="javascript:CustomOpt.SetCarat(1.64,2)" />
+  <area shape="rect" coords="203,1,257,43" href="javascript:CustomOpt.SetCarat(2.01,2.10)" />
+</map>
+
+<map name="Price" id="Price">
+<area shape="rect" coords="9,1,21,43" href="javascript:CustomOpt.SetPrice(1410,25000)" />
+<area shape="rect" coords="21,1,33,43" href="javascript:CustomOpt.SetPrice(25000,50000)"  />
+<area shape="rect" coords="33,1,45,43" href="javascript:CustomOpt.SetPrice(50000,75000)"  />
+<area shape="rect" coords="45,1,57,43" href="javascript:CustomOpt.SetPrice(75000,100000)"  />
+<area shape="rect" coords="57,1,69,43" href="javascript:CustomOpt.SetPrice(100000,125000)"  />
+<area shape="rect" coords="69,1,81,43" href="javascript:CustomOpt.SetPrice(125000,150000)"  />
+<area shape="rect" coords="81,1,93,43" href="javascript:CustomOpt.SetPrice(150000,175000)"  />
+<area shape="rect" coords="93,1,104,43" href="javascript:CustomOpt.SetPrice(175000,200000)"  />
+<area shape="rect" coords="104,1,116,43" href="javascript:CustomOpt.SetPrice(200000,225000)"  />
+<area shape="rect" coords="116,1,128,43" href="javascript:CustomOpt.SetPrice(225000,250000)"  />
+<area shape="rect" coords="128,1,140,43" href="javascript:CustomOpt.SetPrice(250000,275000)"  />
+<area shape="rect" coords="140,1,152,43" href="javascript:CustomOpt.SetPrice(275000,300000)"  />
+<area shape="rect" coords="152,1,164,43" href="javascript:CustomOpt.SetPrice(300000,325000)"  />
+<area shape="rect" coords="164,1,176,43" href="javascript:CustomOpt.SetPrice(325000,350000)"  />
+<area shape="rect" coords="176,1,188,43" href="javascript:CustomOpt.SetPrice(350000,375000)"  />
+<area shape="rect" coords="188,1,200,43" href="javascript:CustomOpt.SetPrice(375000,400000)"  />
+<area shape="rect" coords="200,1,212,43" href="javascript:CustomOpt.SetPrice(400000,425000)"  />
+<area shape="rect" coords="212,1,224,43" href="javascript:CustomOpt.SetPrice(425000,450000)"  />
+<area shape="rect" coords="224,1,236,43" href="javascript:CustomOpt.SetPrice(450000,475000)"  />
+<area shape="rect" coords="236,1,248,43" href="javascript:CustomOpt.SetPrice(475000,500000)"  />
+<area shape="rect" coords="248,1,260,43" href="javascript:CustomOpt.SetPrice(500000,545000)"  />
+</map>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphTemplate" runat="server">
 </asp:Content>
