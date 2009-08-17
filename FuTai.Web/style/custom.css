@@ -106,3 +106,12 @@ background:#ECE8DF; height:684px; border:1px solid #BEAC8D;
 {
 padding:30px; line-height:24px;
 }
+
+.cucent{ text-align:center}
+
+.tipname{ display:block; width:45px; height:22px; text-align:center; line-height:25px; color:white; font-size:14px; border:1px solid #c0ab8c; background:#74592e; overflow:hidden; margin-top:8px}
+ul.list li{ float:left; display:inline; list-style:none}
+ul.list li a.norimg{ width:134px; height:43px; display:block; text-align:center; line-height:43px; color:#69532e; background:url(../images/norimg.jpg) no-repeat; text-decoration:none}
+ul.list li a.nowimg{ background:url(../images/nowimg.jpg) repeat-x;width:134px; height:43px; display:block; text-align:center; line-height:43px; color:white;text-decoration:none}
+
+a.redl{ color:#ee001c}
