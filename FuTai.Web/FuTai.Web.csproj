@@ -63,11 +63,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Data\MyAccount.aspx.cs">
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="App_Data\MyAccount.aspx.designer.cs">
+    <Compile Include="Account\MyAccount.aspx.designer.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="BasePage.cs">
@@ -124,6 +131,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HighLevelProduct.aspx.cs">
+      <DependentUpon>HighLevelProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HighLevelProduct.aspx.designer.cs">
+      <DependentUpon>HighLevelProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="PayMent\InfoDesposite.aspx.cs">
       <DependentUpon>InfoDesposite.aspx</DependentUpon>
@@ -294,20 +308,16 @@
     <Content Include="style\style.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MyAccount.aspx" />
+    <Content Include="About.aspx" />
+    <Content Include="Account\MyAccount.aspx" />
     <Content Include="Controls\ucLeft.ascx" />
     <Content Include="CustomBuy\CustomBuyCzt.aspx" />
     <Content Include="CustomBuy\CustomBuyCzuan.aspx" />
     <Content Include="CustomBuy\CustomPay.aspx" />
     <Content Include="flash\MyMovie.swf" />
+    <Content Include="HighLevelProduct.aspx" />
     <Content Include="Img.xml" />
     <Content Include="js\CustomSear.js" />
-    <Content Include="obj\Debug\FuTai.Web.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\FuTai.Web.dll" />
-    <Content Include="obj\Debug\FuTai.Web.pdb" />
-    <Content Include="obj\Release\FuTai.Web.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Release\FuTai.Web.dll" />
-    <Content Include="obj\Release\FuTai.Web.pdb" />
     <Content Include="PayMent\InfoDesposite.aspx" />
     <Content Include="PayMent\Login.aspx" />
     <Content Include="ProduceCart.aspx" />
@@ -319,31 +329,10 @@
     <Content Include="style\forum.css" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="obj\.svn\all-wcprops" />
-    <None Include="obj\.svn\entries" />
-    <None Include="obj\Debug\ResolveAssemblyReference.cache" />
     <None Include="sql\create_db.sql" />
-    <None Include="style\.svn\all-wcprops" />
-    <None Include="style\.svn\entries" />
-    <None Include="style\.svn\text-base\index.css.svn-base" />
-    <None Include="style\.svn\text-base\inner.css.svn-base" />
-    <None Include="style\.svn\text-base\style.css.svn-base" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Account\" />
-    <Folder Include="obj\.svn\prop-base\" />
-    <Folder Include="obj\.svn\props\" />
-    <Folder Include="obj\.svn\text-base\" />
-    <Folder Include="obj\.svn\tmp\prop-base\" />
-    <Folder Include="obj\.svn\tmp\props\" />
-    <Folder Include="obj\.svn\tmp\text-base\" />
-    <Folder Include="obj\Debug\Refactor\" />
-    <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="style\.svn\prop-base\" />
-    <Folder Include="style\.svn\props\" />
-    <Folder Include="style\.svn\tmp\prop-base\" />
-    <Folder Include="style\.svn\tmp\props\" />
-    <Folder Include="style\.svn\tmp\text-base\" />
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -358,17 +347,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>12271</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

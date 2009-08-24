@@ -149,13 +149,6 @@ namespace FuTai.Component
 			return ((ISingleResult<search_SearchRingBracket_个结果>)(result.ReturnValue));
 		}
 		
-		[Function(Name="dbo.search_SearchDiamond")]
-		public ISingleResult<search_SearchDiamond_个结果> SearchDiamond([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
-			return ((ISingleResult<search_SearchDiamond_个结果>)(result.ReturnValue));
-		}
-		
 		[Function(Name="dbo.search_SearchDiamondOrnament")]
 		public ISingleResult<search_SearchDiamondOrnament_个结果> SearchDiamondOrnament([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
 		{
@@ -189,6 +182,13 @@ namespace FuTai.Component
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
 			return ((ISingleResult<search_SearchGoldOrnament_个结果>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.search_SearchDiamond")]
+		public ISingleResult<search_SearchDiamond_个结果> SearchDiamond([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
+			return ((ISingleResult<search_SearchDiamond_个结果>)(result.ReturnValue));
 		}
 	}
 	
@@ -1352,194 +1352,6 @@ namespace FuTai.Component
 		}
 	}
 	
-	public partial class search_SearchDiamond_个结果
-	{
-		
-		private int _DiamondID;
-		
-		private string _StockNumber;
-		
-		private string _Carat;
-		
-		private string _Clarity;
-		
-		private string _Color;
-		
-		private string _Cut;
-		
-		private int _ProductId;
-		
-		private string _ProductType;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		public search_SearchDiamond_个结果()
-		{
-		}
-		
-		[Column(Storage="_DiamondID", DbType="Int NOT NULL")]
-		public int DiamondID
-		{
-			get
-			{
-				return this._DiamondID;
-			}
-			set
-			{
-				if ((this._DiamondID != value))
-				{
-					this._DiamondID = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_StockNumber", DbType="VarChar(20)")]
-		public string StockNumber
-		{
-			get
-			{
-				return this._StockNumber;
-			}
-			set
-			{
-				if ((this._StockNumber != value))
-				{
-					this._StockNumber = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Carat", DbType="NChar(10)")]
-		public string Carat
-		{
-			get
-			{
-				return this._Carat;
-			}
-			set
-			{
-				if ((this._Carat != value))
-				{
-					this._Carat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Clarity", DbType="VarChar(10)")]
-		public string Clarity
-		{
-			get
-			{
-				return this._Clarity;
-			}
-			set
-			{
-				if ((this._Clarity != value))
-				{
-					this._Clarity = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Color", DbType="VarChar(10)")]
-		public string Color
-		{
-			get
-			{
-				return this._Color;
-			}
-			set
-			{
-				if ((this._Color != value))
-				{
-					this._Color = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Cut", DbType="VarChar(10)")]
-		public string Cut
-		{
-			get
-			{
-				return this._Cut;
-			}
-			set
-			{
-				if ((this._Cut != value))
-				{
-					this._Cut = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Int NOT NULL")]
-		public int ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-	}
-	
 	public partial class search_SearchDiamondOrnament_个结果
 	{
 		
@@ -2277,6 +2089,410 @@ namespace FuTai.Component
 				if ((this._CreateDate != value))
 				{
 					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_SearchDiamond_个结果
+	{
+		
+		private string _DiamondID;
+		
+		private string _Carat;
+		
+		private string _Clarity;
+		
+		private string _Color;
+		
+		private string _Cut;
+		
+		private string _CutStyle;
+		
+		private string _Diameter;
+		
+		private string _CertType;
+		
+		private string _CertId;
+		
+		private string _Polish;
+		
+		private string _Symmetry;
+		
+		private string _AH;
+		
+		private string _Fluorescence;
+		
+		private string _ProductId;
+		
+		private string _ProductType;
+		
+		private string _FTId;
+		
+		private string _CounterId;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		private System.Nullable<int> _Status;
+		
+		private string _Location;
+		
+		private System.Nullable<int> _DiscountType;
+		
+		public search_SearchDiamond_个结果()
+		{
+		}
+		
+		[Column(Storage="_DiamondID", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string DiamondID
+		{
+			get
+			{
+				return this._DiamondID;
+			}
+			set
+			{
+				if ((this._DiamondID != value))
+				{
+					this._DiamondID = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Carat", DbType="VarChar(20)")]
+		public string Carat
+		{
+			get
+			{
+				return this._Carat;
+			}
+			set
+			{
+				if ((this._Carat != value))
+				{
+					this._Carat = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Clarity", DbType="VarChar(20)")]
+		public string Clarity
+		{
+			get
+			{
+				return this._Clarity;
+			}
+			set
+			{
+				if ((this._Clarity != value))
+				{
+					this._Clarity = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Color", DbType="VarChar(20)")]
+		public string Color
+		{
+			get
+			{
+				return this._Color;
+			}
+			set
+			{
+				if ((this._Color != value))
+				{
+					this._Color = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Cut", DbType="VarChar(20)")]
+		public string Cut
+		{
+			get
+			{
+				return this._Cut;
+			}
+			set
+			{
+				if ((this._Cut != value))
+				{
+					this._Cut = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CutStyle", DbType="VarChar(20)")]
+		public string CutStyle
+		{
+			get
+			{
+				return this._CutStyle;
+			}
+			set
+			{
+				if ((this._CutStyle != value))
+				{
+					this._CutStyle = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Diameter", DbType="VarChar(20)")]
+		public string Diameter
+		{
+			get
+			{
+				return this._Diameter;
+			}
+			set
+			{
+				if ((this._Diameter != value))
+				{
+					this._Diameter = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CertType", DbType="VarChar(20)")]
+		public string CertType
+		{
+			get
+			{
+				return this._CertType;
+			}
+			set
+			{
+				if ((this._CertType != value))
+				{
+					this._CertType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CertId", DbType="VarChar(20)")]
+		public string CertId
+		{
+			get
+			{
+				return this._CertId;
+			}
+			set
+			{
+				if ((this._CertId != value))
+				{
+					this._CertId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Polish", DbType="VarChar(20)")]
+		public string Polish
+		{
+			get
+			{
+				return this._Polish;
+			}
+			set
+			{
+				if ((this._Polish != value))
+				{
+					this._Polish = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Symmetry", DbType="VarChar(20)")]
+		public string Symmetry
+		{
+			get
+			{
+				return this._Symmetry;
+			}
+			set
+			{
+				if ((this._Symmetry != value))
+				{
+					this._Symmetry = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_AH", DbType="VarChar(20)")]
+		public string AH
+		{
+			get
+			{
+				return this._AH;
+			}
+			set
+			{
+				if ((this._AH != value))
+				{
+					this._AH = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Fluorescence", DbType="VarChar(20)")]
+		public string Fluorescence
+		{
+			get
+			{
+				return this._Fluorescence;
+			}
+			set
+			{
+				if ((this._Fluorescence != value))
+				{
+					this._Fluorescence = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string ProductId
+		{
+			get
+			{
+				return this._ProductId;
+			}
+			set
+			{
+				if ((this._ProductId != value))
+				{
+					this._ProductId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string ProductType
+		{
+			get
+			{
+				return this._ProductType;
+			}
+			set
+			{
+				if ((this._ProductType != value))
+				{
+					this._ProductType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FTId", DbType="VarChar(20)")]
+		public string FTId
+		{
+			get
+			{
+				return this._FTId;
+			}
+			set
+			{
+				if ((this._FTId != value))
+				{
+					this._FTId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CounterId", DbType="VarChar(20)")]
+		public string CounterId
+		{
+			get
+			{
+				return this._CounterId;
+			}
+			set
+			{
+				if ((this._CounterId != value))
+				{
+					this._CounterId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Money")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreateDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Status", DbType="Int")]
+		public System.Nullable<int> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Location", DbType="VarChar(20)")]
+		public string Location
+		{
+			get
+			{
+				return this._Location;
+			}
+			set
+			{
+				if ((this._Location != value))
+				{
+					this._Location = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountType", DbType="Int")]
+		public System.Nullable<int> DiscountType
+		{
+			get
+			{
+				return this._DiscountType;
+			}
+			set
+			{
+				if ((this._DiscountType != value))
+				{
+					this._DiscountType = value;
 				}
 			}
 		}

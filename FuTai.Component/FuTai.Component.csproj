@@ -68,6 +68,9 @@
   <ItemGroup>
     <Compile Include="BaseBll.cs" />
     <Compile Include="CacheHelper.cs" />
+    <Compile Include="FuTai.cs">
+      <DependentUpon>FuTai.dbml</DependentUpon>
+    </Compile>
     <Compile Include="FuTai.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

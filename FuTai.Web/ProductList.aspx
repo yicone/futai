@@ -28,7 +28,18 @@
             $('#button2').click(function() {
                 searchProduct();
             });
-            // TODO: 三个排序按钮的触发搜索的实现
+
+            // 三个排序按钮的触发搜索的实现
+            $('a.sort').click(function() {
+                $('a.sortnow').attr('class', 'sort');
+                $(this).attr('class', 'sortnow');
+
+                searchProduct();
+            });
+
+            $('a.sortnow').click(function() {
+                searchProduct();
+            });
 
             $('.next-page-link').click(function() {
                 showPage(++_pageNo, _pageSize);
@@ -55,8 +66,8 @@
             var query = new Query();
             query.price1 = $('#price1').val();
             query.price2 = $('#price2').val();
+            query.sort = $('a.sortnow').attr('sortfield');
             // TODO: 可能需要class来确定排序字段和升/降序
-            //            query.sort =
             //            query.order =
 
             var productType = '<%= this.ProductType %>';
@@ -137,11 +148,11 @@
                         <input type="text" size="5" id="price2" class="input1" /></li>
                     <li>
                         <input type="button" value="确定" id="button2" name="button2" class="btn1Style" /></li>
-                    <li><a href="#">
+                    <li><a href="javascript:void(0);" class="sortnow" sortfield="sales">
                         <img width="45" height="22" src="/images/itemsearch_b1.gif" /></a></li>
-                    <li><a href="#">
+                    <li><a href="javascript:void(0);" class="sort" sortfield="time">
                         <img width="71" height="22" src="/images/itemsearch_b2.gif" /></a></li>
-                    <li><a href="#">
+                    <li><a href="javascript:void(0);" class="sort"  sortfield="price">
                         <img width="48" height="22" src="/images/itemsearch_b3.gif" /></a></li></ul>
                 <p class="More">
                     <a class="Icon_gift" href="#">支持货到付款</a></p>

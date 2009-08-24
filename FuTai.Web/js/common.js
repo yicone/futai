@@ -205,5 +205,7 @@ function search(productType, query, typeIdCollection) {
 
             return list;
         }
-    }
+    } else {
+    alert(result.error.Message);
+     }
 }

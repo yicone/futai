@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using System.Data.Linq;
 using FuTai.Component;
+using System.Collections;
 
 namespace FuTai.Web
 {
@@ -34,7 +35,7 @@ namespace FuTai.Web
         [AjaxPro.AjaxMethod]
         public static object Search(string productType, string price1, string price2, string sort, string order, string[] typeIdCollection)
         {
-            object result = null;
+            IEnumerable  result = null;
 
             decimal p1, p2;
             decimal? np1 = (decimal.TryParse(price1, out p1)) ? (decimal?)p1 : null;
@@ -69,6 +70,20 @@ namespace FuTai.Web
                     break;
                 case "RingBracket":
                     result = cxt.SearchRingBracket(np1, np2, type1, type2);
+                    break;
+                default:
+                    break;
+            }
+
+            switch (sort)
+            {
+                case "price":
+                    result = result.AsQueryable().Cast<ISearchResult>().OrderBy(item => item.Price);   // 价格
+                    break;
+                case "time":    // 上架时间
+                    result = result.AsQueryable().Cast<ISearchResult>().OrderBy(item => item.CreateDate);
+                    break;
+                case "sales":   // 销量
                     break;
                 default:
                     break;
