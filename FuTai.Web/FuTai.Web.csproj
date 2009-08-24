@@ -343,7 +343,6 @@
     <Content Include="style\forum.css" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
     <Content Include="Controls\ucDataTable.ascx" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
     <Content Include="HighLevelProduct.aspx" />
