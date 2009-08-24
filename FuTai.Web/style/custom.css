@@ -116,3 +116,7 @@ ul.list li a.norimg{ width:134px; height:43px; display:block; text-align:center;
 ul.list li a.nowimg{ background:url(../images/nowimg.jpg) repeat-x;width:134px; height:43px; display:block; text-align:center; line-height:43px; color:white;text-decoration:none}
 
 a.redl{ color:#ee001c}
+.Mask{  width:100%; display:none; position:absolute; left:0px; top:0px; z-index:5; background:white}
+
+#LoadForm{ display:none; position:absolute; z-index:10; text-align:center; width:700px; left:0px; top:0px}
+#LoadForm img{ margin-bottom:10px}

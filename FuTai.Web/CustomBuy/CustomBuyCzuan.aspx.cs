@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.Data.SqlClient;
 
 namespace FuTai.Web.CustomBuy
 {
@@ -23,6 +24,7 @@ namespace FuTai.Web.CustomBuy
                 if (proid != null)
                 {
                     ShowPanel(3);
+                    this.InitInfo();
                 }
             }
         }
@@ -34,14 +36,18 @@ namespace FuTai.Web.CustomBuy
         {
             ShowPanel(2);
         }
+        public void ChangeType2(object sender, EventArgs e)
+        {
+            ShowPanel(4);
+        }
         protected void ShowPanel(int id)
         {
             switch (id)
             {
                 case 1:
                     Ph_First.Visible = false;
-                    Ph_Second.Visible = false;
-                    Ph_SecondSub.Visible = true;
+                    Ph_Second.Visible = true;
+                    Ph_SecondSub.Visible = false;
                     Ph_Pinfo.Visible = false;
                     break;
                 case 2:
@@ -56,9 +62,19 @@ namespace FuTai.Web.CustomBuy
                     Ph_SecondSub.Visible = false;
                     Ph_Pinfo.Visible = true;
                     break;
+                case 4:
+                    Ph_First.Visible = false;
+                    Ph_Second.Visible = false;
+                    Ph_SecondSub.Visible = true;
+                    Ph_Pinfo.Visible = false;
+                    break;
                 default:
                     break;
             }
+        }
+        private void InitInfo()
+        { 
+            
         }
     }
 }

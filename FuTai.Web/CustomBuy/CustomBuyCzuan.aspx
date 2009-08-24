@@ -1,6 +1,8 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master"  CodeBehind="CustomBuyCzuan.aspx.cs" Inherits="FuTai.Web.CustomBuy.CustomBuy" %>
 <%@ Register src="/Controls/ucLeft.ascx" tagname="ucLeft" tagprefix="uc1" %>
 
+<%@ Register src="../Controls/ucDataTable.ascx" tagname="ucDataTable" tagprefix="uc2" %>
+
 <asp:Content ContentPlaceHolderID="cphHead" ID="Content1" runat="server">
     <link type="text/css" rel="stylesheet" href="/style/custom.css" />
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
@@ -17,15 +19,16 @@
       		<div class="step1_left">
             	<img src="../images/custom_img1.jpg" />
             </div>
-            <div class="step1_right"><img src="../images/custom_img2.jpg" />
-            <asp:LinkButton NavigateUrl="#" ID="Start" runat="server" OnClick="Link_Start"><img src="../images/step1_btn.gif" class="getCustom" /></asp:LinkButton></div>
+            <div class="step1_right"><img src="../images/custom_img2.jpg" /><br />
+                <asp:LinkButton NavigateUrl="#" ID="Start" runat="server" OnClick="Link_Start"><img src="../images/step1_btn.gif" class="getCustom" /></asp:LinkButton>
+            </div>
             <div class="clearfix"></div>
       </div>
       <div class="hr"></div>
       <div class="clearfix"></div>
 </asp:PlaceHolder>
 <asp:PlaceHolder runat="server" ID="Ph_Second" Visible="false">
-    	<uc1:ucLeft ID="ucLeft" runat="server" />
+<uc1:ucLeft ID="ucLeft" runat="server" />
    	  <div class="inner_main">
       <p align="right"><img src="../images/custom_step1.jpg" /></p>
         	<div class="SiteMap">
@@ -36,14 +39,14 @@
         	<div class="box1">
        	    <h2><p>搜不到您要的钻石? 福泰帮您<a href="#" class="redfont1">全球搜钻</a></p><span>站内搜钻</span></h2>
                 <div class="cont">
-                	<table width="723" border="0" align="center" cellpadding="0" cellspacing="0">
+                	<table width="704" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">形状</span></td>
         <td width="80%"><ul class="list">
-			<li><a href="#" class="nowimg">圆形</a></li>
-			<li><a href="#" class="norimg">异形</a></li>
+			<li><a href="javascript:CustomOpt.SetModel('Circel')" class="nowimg">圆形</a></li>
+			<li><a href="javascript:CustomOpt.SetModel('NoRule')" class="norimg">异形</a></li>
 		</ul>
 		<div class="clear"></div></td>
       </tr>
@@ -112,9 +115,8 @@
     </table></td>
   </tr>
   <tr>
-    <td colspan="2" align="left" valign="top"><input type="button" class="btn1Style" value="手动输入条件" />&nbsp;&nbsp;
-      <input type="button" class="btn1Style" value="简化条件" />&nbsp;&nbsp;
-      <input type="button" class="btn1Style" value="重置" />
+    <td colspan="2" align="left" valign="top"><asp:Button ID="ByHand" runat="server" CssClass="btn1Style" Text="手动输入条件" OnClick="ChangeType2" />&nbsp;&nbsp;
+      <input type="button" class="btn1Style" value="重置" onclick="CustomOpt.InitPeo()" />
       &nbsp;&nbsp;快速搜索：<a href="#" class="redl">克拉钻</a> <a href="#" class="redl">3EX钻</a> <a href="#" class="redl">30分钻</a> <a href="#" class="redl">50分钻</a> <a href="#" class="redl">国检钻石</a></td>
     </tr>
 </table>
@@ -122,210 +124,7 @@
                 </div>
             </div>
             <div class="hr"></div>
-        	<div class="box1">
-        	  <h2><span>搜索结果:(共搜到0颗钻石)</span></h2>
-        	  <div class="cont">
-              	<ul class="PageSelect">
-               	<li>1/50</li>
-                <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-                <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-               </ul>
-               <div class="inner_btnlist">
-                 <input type="button" name="button4" id="button12" class="btn1Style" value="对比选中钻石" />
-               </div>
-               <div class="clearfix"></div>
-               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="cartTable">
-                 <tr>
-                   <th>选择<br /></th>
-                   <th>货号</th>
-                   <th> 重量</th>
-                   <th> 净度</th>
-                   <th> 颜色</th>
-                   <th> 切工        </th>
-                   <th>抛光</th>
-                   <th> 对称</th>
-                   <th> 证书        </th>
-                   <th>市场价        </th>
-                   <th>福泰价      </th>
-                   <th>明细</th>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F                  </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA                </td>
-                   <td>¥8400               </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <th colspan="12" align="right">总计产品共 1 件 <span class="redfont1"> ¥31240.00 </span></th>
-                 </tr>
-               </table>
-               <ul class="PageSelect">
-               	<li>1/50</li>
-                <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-                <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-                <li><input name="textfield" type="text" class="input1" id="textfield" size="2" /></li>
-                <li><a href="#"><img src="../images/pageselect_comfirm.gif" /></a></li>
-               </ul>
-               <div class="inner_btnlist">
-                 <input type="button" name="button5" id="button13" class="btn1Style" value="对比选中钻石" />
-               </div>
-               <div class="clearfix"></div>
-			  </div>
-      	  </div>
+            <uc2:ucDataTable ID="ucDataTable1" runat="server" />
    	  </div>
       
     	<div class="clearfix"></div>
@@ -342,55 +141,51 @@
    	</div>
         	<div class="box1">
        	    <h2><p>搜不到您要的钻石? 福泰帮您<a href="#" class="redfont1">全球搜钻</a></p><span>站内搜钻</span></h2>
-                <div class="cont">
+                <div id="ConList" class="cont">
                 <table width="100%" border="0" cellspacing="10" cellpadding="0" class="custsearch_table">
                   <tr>
                     <th>形状</th>
                     <td width="300"><label>
-                      <input type="checkbox" name="checkbox2" id="checkbox2" />
+                      <input type="checkbox" name="checkbox2" id="checkbox2" onclick="CustomOpt.SetModelHigh('Circel',this)" />
                     </label>                      圆形      
-                    <input type="checkbox" name="checkbox3" id="checkbox3" />
+                    <input type="checkbox" name="checkbox3" id="checkbox3" onclick="CustomOpt.SetModelHigh('NoRule',this)" />
                     异形</td>
                     <th>颜色</th>
                     <td><label>
-                      <input type="checkbox" name="checkbox4" id="checkbox4" />
+                      <input type="checkbox" name="checkbox4" id="checkbox4" onclick="CustomOpt.SetColorHigh('J',this)" />
                       J
-                      <input type="checkbox" name="checkbox5" id="checkbox5" />
+                      <input type="checkbox" name="checkbox5" id="checkbox5" onclick="CustomOpt.SetColorHigh('I',this)" />
                     I           
-                    <input type="checkbox" name="checkbox6" id="checkbox6" />
+                    <input type="checkbox" name="checkbox6" id="checkbox6" onclick="CustomOpt.SetColorHigh('H',this)" />
                     H         
-                    <input type="checkbox" name="checkbox7" id="checkbox7" />
+                    <input type="checkbox" name="checkbox7" id="checkbox7" onclick="CustomOpt.SetColorHigh('G',this)" />
                     G         
-                    <input type="checkbox" name="checkbox8" id="checkbox8" />
+                    <input type="checkbox" name="checkbox8" id="checkbox8" onclick="CustomOpt.SetColorHigh('F',this)" />
                     F         
-                    <input type="checkbox" name="checkbox9" id="checkbox9" />
+                    <input type="checkbox" name="checkbox9" id="checkbox9" onclick="CustomOpt.SetColorHigh('E',this)" />
                     E          
-                    <input type="checkbox" name="checkbox10" id="checkbox10" />
+                    <input type="checkbox" name="checkbox10" id="checkbox10" onclick="CustomOpt.SetColorHigh('D',this)" />
                     D </label></td>
                   </tr>
                   <tr>
                     <th>克拉</th>
                     <td>从
                       <label>
-                        <input name="textfield2" type="text" id="textfield2" size="5" />
+                        <input name="textfield2" type="text" id="CarLow" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh(this.value,'L')" />
                     到
-                    <input name="textfield3" type="text" id="textfield3" size="5" />
+                    <input name="textfield3" type="text" id="CarHi" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh(this.value,'H')" />
                     </label></td>
                     <th>净度</th>
-                    <td><input type="checkbox" name="checkbox11" id="checkbox11" />
-J
-  <input type="checkbox" name="checkbox11" id="checkbox12" />
-I
-<input type="checkbox" name="checkbox11" id="checkbox13" />
-H
-<input type="checkbox" name="checkbox11" id="checkbox14" />
-G
-<input type="checkbox" name="checkbox11" id="checkbox15" />
-F
-<input type="checkbox" name="checkbox11" id="checkbox16" />
-E
-<input type="checkbox" name="checkbox11" id="checkbox17" />
-D </td>
+                    <td><input type="checkbox" name="checkbox11" id="checkbox11" onclick="CustomOpt.SetClarityHigh('SI1',this)" />
+SI
+  <input type="checkbox" name="checkbox11" id="checkbox12" onclick="CustomOpt.SetClarityHigh('VS1',this)" />
+VS
+<input type="checkbox" name="checkbox11" id="checkbox13" onclick="CustomOpt.SetClarityHigh('VVS2',this)" />
+WS
+<input type="checkbox" name="checkbox11" id="checkbox14" onclick="CustomOpt.SetClarityHigh('VS2',this)" />
+IF
+<input type="checkbox" name="checkbox11" id="checkbox15" onclick="CustomOpt.SetClarityHigh('FL',this)" />
+FL</td>
                   </tr>
                   <tr>
                     <th>价格</th>
@@ -401,235 +196,27 @@ D </td>
   <input name="textfield4" type="text" id="textfield5" size="5" />
                     </label></td>
                     <th>切工</th>
-                    <td><input type="checkbox" name="checkbox12" id="checkbox18" />
-J
-  <input type="checkbox" name="checkbox12" id="checkbox19" />
-I
-<input type="checkbox" name="checkbox12" id="checkbox20" />
-H
-<input type="checkbox" name="checkbox12" id="checkbox21" />
-G
-<input type="checkbox" name="checkbox12" id="checkbox22" />
+                    <td><input type="checkbox" name="checkbox12" id="checkbox18" onclick="CustomOpt.SetCutHigh('P',this)" />
+P
+  <input type="checkbox" name="checkbox12" id="checkbox19" onclick="CustomOpt.SetCutHigh('F',this)" />
 F
-<input type="checkbox" name="checkbox12" id="checkbox23" />
-E
-<input type="checkbox" name="checkbox12" id="checkbox24" />
-D </td>
+<input type="checkbox" name="checkbox12" id="checkbox20" onclick="CustomOpt.SetCutHigh('G',this)" />
+G
+<input type="checkbox" name="checkbox12" id="checkbox21" onclick="CustomOpt.SetCutHigh('VG',this)" />
+VG
+<input type="checkbox" name="checkbox12" id="checkbox22" onclick="CustomOpt.SetCutHigh('EXCELLENT',this)" />
+EX</td>
                   </tr>
                   <tr>
                     <td colspan="4"><asp:Button ID="Change_Manel" runat="server" CssClass="btn1Style" Text="滑块输入搜索" OnClick="ChangeType" />
-                      <input type="button" name="button7" id="button15" class="btn1Style" value="详细条件" />
-                      <input type="button" name="button8" id="button16" class="btn1Style" value="重置" />
+                      <input type="button" name="button8" id="button16" class="btn1Style" value="重置" onclick="CustomOpt.InitPeoHigh()" />
                     &nbsp;&nbsp;&nbsp;快捷搜索：<a href="#">克拉钻</a> <a href="#">3EX钻</a> <a href="#">30分钻</a> <a href="#">50分钻</a> <a href="#">国检钻石 </a></td>
                   </tr>
                 </table>
               </div>
             </div>
             <div class="hr"></div>
-        	<div class="box1">
-        	  <h2><span>搜索结果:(共搜到0颗钻石)</span></h2>
-        	  <div class="cont">
-              	<ul class="PageSelect">
-               	<li>1/50</li>
-                <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-                <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-               </ul>
-               <div class="inner_btnlist">
-                 <input type="button" name="button4" id="Submit1" class="btn1Style" value="对比选中钻石" />
-               </div>
-               <div class="clearfix"></div>
-               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="cartTable">
-                 <tr>
-                   <th>选择<br /></th>
-                   <th>货号</th>
-                   <th> 重量</th>
-                   <th> 净度</th>
-                   <th> 颜色</th>
-                   <th> 切工        </th>
-                   <th>抛光</th>
-                   <th> 对称</th>
-                   <th> 证书        </th>
-                   <th>市场价        </th>
-                   <th>福泰价      </th>
-                   <th>明细</th>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox1" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox2" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox3" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox4" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox5" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox6" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox7" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox8" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button"  class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox9" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA </td>
-                   <td>¥8400 </td>
-                   <td>¥4670</td>
-                   <td><input type="button"  class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <td><label>
-                     <input type="checkbox" name="checkbox" id="checkbox10" />
-                   </label></td>
-                   <td>123123</td>
-                   <td> 0.350</td>
-                   <td> VS2</td>
-                   <td> F                  </td>
-                   <td>EX </td>
-                   <td> VG</td>
-                   <td> EX</td>
-                   <td> GIA                </td>
-                   <td>¥8400               </td>
-                   <td>¥4670</td>
-                   <td><input type="button" class="btn1Style" value="详细" onclick="location='/CustomBuy/CustomBuyCzuan.aspx?proid=1'" /></td>
-                 </tr>
-                 <tr>
-                   <th colspan="12" align="right">总计产品共 1 件 <span class="redfont1"> ¥31240.00 </span></th>
-                 </tr>
-               </table>
-               <ul class="PageSelect">
-               	<li>1/50</li>
-                <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-                <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-                <li><input name="textfield" type="text" class="input1" id="text1" size="2" /></li>
-                <li><a href="#"><img src="../images/pageselect_comfirm.gif" /></a></li>
-               </ul>
-               <div class="inner_btnlist">
-                 <input type="button" name="button5" id="Submit12" class="btn1Style" value="对比选中钻石" />
-               </div>
-               <div class="clearfix"></div>
-			  </div>
-      	  </div>
+            <uc2:ucDataTable ID="ucDataTable2" runat="server" />
    	  </div>
       
     	<div class="clearfix"></div>
@@ -831,10 +418,10 @@ D </td>
   <area shape="rect" coords="223,0,258,43" href="javascript:CustomOpt.SetColor('D')" />
 </map>
 <map name="JD" id="JD">
-  <area shape="rect" coords="9,1,59,43" href="javascript:CustomOpt.SetClarity('SI')" />
-  <area shape="rect" coords="59,1,108,43" href="javascript:CustomOpt.SetClarity('VS')" />
-  <area shape="rect" coords="108,1,157,43" href="javascript:CustomOpt.SetClarity('WS')" />
-    <area shape="rect" coords="157,1,208,42" href="javascript:CustomOpt.SetClarity('IF')" />
+  <area shape="rect" coords="9,1,59,43" href="javascript:CustomOpt.SetClarity('SI1')" />
+  <area shape="rect" coords="59,1,108,43" href="javascript:CustomOpt.SetClarity('VS1')" />
+  <area shape="rect" coords="108,1,157,43" href="javascript:CustomOpt.SetClarity('VVS2')" />
+    <area shape="rect" coords="157,1,208,42" href="javascript:CustomOpt.SetClarity('VS2')" />
     <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetClarity('FL')" />
 </map>
 <map name="qie" id="qie">
@@ -842,7 +429,7 @@ D </td>
   <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetCut('F')" />
   <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetCut('G')" />
 	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetCut('VG')" />
-    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetCut('EX')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetCut('EXCELLENT')" />
 </map>
 <map name="PaoLight" id="PaoLight">
   <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetPolishing('P')" />
@@ -869,9 +456,9 @@ D </td>
   <area shape="rect" coords="8,2,36,42" href="javascript:CustomOpt.SetCarat(0.23,0.33)" />
   <area shape="rect" coords="37,2,61,42" href="javascript:CustomOpt.SetCarat(0.34,0.63)" />
   <area shape="rect" coords="62,2,88,42" href="javascript:CustomOpt.SetCarat(0.64,1)" />
-  <area shape="rect" coords="124,2,162,42" href="javascript:CustomOpt.SetCarat(1.01,1.33)" />
-  <area shape="rect" coords="162,1,203,43" href="javascript:CustomOpt.SetCarat(1.34,1.63)" />
-  <area shape="rect" coords="88,2,123,41" href="javascript:CustomOpt.SetCarat(1.64,2)" />
+  <area shape="rect" coords="124,2,162,42" href="javascript:CustomOpt.SetCarat(1.34,1.63)" />
+  <area shape="rect" coords="162,1,203,43" href="javascript:CustomOpt.SetCarat(1.64,2)" />
+  <area shape="rect" coords="88,2,123,41" href="javascript:CustomOpt.SetCarat(1.01,1.33)" />
   <area shape="rect" coords="203,1,257,43" href="javascript:CustomOpt.SetCarat(2.01,2.10)" />
 </map>
 

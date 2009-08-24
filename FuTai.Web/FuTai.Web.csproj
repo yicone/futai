@@ -80,6 +80,13 @@
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Controls\ucDataTable.ascx.cs">
+      <DependentUpon>ucDataTable.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucDataTable.ascx.designer.cs">
+      <DependentUpon>ucDataTable.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\ucFooter.ascx.cs">
       <DependentUpon>ucFooter.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -121,6 +128,13 @@
     </Compile>
     <Compile Include="CustomBuy\CustomPay.aspx.designer.cs">
       <DependentUpon>CustomPay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomBuy\SearchMethod.aspx.cs">
+      <DependentUpon>SearchMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomBuy\SearchMethod.aspx.designer.cs">
+      <DependentUpon>SearchMethod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -329,6 +343,10 @@
     <Content Include="style\forum.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Controls\ucDataTable.ascx" />
+    <Content Include="CustomBuy\SearchMethod.aspx" />
+    <Content Include="HighLevelProduct.aspx" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
   <ItemGroup>

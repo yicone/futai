@@ -158,7 +158,7 @@
                     <a class="Icon_gift" href="#">支持货到付款</a></p>
                 <div class="clearfix">
                 </div>
-                <div id="category" class="TypeSelect" style="width: 600px">
+                <div id="category" class="TypeSelect">
                     <!-- 模板生成 -->
                 </div>
                 <ul class="PageSelect">

@@ -50,6 +50,24 @@ namespace FuTai.Web.CustomBuy {
         protected global::FuTai.Web.Controls.ucLeft ucLeft;
         
         /// <summary>
+        /// ByHand 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ByHand;
+        
+        /// <summary>
+        /// ucDataTable1 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FuTai.Web.Controls.ucDataTable ucDataTable1;
+        
+        /// <summary>
         /// Ph_SecondSub 控件。
         /// </summary>
         /// <remarks>
@@ -75,6 +93,15 @@ namespace FuTai.Web.CustomBuy {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Change_Manel;
+        
+        /// <summary>
+        /// ucDataTable2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::FuTai.Web.Controls.ucDataTable ucDataTable2;
         
         /// <summary>
         /// Ph_Pinfo 控件。
