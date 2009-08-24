@@ -75,18 +75,25 @@ namespace FuTai.Web
                     break;
             }
 
-            switch (sort)
+            var list = result.AsQueryable().Cast<ISearchResult>();
+
+            switch (sort.ToLower())
             {
                 case "price":
-                    result = result.AsQueryable().Cast<ISearchResult>().OrderBy(item => item.Price);   // 价格
+                    list = list.OrderBy(item => item.Price);   // 价格
                     break;
                 case "time":    // 上架时间
-                    result = result.AsQueryable().Cast<ISearchResult>().OrderBy(item => item.CreateDate);
+                    list = list.OrderBy(item => item.CreateDate);
                     break;
                 case "sales":   // 销量
                     break;
                 default:
                     break;
+            }
+
+            if (order.ToLower() == "desc")
+            {
+                result = list.Reverse();
             }
 
             return result;

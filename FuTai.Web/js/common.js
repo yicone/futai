@@ -1,4 +1,19 @@
-﻿function renderTemplate(containerId, data) {
+﻿// 扩展js的string类型, 使之具有类似.NET中的String.Format()的功能
+function _StringFormatInline() {
+    var txt = this;
+    for (var i = 0; i < arguments.length; i++) {
+        var exp = new RegExp('\\{' + (i) + '\\}', 'gm');
+        txt = txt.replace(exp, arguments[i]);
+    }
+    return txt;
+}
+
+//example: var str = "This is a {0} string using the {1} method.".format("formatted","inline");
+if (!String.prototype.format) {
+    String.prototype.format = _StringFormatInline;
+}
+
+function renderTemplate(containerId, data) {
     $.jTemplatesDebugMode = true;
     $('#' + containerId).setTemplateElement(containerId + '-template');
     $('#' + containerId).processTemplate(data);

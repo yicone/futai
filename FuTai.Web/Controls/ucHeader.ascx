@@ -1,4 +1,16 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucHeader.ascx.cs" Inherits="FuTai.Web.Controls.ucHeader" %>
+<script type="text/javascript">
+    $(function() {
+        $('#btnSearch').click(function() {
+            var productType = $('#selectProduct').val();
+            var price1 = $('#selectPrice option:selected').attr('price1');
+            var price2 = $('#selectPrice option:selected').attr('price2');
+            var urlFormat = "/ProductList.aspx?productType={0}&price1={1}&price2={2}";
+            var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
+            location.href = url;
+        });
+    });
+</script>
 <div class="head">
     <div class="logo">
         <img height="70" width="200" src="/images/logo.jpg" /></div>
@@ -33,23 +45,24 @@
             百度电子商务首铺 诚信商户</p>
         <p class="searchInput">
             search :
-            <select name="" style="word-spacing:1.5em;text-align:center;">
-                <option>所有分类</option>
-                <option>裸 钻</option>
-                <option>戒 托</option>
-                <option>钻 戒</option>
-                <option>对 戒</option>
-                <option>钻 饰</option>
-                <option>金 饰</option>
-                <option>珠 宝</option>
+            <select id="selectProduct">   <%--style="word-spacing:1.0em;"--%>
+                <option value="Diamond" selected="selected">裸钻</option>
+                <option value="RingBracket">戒托</option>
+                <option value="DiamondRing">钻戒</option>
+                <option value="PairRing">对戒</option>
+                <option value="DiamondOrnament">钻饰</option>
+                <option value="GoldOrnament">金饰</option>
+                <option value="Jewel">珠宝</option>
             </select>
             for :
-            <select name="">
-                <option>所有价格</option>
+            <select id="selectPrice">
+                <option selected="selected">所有价格</option>
+                <option price1="30000" price2="50000">30000-50000</option>
+                <option price1="50000" price2="100000">50000-100000</option>
             </select>
-            <input type="text" defaultword="输入关键字" class="input" name="" />
+            <%--<input type="text" defaultword="输入关键字" class="input" name="" />--%>
             <label>
-                <input type="submit" value="提交" id="button" name="button" class="btn" />
+                <input type="button" value="提交" id="btnSearch" class="btn" style="cursor:pointer;" />
             </label>
             <a class="searchLink" href="#">福泰搜索</a>
         </p>

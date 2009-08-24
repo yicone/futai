@@ -142,12 +142,12 @@
                 <ul class="ItemListSearch">
                     <li>价格：</li>
                     <li>
-                        <input type="text" size="5" id="price1" class="input1" /></li>
+                        <input type="text" size="5" id="price1" class="input1" value="<%= this.Price1 %>" /></li>
                     <li>-</li>
                     <li>
-                        <input type="text" size="5" id="price2" class="input1" /></li>
+                        <input type="text" size="5" id="price2" class="input1" value="<%= this.Price2 %>" /></li>
                     <li>
-                        <input type="button" value="确定" id="button2" name="button2" class="btn1Style" /></li>
+                        <input type="button" value="确定" id="button2" name="button2" class="btn1Style" style="cursor:pointer;" /></li>
                     <li><a href="javascript:void(0);" class="sortnow" sortfield="sales">
                         <img width="45" height="22" src="/images/itemsearch_b1.gif" /></a></li>
                     <li><a href="javascript:void(0);" class="sort" sortfield="time">
