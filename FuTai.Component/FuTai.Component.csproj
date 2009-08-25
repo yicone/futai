@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{5084CE4B-31F6-495D-9774-9DB1435EBFD3}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -68,13 +68,13 @@
   <ItemGroup>
     <Compile Include="BaseBll.cs" />
     <Compile Include="CacheHelper.cs" />
-    <Compile Include="FuTai.cs">
-      <DependentUpon>FuTai.dbml</DependentUpon>
+    <Compile Include="FuTaiDB.cs">
+      <DependentUpon>FuTaiDB.dbml</DependentUpon>
     </Compile>
-    <Compile Include="FuTai.designer.cs">
+    <Compile Include="FuTaiDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FuTai.dbml</DependentUpon>
+      <DependentUpon>FuTaiDB.dbml</DependentUpon>
     </Compile>
     <Compile Include="IPHelper.cs" />
     <Compile Include="LogHelper.cs" />
@@ -92,19 +92,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FuTai.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>FuTai.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="FuTai.dbml.layout">
-      <DependentUpon>FuTai.dbml</DependentUpon>
+    <None Include="FuTaiDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>FuTaiDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -148,6 +143,11 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FuTaiDB.dbml.layout">
+      <DependentUpon>FuTaiDB.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

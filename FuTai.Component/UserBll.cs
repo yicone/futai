@@ -15,19 +15,27 @@ namespace FuTai.Component
 
     public class UserBll : BaseBll
     {
-        public void Register(int? userId, string email, string password)
+        public void Register(string email, string nickname, string password)
         {
-            User user = new User()
+            try
             {
-                UserId = userId,
-                Email = email,
-                Password = password,
-                Authority = (int)UserAuthority.Web
-            };
+                User user = new User()
+                    {
+                        Email = email,
+                        NickName = nickname,
+                        Password = password,
+                        Authority = (int)UserAuthority.Web
+                    };
 
-            DataContext.Users.InsertOnSubmit(user);
+                DataContext.User.InsertOnSubmit(user);
+                DataContext.SubmitChanges();
 
-            SendActiveCode(userId);
+                SendActiveCode(user.UserId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void SendActiveCode(int? userId)
@@ -58,16 +66,21 @@ namespace FuTai.Component
         { }
 
 
-        public void Login(string userId, string password)
+        public void Login(string emailOrNickname, string password)
         {
- 
+            bool isEmailAccount = (emailOrNickname.IndexOf('@') >= 0);
+
+            if (isEmailAccount)
+            {
+
+            }
         }
-        
+
 
         #region Helper
         public static User GetUser(int? userId)
         {
-            var qr = from u in DataContext.Users
+            var qr = from u in DataContext.User
                      where u.UserId == userId
                      select u;
             var user = qr.Single();
@@ -84,5 +97,19 @@ namespace FuTai.Component
             return null;
         }
         #endregion
+
+        public bool CheckNicknameExists(string nickname)
+        {
+            var q = from u in DataContext.User
+                    where u.NickName == nickname
+                    select u;
+
+            return (q.Count() != 0);
+        }
+
+        public object CheckValidcode(string validcode)
+        {
+            return true;
+        }
     }
 }

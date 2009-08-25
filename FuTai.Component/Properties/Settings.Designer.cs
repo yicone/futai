@@ -26,7 +26,7 @@ namespace FuTai.Component.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server=.;Database=FuTai;User Id=sa;password=1q2w3e};")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=FuTai;Integrated Security=True")]
         public string FuTaiConnectionString {
             get {
                 return ((string)(this["FuTaiConnectionString"]));

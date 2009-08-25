@@ -1,7 +1,7 @@
 using System;
 namespace FuTai.Component
 {
-    partial class FuTaiDataContext
+    partial class FuTaiDBDataContext
     {
     }
 
@@ -14,7 +14,7 @@ namespace FuTai.Component
 
     partial class search_SearchRingBracket_个结果 : ISearchResult
     {
- 
+
     }
 
     partial class search_SearchDiamondOrnament_个结果 : ISearchResult

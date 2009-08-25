@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="FuTai" Class="FuTaiDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=FuTai;Integrated Security=True" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Diamond" Member="Diamond">
+    <Type Name="Diamond">
+      <Column Name="DiamondID" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Carat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Clarity" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Cut" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CutStyle" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Diameter" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CertType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CertId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Polish" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Symmetry" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fluorescence" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="Diamond_Product" Member="Product" ThisKey="DiamondID" OtherKey="ProductId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CardId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="NickName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Authority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Impression" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiamondGroup" Member="DiamondGroup">
+    <Type Name="DiamondGroup">
+      <Column Name="DiamondGroupId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DiamondId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MetalType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Style" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="RingBracketId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DeleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiamondOrnament" Member="DiamondOrnament">
+    <Type Name="DiamondOrnament">
+      <Column Name="DiamondOrnamentId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrnamentType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DiamondOrnament_Product" Member="Product" ThisKey="DiamondOrnamentId" OtherKey="ProductId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DiamondRing" Member="DiamondRing">
+    <Type Name="DiamondRing">
+      <Column Name="DiamondRingId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StockNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="otherDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="DiamondRing_Product" Member="Product" ThisKey="DiamondRingId" OtherKey="ProductId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GoldOrnament" Member="GoldOrnament">
+    <Type Name="GoldOrnament">
+      <Column Name="GoldOrnamentId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OrnamentType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldweight" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldprice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="gongfei" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="GoldOrnament_Product" Member="Product" ThisKey="GoldOrnamentId" OtherKey="ProductId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Jewel" Member="Jewel">
+    <Type Name="Jewel">
+      <Column Name="JewelId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JewelType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Jewel_Product" Member="Product" ThisKey="JewelId" OtherKey="ProductId" Type="Product" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PairRing" Member="PairRing">
+    <Type Name="PairRing">
+      <Column Name="PairRingId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="StockNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Product" Member="Product">
+    <Type Name="Product">
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Diamond_Product" Member="Diamond" ThisKey="ProductId" OtherKey="DiamondID" Type="Diamond" IsForeignKey="true" />
+      <Association Name="DiamondOrnament_Product" Member="DiamondOrnament" ThisKey="ProductId" OtherKey="DiamondOrnamentId" Type="DiamondOrnament" IsForeignKey="true" />
+      <Association Name="DiamondRing_Product" Member="DiamondRing" ThisKey="ProductId" OtherKey="DiamondRingId" Type="DiamondRing" IsForeignKey="true" />
+      <Association Name="GoldOrnament_Product" Member="GoldOrnament" ThisKey="ProductId" OtherKey="GoldOrnamentId" Type="GoldOrnament" IsForeignKey="true" />
+      <Association Name="Jewel_Product" Member="Jewel" ThisKey="ProductId" OtherKey="JewelId" Type="Jewel" IsForeignKey="true" />
+      <Association Name="RingBracket_Product" Member="RingBracket" ThisKey="ProductId" OtherKey="BracketId" Type="RingBracket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RingBracket" Member="RingBracket">
+    <Type Name="RingBracket">
+      <Column Name="BracketId" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetalType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="kuanhao" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Style" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="StyleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Craft" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Association Name="RingBracket_Product" Member="Product" ThisKey="BracketId" OtherKey="ProductId" Type="Product" />
+    </Type>
+  </Table>
+  <Function Name="dbo.product_InsertDiamond" Method="InsertDiamond">
+    <Parameter Name="FTId" Parameter="fTId" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CounterId" Parameter="counterId" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="DiscountType" Parameter="discountType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Carat" Parameter="carat" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Clarity" Parameter="clarity" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Color" Parameter="color" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Cut" Parameter="cut" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CutStyle" Parameter="cutStyle" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Diameter" Parameter="diameter" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="CertType" Parameter="certType" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CertId" Parameter="certId" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Polish" Parameter="polish" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Symmetry" Parameter="symmetry" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="AH" Parameter="aH" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="Fluorescence" Parameter="fluorescence" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.search_SearchRingBracket" Method="SearchRingBracket">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchRingBracket_个结果">
+      <Column Name="BracketId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MetalType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="kuanhao" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Style" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="StyleId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Craft" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchDiamond" Method="SearchDiamond">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchDiamond_个结果">
+      <Column Name="DiamondID" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Carat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Clarity" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Cut" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CutStyle" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Diameter" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CertType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CertId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Polish" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Symmetry" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="AH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Fluorescence" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchDiamondOrnament" Method="SearchDiamondOrnament">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchDiamondOrnament_个结果">
+      <Column Name="DiamondOrnamentId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="OrnamentType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchDiamondRing" Method="SearchDiamondRing">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchDiamondRing_个结果">
+      <Column Name="DiamondRingId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StockNumber" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="otherDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchGoldOrnament" Method="SearchGoldOrnament">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchGoldOrnament_个结果">
+      <Column Name="GoldOrnamentId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="OrnamentType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldweight" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldprice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="gongfei" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchJewel" Method="SearchJewel">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchJewel_个结果">
+      <Column Name="PairRingId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StockNumber" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchPairRing" Method="SearchPairRing">
+    <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="Type1" Parameter="type1" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type2" Parameter="type2" Type="System.Int32" DbType="Int" />
+    <ElementType Name="search_SearchPairRing_个结果">
+      <Column Name="GoldOrnamentId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="OrnamentType" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldweight" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldprice" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="gongfei" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

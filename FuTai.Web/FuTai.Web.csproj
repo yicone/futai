@@ -160,12 +160,12 @@
     <Compile Include="PayMent\InfoDesposite.aspx.designer.cs">
       <DependentUpon>InfoDesposite.aspx</DependentUpon>
     </Compile>
-    <Compile Include="PayMent\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="LoginRegister.aspx.cs">
+      <DependentUpon>LoginRegister.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PayMent\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="LoginRegister.aspx.designer.cs">
+      <DependentUpon>LoginRegister.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProduceCart.aspx.cs">
       <DependentUpon>ProduceCart.aspx</DependentUpon>
@@ -333,7 +333,7 @@
     <Content Include="Img.xml" />
     <Content Include="js\CustomSear.js" />
     <Content Include="PayMent\InfoDesposite.aspx" />
-    <Content Include="PayMent\Login.aspx" />
+    <Content Include="LoginRegister.aspx" />
     <Content Include="ProduceCart.aspx" />
     <Content Include="ProductSeries.aspx" />
     <Content Include="School\School.aspx" />
@@ -346,6 +346,8 @@
     <Content Include="Controls\ucDataTable.ascx" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
     <Content Include="HighLevelProduct.aspx" />
+    <Content Include="images\wrongbg.jpg" />
+    <Content Include="js\jquery.error-1.0.0.js" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
   <ItemGroup>
