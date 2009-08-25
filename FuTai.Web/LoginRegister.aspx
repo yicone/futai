@@ -38,6 +38,8 @@
                 $('#textfield2').error('请输入密码');
                 return false;
             }
+
+            return true;
         }
 
         function validateLogon() {
@@ -46,7 +48,6 @@
             var password2 = $.trim($('#textfield5').val());
             var nickname = $.trim($('#textfield6').val());
             var validcode = $.trim($('#textfield7').val());
-            var agree = $('#checkbox').val();
 
             if (!email) {
                 $('#textfield3').error('请输入E-mail地址');
@@ -54,6 +55,13 @@
             } else if (!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email)) {
                 $('#textfield3').error('邮箱格式不正确');
                 return false;
+            } else {
+                var r = MyAjax.CheckEmailExists(email);
+                var exists = r.value;
+                if (exists) {
+                    $('#textfield3').error('邮箱已存在');
+                    return false;
+                }
             }
 
             if (!password) {
@@ -79,7 +87,6 @@
                 var r = MyAjax.CheckNicknameExists(nickname);
                 var exists = r.value;
                 if (exists) {
-                    alert(exists);
                     $('#textfield6').error('昵称已存在');
                     return false;
                 }
@@ -90,18 +97,13 @@
                 return false;
             } else {
                 var r = MyAjax.CheckValidcode(validcode);
-                var exists = r.value;
-                if (exists) {
-                    alert(exists);
+                var valid = r.value;
+                if (!valid) {
                     $('#textfield7').error('验证码不正确');
                     return false;
                 }
             }
 
-            if (agree != 'on') {
-                $('#checkbox').error('尚未同意用户协议');
-                return false;
-            }
 
             return true;
         }
@@ -111,6 +113,12 @@
             var password = $.trim($('#textfield4').val());
             var nickname = $.trim($('#textfield6').val());
 
+            var agree = $('#checkbox').val();
+            if (agree == 'on') {
+                alert('尚未同意用户协议');
+                return false;
+            }
+            
             var pass = validateLogon();
             if (pass) {
                 var r = MyAjax.Register(email, nickname, password);
@@ -129,6 +137,13 @@
                 var r = MyAjax.Login(emailOrNickname, password);
                 if (r.error) {
                     alert(r.error.Message);
+                }
+
+                var success = r.value;
+                if (success) {
+                    location.href = "/";
+                } else {
+                    alert('登录失败, 请重试');
                 }
             }
         }

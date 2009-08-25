@@ -9,6 +9,24 @@
             var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
             location.href = url;
         });
+
+        var r = MyAjax.GetLoginUser();
+        if (!r.error) {
+            var user = r.value;
+            if (user) {
+                $('#linkLogin').text('欢迎你, ' + user.NickName).attr('href', '/');
+                $('#linkLogon').text('注销').attr('href', '/LogoutPage.aspx').attr('id', 'linkLogout');
+            }
+        }
+
+        $('#linkLogout').click(function() {
+            var r = MyAjax.Logout();
+            if (!r.error) {
+                location.href = "/";
+            }
+
+            return false;
+        });
     });
 </script>
 <div class="head">
@@ -16,7 +34,7 @@
         <img height="70" width="200" src="/images/logo.jpg" /></div>
     <div class="userMenu">
         <p>
-            <a href="#">登录</a>|<a href="#">注册</a>|<a href="/Account/MyAccount.aspx">我的帐户</a>|<a href="/ProduceCart.aspx">购物车</a>|<a
+            <a id="linkLogin" href="/LoginRegister.aspx">登录</a>|<a id="linkLogon" href="/LoginRegister.aspx">注册</a>|<a href="/Account/MyAccount.aspx">我的帐户</a>|<a href="/ProduceCart.aspx">购物车</a>|<a
                 href="#">个性定制订单查询</a>|<a href="#">帮助中心</a>|<a href="#">体验中心</a></p>
     </div>
     <div class="bookNum">

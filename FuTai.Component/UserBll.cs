@@ -66,14 +66,20 @@ namespace FuTai.Component
         { }
 
 
-        public void Login(string emailOrNickname, string password)
+        public User Login(string emailOrNickname, string password)
         {
             bool isEmailAccount = (emailOrNickname.IndexOf('@') >= 0);
 
-            if (isEmailAccount)
-            {
+            var q = from u in DataContext.User
+                    where (isEmailAccount ? u.Email : u.NickName) == emailOrNickname
+                    select u;
 
+            if (q.Count() > 0)
+            {
+                return q.Single();
             }
+
+            return null;
         }
 
 
@@ -107,9 +113,18 @@ namespace FuTai.Component
             return (q.Count() != 0);
         }
 
-        public object CheckValidcode(string validcode)
+        public bool CheckValidcode(string validcode)
         {
             return true;
+        }
+
+        public bool CheckEmailExists(string email)
+        {
+            var q = from u in DataContext.User
+                    where u.Email == email
+                    select u;
+
+            return (q.Count() != 0);
         }
     }
 }

@@ -1,11 +1,12 @@
 ﻿using System;
 using AjaxPro;
 using FuTai.Component;
+using System.Web;
 
 namespace FuTai.Web
 {
     [AjaxNamespace("MyAjax")]
-    public partial class LoginRegister : System.Web.UI.Page
+    public partial class LoginRegister : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -19,9 +20,16 @@ namespace FuTai.Web
         }
 
         [AjaxMethod]
-        public static void Login(string emailOrNickname, string password)
+        public static bool Login(string emailOrNickname, string password)
         {
-            Singleton<UserBll>.Instance.Login(emailOrNickname, password);
+            User user = Singleton<UserBll>.Instance.Login(emailOrNickname, password);
+            if (user != null)
+            {
+                HttpContext.Current.Session["CurrentUser"] = user;
+                return true;
+            }
+
+            return false;
         }
 
         [AjaxMethod]
@@ -35,7 +43,14 @@ namespace FuTai.Web
         public static bool CheckValidcode(string validcode)
         {
             var valid = Singleton<UserBll>.Instance.CheckValidcode(validcode);
-            return false;
+            return valid;
+        }
+
+        [AjaxMethod]
+        public static bool CheckEmailExists(string email)
+        {
+            var exists = Singleton<UserBll>.Instance.CheckEmailExists(email);
+            return exists;
         }
     }
 }
