@@ -18,8 +18,7 @@ namespace FuTai.Component
 
         static BaseBll()
         {
-            string connStr = ConfigurationManager.ConnectionStrings["FuTaiConnectionString"].ConnectionString;
-            s_dataContext = new FuTaiDBDataContext(connStr);
+            s_dataContext = FuTaiDBDataContextFactory.GetFuTaiDBContext();
         }
     }
 }

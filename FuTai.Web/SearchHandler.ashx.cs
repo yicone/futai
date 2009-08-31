@@ -46,7 +46,7 @@ namespace FuTai.Web
 
             int? type2 = (typeIdCollection.Length > 1 && int.TryParse(typeIdCollection[1], out t2)) ? (int?)t2 : null;
 
-            FuTaiDBDataContext cxt = new FuTaiDBDataContext();
+            FuTaiDBDataContext cxt = FuTaiDBDataContextFactory.GetFuTaiDBContext();
 
             switch (productType)
             {

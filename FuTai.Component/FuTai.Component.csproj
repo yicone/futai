@@ -76,6 +76,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FuTaiDB.dbml</DependentUpon>
     </Compile>
+    <Compile Include="FuTaiDBDataContextFactory.cs" />
     <Compile Include="IPHelper.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="MailHelper.cs" />
