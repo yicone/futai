@@ -21,7 +21,7 @@ namespace FuTai.Web.CustomBuy
         protected void Page_Load(object sender, EventArgs e)
         {
             Response.ContentType = "text/xml";
-            string FuTai = ConfigurationManager.ConnectionStrings["FuTaiData"].ToString();
+            string FuTai = ConfigurationManager.ConnectionStrings["FuTaiConnectionString"].ToString();
             Dictionary<string, string[]> SqlCon = GetQuery(Request);
             this.MakeResponse(SqlCon, FuTai);
         }
