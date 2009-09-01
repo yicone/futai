@@ -10,14 +10,16 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using AjaxPro;
 
 namespace FuTai.Web
 {
-    public partial class ProduceCart : System.Web.UI.Page
+    public partial class ProduceCart : BasePage
     {
+        [AjaxNamespace("MyAjax")]
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
         }
     }
 }

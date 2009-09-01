@@ -11,15 +11,17 @@ using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
 using System.Data.SqlClient;
+using AjaxPro;
 
 namespace FuTai.Web.CustomBuy
 {
-    public partial class CustomBuy : System.Web.UI.Page
+    public partial class CustomBuy : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
                 string proid = Request["proid"];
                 if (proid != null)
                 {

@@ -10,13 +10,15 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using AjaxPro;
 
 namespace FuTai.Web.CustomBuy
 {
-    public partial class CustomBuyCzt : System.Web.UI.Page
+    public partial class CustomBuyCzt : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
             string Type = Request["product"];
             this.MakePage(Type);
         }

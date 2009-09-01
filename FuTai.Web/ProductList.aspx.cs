@@ -4,11 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using AjaxPro;
 
 namespace FuTai.Web
 {
-    public partial class ProductList : System.Web.UI.Page
+    public partial class ProductList : BasePage
     {
         protected string ProductType { get; set; }
 

@@ -10,14 +10,15 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using AjaxPro;
 
 namespace FuTai.Web.School
 {
-    public partial class School : System.Web.UI.Page
+    public partial class School : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
         }
     }
 }

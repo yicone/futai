@@ -10,10 +10,11 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using AjaxPro;
 
 namespace FuTai.Web.School
 {
-    public partial class SchoolProfile : System.Web.UI.Page
+    public partial class SchoolProfile : BasePage
     {
         private string keyword;
         public string KeyWord
@@ -25,6 +26,7 @@ namespace FuTai.Web.School
         {
             if (!IsPostBack)
             {
+                AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
                 keyword = Request.QueryString["fileid"];
                 this.KeyWord = keyword;
             }
