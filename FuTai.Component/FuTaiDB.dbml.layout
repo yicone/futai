@@ -62,42 +62,42 @@
         <elementListCompartment Id="f142e646-1588-48cc-8e9e-712581380098" absoluteBounds="0.765, 13.085, 1.9700000000000002, 1.5628255208333335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 16.9829622395833); (3.59375 : 16.9829622395833); (3.59375 : 3.2914453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 16.9829622395833); (3.59375 : 16.9829622395833); (3.59375 : 3.2914453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/FuTaiDBDataContext/Diamond/Diamond_Product" />
       <nodes>
         <classShapeMoniker Id="92d348d3-9274-49e8-90b9-f09db793c621" />
         <classShapeMoniker Id="f5608d1a-10b2-49f3-b634-fd8ffd830735" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 4.65625); (3.5624975 : 4.65625); (3.5624975 : 3.2914453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 4.65625); (3.5624975 : 4.65625); (3.5624975 : 3.2914453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/FuTaiDBDataContext/DiamondOrnament/DiamondOrnament_Product" />
       <nodes>
         <classShapeMoniker Id="543be4c7-ac85-4caa-8d4e-60818f747da6" />
         <classShapeMoniker Id="f5608d1a-10b2-49f3-b634-fd8ffd830735" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 8.09157552083333); (3.44791541666667 : 8.09157552083333 : JumpStart); (3.61458208333333 : 8.09157552083333 : JumpEnd); (3.6250025 : 8.09157552083333); (3.6250025 : 3.2914453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 8.09157552083333); (3.6250025 : 8.09157552083333); (3.6250025 : 3.2914453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/FuTaiDBDataContext/DiamondRing/DiamondRing_Product" />
       <nodes>
         <classShapeMoniker Id="916d318a-fd02-4f0d-a186-d05c5ddba485" />
         <classShapeMoniker Id="f5608d1a-10b2-49f3-b634-fd8ffd830735" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 10.8114127604167); (3.53124875 : 10.8114127604167); (3.53124875 : 3.2914453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 10.8114127604167); (3.53124875 : 10.8114127604167); (3.53124875 : 3.2914453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/FuTaiDBDataContext/GoldOrnament/GoldOrnament_Product" />
       <nodes>
         <classShapeMoniker Id="3a536da4-5103-4d35-b452-da2bb9135045" />
         <classShapeMoniker Id="f5608d1a-10b2-49f3-b634-fd8ffd830735" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 2.05848307291667); (3.5 : 2.05848307291667)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 2.05848307291667); (3.5 : 2.05848307291667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/FuTaiDBDataContext/Jewel/Jewel_Product" />
       <nodes>
         <classShapeMoniker Id="79b2108a-bbb0-40f9-9de0-fc0bb1df800f" />
         <classShapeMoniker Id="f5608d1a-10b2-49f3-b634-fd8ffd830735" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 13.6864127604167); (3.65625125 : 13.6864127604167); (3.65625125 : 3.2914453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 13.6864127604167); (3.65625125 : 13.6864127604167); (3.65625125 : 3.2914453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/FuTaiDBDataContext/RingBracket/RingBracket_Product" />
       <nodes>
         <classShapeMoniker Id="ea8065b9-a533-4797-8183-4a0b9dda62b9" />
