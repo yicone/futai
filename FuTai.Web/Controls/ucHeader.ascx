@@ -5,8 +5,16 @@
             var productType = $('#selectProduct').val();
             var price1 = $('#selectPrice option:selected').attr('price1');
             var price2 = $('#selectPrice option:selected').attr('price2');
-            var urlFormat = "/ProductList.aspx?productType={0}&price1={1}&price2={2}";
-            var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
+            if (productType == "Diamond") 
+            {
+                var urlFormat = "/CustomBuy/CustomBuyCzuan.aspx?productType={0}&price1={1}&price2={2}";
+                var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
+            }
+            else
+            {
+                var urlFormat = "/ProductList.aspx?productType={0}&price1={1}&price2={2}";
+                var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
+            }
             location.href = url;
         });
 
@@ -43,7 +51,7 @@
     </div>
     <ul class="topNav">
         <li><a id="Index" href="/Default.aspx">首 页</a></li>
-        <li><a id="Diamond" href="/ProductList.aspx?productType=Diamond">裸 钻</a></li>
+        <li><a id="Diamond" href="/CustomBuy/CustomBuyCzuan.aspx?productType=Diamond">裸 钻</a></li>
         <li><a id="RingBracket" href="/ProductList.aspx?productType=RingBracket">戒 托</a></li>
         <li><a id="DiamondRing" href="/ProductList.aspx?productType=DiamondRing">钻 戒</a></li>
         <li><a id="PairRing" href="/ProductList.aspx?productType=PairRing">对 戒</a></li>
