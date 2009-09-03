@@ -58,7 +58,7 @@ function renderProductType(key) {
 }
 
 var _header=new Array();
-_header["Diamond"]="Diamond";
+_header["CustomBuyCzuan"] = "Diamond";
 _header["Default"]="Index";
 _header["RingBracket"]="RingBracket";
 _header["DiamondRing"]="DiamondRing";
@@ -68,22 +68,21 @@ _header["GoldOrnament"]="GoldOrnament";
 _header["Jewel"]="Jewel";
 _header["HighLevelProduct"]="JP";
 _header["About"]="About";
-var Header={   //头操作
-    Init:function()
-    {
-        var file=GetFile();
-        if (file=="ProductList")
-            file=getUrlParam("productType");
-            
+var Header = {   //头操作
+    Init: function() {
+        var file = GetFile();
+        if (file == "ProductList")
+            file = getUrlParam("productType");
+
+        file = file == null ? "Default" : file;
         this.SetMenu(file);
     },
-    SetMenu:function(name)
-    {
-        $("a","#topNav").each(function(){
+    SetMenu: function(name) {
+        $("a", "#topNav").each(function() {
             $(this).removeClass();
         });
-        var NowHead=_header[name];
-        $("#"+NowHead).addClass("now");
+        var NowHead = _header[name];
+        $("#" + NowHead).addClass("now");
     }
 }
 

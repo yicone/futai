@@ -7,7 +7,7 @@
         $.ajax({
             url: "SearchMethod.aspx?ra=" + Math.random(),
             type: "POST",
-            data: "CutStyle=" + Opt.CutStyle + "&Color=" + Opt.Color + "&Carat=" + Carat + "&Clarity=" + Opt.Clarity + "&Cut=" + Opt.Cut + "&Fluorescence=" + Opt.Fluorescence + "&Polishing=" + Opt.Polishing + "&Symmetry=" + Opt.Symmetry + "&page=" + NowPage,
+            data: "CutStyle=" + Opt.CutStyle + "&Color=" + Opt.Color + "&Carat=" + Carat + "&Price="+Price + "&Clarity=" + Opt.Clarity + "&Cut=" + Opt.Cut + "&Fluorescence=" + Opt.Fluorescence + "&Polishing=" + Opt.Polishing + "&Symmetry=" + Opt.Symmetry + "&page=" + NowPage,
             success: function(msg) {
                 try {
                     $("#LoadForm").hide();
@@ -40,6 +40,7 @@
                     else {
                         $target.html("<tr><th>选择</th><th>货号</th><th>重量</th><th>净度</th><th>颜色</th><th>切工</th><th>抛光</th><th>对称</th><th>证书</th><th>市场价</th><th>福泰价</th><th>明细</th></tr>");
                         $target.html($target.html() + '<tr><td colspan="12" height="100" align="center" valign="middle">没有搜索到相关记录</td></tr>');
+                        $("#NumDio").text(0);
                     }
                 }
                 catch (e) {
@@ -155,7 +156,7 @@ var CustomOpt = {
     CheckCarat: function() {
         var CL = parseFloat($("#CarLow").val());
         var CH = parseFloat($("#CarHi").val());
-        if (!isNaN(CH) && !isNaN(CL) && CH > CL && CH<2.100 && CL>0.230)
+        if (!isNaN(CH) && !isNaN(CL) && CH > CL && CH<=2.100 && CL>=0.230)
             return true;
         else
             return false;
@@ -172,10 +173,26 @@ var CustomOpt = {
 
         CustomMak.Search(this);
     },
-    SetPrice: function(l, h) {
+    SetPrice: function(l, h) { //价格
         this.PriceL = l;
         this.PriceH = h;
-        //CustomMak.Search(this);
+        CustomMak.Search(this);
+    },
+    SetPricetHigh: function() {
+        if (!this.CheckPrice())
+            return false;
+            
+        this.PriceL = $("#PriceLow").val(); 
+        this.PriceH = $("#PriceHigh").val();
+        CustomMak.Search(this);
+    },
+    CheckPrice: function() {
+        var CL = parseFloat($("#PriceLow").val());
+        var CH = parseFloat($("#PriceHigh").val());
+        if (!isNaN(CH) && !isNaN(CL) && CH > CL)
+            return true;
+        else
+            return false;
     },
     SetCut: function(con) {     //切工
         this.Cut = con;
@@ -245,4 +262,14 @@ var CustomOpt = {
             return Trr.join("|");
         }
     }
+}
+
+function getUrlParam(name) 
+{ 
+	  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	  var r = window.location.search.substr(1).match(reg);
+	  if (r != null) 
+		return unescape(r[2]); 
+	  else 
+		return null;
 }
