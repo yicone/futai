@@ -23,10 +23,16 @@ namespace FuTai.Web.CustomBuy
             {
                 AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
                 string proid = Request["proid"];
+                string Type = Request["productType"];
                 if (proid != null)
                 {
                     ShowPanel(3);
                     this.InitInfo();
+                    return;
+                }
+                if (Type == "Diamond")
+                {
+                    ShowPanel(1);
                 }
             }
         }

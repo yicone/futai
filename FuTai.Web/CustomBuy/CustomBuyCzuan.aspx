@@ -28,6 +28,24 @@
       <div class="clearfix"></div>
 </asp:PlaceHolder>
 <asp:PlaceHolder runat="server" ID="Ph_Second" Visible="false">
+<script type="text/javascript">
+    $(document).ready(function(){  
+        var Price1=getUrlParam("price1");
+        var Price2=getUrlParam("price2");
+        if (Price1!=null && Price2!=null && !isNaN(Price1) && !isNaN(Price2) && Price2>Price1)
+        {
+            CustomOpt.PriceL=Price1;
+            CustomOpt.PriceH=Price2;
+            CustomMak.Search(CustomOpt);
+        }
+        else
+        {
+            CustomOpt.PriceL=0;
+            CustomOpt.PriceH=545000;
+            CustomMak.Search(CustomOpt);
+        }
+    });
+</script>
 <uc1:ucLeft ID="ucLeft" runat="server" />
    	  <div class="inner_main">
       <p align="right"><img src="../images/custom_step1.jpg" /></p>
@@ -171,10 +189,10 @@
                     <th>克拉</th>
                     <td>从
                       <label>
-                        <input name="textfield2" type="text" id="CarLow" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh(this.value,'L')" />
+                        <input name="textfield2" type="text" id="CarLow" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh()" />
                     到
-                    <input name="textfield3" type="text" id="CarHi" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh(this.value,'H')" />
-                    </label></td>
+                    <input name="textfield3" type="text" id="CarHi" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh()" />
+                    </label>(克拉范围：0.23~2.100)</td>
                     <th>净度</th>
                     <td><input type="checkbox" name="checkbox11" id="checkbox11" onclick="CustomOpt.SetClarityHigh('SI1',this)" />
 SI
@@ -191,10 +209,10 @@ FL</td>
                     <th>价格</th>
                     <td>从
                       <label>
-                        <input name="textfield4" type="text" id="textfield4" size="5" />
+                        <input name="textfield4" type="text" id="PriceLow" size="5" onblur="CustomOpt.SetPricetHigh()" />
                         到
-  <input name="textfield4" type="text" id="textfield5" size="5" />
-                    </label></td>
+  <input name="textfield4" type="text" id="PriceHigh" size="5" onblur="CustomOpt.SetPricetHigh()" />
+                    </label>(价格：数字)</td>
                     <th>切工</th>
                     <td><input type="checkbox" name="checkbox12" id="checkbox18" onclick="CustomOpt.SetCutHigh('P',this)" />
 P
@@ -300,7 +318,7 @@ EX</td>
                 </tr>
                 <tr>
                   <td><p><strong>主要参数: </strong></p>
-                    <table width="400" border="0" cellpadding="0" cellspacing="0">
+                    <table width="380" border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td width="50%" height="30">钻石重量：1.002克拉</td>
                         <td>钻石色泽：&lt;M色 </td>
@@ -323,7 +341,7 @@ EX</td>
                 </tr>
                 <tr>
                   <td><p><strong>细节比例: </strong></p>
-                    <table width="400" border="0" cellpadding="0" cellspacing="0">
+                    <table width="380" border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td width="50%" height="30">深度：</td>
                         <td>台面比例： </td>

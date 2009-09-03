@@ -54,19 +54,19 @@ namespace FuTai.Web
                     result = cxt.SearchDiamond(np1, np2, type1, type2);
                     break;
                 case "DiamondOrnament":
-                    result = cxt.SearchDiamondOrnament(np1, np2, type1, type2);
+                    result = cxt.SearchDiamondOrnament(np1, np2, type1);
                     break;
                 case "DiamondRing":
-                    result = cxt.SearchDiamondRing(np1, np2, type1, type2);
+                    result = cxt.SearchDiamondRing(np1, np2, type1);
                     break;
                 case "GoldOrnament":
                     result = cxt.SearchGoldOrnament(np1, np2, type1, type2);
                     break;
                 case "Jewel":
-                    result = cxt.SearchJewel(np1, np2, type1, type2);
+                    result = cxt.SearchJewel(np1, np2, type1);
                     break;
                 case "PairRing":
-                    result = cxt.SearchPairRing(np1, np2, type1, type2);
+                    result = cxt.SearchPairRing(np1, np2, type1);
                     break;
                 case "RingBracket":
                     result = cxt.SearchRingBracket(np1, np2, type1, type2);

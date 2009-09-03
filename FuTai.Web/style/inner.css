@@ -17,7 +17,7 @@ line-height:35px; height:35px;
 
 .box1
 {
-border:1px solid #BEAC8D; _height:100px; min-height:100px;
+border:1px solid #BEAC8D; _height:100px; min-height:100px
 }
 
 .box1 h2
@@ -169,12 +169,19 @@ width:470px; float:left; margin-left:13px; display:inline;
 {
 width:470px; float:right; margin-right:13px; display:inline;
 }
-
+.loginSuc
+{
+ width:954px; float:none; display:block; margin-right:0px;
+}
 .reg_leftbox .box1,.reg_rightbox .box1
 {
 margin:0; height:500px; overflow:hidden;
 }
-
+.loginSuc .box1
+{
+ height:200px;	
+}
+.loginSuc p{ line-height:35px; text-align:center}
 .tabSelect
 {
 	position:relative;

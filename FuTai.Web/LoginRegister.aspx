@@ -10,7 +10,7 @@
             border: solid 1px #E17D7E;
             padding: 0px 1px 0px 25px;
             font-size: 12px;
-            background: #FEEAE3 url(/images/wrongbg.jpg) no-repeat -78px 0px;
+            background: #FEEAE3 url(images/wrongbg.gif) no-repeat 5px 0px;
         }
     </style>
 
@@ -80,8 +80,8 @@
             if (!nickname) {
                 $('#textfield6').error('请输入昵称');
                 return false;
-            } else if (nickname.length <= 6) {
-                $('#textfield6').error('昵称格式不正确');
+            } else if (nickname.length <= 3) {
+                $('#textfield6').error('昵称应为4-10个字符');
                 return false;
             } else {
                 var r = MyAjax.CheckNicknameExists(nickname);
@@ -92,17 +92,17 @@
                 }
             }
 
-            if (!validcode) {
-                $('#textfield7').error('请输入验证码');
-                return false;
-            } else {
-                var r = MyAjax.CheckValidcode(validcode);
-                var valid = r.value;
-                if (!valid) {
-                    $('#textfield7').error('验证码不正确');
-                    return false;
-                }
-            }
+//            if (!validcode) {
+//                $('#textfield7').error('请输入验证码');
+//                return false;
+//            } else {
+//                var r = MyAjax.CheckValidcode(validcode);
+//                var valid = r.value;
+//                if (!valid) {
+//                    $('#textfield7').error('验证码不正确');
+//                    return false;
+//                }
+//            }
 
 
             return true;
@@ -113,8 +113,8 @@
             var password = $.trim($('#textfield4').val());
             var nickname = $.trim($('#textfield6').val());
 
-            var agree = $('#checkbox').val();
-            if (agree == 'on') {
+            var agree = $('#checkbox').attr("checked");
+            if (!agree) {
                 alert('尚未同意用户协议');
                 return false;
             }
@@ -125,9 +125,29 @@
                 if (r.error) {
                     alert(r.error.Message);
                 }
+                else
+                {
+                    $("#ph_Login").hide();
+                    $("#ph_Suceed").show();
+                    MyAjax.Login(email, password);
+					$("#CTime").text("5");
+					setTimeout("TimeCount()",1000);
+                }
             }
         }
-
+		function TimeCount()
+		{
+			var Tc=parseInt($("#CTime").text());
+			if (Tc<=0)
+			{
+				location.href="/";
+				return false;
+			}
+						
+			Tc-=1;
+			$("#CTime").text(Tc);
+			setTimeout("TimeCount()",1000);
+		}
         function login() {
             var emailOrNickname = $.trim($('#textfield').val());
             var password = $.trim($('#textfield2').val());
@@ -154,6 +174,19 @@
     <div class="custom_main1">
         <p class="cartStep">
             结算步骤：<span class="redfont1">登录/注册</span> &gt; 填写收获信息 &gt; 支付 &gt; 订购成功</p>
+		<div id="ph_Suceed" style="display:none">
+			<div class="reg_leftbox loginSuc">
+                <div class="box1 cartBox">
+                    <h2>
+                        <span>恭喜你注册成功！</span></h2>
+                    <div class="cont">
+                        
+						<p>恭喜您成功注册为福泰会员！<br />
+<a href="/Default.aspx">请点击这里跳转到福泰内页，或等待<span id="CTime"></span>秒自动跳转</a></p>
+                  </div>
+                </div>
+            </div>
+		</div>
         <div id="ph_Login">
             <div class="reg_leftbox">
                 <div class="box1 cartBox">
@@ -171,23 +204,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td width="23%">
-                                    <p>
-                                        E-mail或昵称：
-                                    </p>
-                                </td>
-                                <td width="77%">
-                                    <label>
+                                <td width="25%"> E-mail或昵称：                                </td>
+                          <td width="75%">
+<label>
                                         <input type="text" name="textfield" id="textfield" />
                                     </label>
                                 </td>
-                            </tr>
+                          </tr>
                             <tr>
                                 <td>
                                     登录密码：
                                 </td>
                                 <td>
-                                    <input type="text" name="textfield2" id="textfield2" />
+                                    <input type="password" name="textfield2" id="textfield2" />
                                 </td>
                             </tr>
                             <tr>
@@ -217,32 +246,32 @@
             <div class="reg_rightbox">
                 <div class="box1 cartBox">
                     <h2>
-                        <span>用户登录 (登录/注册后才能继续操作)：</span></h2>
+                        <span>用户注册 (登录/注册后才能继续操作)：</span></h2>
                     <div id="divLogon" class="cont">
                         <table width="100%" border="0" cellspacing="0" cellpadding="5">
                             <tr>
-                                <td width="29%" align="right" valign="top">
-                                    您的E-mail地址： *
+                                <td width="30%" align="right" valign="top">
+                                    <span class="redfont1">*</span>  您的E-mail地址：
+                                <br />
                                     <br />
-                                    <br />
-                                </td>
-                                <td width="71%">
-                                    <p>
-                                        <input type="text" name="textfield3" id="textfield3" />
-                                    </p>
+                              </td>
+                          <td width="70%">
+<p>
+                                        <input name="textfield3" type="text" id="textfield3" maxlength="25" />
+                            </p>
                                     <p class="grayfont1">
                                         将作为您以后的登录账号,该信息不会在页面上显示。</p>
-                                </td>
-                            </tr>
+                              </td>
+                          </tr>
                             <tr>
                                 <td align="right" valign="top">
-                                    设置密码： *
+                                    <span class="redfont1">*</span> 设置密码： 
                                     <br />
                                     <br />
                                 </td>
                                 <td>
                                     <p>
-                                        <input type="text" name="textfield4" id="textfield4" />
+                                        <input name="textfield4" type="password" id="textfield4" style="width:149px" maxlength="30"  />
                                     </p>
                                     <p class="grayfont1">
                                         密码由英文字母、数字、符号组成，长度6-30位。</p>
@@ -250,30 +279,30 @@
                             </tr>
                             <tr>
                                 <td align="right" valign="top">
-                                    确认密码： *
+                                   <span class="redfont1">*</span> 确认密码：
                                     <br />
                                 </td>
                                 <td>
-                                    <input type="text" name="textfield5" id="textfield5" />
+                                    <input name="textfield5" type="password" id="textfield5" style="width:149px" maxlength="30" />
                                     <span class="grayfont1">请再次输入密码。</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right" valign="top">
-                                    设置昵称： *
+                                   <span class="redfont1">*</span> 设置昵称： 
                                     <br />
                                 </td>
                                 <td>
                                     <p>
-                                        <input type="text" name="textfield6" id="textfield6" />
+                                        <input name="textfield6" type="text" id="textfield6" maxlength="10" />
                                     </p>
                                     <p class="grayfont1">
                                         希望我们怎么称呼您,也是您在论坛发帖时显示的名称。</p>
                                 </td>
-                            </tr>
+                            </tr><%--
                             <tr>
                                 <td align="right" valign="top">
-                                    验证码： *
+                                   <span class="redfont1">*</span> 验证码： 
                                     <br />
                                 </td>
                                 <td>
@@ -283,7 +312,7 @@
                                     <p class="grayfont1">
                                         请输入图片中的字母或数字 看不清楚，换一张</p>
                                 </td>
-                            </tr>
+                            </tr>--%>
                             <tr>
                                 <td colspan="2" align="center">
                                     <label>
@@ -329,8 +358,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
-                                &nbsp;
+                            <td align="right">&nbsp;
+                                
                             </td>
                             <td colspan="2">
                                 会员卡号就是您会员卡后面的号码，您也可以通过注册时所选的邮箱地址登录。<br />
@@ -360,16 +389,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
-                                &nbsp;
+                            <td align="right">&nbsp;
+                                
                             </td>
-                            <td colspan="2">
-                                &nbsp;
+                            <td colspan="2">&nbsp;
+                                
                             </td>
                         </tr>
                         <tr>
-                            <td align="right">
-                                &nbsp;
+                            <td align="right">&nbsp;
+                                
                             </td>
                             <td colspan="2">
                                 <input type="submit" name="button2" id="Submit1" class="btn1Style" value=" 提交 " />
@@ -390,8 +419,8 @@
                     <td width="25%" valign="top">
                         <p>
                             1. 更低价格</p>
-                        <p>
-                            &nbsp;</p>
+                        <p>&nbsp;
+                            </p>
                         <p>
                             同类产品仅是传统珠宝店的3-7折，<br />
                             其他网站的7-9折
@@ -400,8 +429,8 @@
                     <td width="25%" valign="top">
                         <p>
                             2. 更多选择</p>
-                        <p>
-                            &nbsp;</p>
+                        <p>&nbsp;
+                            </p>
                         <p>
                             数千款欧美时尚款式，40余万<br />
                             颗全球美钻资源
@@ -410,8 +439,8 @@
                     <td width="25%" valign="top">
                         <p>
                             3. 更高品质</p>
-                        <p>
-                            &nbsp;</p>
+                        <p>&nbsp;
+                            </p>
                         <p>
                             世界三大品牌Cartier（卡地亚）、<br />
                             Tiffany&amp;Co（蒂凡尼）、<br />
@@ -422,8 +451,8 @@
                     <td width="25%" valign="top">
                         <p>
                             4. 更安全 更方便</p>
-                        <p>
-                            &nbsp;</p>
+                        <p>&nbsp;
+                            </p>
                         <p>
                             提供GIA-国证双证双保险，<br />
                             体验店和在线客服一对一专<br />

@@ -7,8 +7,8 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-
-    });
+            
+        });
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">

@@ -32,14 +32,10 @@ namespace FuTai.Web.CustomBuy
                 TempObj.Add("CutStyle", MakeSar(Hres.Form["CutStyle"].ToString()));
             if (Hres.Form["Color"].ToString() != "null")
                 TempObj.Add("Color", MakeSar(Hres.Form["Color"].ToString()));
-            //string TempPrice = Hres.Form["Price"].ToString();
             if (Hres.Form["Carat"].ToString() != "null")
                 TempObj.Add("Carat", MakeSar(Hres.Form["Carat"].ToString()));
-            //if (TempPrice != "null")
-            //{
-            //    TempObj.Add("PriceL", TempPrice.Split(spl)[0].ToString());
-            //    TempObj.Add("PriceH", TempPrice.Split(spl)[1].ToString());
-            //}
+            if (Hres.Form["Price"].ToString() != "null")
+                TempObj.Add("Price", MakeSar(Hres.Form["Price"].ToString()));
             if (Hres.Form["Clarity"].ToString()!="null")
                 TempObj.Add("Clarity", MakeSar(Hres.Form["Clarity"].ToString()));
             if (Hres.Form["Cut"].ToString() != "null")
@@ -99,7 +95,7 @@ namespace FuTai.Web.CustomBuy
         }
         private string MakeString(Dictionary<string, string[]> consql)
         {
-            StringBuilder SqlWord = new StringBuilder("select top 10 DiamondId,Carat,Clarity,Color,Cut,Polish,Symmetry,Fluorescence from Diamond where ");
+            StringBuilder SqlWord = new StringBuilder("select top 10 DiamondId,Carat,Clarity,Color,Cut,Polish,Symmetry,Fluorescence from Diamond Di INNER JOIN Product p ON Di.DiamondID=p.ProductId where ");
             string Pid = ((string[])consql["page"])[0];
             string NotInCon = "DiamondId Not IN (select top " + (int.Parse(Pid) - 1) * 10 + " DiamondId from Diamond";
             string TempCon="";
@@ -109,7 +105,7 @@ namespace FuTai.Web.CustomBuy
                 {
                     if (Key != "page")
                     {
-                        if (Key == "Carat")
+                        if (Key == "Carat" || Key == "Price")   //克拉、价格
                         {
                             char[] spl = { '-' };
                             TempCon += " " + Key + ">='" + ((string[])consql[Key])[0].ToString().Split(spl)[0] + "' And " + Key + "<='" + ((string[])consql[Key])[0].ToString().Split(spl)[1] + "' And";
@@ -117,11 +113,11 @@ namespace FuTai.Web.CustomBuy
                         else
                         {
                             string[] ConArr = (string[])consql[Key];
-                            TempCon+="(";
+                            TempCon += "(";
                             for (int i = 0; i < ConArr.Length; i++)
                             {
                                 if (i == ConArr.Length - 1)
-                                    TempCon+=" "+Key+"='"+ConArr[i].ToString()+"') And";
+                                    TempCon += " " + Key + "='" + ConArr[i].ToString() + "') And";
                                 else
                                     TempCon += " " + Key + "='" + ConArr[i].ToString() + "' OR";
                             }
@@ -146,7 +142,7 @@ namespace FuTai.Web.CustomBuy
         }
         private string MakeStrCot(Dictionary<string, string[]> consql)
         {
-            StringBuilder SqlWord = new StringBuilder("select Count(*) from Diamond");
+            StringBuilder SqlWord = new StringBuilder("select Count(*) from Diamond Di INNER JOIN Product p ON Di.DiamondID=p.ProductId");
             if (consql.Count > 1)
             {
                 SqlWord.Append(" where ");
@@ -154,7 +150,7 @@ namespace FuTai.Web.CustomBuy
                 {
                     if (Key != "page")
                     {
-                        if (Key == "Carat")
+                        if (Key == "Carat" || Key == "Price")   //克拉、价格
                         {
                             char[] spl = { '-' };
                             SqlWord.Append(Key + ">='" + ((string[])consql[Key])[0].ToString().Split(spl)[0] + "' And " + Key + "<='" + ((string[])consql[Key])[0].ToString().Split(spl)[1] + "' And ");

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Img>
-	<src id="1">dataimg/02.jpg</src>
-	<src id="2">dataimg/03.jpg</src>
-	<src id="3">dataimg/04.jpg</src>
-	<src id="4">dataimg/05.jpg</src>
-	<src id="5">dataimg/06.jpg</src>
+	<src link="http://www.baidu.com?abc=1" id="1">dataimg/02.jpg</src>
+	<src link="http://www.baidu.com?abc=2" id="2">dataimg/03.jpg</src>
+	<src link="http://www.baidu.com?abc=3" id="3">dataimg/04.jpg</src>
+	<src link="http://www.baidu.com?abc=4" id="4">dataimg/05.jpg</src>
+	<src link="http://www.baidu.com?abc=5" id="5">dataimg/06.jpg</src>
 </Img>

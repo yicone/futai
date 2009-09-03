@@ -17,6 +17,7 @@ namespace FuTai.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
 
         }
     }

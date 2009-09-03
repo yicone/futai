@@ -21,7 +21,7 @@
             });
 
             // 默认选中分类中的第一项
-            $('div.TypeSelect ul').find('li:first a').attr('class', '');
+            //$('div.TypeSelect ul').find('li:first a').attr('class', '');
 
             searchProduct();
 
@@ -62,7 +62,6 @@
                 var typeId = $(this).attr('typeid');
                 typeIdCollection.push(typeId);
             });
-
             var query = new Query();
             query.price1 = $('#price1').val();
             query.price2 = $('#price2').val();

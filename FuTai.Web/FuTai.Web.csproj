@@ -346,7 +346,7 @@
     <Content Include="Controls\ucDataTable.ascx" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
     <Content Include="HighLevelProduct.aspx" />
-    <Content Include="images\wrongbg.jpg" />
+    <Content Include="images\wrongbg.gif" />
     <Content Include="js\jquery.error-1.0.0.js" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
