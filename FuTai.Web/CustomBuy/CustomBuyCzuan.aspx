@@ -243,7 +243,6 @@ EX</td>
 <asp:PlaceHolder runat="server" ID="Ph_Pinfo" Visible="false">
     <uc1:ucLeft ID="ucLeft3" runat="server" />
    	  <div class="inner_main">
-      <p align="right"><img src="../images/custom_step2.jpg" /></p>
         	<div class="SiteMap">
             
             <p><a href="#">首页 &gt;</a> 个性定制 &gt; 选钻石 &gt; 产品信息 </p>
@@ -283,7 +282,7 @@ EX</td>
                     <input type="submit" name="button3" id="Submit15" class="btn1Style" value="给商品留言" />
                     <input type="submit" name="button2" id="Submit16" class="btn1Style" value="联系福泰珠宝顾问" />
                   </p></td>
-                  <td width="165" valign="top"><p><strong>您还可以：</strong></p>
+                  <td width="165" valign="top"><%--<p><strong>您还可以：</strong></p>
                   <p>&nbsp;</p>
                   <table width="165" border="0" cellspacing="0" cellpadding="0">
                     <tr>
@@ -296,7 +295,7 @@ EX</td>
                       <td><img src="../images/custom_listbtn3.jpg" width="165" height="77" /></td>
                     </tr>
                   </table>                  
-                  <p>&nbsp;</p></td>
+                  <p>&nbsp;</p>--%></td>
                 </tr>
               </table>
             </div>

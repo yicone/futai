@@ -90,7 +90,7 @@
             <label>
                 <input type="button" value="提交" id="btnSearch" class="btn" style="cursor:pointer;" />
             </label>
-            <a class="searchLink" href="#">福泰搜索</a>
+            <a class="searchLink" href="/SearchHigh.aspx" target="_blank">福泰搜索</a>
         </p>
     </div>
     <div class="banner">

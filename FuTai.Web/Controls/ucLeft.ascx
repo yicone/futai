@@ -29,11 +29,11 @@
                 <li><a href="#">- 宝石套系 -</a></li>
             </ul>
             </li>
-            <li><a href="#" class="head"><span>挚爱系列</span></a>
+            <li><a href="#" class="head"><span onclick="location='/ProductSeries.aspx?Series=ZhiAi'">挚爱系列</span></a>
             </li>
-            <li><a href="#" class="head"><span>礼爱系列</span></a>
+            <li><a href="/ProductSeries.aspx?Series=LiAi" class="head"><span onclick="location='/ProductSeries.aspx?Series=LiAi'">礼爱系列</span></a>
             </li>
-            <li><a href="#" class="head"><span>商务系列</span></a>
+            <li><a href="/ProductSeries.aspx?Series=ShangWu" class="head"><span onclick="location='/ProductSeries.aspx?Series=ShangWu'">商务系列</span></a>
             </li>
         </ul>
         <div class="hr">

@@ -30,63 +30,63 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     <br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img1.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img1.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
         </ul>
         <div class="hr">
