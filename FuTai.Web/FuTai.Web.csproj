@@ -206,6 +206,13 @@
     <Compile Include="SearchHandler.ashx.cs">
       <DependentUpon>SearchHandler.ashx</DependentUpon>
     </Compile>
+    <Compile Include="SearchHigh.aspx.cs">
+      <DependentUpon>SearchHigh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchHigh.aspx.designer.cs">
+      <DependentUpon>SearchHigh.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -348,6 +355,7 @@
     <Content Include="HighLevelProduct.aspx" />
     <Content Include="images\wrongbg.gif" />
     <Content Include="js\jquery.error-1.0.0.js" />
+    <Content Include="SearchHigh.aspx" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
   <ItemGroup>
