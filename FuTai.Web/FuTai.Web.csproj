@@ -354,6 +354,7 @@
     <Content Include="CustomBuy\SearchMethod.aspx" />
     <Content Include="images\wrongbg.gif" />
     <Content Include="js\jquery.error-1.0.0.js" />
+    <Content Include="js\searchtemplates.js" />
     <Content Include="SearchHigh.aspx" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
