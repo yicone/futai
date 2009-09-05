@@ -6,6 +6,16 @@
 <link href="/style/inner.css" rel="stylesheet" type="text/css" />
 <link href="/style/forum.css" rel="stylesheet" type="text/css" />
 <link href="/style/custom.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/searchtemplates.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+            var ClassVal=$("#sel_ProductClass").val();
+            SerHigh.InitClass(ClassVal);
+        });
+       
+    </script>
 </asp:Content>
 
 <asp:Content ContentPlaceHolderID="cphContent" runat="server" ID="Content2">
@@ -17,259 +27,38 @@
         <div class="box1">
           <h2><span>高级搜索：</span></h2>
           <div class="cont">
-          
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td>商品名称： </td>
-                <td><label>
-                  <select name="select" id="select">
-                    <option>请选择 </option>
-                  </select>
-                </label></td>
-                <td>材质：</td>
-                <td><select name="select2" id="select2">
-                  <option>请选择 </option>
-                </select></td>
-                <td>珠宝：</td>
-                <td><select name="select3" id="select3">
-                  <option>请选择 </option>
-                </select></td>
-                <td>价格：</td>
-                <td><select name="select4" id="select4">
-                  <option>请选择 </option>
-                </select></td>
-                <td>关键字：</td>
-                <td><select name="select5" id="select5">
-                  <option>请选择 </option>
-                </select></td>
-                <td><label>
-                  <input type="submit" class="btn1Style" name="button2" id="button2" value=" GO " />
-                </label></td>
-              </tr>
-            </table>
-            <ul class="PageSelect">
-              <li>1/50</li>
-              <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-              <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-            </ul>
-            <p style="line-height:40px;">更新日期：2009-6-25</p>
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="cartTable">
-              <tr>
-                <th>类型          证书</th>
-                <th>编号</th>
-                <th> 重量(克拉)      </th>
-                <th>切工</th>
-                <th> 颜色</th>
-                <th> 净度    </th>
-                <th>抛光/对称        </th>
-                <th>销售价格</th>
-                <th>详情</th>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33        </td>
-                <td>EXCELLENT</td>
-                <td> G       </td>
-                <td>VS1</td>
-                <td> EX/EX         </td>
-                <td>￥5,700       </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-              <tr>
-                <td>钻石</td>
-                <td> GIA-15161498</td>
-                <td> 0.33 </td>
-                <td>EXCELLENT</td>
-                <td> G </td>
-                <td>VS1</td>
-                <td> EX/EX </td>
-                <td>￥5,700 </td>
-                <td>了解更多</td>
-              </tr>
-            </table>
-            <ul class="PageSelect">
-              <li>1/50</li>
-              <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-              <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-              <li>
-                <input name="textfield" type="text" class="input1" id="textfield" size="2" />
-              </li>
-              <li><a href="#"><img src="../images/pageselect_comfirm.gif" /></a></li>
+            <div class="NewSerBar">
+            <ul>
+                <li>商品分类： <select name="select" id="sel_ProductClass">
+                    <option value="none" selected>请选择 </option>
+                    </select> <span id="HighBar"></span> 商品价格：  <select name="select" id="sel_Price">
+                    <option selected>所有价格 </option>
+                    <option price1="0" price2="30000">0-30000 </option>
+                    <option price1="30000" price2="100000">30000-100000 </option>
+                    <option price1="100000" price2="200000">100000-200000 </option>
+                    <option price1="200000" price2="300000">200000-300000 </option>
+                    <option price1="300000" price2="450000">300000-450000 </option>
+                    <option price1="450000" price2="550000">450000-550000 </option>
+                  </select></li>
+                <li class="Go"><input type="button" class="btn1Style" name="button2" id="Go" value=" GO" onclick="SerHigh.Go(true)" /></li>
             </ul>
             <div class="clearfix"></div>
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td>商品名称： </td>
-                <td><label>
-                  <select name="select6" id="select6">
-                    <option>请选择 </option>
-                  </select>
-                </label></td>
-                <td>材质：</td>
-                <td><select name="select6" id="select7">
-                  <option>请选择 </option>
-                </select></td>
-                <td>珠宝：</td>
-                <td><select name="select6" id="select8">
-                  <option>请选择 </option>
-                </select></td>
-                <td>价格：</td>
-                <td><select name="select6" id="select9">
-                  <option>请选择 </option>
-                </select></td>
-                <td>关键字：</td>
-                <td><select name="select6" id="select10">
-                  <option>请选择 </option>
-                </select></td>
-                <td><label>
-                  <input type="submit" class="btn1Style" name="button3" id="button3" value=" GO " />
-                </label></td>
-              </tr>
-            </table>
+            </div>
+            <ul class="PageSelect">
+              <li id="PageS"></li>
+              <li><a href="javascript:SerHigh.ShowPage('pre')"><img src="../images/pageselect_left.gif" /></a></li>
+              <li><a href="javascript:SerHigh.ShowPage('next')"><img src="../images/pageselect_next.gif" /></a></li>
+              <li>
+                <input name="textfield" type="text" class="input1" id="pageSi" maxlength="3" size="2" />
+              </li>
+              <li><a href="javascript:SerHigh.ShowPage('custom')"><img src="../images/pageselect_comfirm.gif" /></a></li>
+            </ul>
+            <p style="line-height:40px;">更新日期：2009-6-25</p>
+               <div id="LoadForm" style="padding-top:120px; position:static; padding-bottom:250px">
+                	<img src="../Images/loadinfo_net.gif" />
+    				<div id="Loading">加载中</div>
+               </div>
+             <div id="ResultTb"></div>
           </div>
         </div>
       </div>

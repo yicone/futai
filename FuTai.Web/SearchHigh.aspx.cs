@@ -19,7 +19,7 @@ namespace FuTai.Web
         {
             if (!IsPostBack)
             {
-                AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+                AjaxPro.Utility.RegisterTypeForAjax(typeof(SearchHandler));
             }
         }
     }
