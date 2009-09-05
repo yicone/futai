@@ -216,3 +216,9 @@ margin:0; height:500px; overflow:hidden;
 {
 	background:#74572D; color:#FFF; font-size:12px; border:1px solid #BEAC8D;
 }
+
+.NewSerBar ul li{ float:left; display:inline; width:660px} 
+.NewSerBar ul li select{ width:90px; vertical-align:middle}
+.NewSerBar ul li.Go{ width:30px; padding-left:5px}
+
+.relative{ position:relative;}
