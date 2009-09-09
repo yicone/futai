@@ -23,7 +23,7 @@
     <Type Name="User">
       <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CardId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Column Name="NickName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Authority" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -110,6 +110,8 @@
       <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Diamond_Product" Member="Diamond" ThisKey="ProductId" OtherKey="DiamondID" Type="Diamond" IsForeignKey="true" />
       <Association Name="DiamondOrnament_Product" Member="DiamondOrnament" ThisKey="ProductId" OtherKey="DiamondOrnamentId" Type="DiamondOrnament" IsForeignKey="true" />
       <Association Name="DiamondRing_Product" Member="DiamondRing" ThisKey="ProductId" OtherKey="DiamondRingId" Type="DiamondRing" IsForeignKey="true" />

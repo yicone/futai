@@ -26,7 +26,7 @@
                             html += "<td>" + $("cut", this).text() + "</td>";
                             html += "<td>" + $("polish", this).text() + "</td>";
                             html += "<td>" + $("sym", this).text() + "</td>";
-                            html += "<td>GIA</td><td>-</td><td>-</td>";
+                            html += "<td>GIA</td><td>"+parseInt($("price",this).text())+"</td><td>"+parseInt($("price",this).text())+"</td>";
                             html += "<td><input type='button' class='btn1Style' value='详细' onclick='location=\"/CustomBuy/CustomBuyCzuan.aspx?proid=" + $("id", this).text() + "\"' /></td>";
                             html += "</tr>";
                             $target.html($target.html() + html);

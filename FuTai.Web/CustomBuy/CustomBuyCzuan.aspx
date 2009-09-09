@@ -9,8 +9,9 @@
     <script type="text/javascript" src="../js/CustomSear.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-
-    });
+            if (getUrlParam("productType")=="Diamond")
+                $(".Pstep").hide();
+        });
     </script> 
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="cphContent">
@@ -48,7 +49,7 @@
 </script>
 <uc1:ucLeft ID="ucLeft" runat="server" />
    	  <div class="inner_main">
-      <p align="right"><img src="../images/custom_step1.jpg" /></p>
+      <p class="Pstep" align="right"><img src="../images/custom_step1.jpg" /></p>
         	<div class="SiteMap">
             
             <p><a href="#">首页 &gt;</a> 个性定制 &gt; 选钻石</p>
@@ -151,7 +152,7 @@
 <asp:PlaceHolder ID="Ph_SecondSub" runat="server" Visible="false">
       <uc1:ucLeft ID="ucLeft2" runat="server" />
    	  <div class="inner_main">
-      <p align="right"><img src="../images/custom_step1.jpg" /></p>
+      <p class="Pstep" runat="server" align="right"><img src="../images/custom_step1.jpg" /></p>
         	<div class="SiteMap">
             
             <p><a href="#">首页 &gt;</a> 个性定制 &gt; 选钻石</p>
