@@ -17,3 +17,4 @@ note: 发现VS一个令人愉悦的shortcut: Ctrl + / or Ctrl + D , 然后输入 ">of common.
 note: 谷歌输入法终于可以快捷输入日期和时间了! 日期: irq, 时间: isj
 note: 安装了SqlToolbelt, 所有组件全部通过RedGate.Licensing破解(CSDN)
 todo: 首页左侧导航用到的Menu.xml, 下载过程非常慢, 找出原因解决之
+todo: 解决VS2008在Win7下的解决方案管理器的闪烁问题
