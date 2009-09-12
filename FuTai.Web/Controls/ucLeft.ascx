@@ -3,16 +3,44 @@
 <script type="text/javascript" src="/js/jquery.accordion-1.6.js"></script>
 <script type="text/javascript">
 	jQuery().ready(function(){
-		jQuery('#navigation').accordion({
-			autoheight: false,
-			header: '.head'
-		});
+	     $.ajax({url:"/MenuList.xml",
+	        type:"get",
+	        datatype:"xml",
+	        success:function (data)
+	        {
+	            var $target=$("#navigation");
+	            var TempHtml="";
+	            $("Menu",data).each(function(){
+	                if ($("SubMenu",this).size()>0)
+	                {
+	                    TempHtml+='<li><a href="#" class="head"><span>'+$(this).attr("value")+'</span></a>';
+	                    TempHtml+='<ul>';
+	                    $("SubMenu",this).each(function(){
+	                        TempHtml+='<li><a href="/ProductSeries.aspx?maintype='+$(this).parent().attr("type")+'&subtype='+$(this).attr("type")+'">- '+$(this).text()+' -</a></li>';
+	                    });
+	                    TempHtml+='</ul>';
+	                }
+	                else
+	                    TempHtml+='<li><a href="#" class="head"><span onclick="location=\'/ProductSeries.aspx?maintype='+$(this).attr("type")+'\'">'+$(this).attr("value")+'</span></a>';
+	                    
+	                TempHtml+='</li>';
+	            });
+	            $target.html(TempHtml);
+	            jQuery('#navigation').accordion({
+		            autoheight: false,
+		            header: '.head'
+	            });
+	            
+	        }
+	        
+	    });
 	});
+	
 </script>
 
 <div class="left">
         <ul class="subnav" id="navigation">
-            <li><a href="#" class="head"><span>结婚系列</span></a><ul>
+            <%--<li><a href="#" class="head"><span>结婚系列</span></a><ul>
                 <li><a href="#">- 钻戒 -</a></li>
                 <li><a href="#">- 婚戒 -</a></li>
                 <li><a href="#">- 情侣戒 -</a></li>
@@ -34,7 +62,7 @@
             <li><a href="/ProductSeries.aspx?Series=LiAi" class="head"><span onclick="location='/ProductSeries.aspx?Series=LiAi'">礼爱系列</span></a>
             </li>
             <li><a href="/ProductSeries.aspx?Series=ShangWu" class="head"><span onclick="location='/ProductSeries.aspx?Series=ShangWu'">商务系列</span></a>
-            </li>
+            </li>--%>
         </ul>
         <div class="hr">
         </div>

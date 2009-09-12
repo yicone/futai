@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Xml.Linq;
+using System.Xml;
 
 namespace FuTai.Web.Controls
 {
@@ -17,7 +18,7 @@ namespace FuTai.Web.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

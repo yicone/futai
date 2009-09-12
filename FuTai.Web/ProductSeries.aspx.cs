@@ -15,69 +15,103 @@ namespace FuTai.Web
 {
     public partial class ProductSeries : System.Web.UI.Page
     {
-        private string _series;
+        private string _maintype;
+        private string _subtype;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
-                _series = Request.QueryString["Series"];
-                _series=_series==null?"ZhiAi":_series;
-                SetPage(_series);
+                _maintype = Request.QueryString["maintype"];
+                _maintype = _maintype == null ? "ZhiAi" : _maintype;
+                SetPage(_maintype);
             }
         }
-        public string Series
+        public string MainType
         {
             get {
-                return _series;
+                return _maintype;
             }
             set
             {
-                _series = value;
+                _maintype = value;
+            }
+        }
+        public string SubType
+        {
+            get
+            {
+                return _subtype;
+            }
+            set
+            {
+                _subtype = value;
             }
         }
         private void SetPage(string type)
         {
             switch (type)
             {
-                case "ZhiAi":
-                    this._series = "挚爱系列";
-                    ShowPanel(1);
+                case "Rlove":
+                    this._maintype = "挚爱系列";
+                    this._subtype = null;
                     break;
-                case "LiAi":
-                    this._series = "礼爱系列";
-                    ShowPanel(2);
+                case "Plove":
+                    this._maintype = "礼爱系列";
+                    this._subtype = null;
                     break;
-                case "ShangWu":
-                    this._series = "商务系列";
-                    ShowPanel(3);
+                case "Slove":
+                    this._maintype = "商务系列";
+                    this._subtype = null;
                     break;
-                default: 
-                    this._series = "挚爱系列";
-                    ShowPanel(1);
+                case "Widd":
+                    this._maintype = "结婚系列";
+                    SetSubType(this._subtype);
+                    break;
+                case "Fashion":
+                    this._maintype = "时尚系列";
+                    SetSubType(this._subtype);
+                    break;
+                case "Wrap":
+                    this._maintype = "套装系列";
+                    SetSubType(this._subtype);
+                    break;
+                default:
+                    this._maintype = "挚爱系列";
+                    this._subtype = null;
                     break;
             }
         }
-        private void ShowPanel(int i)
+        private void SetSubType(string type)
         {
-            switch (i)
-            { 
-                case 1:
-                    ph_ShangWu.Visible = false;
-                    ph_LiAi.Visible = false;
-                    ph_ZhiAi.Visible = true;
+            switch(type)
+            {
+                case "DiamondRing":
+                    this._subtype = "钻戒";
                     break;
-                case 2:
-                    ph_ShangWu.Visible = false;
-                    ph_LiAi.Visible = true;
-                    ph_ZhiAi.Visible = false;
+                case "WiddRing":
+                    this._subtype = "婚戒";
                     break;
-                case 3:
-                    ph_ShangWu.Visible = true;
-                    ph_LiAi.Visible = false;
-                    ph_ZhiAi.Visible = false;
+                case "LoverRing":
+                    this._subtype = "情侣戒";
+                    break;
+                case "GoldRing":
+                    this._subtype = "结婚金戒";
+                    break;
+                case "FashionDiamond":
+                    this._subtype = "时尚钻饰系列";
+                    break;
+                case "FashionJewel":
+                    this._subtype = "时尚珠宝系列";
+                    break;
+                case "DiamondSer":
+                    this._subtype = "钻石套系";
+                    break;
+                case "BaoDiamondSer":
+                    this._subtype = "宝石套系";
                     break;
                 default:
+                    this._subtype = null;
                     break;
             }
         }

@@ -21,32 +21,5 @@ namespace FuTai.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FuTai.Web.Controls.ucLeft ucLeft;
-        
-        /// <summary>
-        /// ph_ShangWu control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ph_ShangWu;
-        
-        /// <summary>
-        /// ph_ZhiAi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ph_ZhiAi;
-        
-        /// <summary>
-        /// ph_LiAi control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder ph_LiAi;
     }
 }

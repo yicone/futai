@@ -355,6 +355,7 @@
     <Content Include="images\wrongbg.gif" />
     <Content Include="js\jquery.error-1.0.0.js" />
     <Content Include="js\searchtemplates.js" />
+    <Content Include="MenuList.xml" />
     <Content Include="SearchHigh.aspx" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
