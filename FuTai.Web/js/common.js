@@ -209,17 +209,14 @@ var Query = function() {
     this.order = "desc"
 };
 
-function search(productType, query, typeIdCollection) {
-    var result;
-    result = MyAjax.Search(productType, query.price1, query.price2, query.sort, query.order, typeIdCollection);
-
+function search(productType, query, typeIdCollection){
+    var result = MyAjax.Search(productType, query.price1, query.price2, query.sort, query.order, typeIdCollection);
     if (!result.error) {
-        if (!result.error) {
-            var list = result.value;
-
-            return list;
-        }
-    } else {
-            alert(result.error.Message);
-     }
+        var list = result.value;
+        
+        return list;
+    }
+    else {
+        alert(result.error.Message);
+    }
 }

@@ -1,0 +1,19 @@
+2009-09-13 05:11
+
+db: 修改PairRing表, 增加字段 PairId char(10), Sex bit
+todo: 检查并修正各表的字段类型, 以符合需求
+db: 修改"search_SearchPairRing"存储过程. 实现根据搜索结果自动匹配和展示对戒中另一枚戒指的信息
+db: 修改"search_SearchPairRing"存储过程. 使用表变量代替临时表, 以解决LINQ TO SQL无法推导出临时表的结构的问题. 实验未完全成功! todo: 查看"快买"实现
+note: 当LINQ TO SQL 不能正确推导存储过程返回的结构时, 可以通过创建表变量模拟返回结构, 辅助LINQ TO SQL生成合适的类后, 再还原存储过程
+update: 将ISearchResult及相关类继承从FuTaiDB.cs中移出到ISearchResult.cs. 以解决更新*.dbml文件后频繁丢失*.dbml.designer.cs的问题
+fix: 修复各页面无法显示登录信息的问题
+note: AjaxPro并非限制一个页面不能注册多个声明了AjaxMethod方法的类, 限制在于多个类不能拥有相同的AjaxNamespace声明, 因为对应的客户端实现为js类
+update: 实现了对戒搜索
+fix: AjaxPro 9.2.17.1(截至目前的最新版本)的bug, "this.onTimeout not a function"
+update: 修改web.config, 将AjaxPro用到的三个基础js合并为1个, 减少http请求数
+todo: 最小化(minify) js文件
+update: 增加开发日志.txt
+note: 发现VS一个令人愉悦的shortcut: Ctrl + / or Ctrl + D , 然后输入 ">of common.js", 回车
+note: 谷歌输入法终于可以快捷输入日期和时间了! 日期: irq, 时间: isj
+note: 安装了SqlToolbelt, 所有组件全部通过RedGate.Licensing破解(CSDN)
+todo: 首页左侧导航用到的Menu.xml, 下载过程非常慢, 找出原因解决之

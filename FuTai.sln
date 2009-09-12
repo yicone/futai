@@ -10,6 +10,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{F3723B75-790E-4DF2-94D1-7521374A3E97}"
 	ProjectSection(SolutionItems) = preProject
 		字典.txt = 字典.txt
+		开发日志.txt = 开发日志.txt
 		开发规范.txt = 开发规范.txt
 	EndProjectSection
 EndProject

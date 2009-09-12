@@ -77,7 +77,12 @@
             _pageCount = Math.ceil(_productList.length / _pageSize);
             if (_pageCount < 0) _pageCount = 0;
 
-            renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+            if(productType != "PairRing"){
+                renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+            }else{
+                $('#product-list').attr('id', 'pairring-list');
+                renderTemplate('pairring-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+            }
 
             $('li.pager').text('1/' + _pageCount);
         }
@@ -212,8 +217,34 @@
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
                     <a href="#"><strong>{$T.record.ProductId}</strong></a><br />
-                    男款:<span class="redfont1">¥{$T.record.Price}</span><br />
-                    女款:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    市场价:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    会员价:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
+            </li>
+        <%--如果是每行最后一项, 或者是列表的最后一项--%>
+        {#if ($T.record$index + 1) % 3 == 0 || $T.record$last}
+        </ul>
+        <div class="clearfix">
+        </div>
+        {#/if}
+        {#/for}
+    </textarea>
+    <textarea id="pairring-list-template" style="display: none">
+        {#foreach $T.productList as record begin=$T.pageBegin count=$T.pageSize}
+        <%--如果是每行的第一项--%>
+        {#if $T.record$index % 3 == 0 || $T.record$first}
+        <div class="inner_hr">
+        </div>
+        <ul class="inner_list1">
+        {#/if}
+             <li>
+                <img src="/images/product_img.jpg" />
+                <img class="fdjbtn" src="/images/icon_fdj.gif" />
+                <p>
+                    <a href="#"><strong>{$T.record.ProductId}</strong></a><br />
+                    男款:<span class="redfont1">¥{$T.record.Price0}</span><br />
+                    女款:<span class="redfont1">¥{$T.record.Price1}</span><br />
+                    总价:<span class="redfont1">¥{$T.record.Price}</span><br />
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>

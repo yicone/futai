@@ -68,9 +68,6 @@
   <ItemGroup>
     <Compile Include="BaseBll.cs" />
     <Compile Include="CacheHelper.cs" />
-    <Compile Include="FuTaiDB.cs">
-      <DependentUpon>FuTaiDB.dbml</DependentUpon>
-    </Compile>
     <Compile Include="FuTaiDB.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,6 +75,7 @@
     </Compile>
     <Compile Include="FuTaiDBDataContextFactory.cs" />
     <Compile Include="IPHelper.cs" />
+    <Compile Include="ISearchResult.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="MailHelper.cs" />
     <Compile Include="PageUrl.cs" />
