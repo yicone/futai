@@ -6,6 +6,7 @@ using System.Web.Services;
 using System.Data.Linq;
 using FuTai.Component;
 using System.Collections;
+using AjaxPro;
 
 namespace FuTai.Web
 {
@@ -17,7 +18,6 @@ namespace FuTai.Web
     [AjaxPro.AjaxNamespace("MyAjax")]
     public class SearchHandler : IHttpHandler
     {
-
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AjaxPro;
+using FuTai.Component;
 
 namespace FuTai.Web
 {
@@ -11,7 +13,6 @@ namespace FuTai.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
         }
     }
 }

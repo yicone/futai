@@ -18,7 +18,7 @@
             location.href = url;
         });
 
-        var r = MyAjax.GetLoginUser();
+        var r = BaseAjax.GetLoginUser();
         if (!r.error) {
             var user = r.value;
             if (user) {
@@ -26,9 +26,9 @@
                 $('#linkLogon').text('注销').attr('href', '/LogoutPage.aspx').attr('id', 'linkLogout');
             }
         }
-
+    
         $('#linkLogout').click(function() {
-            var r = MyAjax.Logout();
+            var r = BaseAjax.Logout();
             if (!r.error) {
                 location.href = "/";
             }

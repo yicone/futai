@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AjaxPro;
+using FuTai.Component;
 
 namespace FuTai.Web
 {
@@ -21,7 +23,7 @@ namespace FuTai.Web
             {
                 AjaxPro.Utility.RegisterTypeForAjax(typeof(SearchHandler));
 
-                string productType = Request.QueryString["productType"];
+                string productType = Request.QueryString["productType"];        
                 this.ProductType = productType;
 
                 var price1 = Request.QueryString["price1"];

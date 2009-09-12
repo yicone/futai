@@ -8,7 +8,7 @@ using AjaxPro;
 
 namespace FuTai.Web
 {
-    [AjaxNamespace("MyAjax")]
+    [AjaxNamespace("BaseAjax")]
     public class BasePage : Page
     {
         protected override void OnLoad(EventArgs e)
@@ -20,7 +20,7 @@ namespace FuTai.Web
 
         protected override void OnError(EventArgs e)
         { 
-            var ex = Server.GetLastError();
+            var ex = Server.GetLastError();     
             LogHelper.LogException(ex);
             Server.Transfer(PageUrl.ErrorPage);
         }
