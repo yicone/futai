@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<root>
+  <Menu id="List1" type="Widd" value="结婚系列">
+    <SubMenu type="DiamondRing">钻戒</SubMenu>
+    <SubMenu type="WiddRing">婚戒</SubMenu>
+    <SubMenu type="LoverRing">情侣戒</SubMenu>
+    <SubMenu type="GoldRing">结婚金戒</SubMenu>
+  </Menu>
+  <Menu id="List2" type="Fashion" value="时尚系列">
+    <SubMenu type="FashionDiamond">时尚钻饰系列</SubMenu>
+    <SubMenu type="FashionJewel">时尚珠宝系列</SubMenu>
+  </Menu>
+  <Menu id="List3" type="Wrap" value="套装系列">
+    <SubMenu type="DiamondSer">钻石套系</SubMenu>
+    <SubMenu type="BaoDiamondSer">宝石套系</SubMenu>
+  </Menu>
+  <Menu id="List4" type="Rlove" value="挚爱系列" />
+  <Menu id="List5" type="Plove" value="礼爱系列" />
+  <Menu id="List6" type="Slove" value="商务系列" />
+</root>
