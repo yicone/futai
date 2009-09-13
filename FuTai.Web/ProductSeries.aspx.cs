@@ -13,7 +13,7 @@ using System.Xml.Linq;
 
 namespace FuTai.Web
 {
-    public partial class ProductSeries : System.Web.UI.Page
+    public partial class ProductSeries : BasePage
     {
         private string _maintype;
         private string _subtype;
@@ -21,9 +21,10 @@ namespace FuTai.Web
         {
             if (!IsPostBack)
             {
-                AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+                AjaxPro.Utility.RegisterTypeForAjax(typeof(SearchHandler));
                 _maintype = Request.QueryString["maintype"];
                 _maintype = _maintype == null ? "ZhiAi" : _maintype;
+                _subtype = Request.QueryString["subtype"];
                 SetPage(_maintype);
             }
         }

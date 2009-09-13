@@ -16,12 +16,12 @@
 	                    TempHtml+='<li><a href="#" class="head"><span>'+$(this).attr("value")+'</span></a>';
 	                    TempHtml+='<ul>';
 	                    $("SubMenu",this).each(function(){
-	                        TempHtml+='<li><a href="/ProductSeries.aspx?maintype='+$(this).parent().attr("type")+'&subtype='+$(this).attr("type")+'">- '+$(this).text()+' -</a></li>';
+	                        TempHtml+='<li><a href="/ProductSeries.aspx?maintype='+$(this).parent().attr("type")+'&subtype='+$(this).attr("type")+'&menu='+$(this).parent().attr("id")+'">- '+$(this).text()+' -</a></li>';
 	                    });
 	                    TempHtml+='</ul>';
 	                }
 	                else
-	                    TempHtml+='<li><a href="#" class="head"><span onclick="location=\'/ProductSeries.aspx?maintype='+$(this).attr("type")+'\'">'+$(this).attr("value")+'</span></a>';
+	                    TempHtml+='<li><a href="#" class="head"><span onclick="location=\'/ProductSeries.aspx?maintype='+$(this).attr("type")+'&menu='+$(this).attr("id")+'\'">'+$(this).attr("value")+'</span></a>';
 	                    
 	                TempHtml+='</li>';
 	            });
@@ -29,7 +29,10 @@
 	            jQuery('#navigation').accordion({
 		            autoheight: false,
 		            header: '.head'
-	            });
+	            })
+	            var MenuId=getUrlParam("menu");
+	            if (MenuId!=null && !isNaN(MenuId) && MenuId>=0 && MenuId<=5)
+	                $('#navigation').activate(parseInt(MenuId));
 	            
 	        }
 	        

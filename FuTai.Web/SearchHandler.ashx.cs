@@ -98,5 +98,13 @@ namespace FuTai.Web
 
             return result;
         }
+        [AjaxPro.AjaxMethod]
+        public static object SearchClassType(string MainType,string SubType)
+        {
+            IEnumerable result = null;
+            FuTaiDBDataContext cxt = FuTaiDBDataContextFactory.GetFuTaiDBContext();
+            result = cxt.SearchByType(MainType,SubType);
+            return result;
+        }
     }
 }

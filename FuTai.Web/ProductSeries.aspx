@@ -5,6 +5,81 @@
 <asp:Content ContentPlaceHolderID="cphHead" runat="server" ID="Content1">
 <link href="/style/inner.css" rel="stylesheet" type="text/css" />
 <link href="/style/forum.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+        var _productList;
+        var _pageNo = 1;
+        var _pageCount = 0;
+        var _pageSize = 12;
+        $(document).ready(function() {
+            var MType = getUrlParam("maintype");
+            var SType = getUrlParam("subtype");
+            searchProduct(MType,SType);
+
+        });
+
+        function searchProduct(mtp,stp) {
+            _productList = searchbytype(mtp,stp);
+            SetProduct();
+        }
+        function SetProduct()
+        {
+            var target=$("#ProForm");
+            var procount=_productList.length;
+            _pageCount=parseInt(procount/12)==0?1:parseInt(procount/12);
+            
+            $("#NowPage").text(_pageNo);
+            $("#totalpage").text(_pageCount);
+            $("#pageshow2").html($("#pageshow1").html());
+            
+            $("#CountPro").text(procount);
+            $("#CountPro2").text(procount);
+            
+            var TempHtml="";
+            var now=(_pageNo-1)*_pageSize;
+            var total=(now+_pageSize)>procount?procount:(now+_pageSize);
+            for (var i=now;i<total;i++)
+            {
+                var Pro=_productList[i];
+                TempHtml+='<li><img src="../images/product_img.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" /><p><a href="#">'+Pro["ProductId"]+'<br />';
+                TempHtml+=Pro["ProductNick"]+' </a><br /><span class="redfont1">福泰实价: ￥'+Pro["Price"]+' </span></p></li>';
+            }
+            target.html(TempHtml);
+        }
+        
+        function ShowPage(type)
+        {
+            switch(type)
+            {
+                case "pre":
+                    if (_pageNo>1)
+                        _pageNo-=1;
+                    else
+                        return;
+                    break;
+                case "next":
+                    if (_pageNo+1<=_pageCount)
+                        _pageNo+=1;
+                    else
+                        return;
+                    break;
+                case "custom":
+                    var Pnum=$("#pageSi").val();
+                    if (!isNaN(Pnum) && Pnum>0 && Pnum<=_pageCount)
+                        _pageNo=Pnum;
+                    else
+                    {
+                        return;
+                    }
+                    break;
+                default:
+                break;
+            }
+            SetProduct();
+        }
+        
+
+    </script>
+
 </asp:Content>
 <asp:Content ContentPlaceHolderID="cphContent" runat="server" ID="Content2">
     <uc1:ucLeft ID="ucLeft" runat="server" />
@@ -23,14 +98,14 @@
           <div class="inner_hr"></div>
           <div  class="series_left">
           <ul class="PageSelect">
-            <li>1/50</li>
-            <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-            <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
+            <li id="pageshow1"><span id="NowPage"></span>/<span id="totalpage"></span></li>
+            <li><a href="javascript:ShowPage('pre')"><img src="../images/pageselect_left.gif" /></a></li>
+            <li><a href="javascript:ShowPage('next')"><img src="../images/pageselect_next.gif" /></a></li>
           </ul>
-          <p class="itemNum">共有 <span class="redfont1">160</span> 件</p>
+          <p class="itemNum">共有 <span class="redfont1" id="CountPro">160</span> 件</p>
           <div class="clearfix"></div>
-<ul class="inner_list1">
-  <li><img src="../images/product_img.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" />
+<ul id="ProForm" class="inner_list1">
+  <%--<li><img src="../images/product_img.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" />
     <p><a href="#">G750彩金钻石吊坠<br />
       妙不可言 </a><br />
       <span class="redfont1">福泰实价: ￥1130 </span></p>
@@ -89,17 +164,17 @@
     <p><a href="#">G750彩金钻石吊坠<br />
       妙不可言 </a><br />
   <span class="redfont1">福泰实价: ￥1130 </span></p>
-    </li>
+    </li>--%>
 </ul>
           <div class="clearfix"></div>
            <ul class="PageSelect">
-               	<li>1/50</li>
-                <li><a href="#"><img src="../images/pageselect_left.gif" /></a></li>
-                <li><a href="#"><img src="../images/pageselect_next.gif" /></a></li>
-                <li><input name="textfield" type="text" class="input1" id="textfield" size="2" /></li>
-                <li><a href="#"><img src="../images/pageselect_comfirm.gif" /></a></li>
+               	<li id="pageshow2">1/50</li>
+                <li><a href="javascript:ShowPage('pre')"><img src="../images/pageselect_left.gif" /></a></li>
+                <li><a href="javascript:ShowPage('next')"><img src="../images/pageselect_next.gif" /></a></li>
+                <li><input name="textfield" type="text" class="input1" id="pageSi" size="2" maxlength="3" /></li>
+                <li><a href="javascript:ShowPage('custom')"><img src="../images/pageselect_comfirm.gif" /></a></li>
             </ul>
-               <p class="itemNum">共有 <span class="redfont1">160</span> 件</p>
+               <p class="itemNum">共有 <span class="redfont1" id="CountPro2">160</span> 件</p>
                <div class="clearfix"></div>
           </div>
           <div class="series_right">

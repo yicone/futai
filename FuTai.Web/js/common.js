@@ -220,3 +220,15 @@ function search(productType, query, typeIdCollection){
         alert(result.error.Message);
     }
 }
+function searchbytype(mt,st)
+{
+    var result = MyAjax.SearchClassType(mt,st);
+    if (!result.error) {
+        var list = result.value;
+        
+        return list;
+    }
+    else {
+        alert(result.error.Message);
+    }
+}
