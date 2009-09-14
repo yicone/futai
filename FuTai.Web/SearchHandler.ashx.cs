@@ -99,11 +99,11 @@ namespace FuTai.Web
             return result;
         }
         [AjaxPro.AjaxMethod]
-        public static object SearchClassType(string MainType,string SubType)
+        public static object SearchClassType(string MainType,string SubType, bool Hotted)
         {
             IEnumerable result = null;
             FuTaiDBDataContext cxt = FuTaiDBDataContextFactory.GetFuTaiDBContext();
-            result = cxt.SearchByType(MainType,SubType);
+            result = cxt.SearchByType(MainType,SubType,Hotted);
             return result;
         }
     }

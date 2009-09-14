@@ -7,19 +7,44 @@
 <link href="/style/forum.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
         var _productList;
+        var _hotlist;
         var _pageNo = 1;
         var _pageCount = 0;
         var _pageSize = 12;
         $(document).ready(function() {
             var MType = getUrlParam("maintype");
             var SType = getUrlParam("subtype");
-            searchProduct(MType,SType);
+            SType=SType=="Default"?null:SType;
+            searchProduct(MType,SType,null);
 
         });
 
-        function searchProduct(mtp,stp) {
-            _productList = searchbytype(mtp,stp);
+        function searchProduct(mtp,stp,hotted) {
+            _productList = searchbytype(mtp,stp,hotted);
+            _hotlist=searchbytype(mtp,stp,true);
+            SetHotList();
             SetProduct();
+        }
+        function SetHotList()
+        {
+            var HForm=$("#HottedForm");
+            var HotHtml="";
+            if (_hotlist.length==0)
+                $("#HottedForm").html('<p style="text-align:center; padding-top:80px; padding-bottom:80px">暂无相关信息</p>');
+            else
+            {
+                HotHtml+='<table width="100%" border="0" cellspacing="0" cellpadding="0">';
+                var ListCount=_hotlist.length>3?3:_hotlist.length;
+                for (var i=0;i<ListCount;i++)
+                {
+                    var hotpro=_hotlist[i];
+                    HotHtml+='<tr><td width="49%"><img src="../images/series1_dataimg.jpg" /></td>';
+                    HotHtml+='<td width="51%">'+hotpro["ProductId"]+'<br />'+hotpro["ProductNick"]+' <br /><span class="redfont1">福泰实价: ￥ '+ hotpro["Price"] +'</span></td>';
+                    HotHtml+='</tr>';
+                }
+                 HotHtml+='</table>';
+                 HForm.html(HotHtml);
+            }
         }
         function SetProduct()
         {
@@ -180,7 +205,7 @@
           <div class="series_right">
        	  <div class="box1 series_cont">
             	<h2><span>最受欢迎的礼品</span></h2>
-                <div class="cont">
+                <div id="HottedForm" class="cont">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td width="49%"><img src="../images/series1_dataimg.jpg" /></td>

@@ -220,9 +220,9 @@ function search(productType, query, typeIdCollection){
         alert(result.error.Message);
     }
 }
-function searchbytype(mt,st)
+function searchbytype(mt,st,hotted)
 {
-    var result = MyAjax.SearchClassType(mt,st);
+    var result = MyAjax.SearchClassType(mt,st,hotted);
     if (!result.error) {
         var list = result.value;
         
