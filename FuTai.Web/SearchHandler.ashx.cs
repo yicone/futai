@@ -98,6 +98,14 @@ namespace FuTai.Web
 
             return result;
         }
+
+        [AjaxPro.AjaxMethod]
+        public static object SearchProduct(string productId)
+        {
+            var result = Singleton<ProductBll>.Instance.SearchProduct(productId);
+            return result;
+        }
+
         [AjaxPro.AjaxMethod]
         public static object SearchClassType(string MainType,string SubType, bool Hotted)
         {

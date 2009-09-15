@@ -65,7 +65,7 @@
             for (var i=now;i<total;i++)
             {
                 var Pro=_productList[i];
-                TempHtml+='<li><img src="../images/product_img.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" /><p><a href="#">'+Pro["ProductId"]+'<br />';
+                TempHtml+='<li><img src="../images/product_img.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" /><p><a href="/ProductInfo.aspx?proid='+Pro["ProductId"]+'">'+Pro["ProductId"]+'<br />';
                 TempHtml+=Pro["ProductNick"]+' </a><br /><span class="redfont1">福泰实价: ￥'+Pro["Price"]+' </span></p></li>';
             }
             target.html(TempHtml);

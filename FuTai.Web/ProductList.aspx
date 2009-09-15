@@ -216,7 +216,7 @@
                 <img src="/images/product_img.jpg" />
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
-                    <a href="#"><strong>{$T.record.ProductId}</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.ProductId}"><strong>{$T.record.ProductId}</strong></a><br />
                     市场价:<span class="redfont1">¥{$T.record.Price}</span><br />
                     会员价:<span class="redfont1">¥{$T.record.Price}</span><br />
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
@@ -241,9 +241,9 @@
                 <img src="/images/product_img.jpg" />
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
-                    <a href="#"><strong>{$T.record.ProductId}</strong></a><br />
-                    男款:<span class="redfont1">¥{$T.record.Price0}</span><br />
-                    女款:<span class="redfont1">¥{$T.record.Price1}</span><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}"><strong>{$T.record.PairId}</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}">男款:<span class="redfont1">¥{$T.record.Price0}</span></a><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId1}">女款:<span class="redfont1">¥{$T.record.Price1}</span></a><br />
                     总价:<span class="redfont1">¥{$T.record.Price}</span><br />
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>

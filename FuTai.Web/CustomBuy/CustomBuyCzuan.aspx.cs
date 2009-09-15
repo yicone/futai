@@ -24,12 +24,6 @@ namespace FuTai.Web.CustomBuy
                 AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
                 string proid = Request["proid"];
                 string Type = Request["productType"];
-                if (proid != null)
-                {
-                    ShowPanel(3);
-                    this.InitInfo();
-                    return;
-                }
                 if (Type == "Diamond")
                 {
                     ShowPanel(1);
@@ -56,33 +50,25 @@ namespace FuTai.Web.CustomBuy
                     Ph_First.Visible = false;
                     Ph_Second.Visible = true;
                     Ph_SecondSub.Visible = false;
-                    Ph_Pinfo.Visible = false;
                     break;
                 case 2:
                     Ph_First.Visible = false;
                     Ph_Second.Visible = true;
                     Ph_SecondSub.Visible = false;
-                    Ph_Pinfo.Visible = false;
                     break;
                 case 3:
                     Ph_First.Visible = false;
                     Ph_Second.Visible = false;
                     Ph_SecondSub.Visible = false;
-                    Ph_Pinfo.Visible = true;
                     break;
                 case 4:
                     Ph_First.Visible = false;
                     Ph_Second.Visible = false;
                     Ph_SecondSub.Visible = true;
-                    Ph_Pinfo.Visible = false;
                     break;
                 default:
                     break;
             }
-        }
-        private void InitInfo()
-        { 
-            
         }
     }
 }

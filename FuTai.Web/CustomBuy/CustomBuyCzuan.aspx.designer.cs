@@ -102,23 +102,5 @@ namespace FuTai.Web.CustomBuy {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FuTai.Web.Controls.ucDataTable ucDataTable2;
-        
-        /// <summary>
-        /// Ph_Pinfo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder Ph_Pinfo;
-        
-        /// <summary>
-        /// ucLeft3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::FuTai.Web.Controls.ucLeft ucLeft3;
     }
 }

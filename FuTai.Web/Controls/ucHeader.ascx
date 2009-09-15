@@ -57,7 +57,7 @@
         <li><a id="PairRing" href="/ProductList.aspx?productType=PairRing">对 戒</a></li>
         <li><a id="DiamondOrnament" href="/ProductList.aspx?productType=DiamondOrnament">钻 饰</a></li>
         <li><a id="GoldOrnament" href="/ProductList.aspx?productType=GoldOrnament">金 饰</a></li>
-        <li><a id="Jewel" href="/ProductList.aspx?productType=Jewel">珠 宝</a></li>
+        <li><a id="Jewel" href="/ProductList.aspx?productType=Jewel">宝 石</a></li>
         <li><a id="JP" href="/HighLevelProduct.aspx">福泰精品</a></li>
         <li><a id="About" href="/About.aspx">关于福泰</a></li>
     </ul>
