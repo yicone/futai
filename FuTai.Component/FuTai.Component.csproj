@@ -82,6 +82,7 @@
     <Compile Include="LogHelper.cs" />
     <Compile Include="MailHelper.cs" />
     <Compile Include="PageUrl.cs" />
+    <Compile Include="ProductBll.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

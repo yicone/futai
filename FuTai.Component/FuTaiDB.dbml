@@ -16,7 +16,6 @@
       <Column Name="Symmetry" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="AH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Fluorescence" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="Diamond_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.DiamondGroup" Member="DiamondGroups">
@@ -40,7 +39,6 @@
       <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DiamondOrnament_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.DiamondRing" Member="DiamondRings">
@@ -51,7 +49,6 @@
       <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="otherDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="DiamondRing_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.GoldOrnament" Member="GoldOrnaments">
@@ -64,7 +61,6 @@
       <Column Name="gongfei" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="GoldOrnament_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.Jewel" Member="Jewels">
@@ -74,7 +70,6 @@
       <Column Name="RingType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="mainDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Jewel_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.PairRing" Member="PairRings">
@@ -85,7 +80,6 @@
       <Column Name="PairId" Type="System.String" DbType="Char(10)" CanBeNull="true" />
       <Column Name="Sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="PairRing_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.Product" Member="Products">
@@ -101,14 +95,7 @@
       <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MainType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Member="ProductNick" Type="System.String" CanBeNull="false" />
-      <Association Name="Diamond_Product" Member="Diamond" ThisKey="ProductId" Type="Diamond" IsForeignKey="true" />
-      <Association Name="DiamondOrnament_Product" Member="DiamondOrnament" ThisKey="ProductId" Type="DiamondOrnament" IsForeignKey="true" />
-      <Association Name="DiamondRing_Product" Member="DiamondRing" ThisKey="ProductId" Type="DiamondRing" IsForeignKey="true" />
-      <Association Name="GoldOrnament_Product" Member="GoldOrnament" ThisKey="ProductId" Type="GoldOrnament" IsForeignKey="true" />
-      <Association Name="Jewel_Product" Member="Jewel" ThisKey="ProductId" Type="Jewel" IsForeignKey="true" />
-      <Association Name="PairRing_Product" Member="PairRing" ThisKey="ProductId" Type="PairRing" IsForeignKey="true" />
-      <Association Name="RingBracket_Product" Member="RingBracket" ThisKey="ProductId" Type="RingBracket" IsForeignKey="true" />
+      <Column Name="ProductNick" Type="System.String" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.RingBracket" Member="RingBrackets">
@@ -121,7 +108,6 @@
       <Column Name="Type1" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Type2" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Craft" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Association Name="RingBracket_Product" Member="Products" OtherKey="ProductId" Type="Product" />
     </Type>
   </Table>
   <Table Name="dbo.[User]" Member="User">
@@ -330,10 +316,11 @@
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.search_SearchByType" Method="search_SearchByType">
+  <Function Name="dbo.search_SearchByType" Method="SearchByType">
     <Parameter Name="MType" Parameter="mType" Type="System.String" DbType="VarChar(20)" />
     <Parameter Name="SType" Parameter="sType" Type="System.String" DbType="VarChar(50)" />
-    <ElementType Name="search_SearchByTypeResult">
+    <Parameter Name="Hotted" Parameter="hotted" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="search_SearchByTypeResult1">
       <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
       <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
@@ -345,6 +332,8 @@
       <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MainType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductNick" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Hotted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

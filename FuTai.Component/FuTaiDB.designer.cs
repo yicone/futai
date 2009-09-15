@@ -247,10 +247,10 @@ namespace FuTai.Component
 		}
 		
 		[Function(Name="dbo.search_SearchByType")]
-		public ISingleResult<search_SearchByTypeResult> SearchByType([Parameter(Name="MType", DbType="VarChar(20)")] string mType, [Parameter(Name="SType", DbType="VarChar(50)")] string sType)
+		public ISingleResult<search_SearchByTypeResult1> SearchByType([Parameter(Name="MType", DbType="VarChar(20)")] string mType, [Parameter(Name="SType", DbType="VarChar(50)")] string sType, [Parameter(Name="Hotted", DbType="Bit")] System.Nullable<bool> hotted)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mType, sType);
-			return ((ISingleResult<search_SearchByTypeResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mType, sType, hotted);
+			return ((ISingleResult<search_SearchByTypeResult1>)(result.ReturnValue));
 		}
 	}
 	
@@ -286,8 +286,6 @@ namespace FuTai.Component
 		
 		private string _Fluorescence;
 		
-		private EntitySet<Product> _Products;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -322,7 +320,6 @@ namespace FuTai.Component
 		
 		public Diamond()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -586,19 +583,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="Diamond_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -617,18 +601,6 @@ namespace FuTai.Component
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Diamond = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Diamond = null;
 		}
 	}
 	
@@ -904,8 +876,6 @@ namespace FuTai.Component
 		
 		private System.Nullable<int> _Type2;
 		
-		private EntitySet<Product> _Products;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -926,7 +896,6 @@ namespace FuTai.Component
 		
 		public DiamondOrnament()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -1050,19 +1019,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="DiamondOrnament_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1081,18 +1037,6 @@ namespace FuTai.Component
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.DiamondOrnament = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.DiamondOrnament = null;
 		}
 	}
 	
@@ -1114,8 +1058,6 @@ namespace FuTai.Component
 		
 		private string _otherDiamondCarat;
 		
-		private EntitySet<Product> _Products;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1136,7 +1078,6 @@ namespace FuTai.Component
 		
 		public DiamondRing()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -1260,19 +1201,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="DiamondRing_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1291,18 +1219,6 @@ namespace FuTai.Component
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.DiamondRing = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.DiamondRing = null;
 		}
 	}
 	
@@ -1328,8 +1244,6 @@ namespace FuTai.Component
 		
 		private System.Nullable<int> _Type2;
 		
-		private EntitySet<Product> _Products;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1354,7 +1268,6 @@ namespace FuTai.Component
 		
 		public GoldOrnament()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -1518,19 +1431,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="GoldOrnament_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1550,18 +1450,6 @@ namespace FuTai.Component
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.GoldOrnament = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.GoldOrnament = null;
-		}
 	}
 	
 	[Table(Name="dbo.Jewel")]
@@ -1579,8 +1467,6 @@ namespace FuTai.Component
 		private string _mainDiamondCarat;
 		
 		private System.Nullable<int> _Type1;
-		
-		private EntitySet<Product> _Products;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1600,7 +1486,6 @@ namespace FuTai.Component
 		
 		public Jewel()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -1704,19 +1589,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="Jewel_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1735,18 +1607,6 @@ namespace FuTai.Component
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Jewel = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.Jewel = null;
 		}
 	}
 	
@@ -1768,8 +1628,6 @@ namespace FuTai.Component
 		
 		private System.Nullable<int> _Type1;
 		
-		private EntitySet<Product> _Products;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1790,7 +1648,6 @@ namespace FuTai.Component
 		
 		public PairRing()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -1914,19 +1771,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="PairRing_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1945,18 +1789,6 @@ namespace FuTai.Component
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.PairRing = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.PairRing = null;
 		}
 	}
 	
@@ -1990,20 +1822,6 @@ namespace FuTai.Component
 		
 		private string _ProductNick;
 		
-		private EntityRef<Diamond> _Diamond;
-		
-		private EntityRef<DiamondOrnament> _DiamondOrnament;
-		
-		private EntityRef<DiamondRing> _DiamondRing;
-		
-		private EntityRef<GoldOrnament> _GoldOrnament;
-		
-		private EntityRef<Jewel> _Jewel;
-		
-		private EntityRef<PairRing> _PairRing;
-		
-		private EntityRef<RingBracket> _RingBracket;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2036,13 +1854,6 @@ namespace FuTai.Component
 		
 		public Product()
 		{
-			this._Diamond = default(EntityRef<Diamond>);
-			this._DiamondOrnament = default(EntityRef<DiamondOrnament>);
-			this._DiamondRing = default(EntityRef<DiamondRing>);
-			this._GoldOrnament = default(EntityRef<GoldOrnament>);
-			this._Jewel = default(EntityRef<Jewel>);
-			this._PairRing = default(EntityRef<PairRing>);
-			this._RingBracket = default(EntityRef<RingBracket>);
 			OnCreated();
 		}
 		
@@ -2057,10 +1868,6 @@ namespace FuTai.Component
 			{
 				if ((this._ProductId != value))
 				{
-					if (this._Diamond.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
 					this.OnProductIdChanging(value);
 					this.SendPropertyChanging();
 					this._ProductId = value;
@@ -2269,8 +2076,8 @@ namespace FuTai.Component
 				}
 			}
 		}
-
-        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+		
+		[Column(Storage="_ProductNick", CanBeNull=false)]
 		public string ProductNick
 		{
 			get
@@ -2286,244 +2093,6 @@ namespace FuTai.Component
 					this._ProductNick = value;
 					this.SendPropertyChanged("ProductNick");
 					this.OnProductNickChanged();
-				}
-			}
-		}
-		
-		[Association(Name="Diamond_Product", Storage="_Diamond", ThisKey="ProductId", IsForeignKey=true)]
-		public Diamond Diamond
-		{
-			get
-			{
-				return this._Diamond.Entity;
-			}
-			set
-			{
-				Diamond previousValue = this._Diamond.Entity;
-				if (((previousValue != value) 
-							|| (this._Diamond.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Diamond.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._Diamond.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.DiamondID;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("Diamond");
-				}
-			}
-		}
-		
-		[Association(Name="DiamondOrnament_Product", Storage="_DiamondOrnament", ThisKey="ProductId", IsForeignKey=true)]
-		public DiamondOrnament DiamondOrnament
-		{
-			get
-			{
-				return this._DiamondOrnament.Entity;
-			}
-			set
-			{
-				DiamondOrnament previousValue = this._DiamondOrnament.Entity;
-				if (((previousValue != value) 
-							|| (this._DiamondOrnament.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DiamondOrnament.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._DiamondOrnament.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.DiamondOrnamentId;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("DiamondOrnament");
-				}
-			}
-		}
-		
-		[Association(Name="DiamondRing_Product", Storage="_DiamondRing", ThisKey="ProductId", IsForeignKey=true)]
-		public DiamondRing DiamondRing
-		{
-			get
-			{
-				return this._DiamondRing.Entity;
-			}
-			set
-			{
-				DiamondRing previousValue = this._DiamondRing.Entity;
-				if (((previousValue != value) 
-							|| (this._DiamondRing.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._DiamondRing.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._DiamondRing.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.DiamondRingId;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("DiamondRing");
-				}
-			}
-		}
-		
-		[Association(Name="GoldOrnament_Product", Storage="_GoldOrnament", ThisKey="ProductId", IsForeignKey=true)]
-		public GoldOrnament GoldOrnament
-		{
-			get
-			{
-				return this._GoldOrnament.Entity;
-			}
-			set
-			{
-				GoldOrnament previousValue = this._GoldOrnament.Entity;
-				if (((previousValue != value) 
-							|| (this._GoldOrnament.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._GoldOrnament.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._GoldOrnament.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.GoldOrnamentId;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("GoldOrnament");
-				}
-			}
-		}
-		
-		[Association(Name="Jewel_Product", Storage="_Jewel", ThisKey="ProductId", IsForeignKey=true)]
-		public Jewel Jewel
-		{
-			get
-			{
-				return this._Jewel.Entity;
-			}
-			set
-			{
-				Jewel previousValue = this._Jewel.Entity;
-				if (((previousValue != value) 
-							|| (this._Jewel.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Jewel.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._Jewel.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.JewelId;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("Jewel");
-				}
-			}
-		}
-		
-		[Association(Name="PairRing_Product", Storage="_PairRing", ThisKey="ProductId", IsForeignKey=true)]
-		public PairRing PairRing
-		{
-			get
-			{
-				return this._PairRing.Entity;
-			}
-			set
-			{
-				PairRing previousValue = this._PairRing.Entity;
-				if (((previousValue != value) 
-							|| (this._PairRing.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PairRing.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._PairRing.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.PairRingId;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("PairRing");
-				}
-			}
-		}
-		
-		[Association(Name="RingBracket_Product", Storage="_RingBracket", ThisKey="ProductId", IsForeignKey=true)]
-		public RingBracket RingBracket
-		{
-			get
-			{
-				return this._RingBracket.Entity;
-			}
-			set
-			{
-				RingBracket previousValue = this._RingBracket.Entity;
-				if (((previousValue != value) 
-							|| (this._RingBracket.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._RingBracket.Entity = null;
-						previousValue.Products.Remove(this);
-					}
-					this._RingBracket.Entity = value;
-					if ((value != null))
-					{
-						value.Products.Add(this);
-						this._ProductId = value.BracketId;
-					}
-					else
-					{
-						this._ProductId = default(string);
-					}
-					this.SendPropertyChanged("RingBracket");
 				}
 			}
 		}
@@ -2571,8 +2140,6 @@ namespace FuTai.Component
 		
 		private string _Craft;
 		
-		private EntitySet<Product> _Products;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2597,7 +2164,6 @@ namespace FuTai.Component
 		
 		public RingBracket()
 		{
-			this._Products = new EntitySet<Product>(new Action<Product>(this.attach_Products), new Action<Product>(this.detach_Products));
 			OnCreated();
 		}
 		
@@ -2761,19 +2327,6 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Association(Name="RingBracket_Product", Storage="_Products", OtherKey="ProductId")]
-		public EntitySet<Product> Products
-		{
-			get
-			{
-				return this._Products;
-			}
-			set
-			{
-				this._Products.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2792,18 +2345,6 @@ namespace FuTai.Component
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.RingBracket = this;
-		}
-		
-		private void detach_Products(Product entity)
-		{
-			this.SendPropertyChanging();
-			entity.RingBracket = null;
 		}
 	}
 	
@@ -5153,6 +4694,10 @@ namespace FuTai.Component
 	{
 		
 		private string _PairId;
+
+        private string _PairRingId0;
+
+        private string _PairRingId1;
 		
 		private System.Nullable<decimal> _Price;
 		
@@ -5185,7 +4730,39 @@ namespace FuTai.Component
 				}
 			}
 		}
-		
+
+        [Column(Storage = "_PairRingId0", DbType = "Char(10)")]
+        public string PairRingId0
+        {
+            get
+            {
+                return this._PairRingId0;
+            }
+            set
+            {
+                if ((this._PairRingId0 != value))
+                {
+                    this._PairRingId0 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_PairRingId1", DbType = "Char(10)")]
+        public string PairRingId1
+        {
+            get
+            {
+                return this._PairRingId1;
+            }
+            set
+            {
+                if ((this._PairRingId1 != value))
+                {
+                    this._PairRingId1 = value;
+                }
+            }
+        }
+
 		[Column(Storage="_Price", DbType="Money")]
 		public System.Nullable<decimal> Price
 		{
@@ -5283,7 +4860,7 @@ namespace FuTai.Component
 		}
 	}
 	
-	public partial class search_SearchByTypeResult
+	public partial class search_SearchByTypeResult1
 	{
 		
 		private string _ProductId;
@@ -5307,10 +4884,12 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
-
-        private string _ProductNick;
 		
-		public search_SearchByTypeResult()
+		private string _ProductNick;
+		
+		private System.Nullable<bool> _Hotted;
+		
+		public search_SearchByTypeResult1()
 		{
 		}
 		
@@ -5489,21 +5068,38 @@ namespace FuTai.Component
 				}
 			}
 		}
-        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
-        public string ProductNick
-        {
-            get
-            {
-                return this._ProductNick;
-            }
-            set
-            {
-                if ((this._ProductNick != value))
-                {
-                    this._ProductNick = value;
-                }
-            }
-        }
+		
+		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
+		public string ProductNick
+		{
+			get
+			{
+				return this._ProductNick;
+			}
+			set
+			{
+				if ((this._ProductNick != value))
+				{
+					this._ProductNick = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Hotted", DbType="Bit")]
+		public System.Nullable<bool> Hotted
+		{
+			get
+			{
+				return this._Hotted;
+			}
+			set
+			{
+				if ((this._Hotted != value))
+				{
+					this._Hotted = value;
+				}
+			}
+		}
 	}
 }
 #pragma warning restore 1591
