@@ -54,9 +54,12 @@
                     showPage(pageNo);
                 }
             });
+            $("#searchall").click(function(){    //搜索全部
+                searchProduct(true);
+            });
         });
 
-        function searchProduct() {
+        function searchProduct(all) {
             var typeIdCollection = [];
             $('div.TypeSelect').find('li a[class=""]').each(function() {
                 var typeId = $(this).attr('typeid');
@@ -68,7 +71,15 @@
             query.sort = $('a.sortnow').attr('sortfield');
             // TODO: 可能需要class来确定排序字段和升/降序
             //            query.order =
-
+            
+            if (all)  //搜索全部处理
+            {
+               typeIdCollection = [];
+               query = new Query();
+                $('div.TypeSelect').find('li a[class=""]').each(function() {
+                    $(this).addClass("grayfont1");
+                });
+            }
             var productType = '<%= this.ProductType %>';
             // 搜索. 搜索结果缓存到全局变量!
             _productList = search(productType, query, typeIdCollection);
@@ -157,7 +168,9 @@
                     <li><a href="javascript:void(0);" class="sort" sortfield="time">
                         <img width="71" height="22" src="/images/itemsearch_b2.gif" /></a></li>
                     <li><a href="javascript:void(0);" class="sort"  sortfield="price">
-                        <img width="48" height="22" src="/images/itemsearch_b3.gif" /></a></li></ul>
+                        <img width="48" height="22" src="/images/itemsearch_b3.gif" /></a></li>
+                    <li>
+                    <input type="button" value="查看全部" id="searchall" name="button2" class="btn1Style" style="cursor:pointer;" /></li></ul>
                 <p class="More">
                     <a class="Icon_gift" href="#">支持货到付款</a></p>
                 <div class="clearfix">

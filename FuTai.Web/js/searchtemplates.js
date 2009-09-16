@@ -144,7 +144,7 @@
             if (this.HasType2[0])
                 TempHtml+='<td>'+type2+'</td>';
             
-            TempHtml+='<td>'+Accacount+'</td><td>'+Location+'</td><td>'+Sprice+'</td><td><a target="_blank" href="/CustomBuy/CustomBuyCzuan.aspx?proid='+CurObj["ProductId"]+'">了解详情</a></td></tr>';
+            TempHtml+='<td>'+Accacount+'</td><td>'+Location+'</td><td>'+Sprice+'</td><td><a target="_blank" href="/ProductInfo.aspx?proid='+CurObj["ProductId"]+'">了解详情</a></td></tr>';
         }
         
         TempHtml+='</table>';

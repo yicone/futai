@@ -136,7 +136,7 @@
   <tr>
     <td colspan="2" align="left" valign="top"><asp:Button ID="ByHand" runat="server" CssClass="btn1Style" Text="手动输入条件" OnClick="ChangeType2" />&nbsp;&nbsp;
       <input type="button" class="btn1Style" value="重置" onclick="CustomOpt.InitPeo()" />
-      &nbsp;&nbsp;快速搜索：<a href="#" class="redl">克拉钻</a> <a href="#" class="redl">3EX钻</a> <a href="#" class="redl">30分钻</a> <a href="#" class="redl">50分钻</a> <a href="#" class="redl">国检钻石</a></td>
+      &nbsp;&nbsp;<input type="button" class="btn1Style" value="查看全部" onclick="CustomOpt.InitPeo();CustomMak.Search(CustomOpt);" /></td>
     </tr>
 </table>
 
@@ -227,9 +227,9 @@ VG
 EX</td>
                   </tr>
                   <tr>
-                    <td colspan="4"><asp:Button ID="Change_Manel" runat="server" CssClass="btn1Style" Text="滑块输入搜索" OnClick="ChangeType" />
+                    <td colspan="4"><asp:Button ID="Change_Manel" runat="server" CssClass="btn1Style" Text="滑块输入搜索" OnClick="ChangeType" />&nbsp;&nbsp;
                       <input type="button" name="button8" id="button16" class="btn1Style" value="重置" onclick="CustomOpt.InitPeoHigh()" />
-                    &nbsp;&nbsp;&nbsp;快捷搜索：<a href="#">克拉钻</a> <a href="#">3EX钻</a> <a href="#">30分钻</a> <a href="#">50分钻</a> <a href="#">国检钻石 </a></td>
+                    &nbsp;&nbsp;<input type="button" class="btn1Style" value="查看全部" onclick="CustomOpt.InitPeo();CustomMak.Search(CustomOpt);" /></td>
                   </tr>
                 </table>
               </div>

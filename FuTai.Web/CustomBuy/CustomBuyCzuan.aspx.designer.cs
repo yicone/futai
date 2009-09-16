@@ -47,7 +47,7 @@ namespace FuTai.Web.CustomBuy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FuTai.Web.Controls.ucLeft ucLeft;
+        protected global::System.Web.UI.UserControl ucLeft;
         
         /// <summary>
         /// ByHand control.
@@ -83,7 +83,7 @@ namespace FuTai.Web.CustomBuy {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FuTai.Web.Controls.ucLeft ucLeft2;
+        protected global::System.Web.UI.UserControl ucLeft2;
         
         /// <summary>
         /// Change_Manel control.

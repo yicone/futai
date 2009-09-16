@@ -111,15 +111,19 @@
                     <td height="24" colspan="2"><strong>戒指结构：</strong></td>
                   </tr>
                   <tr>
+                    <td width="160" height="24">材质：{$T.info.ConProduct.RingType}</td>
+                    <td></td>
+                  </tr>
+                  <tr>
                     <td width="160" height="24">主宝名称：{$T.info.ConProduct.JewelType}</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">主宝重量：{$T.info.ConProduct.mainDiamondCarat}千克</td>
+                    <td width="160" height="24">主宝重量：{$T.info.ConProduct.mainDiamondCarat}克</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝名称：{$T.info.ConProduct.RingType}</td>
+                    <td width="160" height="24">副宝名称：</td>
                     <td></td>
                   </tr>
                   <tr>
@@ -163,13 +167,13 @@
             <div class="cont">
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                  <td width="322" valign="top"><p><img src="../images/custom_productimg2.jpg" width="288" height="214" /></p>
+                  <td width="310" valign="top"><p><img src="../images/custom_productimg2.jpg" width="288" height="214" /></p>
                   <p>&nbsp;</p>
                   <p>
                     <input type="submit" name="button4" id="Submit1" class="btn1Style" value="发送给好友" />
                     <input type="submit" name="button5" id="Submit2" class="btn1Style" value="收藏" />
                   </p></td>
-                  <td width="350" valign="top" align="left">
+                  <td width="320" valign="top" align="left">
                     <p style="line-height:23px; padding-bottom:10px">市场价：¥{$T.info.Product.Price*1.2} <br />
                     福泰价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span></p>
                     <p style="line-height:23px;"> <strong>主要参数: </strong><br />
@@ -211,7 +215,7 @@
                 </tr>
                 <tr>
                   <td><p><strong>主要参数: </strong></p>
-                    <table width="400" border="0" cellpadding="0" cellspacing="0">
+                    <table width="380" border="0" cellpadding="0" cellspacing="0">
                       <tr>
                         <td width="50%" height="30">钻石重量：{$T.info.ConProduct.Carat}克拉</td>
                         <td>钻石颜色：{$T.info.ConProduct.Color} </td>
@@ -305,6 +309,12 @@
                     <td width="160" height="24">所在地：{$T.info.Product.Location}</td>
                     <td></td>
                   </tr>
+                  
+                  <tr>
+                    <td width="160" height="24">材质：{$T.info.ConProduct.MetalType}
+                </td>
+                    <td></td>
+                  </tr>
                 </table>
                 <div class="hr"></div>
                 <table border="0" cellspacing="0" cellpadding="0">
@@ -317,7 +327,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝名称：{$T.info.ConProduct.MetalType}
+                    <td width="160" height="24">副宝名称：
                 </td>
                     <td></td>
                   </tr>
@@ -397,6 +407,11 @@
                     <td width="160" height="24">所在地：{$T.info.Product.Location}</td>
                     <td></td>
                   </tr>
+                  <tr>
+                    <td width="160" height="24">材质：{$T.info.ConProduct.RingType}
+                </td>
+                    <td></td>
+                  </tr>
                 </table>
                 <div class="hr"></div>
                 <table border="0" cellspacing="0" cellpadding="0">
@@ -409,7 +424,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝名称：{$T.info.ConProduct.RingType}
+                    <td width="160" height="24">副宝名称：
                 </td>
                     <td></td>
                   </tr>
@@ -489,6 +504,10 @@
                     <td width="160" height="24">所在地：{$T.info.Product.Location}</td>
                     <td></td>
                   </tr>
+                  <tr>
+                    <td width="160" height="24">材质：{$T.info.ConProduct.RingType}</td>
+                    <td></td>
+                  </tr>
                 </table>
                 <div class="hr"></div>
                 <h3>产品图片<a name="b"></a></h3>
@@ -553,6 +572,10 @@
                   </tr>
                   <tr>
                     <td width="160" height="24">所在地：{$T.info.Product.Location}</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td width="160" height="24">材质：{$T.info.ConProduct.RingType}</td>
                     <td></td>
                   </tr>
                   <tr>
@@ -629,6 +652,10 @@
                   </tr>
                   <tr>
                     <td width="160" height="24">所在地：{$T.info.Product.Location}</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td width="160" height="24">材质：{$T.info.ConProduct.RingType}</td>
                     <td></td>
                   </tr>
                 </table>
