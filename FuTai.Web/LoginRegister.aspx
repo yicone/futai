@@ -56,7 +56,7 @@
                 $('#textfield3').error('邮箱格式不正确');
                 return false;
             } else {
-                var r = MyAjax.CheckEmailExists(email);
+                var r = BaseAjax.CheckEmailExists(email);
                 var exists = r.value;
                 if (exists) {
                     $('#textfield3').error('邮箱已存在');
@@ -84,7 +84,7 @@
                 $('#textfield6').error('昵称应为4-10个字符');
                 return false;
             } else {
-                var r = MyAjax.CheckNicknameExists(nickname);
+                var r = BaseAjax.CheckNicknameExists(nickname);
                 var exists = r.value;
                 if (exists) {
                     $('#textfield6').error('昵称已存在');
@@ -121,7 +121,7 @@
             
             var pass = validateLogon();
             if (pass) {
-                var r = MyAjax.Register(email, nickname, password);
+                var r = BaseAjax.Register(email, nickname, password);
                 if (r.error) {
                     alert(r.error.Message);
                 }
@@ -129,7 +129,7 @@
                 {
                     $("#ph_Login").hide();
                     $("#ph_Suceed").show();
-                    MyAjax.Login(email, password);
+                    BaseAjax.Login(email, password);
 					$("#CTime").text("5");
 					setTimeout("TimeCount()",1000);
                 }
@@ -154,7 +154,7 @@
 
             var pass = validateLogin();
             if (pass) {
-                var r = MyAjax.Login(emailOrNickname, password);
+                var r = BaseAjax.Login(emailOrNickname, password);
                 if (r.error) {
                     alert(r.error.Message);
                 }
@@ -166,6 +166,11 @@
                     alert('登录失败, 请重试');
                 }
             }
+        }
+        function TxtLogin(evt)
+        {
+            if (evt.keyCode=="13")
+                $("#button4").click();
         }
     </script>
 
@@ -207,7 +212,7 @@
                                 <td width="25%"> E-mail或昵称：                                </td>
                           <td width="75%">
 <label>
-                                        <input type="text" name="textfield" id="textfield" />
+                                        <input type="text" name="textfield" id="textfield" onkeydown="TxtLogin(event)" />
                                     </label>
                                 </td>
                           </tr>
@@ -216,7 +221,7 @@
                                     登录密码：
                                 </td>
                                 <td>
-                                    <input type="password" name="textfield2" id="textfield2" />
+                                    <input type="password" name="textfield2" id="textfield2" onkeydown="TxtLogin(event)"  />
                                 </td>
                             </tr>
                             <tr>
@@ -236,7 +241,7 @@
                             </tr>
                             <tr>
                                 <td height="70" align="center">
-                                    <input type="submit" name="button2" id="button2" class="btn1Style" value=" 支付宝用户登录 " />
+                                    <input type="button" name="button2" id="button2" class="btn1Style" value=" 支付宝用户登录 " />
                                 </td>
                             </tr>
                         </table>
@@ -401,8 +406,8 @@
                                 
                             </td>
                             <td colspan="2">
-                                <input type="submit" name="button2" id="Submit1" class="btn1Style" value=" 提交 " />
-                                <input type="submit" name="button4" id="Submit2" class="btn1Style" value="清空内容" />
+                                <input type="button" name="button2" id="Submit1" class="btn1Style" value=" 提交 " />
+                                <input type="button" name="button4" id="Submit2" class="btn1Style" value="清空内容" />
                             </td>
                         </tr>
                     </table>

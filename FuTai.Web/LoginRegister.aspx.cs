@@ -5,12 +5,19 @@ using System.Web;
 
 namespace FuTai.Web
 {
-    [AjaxNamespace("MyAjax")]
+    [AjaxNamespace("BaseAjax")]
     public partial class LoginRegister : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
             AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+        }
+
+        protected override void OnError(EventArgs e)
+        {
+            var ex = Server.GetLastError();
+            LogHelper.LogException(ex);
+            Server.Transfer(PageUrl.ErrorPage);
         }
 
         [AjaxMethod]
@@ -51,6 +58,26 @@ namespace FuTai.Web
         {
             var exists = Singleton<UserBll>.Instance.CheckEmailExists(email);
             return exists;
+        }
+
+        [AjaxMethod]
+        public User GetLoginUser()
+        {
+            if (Session != null && Session["CurrentUser"] != null)
+            {
+                return (User)Session["CurrentUser"];
+            }
+
+            return null;
+        }
+
+        [AjaxMethod]
+        public void Logout()
+        {
+            if (Session != null && Session["CurrentUser"] != null)
+            {
+                Session["CurrentUser"] = null;
+            }
         }
     }
 }

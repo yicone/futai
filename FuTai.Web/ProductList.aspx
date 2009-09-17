@@ -23,7 +23,7 @@
             // 默认选中分类中的第一项
             //$('div.TypeSelect ul').find('li:first a').attr('class', '');
 
-            searchProduct();
+            setTimeout("searchProduct()",200);
 
             $('#button2').click(function() {
                 searchProduct();
@@ -89,12 +89,11 @@
             if (_pageCount < 0) _pageCount = 0;
 
             if(productType != "PairRing"){
-                renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+                renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize});
             }else{
                 $('#product-list').attr('id', 'pairring-list');
                 renderTemplate('pairring-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
             }
-
             $('li.pager').text('1/' + _pageCount);
         }
 
@@ -116,7 +115,7 @@
 
             var pageBegin = (pageNo - 1) * _pageSize;
             
-            renderTemplate('product-list', { 'productList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize });
+            renderTemplate('product-list', { 'productList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize});
         }
 
         function switchType($link) {
@@ -231,7 +230,7 @@
                 <p>
                     <a href="/ProductInfo.aspx?proid={$T.record.ProductId}"><strong>{$T.record.ProductId}</strong></a><br />
                     市场价:<span class="redfont1">¥{$T.record.Price}</span><br />
-                    会员价:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    福泰价:<span class="redfont1">¥{parseInt($T.record.Price*$T.record.DiscountType/100)}</span><br />
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>

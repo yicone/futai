@@ -366,6 +366,7 @@
     <Content Include="MenuList.xml" />
     <Content Include="ProductInfo.aspx" />
     <Content Include="SearchHigh.aspx" />
+    <Content Include="UserAccount.xml" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
   <ItemGroup>

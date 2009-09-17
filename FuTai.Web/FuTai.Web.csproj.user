@@ -26,6 +26,7 @@
           </StartWorkingDirectory>
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
+          <UseIIS>False</UseIIS>
           <EnableWcfTestClientForSVC>False</EnableWcfTestClientForSVC>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>

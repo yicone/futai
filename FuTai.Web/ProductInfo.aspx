@@ -7,37 +7,41 @@
     <script type="text/javascript" src="/js/jquery.jtemplates-0.7.5.pack.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            setTimeout("ShowProduct()",200);
+        });
+        function ShowProduct()
+        {
             var result = MyAjax.SearchProduct('<%= this.ProductId %>');
             if(!result.error){
                 var productType = result.value.Product.ProductType;
                 switch(productType.toLowerCase()){
                     case "diamond":
                         $('#productinfo').attr('id', 'diamond');
-                        renderTemplate('diamond',{ 'info': result.value});
+                        renderTemplate('diamond',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     case "ringbracket":
                         $('#productinfo').attr('id', 'ringbracket');
-                        renderTemplate('ringbracket',{ 'info': result.value});
+                        renderTemplate('ringbracket',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     case "diamondring":
                         $('#productinfo').attr('id', 'diamondring');
-                        renderTemplate('diamondring',{ 'info': result.value});
+                        renderTemplate('diamondring',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     case "pairring":
                         $('#productinfo').attr('id', 'pairring');
-                        renderTemplate('pairring',{ 'info': result.value});
+                        renderTemplate('pairring',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     case "diamondornament":
                         $('#productinfo').attr('id', 'diamondornament');
-                        renderTemplate('diamondornament',{ 'info': result.value});
+                        renderTemplate('diamondornament',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     case "goldornament":
                         $('#productinfo').attr('id', 'goldornament');
-                        renderTemplate('goldornament',{ 'info': result.value});
+                        renderTemplate('goldornament',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     case "jewel":
                         $('#productinfo').attr('id', 'jewel');
-                        renderTemplate('jewel',{ 'info': result.value});
+                        renderTemplate('jewel',{ 'info': result.value,'islogin':IsLogin});
                         break;
                     default:
                         break;
@@ -45,7 +49,7 @@
             }else{
                 alert(result.error.Message);
             }
-        });
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="cphContent">
@@ -76,8 +80,14 @@
                       <td width="300" valign="top">
                       	<div class="product_img"><img src="../images/custom_img.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
-                      <td valign="top" class="product_detail">福泰价格：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
-款号：{$T.info.Product.FTId}<br /><br /><br /><br /><br />
+                      <td valign="top" class="product_detail">
+                      市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+                      福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
+                      {#if $T.islogin==true}
+                      会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
+                      {#/if}
+                      款号：{$T.info.Product.FTId}
+                      <br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
   <input type="button" name="button2" id="button2" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
@@ -174,8 +184,12 @@
                     <input type="submit" name="button5" id="Submit2" class="btn1Style" value="收藏" />
                   </p></td>
                   <td width="320" valign="top" align="left">
-                    <p style="line-height:23px; padding-bottom:10px">市场价：¥{$T.info.Product.Price*1.2} <br />
-                    福泰价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span></p>
+                    <p style="line-height:23px; padding-bottom:10px">市场价：¥{$T.info.Product.Price} <br />
+                    福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span>
+                    {#if $T.islogin==true}
+                      <br />会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
+                      {#/if}
+                    </p>
                     <p style="line-height:23px;"> <strong>主要参数: </strong><br />
                       钻石重量：{$T.info.ConProduct.Carat}克拉  &nbsp;&nbsp;  净度：{$T.info.ConProduct.Clarity} <br />
                   钻石切工：{$T.info.ConProduct.Cut}        &nbsp;&nbsp;     颜色：{$T.info.ConProduct.Color}<br />
@@ -280,8 +294,12 @@
                       	<div class="product_img"><img src="../images/custom_img.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-福泰价格：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
-款号：<span class="redfont1"><strong>{$T.info.Product.ProductId}</strong></span>
+市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
+{#if $T.islogin==true}
+会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
+{#/if}
+款号：{$T.info.Product.ProductId}</span>
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
@@ -378,8 +396,12 @@
                       	<div class="product_img"><img src="../images/custom_img.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-福泰价格：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
-款号：<span class="redfont1"><strong>{$T.info.Product.ProductId}</strong></span>
+市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
+{#if $T.islogin==true}
+会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
+{#/if}
+款号：{$T.info.Product.ProductId}</span>
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
@@ -475,8 +497,12 @@
                       	<div class="product_img"><img src="../images/custom_img.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-福泰价格：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
-款号：<span class="redfont1"><strong>{$T.info.Product.ProductId}</strong></span>
+市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
+{#if $T.islogin==true}
+会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
+{#/if}
+款号：{$T.info.Product.ProductId}
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
@@ -545,8 +571,12 @@
                       	<div class="product_img"><img src="../images/custom_img.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-福泰价格：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
-款号：<span class="redfont1"><strong>{$T.info.Product.ProductId}</strong></span>
+市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
+{#if $T.islogin==true}
+会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
+{#/if}
+款号：{$T.info.Product.ProductId}</span>
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">

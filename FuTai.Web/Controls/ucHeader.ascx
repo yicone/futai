@@ -22,9 +22,14 @@
         if (!r.error) {
             var user = r.value;
             if (user) {
+                IsLogin=true;
+                GetUserAcc(user.Authority);
                 $('#linkLogin').text('欢迎你, ' + user.NickName).attr('href', '/');
                 $('#linkLogon').text('注销').attr('href', '/LogoutPage.aspx').attr('id', 'linkLogout');
             }
+            else
+                IsLogin=false;
+                
         }
     
         $('#linkLogout').click(function() {
@@ -36,6 +41,24 @@
             return false;
         });
     });
+    function GetUserAcc(usertype)
+    {
+        $.ajax({
+            url:"/UserAccount.xml",
+            type:"get",
+            dataType:"xml",
+            success:function(data)
+            {
+                $("Utype",data).each(function(){
+                    if ($(this).attr("type")==usertype)
+                    {
+                        UserAccNum=parseFloat($(this).attr("account"));
+                        return;
+                    }
+                });
+            }
+        });
+    }
 </script>
 <div class="head">
     <div class="logo">

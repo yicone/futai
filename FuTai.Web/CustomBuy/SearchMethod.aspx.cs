@@ -78,7 +78,7 @@ namespace FuTai.Web.CustomBuy
                 while(Dr.Read())
                 {
                     Response.Write("<Mes>");
-                    Response.Write("<id>" + Dr.GetValue(0) + "</id><weight>" + Dr.GetValue(1).ToString() + "</weight><clean>" + Dr.GetValue(2).ToString() + "</clean><color>" + Dr.GetValue(3).ToString() + "</color><cut>" + Dr.GetValue(4).ToString() + "</cut><polish>"+Dr.GetValue(5)+"</polish><sym>"+Dr.GetValue(6)+"</sym><fluo>"+Dr.GetValue(7)+"</fluo><price>"+Dr.GetValue(8)+"</price>");
+                    Response.Write("<id>" + Dr.GetValue(0) + "</id><weight>" + Dr.GetValue(1).ToString() + "</weight><clean>" + Dr.GetValue(2).ToString() + "</clean><color>" + Dr.GetValue(3).ToString() + "</color><cut>" + Dr.GetValue(4).ToString() + "</cut><polish>" + Dr.GetValue(5) + "</polish><sym>" + Dr.GetValue(6) + "</sym><fluo>" + Dr.GetValue(7) + "</fluo><price>" + Dr.GetValue(8) + "</price><Discount>" + Dr.GetValue(9) + "</Discount>");
                     Response.Write("</Mes>");
                 }
             }
@@ -95,7 +95,7 @@ namespace FuTai.Web.CustomBuy
         }
         private string MakeString(Dictionary<string, string[]> consql)
         {
-            StringBuilder SqlWord = new StringBuilder("select top 10 DiamondId,Carat,Clarity,Color,Cut,Polish,Symmetry,Fluorescence,p.Price from Diamond Di INNER JOIN Product p ON Di.DiamondID=p.ProductId where ");
+            StringBuilder SqlWord = new StringBuilder("select top 10 DiamondId,Carat,Clarity,Color,Cut,Polish,Symmetry,Fluorescence,p.Price,p.DiscountType from Diamond Di INNER JOIN Product p ON Di.DiamondID=p.ProductId where ");
             string Pid = ((string[])consql["page"])[0];
             string NotInCon = "DiamondId Not IN (select top " + (int.Parse(Pid) - 1) * 10 + " DiamondId from Diamond";
             string TempCon="";
