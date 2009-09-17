@@ -27,8 +27,11 @@ namespace FuTai.Component
                         Authority = (int)UserAuthority.Web
                     };
 
-                DataContext.User.InsertOnSubmit(user);
-                DataContext.SubmitChanges();
+                using (var context = BaseBll.DataContext)
+                {
+                    context.User.InsertOnSubmit(user);
+                    context.SubmitChanges();
+                }
 
                 SendActiveCode(user.UserId);
             }
