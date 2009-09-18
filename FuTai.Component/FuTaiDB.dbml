@@ -95,7 +95,9 @@
       <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MainType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ProductNick" Type="System.String" CanBeNull="false" />
+      <Column Name="ProductNick" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Hotted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ImgSrc" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.RingBracket" Member="RingBrackets">

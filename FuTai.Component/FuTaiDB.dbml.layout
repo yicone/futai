@@ -44,10 +44,10 @@
         <elementListCompartment Id="0c81369e-053e-4a0f-ab89-5a4340ca7388" absoluteBounds="0.76500000059604645, 11.08500000089407, 1.9700000000000002, 1.2255859375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a682c4e1-beba-4201-9693-4570e3901447" absoluteBounds="3.5, 1, 2, 2.7973046875">
+    <classShape Id="a682c4e1-beba-4201-9693-4570e3901447" absoluteBounds="3.5, 1, 2, 3.1345442708333326">
       <DataClassMoniker Name="/FuTaiDBDataContext/Product" />
       <nestedChildShapes>
-        <elementListCompartment Id="195e5464-6a2b-49b6-abaa-c992326f3b1a" absoluteBounds="3.5150000005960464, 1.4600000008940697, 1.9700000000000002, 2.2373046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="195e5464-6a2b-49b6-abaa-c992326f3b1a" absoluteBounds="3.5150000005960464, 1.4600000008940697, 1.9700000000000002, 2.574544270833333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="216bc5d8-9a8b-45b4-8d48-b138a9d8d4df" absoluteBounds="0.75, 16.375, 2, 2.1228255208333344">

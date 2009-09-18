@@ -1822,6 +1822,10 @@ namespace FuTai.Component
 		
 		private string _ProductNick;
 		
+		private System.Nullable<bool> _Hotted;
+		
+		private string _ImgSrc;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1850,6 +1854,10 @@ namespace FuTai.Component
     partial void OnSubTypeChanged();
     partial void OnProductNickChanging(string value);
     partial void OnProductNickChanged();
+    partial void OnHottedChanging(System.Nullable<bool> value);
+    partial void OnHottedChanged();
+    partial void OnImgSrcChanging(string value);
+    partial void OnImgSrcChanged();
     #endregion
 		
 		public Product()
@@ -2077,7 +2085,7 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Column(Storage="_ProductNick", CanBeNull=false)]
+		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
 		public string ProductNick
 		{
 			get
@@ -2093,6 +2101,46 @@ namespace FuTai.Component
 					this._ProductNick = value;
 					this.SendPropertyChanged("ProductNick");
 					this.OnProductNickChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Hotted", DbType="Bit")]
+		public System.Nullable<bool> Hotted
+		{
+			get
+			{
+				return this._Hotted;
+			}
+			set
+			{
+				if ((this._Hotted != value))
+				{
+					this.OnHottedChanging(value);
+					this.SendPropertyChanging();
+					this._Hotted = value;
+					this.SendPropertyChanged("Hotted");
+					this.OnHottedChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ImgSrc", DbType="VarChar(30)")]
+		public string ImgSrc
+		{
+			get
+			{
+				return this._ImgSrc;
+			}
+			set
+			{
+				if ((this._ImgSrc != value))
+				{
+					this.OnImgSrcChanging(value);
+					this.SendPropertyChanging();
+					this._ImgSrc = value;
+					this.SendPropertyChanged("ImgSrc");
+					this.OnImgSrcChanged();
 				}
 			}
 		}
@@ -2666,6 +2714,8 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
+
+        private string _ImgSrc;
 		
 		public search_SearchRingBracketResult()
 		{
@@ -2974,6 +3024,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchDiamondResult
@@ -3026,6 +3092,8 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
+
+        private string _ImgSrc;
 		
 		public search_SearchDiamondResult()
 		{
@@ -3414,6 +3482,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchDiamondOrnamentResult
@@ -3452,6 +3536,8 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
+
+        private string _ImgSrc;
 		
 		public search_SearchDiamondOrnamentResult()
 		{
@@ -3728,6 +3814,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchDiamondRingResult
@@ -3766,6 +3868,8 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
+
+        private string _ImgSrc;
 		
 		public search_SearchDiamondRingResult()
 		{
@@ -4042,6 +4146,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchGoldOrnamentResult
@@ -4084,6 +4204,8 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
+
+        private string _ImgSrc;
 		
 		public search_SearchGoldOrnamentResult()
 		{
@@ -4392,6 +4514,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchJewelResult
@@ -4428,6 +4566,8 @@ namespace FuTai.Component
 		private string _MainType;
 		
 		private string _SubType;
+
+        private string _ImgSrc;
 		
 		public search_SearchJewelResult()
 		{
@@ -4688,6 +4828,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchPairRingResult
@@ -4710,6 +4866,8 @@ namespace FuTai.Component
 		private System.Nullable<decimal> _Price1;
 		
 		private System.Nullable<System.DateTime> _CreateDate;
+
+        private string _ImgSrc;
 		
 		public search_SearchPairRingResult()
 		{
@@ -4762,7 +4920,7 @@ namespace FuTai.Component
                 }
             }
         }
-
+		
 		[Column(Storage="_Price", DbType="Money")]
 		public System.Nullable<decimal> Price
 		{
@@ -4858,6 +5016,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 	
 	public partial class search_SearchByTypeResult1
@@ -4888,6 +5062,8 @@ namespace FuTai.Component
 		private string _ProductNick;
 		
 		private System.Nullable<bool> _Hotted;
+
+        private string _ImgSrc;
 		
 		public search_SearchByTypeResult1()
 		{
@@ -5100,6 +5276,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(30)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 	}
 }
 #pragma warning restore 1591
