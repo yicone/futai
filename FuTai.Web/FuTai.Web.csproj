@@ -2,8 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
-
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -319,7 +318,6 @@
     <Content Include="images\pageselect_left.gif" />
     <Content Include="images\pageselect_next.gif" />
     <Content Include="images\product_ad1.jpg" />
-    <Content Include="images\product_img.jpg" />
     <Content Include="images\searchintro.gif" />
     <Content Include="images\top_nav.jpg" />
     <Content Include="js\chili-1.7.pack.js" />
@@ -359,7 +357,63 @@
   <ItemGroup>
     <Content Include="Controls\ucDataTable.ascx" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
+    <Content Include="images\aboutft_bg.jpg" />
+    <Content Include="images\btn_buy.gif" />
+    <Content Include="images\cart_img.jpg" />
+    <Content Include="images\classic_bg.jpg" />
+    <Content Include="images\classic_dataimg1.jpg" />
+    <Content Include="images\classic_dataimg2.jpg" />
+    <Content Include="images\classic_dataimg3.jpg" />
+    <Content Include="images\custom_ad.jpg" />
+    <Content Include="images\custom_btn1.jpg" />
+    <Content Include="images\custom_btn2.jpg" />
+    <Content Include="images\custom_getimg.jpg" />
+    <Content Include="images\custom_img1.jpg" />
+    <Content Include="images\custom_img2.jpg" />
+    <Content Include="images\custom_imgbg.gif" />
+    <Content Include="images\custom_listbtn1.jpg" />
+    <Content Include="images\custom_listbtn2.jpg" />
+    <Content Include="images\custom_listbtn3.jpg" />
+    <Content Include="images\custom_listitem.gif" />
+    <Content Include="images\custom_productimg2.jpg" />
+    <Content Include="images\custom_step1.jpg" />
+    <Content Include="images\custom_step2.jpg" />
+    <Content Include="images\custom_step3.jpg" />
+    <Content Include="images\inner_hr2.gif" />
+    <Content Include="images\inner_hr2.jpg" />
+    <Content Include="images\inner_hr3.gif" />
+    <Content Include="images\inner_tabselect2_btn.gif" />
+    <Content Include="images\inner_tabselect2_now.gif" />
+    <Content Include="images\kuanhaoRing.jpg" />
+    <Content Include="images\kuanhaoRingBig.jpg" />
+    <Content Include="images\kuanhaoRingHot.jpg" />
+    <Content Include="images\kuanhaoRingMid.jpg" />
+    <Content Include="images\loadinfo_net.gif" />
+    <Content Include="images\lxxbar_01.jpg" />
+    <Content Include="images\lxxbar_02.jpg" />
+    <Content Include="images\lxxbar_03.jpg" />
+    <Content Include="images\lxxbar_04.jpg" />
+    <Content Include="images\myaccount_img.jpg" />
+    <Content Include="images\myaccount_table.gif" />
+    <Content Include="images\norimg.jpg" />
+    <Content Include="images\nowimg.jpg" />
+    <Content Include="images\school_boxbg.jpg" />
+    <Content Include="images\school_dataimg1.jpg" />
+    <Content Include="images\school_dataimg2.jpg" />
+    <Content Include="images\school_dataimg3.jpg" />
+    <Content Include="images\school_dataimg4.jpg" />
+    <Content Include="images\school_detailimg.jpg" />
+    <Content Include="images\series_ad1.jpg" />
+    <Content Include="images\series_ad2.jpg" />
+    <Content Include="images\series_ad3.jpg" />
+    <Content Include="images\step1_btn.gif" />
+    <Content Include="images\v_hr.jpg" />
     <Content Include="images\wrongbg.gif" />
+    <Content Include="images\XXbar_01.jpg" />
+    <Content Include="images\XXbar_02.jpg" />
+    <Content Include="images\XXbar_03.jpg" />
+    <Content Include="images\XXbar_04.jpg" />
+    <Content Include="images\XXbar_05.jpg" />
     <Content Include="js\ajaxpro.js" />
     <Content Include="js\jquery.error-1.0.0.js" />
     <Content Include="js\searchtemplates.js" />
