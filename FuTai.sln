@@ -7,8 +7,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuTai.Admin", "FuTai.Admin\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuTai.Component", "FuTai.Component\FuTai.Component.csproj", "{5084CE4B-31F6-495D-9774-9DB1435EBFD3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{F3723B75-790E-4DF2-94D1-7521374A3E97}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E911CA2C-6D43-4E86-839E-06002EAEAD3E}"
 	ProjectSection(SolutionItems) = preProject
+		DataBase\FuTaiDBDoc.sqldoc = DataBase\FuTaiDBDoc.sqldoc
 		字典.txt = 字典.txt
 		开发日志.txt = 开发日志.txt
 		开发规范.txt = 开发规范.txt
