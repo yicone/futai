@@ -33,3 +33,9 @@ http://jquery.com/
 
 jTemplate doc: (当前版本: 0.7.8)
 http://jtemplates.tpython.com/
+
+2009-09-20 02:57
+
+note: SSMS 2008 在Windows 7环境中附加数据库时, 使用管理员运行无效, 尝试后得出需要用Windows验证方式连接, 而不能以SQL验证方式连接
+update: 更新了dbml文件
+doc: 整理了数据库文档(使用SQL Doc 2). MS Word版: FuTaiDBDoc.doc		HTML版: FuTaiDBDoc/main.html 
