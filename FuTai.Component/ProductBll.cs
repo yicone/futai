@@ -22,7 +22,7 @@ namespace FuTai.Component
 
             using (var dataContext = DataContext)
             {
-                var a = from p in dataContext.Products
+                var a = from p in dataContext.Product
                         where p.ProductId == productId
                         select p;
 
@@ -37,7 +37,7 @@ namespace FuTai.Component
                 switch (productType)
                 {
                     case "Diamond":
-                        var j1 = from d in dataContext.Diamonds
+                        var j1 = from d in dataContext.Diamond
                                  where d.DiamondID == productId
                                  select d;
 
@@ -45,7 +45,7 @@ namespace FuTai.Component
                         result.ConProduct = diamond;
                         break;
                     case "DiamondOrnament":
-                        var j2 = from d in dataContext.DiamondOrnaments
+                        var j2 = from d in dataContext.DiamondOrnament
                                  where d.DiamondOrnamentId == productId
                                  select d;
 
@@ -53,7 +53,7 @@ namespace FuTai.Component
                         result.ConProduct = (diamondOrnament);
                         break;
                     case "DiamondRing":
-                        var j3 = from d in dataContext.DiamondRings
+                        var j3 = from d in dataContext.DiamondRing
                                  where d.DiamondRingId == productId
                                  select d;
 
@@ -61,7 +61,7 @@ namespace FuTai.Component
                         result.ConProduct = (diamondRing);
                         break;
                     case "Jewel":
-                        var j4 = from d in dataContext.Jewels
+                        var j4 = from d in dataContext.Jewel
                                  where d.JewelId == productId
                                  select d;
 
@@ -69,7 +69,7 @@ namespace FuTai.Component
                         result.ConProduct = (jewel);
                         break;
                     case "PairRing":
-                        var j5 = from d in dataContext.PairRings
+                        var j5 = from d in dataContext.PairRing
                                  where d.PairRingId == productId
                                  select d;
 
@@ -77,7 +77,7 @@ namespace FuTai.Component
                         result.ConProduct = (pairRing);
                         break;
                     case "RingBracket":
-                        var j6 = from d in dataContext.RingBrackets
+                        var j6 = from d in dataContext.RingBracket
                                  where d.BracketId == productId
                                  select d;
 
@@ -85,7 +85,7 @@ namespace FuTai.Component
                         result.ConProduct = (ringBracket);
                         break;
                     case "GoldOrnament":
-                        var j7 = from d in dataContext.GoldOrnaments
+                        var j7 = from d in dataContext.GoldOrnament
                                  where d.GoldOrnamentId == productId
                                  select d;
 
