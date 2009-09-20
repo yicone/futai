@@ -78,7 +78,7 @@
                   <table width="100%" border="0" cellspacing="5" cellpadding="0">
                     <tr>
                       <td width="300" valign="top">
-                      	<div class="product_img"><img src="../images/kuanhao{$T.info.Product.ImgSrc}Mid.jpg" width="180" height="180" /></div>
+                      	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
                       市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
@@ -133,15 +133,15 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝名称：</td>
+                    <td width="160" height="24">副宝名称：{$T.info.ConProduct.otherDiamondname}</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝重量：</td>
+                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝颗粒数：</td>
+                    <td width="160" height="24">副宝颗粒数：{$T.info.ConProduct.otherDiamondshu}颗</td>
                     <td></td>
                   </tr>
                 </table>
@@ -149,7 +149,7 @@
                 <h3>产品图片<a name="b"></a></h3>
                 <div class="inner_hr"></div>
                 <p align="center">
-                <img src="../images/kuanhao{$T.info.Product.ImgSrc}Big.jpg" width="580" height="497" /> </p>
+                <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
@@ -291,7 +291,7 @@
                   <table width="100%" border="0" cellspacing="5" cellpadding="0">
                     <tr>
                       <td width="300" valign="top">
-                      	<div class="product_img"><img src="../images/kuanhao{$T.info.Product.ImgSrc}Mid.jpg" width="180" height="180" /></div>
+                      	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
 市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
@@ -345,17 +345,17 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝名称：
+                    <td width="160" height="24">副宝名称：{$T.info.ConProduct.otherDiamondname}
                 </td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝重量：
+                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克
                 </td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝颗粒数：
+                    <td width="160" height="24">副宝颗粒数：{$T.info.ConProduct.otherDiamondshu}颗
                 </td>
                     <td></td>
                   </tr>
@@ -364,7 +364,7 @@
                 <h3>产品图片<a name="b"></a></h3>
                 <div class="inner_hr"></div>
                 <p align="center">
-                <img src="../images/kuanhao{$T.info.Product.ImgSrc}Big.jpg" width="580" height="497" /> </p>
+                <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
@@ -393,7 +393,7 @@
                   <table width="100%" border="0" cellspacing="5" cellpadding="0">
                     <tr>
                       <td width="300" valign="top">
-                      	<div class="product_img"><img src="../images/kuanhao{$T.info.Product.ImgSrc}Mid.jpg" width="180" height="180" /></div>
+                      	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
 市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
@@ -446,17 +446,17 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝名称：
+                    <td width="160" height="24">副宝名称：{$T.info.ConProduct.otherDiamondname}
                 </td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}
+                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克
                 </td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝颗粒数：
+                    <td width="160" height="24">副宝颗粒数：{$T.info.ConProduct.otherDiamondshu}颗
                 </td>
                     <td></td>
                   </tr>
@@ -465,7 +465,7 @@
                 <h3>产品图片<a name="b"></a></h3>
                 <div class="inner_hr"></div>
                 <p align="center">
-                <img src="../images/kuanhao{$T.info.Product.ImgSrc}Big.jpg" width="580" height="497" /> </p>
+                <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
@@ -494,7 +494,7 @@
                   <table width="100%" border="0" cellspacing="5" cellpadding="0">
                     <tr>
                       <td width="300" valign="top">
-                      	<div class="product_img"><img src="../images/kuanhao{$T.info.Product.ImgSrc}Mid.jpg" width="180" height="180" /></div>
+                      	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
 市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
@@ -539,7 +539,7 @@
                 <h3>产品图片<a name="b"></a></h3>
                 <div class="inner_hr"></div>
                 <p align="center">
-                <img src="../images/kuanhao{$T.info.Product.ImgSrc}Big.jpg" width="580" height="497" /> </p>
+                <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
@@ -568,7 +568,7 @@
                   <table width="100%" border="0" cellspacing="5" cellpadding="0">
                     <tr>
                       <td width="300" valign="top">
-                      	<div class="product_img"><img src="../images/kuanhao{$T.info.Product.ImgSrc}Mid.jpg" width="180" height="180" /></div>
+                      	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
 市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
@@ -609,11 +609,11 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">金重：</td>
+                    <td width="160" height="24">金重：{$T.info.ConProduct.Goldweight}克</td>
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">主宝重：{$T.info.Product.mainDiamondCarat}</td>
+                    <td width="160" height="24">主宝重：{$T.info.Product.mainDiamondCarat}克</td>
                     <td></td>
                   </tr>
                 </table>
@@ -621,7 +621,7 @@
                 <h3>产品图片<a name="b"></a></h3>
                 <div class="inner_hr"></div>
                 <p align="center">
-                <img src="../images/kuanhao{$T.info.Product.ImgSrc}Big.jpg" width="580" height="497" /> </p>
+                <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
@@ -650,7 +650,7 @@
                   <table width="100%" border="0" cellspacing="5" cellpadding="0">
                     <tr>
                       <td width="300" valign="top">
-                      	<div class="product_img"><img src="../images/kuanhao{$T.info.Product.ImgSrc}Mid.jpg" width="180" height="180" /></div>
+                      	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">款号：<span class="redfont1"><strong>{$T.info.Product.ProductId}</strong></span><br />
 金重：{$T.info.ConProduct.Goldweight}<br />
@@ -693,7 +693,7 @@
                 <h3>产品图片<a name="b"></a></h3>
                 <div class="inner_hr"></div>
                 <p align="center">
-                <img src="../images/kuanhao{$T.info.Product.ImgSrc}Big.jpg" width="580" height="497" /> </p>
+                <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>

@@ -225,7 +225,7 @@
         <ul class="inner_list1">
         {#/if}
              <li>
-                <img src="/images/kuanhao{$T.record.ImgSrc}.jpg" />
+                <img src="/images/productImg/{$T.record.kuanhao}.jpg" width="128" height="121" />
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
                     <a href="/ProductInfo.aspx?proid={$T.record.ProductId}"><strong>{$T.record.ProductId}</strong></a><br />
@@ -250,7 +250,7 @@
         <ul class="inner_list1">
         {#/if}
              <li>
-                <img src="/images/kuanhao{$T.record.ImgSrc}.jpg" />
+                <img src="/images/productImg/{$T.record.ImgSrc}.jpg" width="128" height="121" />
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
                     <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}"><strong>{$T.record.PairId}</strong></a><br />
