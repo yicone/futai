@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+
+.experience_left
+{
+	width:510px; float:left;
+}
+
+.experience_right
+{
+	float:right; width:190px;
+}
+
+.experience_shop img
+{
+	display:block;
+}
+
+.experience_shop p
+{
+	line-height:60px; font-size:14px; padding-left:20px;border-top:1px solid #BDAC8E;
+}
+
+.experience_shop,.experience_map,.experience_intro,.experience_add,.experience_intro img
+{
+	border:1px solid #BDAC8E;
+}
+
+.experience_intro img,.experience_intro p
+{
+	width:170px; margin-top:10px; margin-left:8px;
+}
+
+.experience_add
+{
+	padding:5px 10px; height:370px;
+}

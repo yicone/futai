@@ -656,7 +656,7 @@
 金重：{$T.info.ConProduct.Goldweight}<br />
 金价：<span class="redfont1"><strong>¥{$T.info.ConProduct.Goldprice}</strong></span><br />
 工费：{$T.info.ConProduct.gongfei}<br />
-价格：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span>
+价格：<span class="redfont1"><strong>¥{parseInt(parseFloat($T.info.ConProduct.Goldweight)*parseFloat($T.info.ConProduct.Goldprice)*parseFloat($T.info.ConProduct.gongfei))}</strong></span>
 <br /><br />
 <div class="inner_hr2"></div>
 <p align="center">

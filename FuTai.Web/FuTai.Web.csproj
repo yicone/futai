@@ -146,12 +146,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HandShow\HandShow.aspx.cs">
+      <DependentUpon>HandShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HandShow\HandShow.aspx.designer.cs">
+      <DependentUpon>HandShow.aspx</DependentUpon>
+    </Compile>
     <Compile Include="HighLevelProduct.aspx.cs">
       <DependentUpon>HighLevelProduct.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HighLevelProduct.aspx.designer.cs">
       <DependentUpon>HighLevelProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="School\Ceif.aspx.cs">
+      <DependentUpon>Ceif.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="School\Ceif.aspx.designer.cs">
+      <DependentUpon>Ceif.aspx</DependentUpon>
     </Compile>
     <Compile Include="PayMent\InfoDesposite.aspx.cs">
       <DependentUpon>InfoDesposite.aspx</DependentUpon>
@@ -356,8 +370,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controls\ucDataTable.ascx" />
+    <Content Include="style\experience.css" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
+    <Content Include="HandShow\HandShow.aspx" />
     <Content Include="images\aboutft_bg.jpg" />
+    <Content Include="images\bottomlist_btn1.jpg" />
+    <Content Include="images\bottomlist_btn2.jpg" />
+    <Content Include="images\bottomlist_btn3.jpg" />
     <Content Include="images\btn_buy.gif" />
     <Content Include="images\cart_img.jpg" />
     <Content Include="images\classic_bg.jpg" />
@@ -379,16 +398,31 @@
     <Content Include="images\custom_step1.jpg" />
     <Content Include="images\custom_step2.jpg" />
     <Content Include="images\custom_step3.jpg" />
+    <Content Include="images\experience_intro.jpg" />
+    <Content Include="images\experience_map.jpg" />
+    <Content Include="images\experience_shop.gif" />
+    <Content Include="images\experience_shop.jpg" />
+    <Content Include="images\handshow_pic1.jpg" />
+    <Content Include="images\handshow_pic2.jpg" />
+    <Content Include="images\handshow_pic3.jpg" />
+    <Content Include="images\handshow_pic4.jpg" />
+    <Content Include="images\handshow_pic5.jpg" />
+    <Content Include="images\huanranchongsheng_pic1.jpg" />
+    <Content Include="images\huanranchongsheng_pic2.jpg" />
     <Content Include="images\inner_hr2.gif" />
     <Content Include="images\inner_hr2.jpg" />
     <Content Include="images\inner_hr3.gif" />
     <Content Include="images\inner_tabselect2_btn.gif" />
     <Content Include="images\inner_tabselect2_now.gif" />
+    <Content Include="images\i_buybtn_c.gif" />
+    <Content Include="images\jiumaoxinyan_pic1.jpg" />
+    <Content Include="images\jiumaoxinyan_pic2.jpg" />
     <Content Include="images\JS广告.jpg" />
     <Content Include="images\kuanhao.jpg" />
     <Content Include="images\kuanhaoHot.jpg" />
     <Content Include="images\kuanhaoRingBig.jpg" />
     <Content Include="images\kuanhaoRingMid.jpg" />
+    <Content Include="images\laitu_pic.jpg" />
     <Content Include="images\loadinfo_net.gif" />
     <Content Include="images\lxxbar_01.jpg" />
     <Content Include="images\lxxbar_02.jpg" />
@@ -416,6 +450,17 @@
     <Content Include="images\school_dataimg3.jpg" />
     <Content Include="images\school_dataimg4.jpg" />
     <Content Include="images\school_detailimg.jpg" />
+    <Content Include="images\school_ysbs1.jpg" />
+    <Content Include="images\school_ysbs2.jpg" />
+    <Content Include="images\school_ysbs3.jpg" />
+    <Content Include="images\school_zs1.gif" />
+    <Content Include="images\school_zs2.gif" />
+    <Content Include="images\school_zs3.gif" />
+    <Content Include="images\school_zs4.gif" />
+    <Content Include="images\school_zs5.gif" />
+    <Content Include="images\school_zs6.gif" />
+    <Content Include="images\school_zs7.gif" />
+    <Content Include="images\school_zs8.gif" />
     <Content Include="images\series_ad1.jpg" />
     <Content Include="images\series_ad2.jpg" />
     <Content Include="images\series_ad3.jpg" />
@@ -427,6 +472,7 @@
     <Content Include="images\XXbar_03.jpg" />
     <Content Include="images\XXbar_04.jpg" />
     <Content Include="images\XXbar_05.jpg" />
+    <Content Include="School\Ceif.aspx" />
     <Content Include="js\ajaxpro.js" />
     <Content Include="js\jquery.error-1.0.0.js" />
     <Content Include="js\searchtemplates.js" />

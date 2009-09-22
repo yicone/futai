@@ -118,8 +118,8 @@
       <Column Name="otherDiamondname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="otherDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="otherDiamondshu" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="gongfei" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="Goldweight" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="gongfei" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Goldweight" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Goldprice" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>

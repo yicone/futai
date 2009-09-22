@@ -311,6 +311,10 @@ border:1px solid #BEAC8D; font-size:12px;
 	width:160px; float:left; margin-right:15px; #margin-right:20px; display:inline;
 }
 
+.AddInfo .buybtn
+{
+	margin:0 auto; margin-bottom:3px;
+}
 .bottomMenuLst
 {
 	float:left; width:83px; padding:10px 32px; display:inline; border-left:1px solid #BCAA86;
@@ -326,6 +330,15 @@ border:1px solid #BEAC8D; font-size:12px;
 	background:url(../images/blacksquare.gif) no-repeat left; padding-left:10px; background-position:0 5px;
 } 
 
+.bottomMenuLst2
+{
+	padding:0px 6px; padding-right:0px;
+}
+
+.bottomMenuLst2 li
+{
+	float:left; padding-right:12px;
+}
 .copyright
 {
 	color:#68553A; line-height:20px;

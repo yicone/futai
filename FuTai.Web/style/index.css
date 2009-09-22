@@ -142,6 +142,11 @@ p,li,td
 	padding-top:45px; padding-left:20px;
 }
 
+.customBox a.buybtn
+{
+	font-size:12px; margin:0 auto; margin-top:3px; background:url(../images/i_buybtn_c.gif);
+}
+
 .pLink
 {
 	border:1px solid #FFF;

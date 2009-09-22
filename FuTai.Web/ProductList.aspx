@@ -229,8 +229,13 @@
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
                     <a href="/ProductInfo.aspx?proid={$T.record.ProductId}"><strong>{$T.record.ProductId}</strong></a><br />
+        {#if $T.record.ProductType=="GoldOrnament"}  
+                    金重:<span class="redfont1">¥{$T.record.Goldweight}</span><br />
+                    工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />   
+        {#else}      
                     市场价:<span class="redfont1">¥{$T.record.Price}</span><br />
                     福泰价:<span class="redfont1">¥{parseInt($T.record.Price*$T.record.DiscountType/100)}</span><br />
+        {#/if}             
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>
@@ -254,9 +259,14 @@
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
                     <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}"><strong>{$T.record.PairId}</strong></a><br />
+        {#if $T.record.Type1==1}  
+                    金重:<span class="redfont1">¥{$T.record.GoldWeight}</span><br />
+                    工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />
+        {#else}           
                     <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}">男款:<span class="redfont1">¥{$T.record.Price0}</span></a><br />
                     <a href="/ProductInfo.aspx?proid={$T.record.PairRingId1}">女款:<span class="redfont1">¥{$T.record.Price1}</span></a><br />
                     总价:<span class="redfont1">¥{$T.record.Price}</span><br />
+        {#/if}
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>

@@ -64,7 +64,7 @@ background:url(../images/inner_hr3.gif) no-repeat center; height:15px; overflow:
 
 .inner_list1 li
 {
-float:left; width:33%; height:260px;
+float:left; width:33%; min-height:250px; padding-bottom:10px; _height:250px;
 }
 
 .inner_list1 li img
@@ -74,7 +74,7 @@ display:block; margin:0 auto;
 
 .inner_list1 li p
 {
-text-align:center; line-height:22px;
+text-align:center; line-height:22px; padding-left:8px; padding-right:8px;
 }
 
 .fdjbtn
@@ -220,5 +220,54 @@ margin:0; height:500px; overflow:hidden;
 .NewSerBar ul li{ float:left; display:inline; width:660px} 
 .NewSerBar ul li select{ width:90px; vertical-align:middle}
 .NewSerBar ul li.Go{ width:30px; padding-left:5px}
+.handshow_left
+{
+	float:left; width:460px; 
+}
+
+.handshow_left_num
+{
+	float:left; width:100px; padding-top:10px;
+}
+
+.handshow_left .buybtn
+{
+	margin:0 auto;
+}
+
+.handshow_right
+{
+	float:right; width:240px;
+}
+
+.buybtn
+{
+	background:url(../images/i_buybtn.gif); display:block; width:71px; height:21px; text-align:center; line-height:21px; margin-top:5px;
+}
+
+.handshow_list li
+{
+	padding:15px; background:#ECE8DF; border-bottom:1px dashed #A0A0A0;
+}
+
+.handshow_list img
+{
+	float:left;
+}
+
+.handshow_list p
+{
+	line-height:16px; float:left; width:100px; margin-left:10px;
+}
+
+.handshow_ad
+{
+	padding:13px; padding-bottom:0;background:#ECE8DF;
+}
+
+.handshow_ad li
+{
+	  padding-bottom:13px;
+}
 
 .relative{ position:relative;}

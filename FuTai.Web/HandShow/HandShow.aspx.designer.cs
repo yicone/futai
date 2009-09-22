@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FuTai.Web {
+namespace FuTai.Web.HandShow {
     
     
-    public partial class ProductList {
+    public partial class HandShow {
         
         /// <summary>
-        /// ucLeft 控件。
+        /// ucLeft1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FuTai.Web.Controls.ucLeft ucLeft;
+        protected global::FuTai.Web.Controls.ucLeft ucLeft1;
     }
 }

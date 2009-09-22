@@ -43,7 +43,17 @@
 
 .school_detail h4
 {
-	padding-top:10px;
+	padding-top:10px; padding-bottom:5px;
+}
+
+.school_detail h5
+{
+	padding-top:5px; padding-bottom:5px; font-size:12px; color:#626262;
+}
+
+.school_detail p.noindent,.school_detail div.noindent p
+{
+	text-indent:0;
 }
 
 .school_cont1 img

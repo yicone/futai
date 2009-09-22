@@ -1,15 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
+using System.Configuration;
+using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
-using AjaxPro;
-using FuTai.Component;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
 
-namespace FuTai.Web
+namespace FuTai.Web.HandShow
 {
-    public partial class Default : BasePage
+    public partial class HandShow : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
