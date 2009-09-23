@@ -134,7 +134,7 @@ p,li,td
 
 .customBox
 {
-	background:url(../images/i_customBox.jpg); border:1px solid #FFF; height:156px;
+	background:url(../images/i_customBox.jpg) no-repeat #c0c0c0 ; border:1px solid #FFF; height:166px;
 }
 
 .customBox ul

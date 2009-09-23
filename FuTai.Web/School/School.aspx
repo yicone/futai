@@ -10,88 +10,107 @@
     <uc1:ucLeft ID="ucLeft" runat="server" />
 <div class="inner_main">
         <div class="SiteMap">
-          <p><a href="#">首页</a> > 福泰学院</p>
+          <p><a href="/Default.aspx">首页</a> > 福泰学院</p>
         </div>
         <div class="school_left">
         <div class="box1">
-          <h2><span>钻石知识：</span></h2>
+          <h2><span>钻石：</span></h2>
           <div class="cont school_detail">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
               <tr>
-                <td width="50%"><strong><a href="SchoolProfile.aspx?fileid=净度">[净度]</a></strong>：包括两部分，即宝... </td>
-                <td width="50%"><strong><a href="SchoolProfile.aspx?fileid=切工">[切工]</a></strong>：即钻石切割和抛光... <br /></td>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 钻石的含义及历史             </a><br />
+                </strong></td>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 钻石的4C             </a></strong></td>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 证书</a></strong></td>
               </tr>
               <tr>
-                <td><strong><a href="SchoolProfile.aspx?fileid=颜色">[颜色]</a></strong>：钻石相当于一个棱... </td>
-                <td><strong><a href="SchoolProfile.aspx?fileid=重量">[重量]</a></strong>：钻石重量以Carat... </td>
-              </tr>
-              <tr>
-                <td><strong><a href="SchoolProfile.aspx?fileid=证书">[证书]</a></strong>：GIA,IGI... </td>
+                <td><a href="/School/SchoolProfile.aspx?field=zhuanshi"><strong>&gt; 钻石的形成</strong>（开采，打磨） </a></td>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 钻石的肉眼鉴定</a></strong></td>
                 <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 钻石的保养</a></strong></td>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 彩钻</a></strong></td>
+                <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 异型钻</a></strong></td>
               </tr>
             </table>
           </div>
         </div>
           <div class="box1">
-            <h2><span>钻石知识：</span></h2>
+            <h2><span>翡翠：</span></h2>
             <div class="cont school_cont1">
-                	<img src="../images/school_dataimg1.jpg" />
-                    <p><strong>[镀金]</strong><br />
-镀金（银）根据材质的不同分为两类，一类是同质材料
-的镀金（银），指对黄金（银）的表面处理；另一类为
-异质材料的镀金（银）... </p>
-<div class="clearfix"></div>
-              <div class="inner_hr2"></div>
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td>如何鉴别铂金与类似金属？              </td>
-                    <td>18K,G750,铂金这几种有什么区别? <br /></td>
-                  </tr>
-                  <tr>
-                    <td>铂金饰品的标识.                       </td>
-                    <td>世界上最稀有的贵金属——铂金</td>
-                  </tr>
-                </table>
-            </div>
-          </div>
-          <div class="box1">
-            <h2><span>钻石知识：</span></h2>
-            <div class="cont school_cont1"> <img src="../images/school_dataimg1.jpg" alt="" />
-              <p><strong>[镀金]</strong><br />
-                镀金（银）根据材质的不同分为两类，一类是同质材料
-                的镀金（银），指对黄金（银）的表面处理；另一类为
-                异质材料的镀金（银）... </p>
-              <div class="clearfix"></div>
-              <div class="inner_hr2"></div>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
-                  <td>如何鉴别铂金与类似金属？ </td>
-                  <td>18K,G750,铂金这几种有什么区别? <br /></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=feicui">&gt; 翡翠的矿物组成 </a><br />
+                  </strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=feicui">&gt; 翡翠的特性：</a></strong><a href="#">结构；颜色、光泽</a></td>
                 </tr>
                 <tr>
-                  <td>铂金饰品的标识. </td>
-                  <td>世界上最稀有的贵金属——铂金</td>
+                  <td><a href="/School/SchoolProfile.aspx?field=feicui"><strong>&gt; 鉴别</strong>（翠性、颜色、光泽、ABC货）</a></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=feicui">&gt; 相似玉石的鉴别</a></strong></td>
+                </tr>
+                <tr>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=feicui">&gt; 翡翠的保养</a></strong></td>
+                  <td>&nbsp;</td>
                 </tr>
               </table>
             </div>
           </div>
           <div class="box1">
-            <h2><span>钻石知识：</span></h2>
-            <div class="cont school_cont1"> <img src="../images/school_dataimg1.jpg" alt="" />
-              <p><strong>[镀金]</strong><br />
-                镀金（银）根据材质的不同分为两类，一类是同质材料
-                的镀金（银），指对黄金（银）的表面处理；另一类为
-                异质材料的镀金（银）... </p>
-              <div class="clearfix"></div>
-              <div class="inner_hr2"></div>
-              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <h2><span>珍珠：</span></h2>
+            <div class="cont school_cont1">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
-                  <td>如何鉴别铂金与类似金属？ </td>
-                  <td>18K,G750,铂金这几种有什么区别? <br /></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=ZhenZhu">&gt; 简介</a><br />
+                  </strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=ZhenZhu">&gt; 珍珠的结构</a></strong></td>
                 </tr>
                 <tr>
-                  <td>铂金饰品的标识. </td>
-                  <td>世界上最稀有的贵金属——铂金</td>
+                  <td colspan="2"><strong><a href="/School/SchoolProfile.aspx?field=ZhenZhu">&gt; 平直鉴别：颜色、光泽  天然、养殖鉴别</a></strong></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><strong><a href="/School/SchoolProfile.aspx?field=ZhenZhu">&gt; 珍珠质量评价分级</a></strong><a href="#">（颜色、大小、形状、光泽） </a></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><strong><a href="/School/SchoolProfile.aspx?field=ZhenZhu">&gt; 珍珠的保养</a></strong></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="box1">
+            <h2><span>有色宝石：</span></h2>
+            <div class="cont school_cont1">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
+                <tr>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=ColorfulJewel">&gt; 红蓝宝石简介</a><br />
+                  </strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=ColorfulJewel"> &gt; 红蓝宝的品质分级        </a></strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=ColorfulJewel">&gt; 红蓝宝的产地</a></strong></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="box1">
+            <h2><span>素金：</span></h2>
+            <div class="cont school_cont1">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
+                <tr>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold">&gt; 红蓝宝石简介</a><br />
+                  </strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold"> &gt; 红蓝宝的品质分级 </a></strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold">&gt; 红蓝宝的产地</a></strong></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="box1">
+            <h2><span>首饰选择和佩带：</span></h2>
+            <div class="cont school_cont1">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
+                <tr>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Player">&gt; 分类</a><br />
+                  </strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Player"> &gt; 保养 </a></strong></td>
                 </tr>
               </table>
             </div>

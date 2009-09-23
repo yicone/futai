@@ -27,8 +27,42 @@ namespace FuTai.Web.School
             if (!IsPostBack)
             {
                 AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
-                keyword = Request.QueryString["fileid"];
-                this.KeyWord = keyword;
+                keyword = Request.QueryString["field"];
+                ShowPanel(keyword);
+            }
+        }
+        private void ShowPanel(string kword)
+        {
+            switch (kword)
+            { 
+                case "zhuanshi":
+                    this.KeyWord = "钻石";
+                    Diamond.Visible = true;
+                    break;
+                case "feicui":
+                    this.KeyWord = "翡翠";
+                    FeiCui.Visible = true;
+                    break;
+                case "ZhenZhu":
+                    this.KeyWord = "珍珠";
+                    ZhenZhu.Visible = true;
+                    break;
+                case "ColorfulJewel":
+                    this.KeyWord = "有色宝石";
+                    ColorfulJewel.Visible = true;
+                    break;
+                case "Gold":
+                    this.KeyWord = "素金";
+                    Gold.Visible = true;
+                    break;
+                case "Player":
+                    this.KeyWord = "首饰选择和佩戴";
+                    FeiCui.Visible = true;
+                    break;
+                default:
+                    this.KeyWord = "钻石";
+                    Diamond.Visible = true;
+                    break;
             }
         }
     }

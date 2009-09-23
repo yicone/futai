@@ -195,7 +195,7 @@
     </div>
     <div class="right">
         <div class="addInfo">
-            <img src="dataimg/add_img.jpg" />
+            <a href="/NewIntro/NewExperience.aspx" target="_blank"><img src="dataimg/add_img.jpg" /></a>
             <p>
                 <strong><a href="#">置地广场旗舰店<br />
                     地址：南京东路步行街<br />
@@ -211,14 +211,15 @@
                 <li><a href="#">3,国际名师精工镶嵌</a></li>
                 <li><a href="#">4,铭刻属于你的印记</a></li>
             </ul>
+            <a href="#" class="buybtn">立刻订购</a>
         </div>
         <div class="hr">
         </div>
         <ul class="pLink">
-            <li><a href="/CustomBuy/CustomBuyCzuan.aspx">
-                <img src="images/i_rnavimg1.jpg" /><span>来料定制</span></a></li><li><a href="#">
-                    <img src="images/i_rnavimg2.jpg" /><span>来图定制</span></a></li><li><a href="#">
-                        <img src="images/i_rnavimg3.jpg" /><span>破损重生</span></a></li><li><a href="#">
+            <li><a href="/School/CustomMake.aspx?type=Custom">
+                <img src="images/i_rnavimg1.jpg" /><span>来料定制</span></a></li><li><a href="/School/CustomMake.aspx?type=CustomImg">
+                    <img src="images/i_rnavimg2.jpg" /><span>来图定制</span></a></li><li><a href="/School/CustomMake.aspx?type=ReAlive">
+                        <img src="images/i_rnavimg3.jpg" /><span>破损重生</span></a></li><li><a href="/School/CustomMake.aspx?type=OldNew">
                             <img src="images/i_rnavimg4.jpg" /><span>以旧换新</span></a></li>
         </ul>
         <div class="hr">

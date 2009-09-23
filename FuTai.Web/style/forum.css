@@ -38,8 +38,10 @@
 
 .school_detail p
 {
-	text-indent:2em; line-height:18px; padding:10px 0; line-height:25px;
+	text-indent:2em; padding:10px 0; line-height:25px;
 }
+
+.DeTb tr td{ line-height:25px;}
 
 .school_detail h4
 {

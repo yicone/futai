@@ -28,7 +28,7 @@
                             html += "<td>" + $("sym", this).text() + "</td>";
                             var DisCount=parseFloat(parseInt($("Discount",this).text())/100);
                             html += "<td>GIA</td><td>"+parseInt($("price",this).text())+"</td><td>"+parseInt(parseInt($("price",this).text())*DisCount)+"</td>";
-                            html += "<td><input type='button' class='btn1Style' value='详细' onclick='location=\"/ProductInfo.aspx?proid=" + $("id", this).text() + "\"' /></td>";
+                            html += "<td><a target='_blank' href='/ProductInfo.aspx?proid=" + $("id", this).text() + "'>了解详细</a></td>";
                             html += "</tr>";
                             $target.html($target.html() + html);
                         });
