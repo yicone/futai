@@ -83,8 +83,8 @@
             <h3>
                 一钻双证</h3>
             <div style="padding-top: 10px;">
-                <a href="/School/Ceif.aspx" target="_blank"><img height="93" width="60" style="margin-right: 15px;" src="/dataimg/zhen.gif" /><img
-                    height="93" width="60" src="/dataimg/zhen.gif" /></a></div>
+                <a href="/School/Ceif.aspx" target="_blank"><img height="93" width="60" style="margin-right: 15px;" src="/images/zhen.gif" /><img
+                    height="93" width="60" src="/images/zhen1.gif" /></a></div>
             <div class="hr2">
             </div>
             <h3>

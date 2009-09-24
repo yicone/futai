@@ -15,9 +15,44 @@ namespace FuTai.Web.NewIntro
 {
     public partial class NewExperience : BasePage
     {
+        public string Kword;
         protected void Page_Load(object sender, EventArgs e)
         {
-            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+            if (!IsPostBack)
+            {
+                AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+                ShowPanel(Request.QueryString["type"]);
+            }
+        }
+        private void ShowPanel(string type)
+        {
+            switch (type)
+            { 
+                case "Contact":
+                    Kword = "联系我们";
+                    Pa_Contact.Visible =true;
+                    break;
+                case "VIP":
+                    Kword = "会员制度";
+                    Pa_VIP.Visible = true;
+                    break;
+                case "Pay":
+                    Kword = "关于支付";
+                    Pa_Pay.Visible = true;
+                    break;
+                case "Help":
+                    Kword = "帮助中心";
+                    Pa_Help.Visible = true;
+                    break;
+                case "Promise":
+                    Kword = "百年承诺";
+                    Pa_Promise.Visible = true;
+                    break;
+                default:
+                    Kword = "联系我们";
+                    Pa_Contact.Visible = true;
+                    break;
+            }
         }
     }
 }

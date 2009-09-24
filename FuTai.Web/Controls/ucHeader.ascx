@@ -66,7 +66,7 @@
     <div class="userMenu">
         <p>
             <a id="linkLogin" href="/LoginRegister.aspx">登录</a>|<a id="linkLogon" href="/LoginRegister.aspx">注册</a>|<a href="/Account/MyAccount.aspx">我的帐户</a>|<a href="/ProduceCart.aspx">购物车</a>|<a
-                href="#">个性定制订单查询</a>|<a href="#">帮助中心</a>|<a href="#">体验中心</a></p>
+                href="#">个性定制订单查询</a>|<a href="/NewIntro/NewExperience.aspx?type=Help" target="_blank">帮助中心</a>|<a href="#">体验中心</a></p>
     </div>
     <div class="bookNum">
         <img src="/images/booknum.jpg" /></div>

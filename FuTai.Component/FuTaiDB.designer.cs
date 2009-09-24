@@ -4329,6 +4329,8 @@ namespace FuTai.Component
 		private string _ProductId;
 		
 		private string _ProductType;
+
+        private string _ImgSrc;
 		
 		private string _FTId;
 		
@@ -4387,6 +4389,22 @@ namespace FuTai.Component
 				}
 			}
 		}
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(20)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 		
 		[Column(Storage="_FTId", DbType="VarChar(20)")]
 		public string FTId

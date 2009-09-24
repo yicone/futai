@@ -270,4 +270,16 @@ margin:0; height:500px; overflow:hidden;
 	  padding-bottom:13px;
 }
 
+.helptable td p
+{
+	text-align:center; text-indent:0;
+}
 .relative{ position:relative;}
+.question_list a strong
+{
+	display:block; background:url(../images/faq_q.gif) no-repeat left; padding-left:30px;
+}
+
+.question_list .answer {
+	background:url(../images/faq_a1.gif) top left no-repeat; padding-left:30px; display:none;
+}

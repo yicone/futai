@@ -8,22 +8,22 @@
     <td align="center"><p><a href="#" class="buybtn">在线客服</a></p></td>
     </tr>
   <tr>
-    <td align="center"><p><a href="#" class="buybtn">帮助中心</a></p></td>
+    <td align="center"><p><a href="/NewIntro/NewExperience.aspx?type=Help" class="buybtn" target="_blank">帮助中心</a></p></td>
     </tr>
 </table>
 
             </div>
         	<div class="bottomMenuLst2">
             	<ul>
-                	<li><img src="/images/bottomlist_btn1.jpg" /></li>
-                    <li><img src="/images/bottomlist_btn2.jpg" /></li>
-                    <li><img src="/images/bottomlist_btn3.jpg" /></li>
+                	<li><a href="/NewIntro/NewExperience.aspx?type=Pay" target="_blank"><img src="/images/bottomlist_btn1.jpg" /></a></li>
+                    <li><a href="/School/School.aspx" target="_blank"><img src="/images/bottomlist_btn2.jpg" /></a></li>
+                    <li><a href="/NewIntro/NewExperience.aspx?type=VIP" target="_blank"><img src="/images/bottomlist_btn3.jpg" /></a></li>
                 </ul>
             </div>
       </div>
         	<div class="clearfix"></div>
   </div>
-        <img src="/images/100y.jpg" />
+        <a href="/NewIntro/NewExperience.aspx?type=Promise"><img src="/images/100y.jpg" /></a>
   <div class="clearfix"></div>
       <p align="center" class="copyright">版权所有上海福泰珠宝首饰有限公司，相关公司产品信息非本站许可，不得用于商业用途<br />
   Copyright All rights reserved.</p>

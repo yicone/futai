@@ -38,7 +38,7 @@
                 for (var i=0;i<ListCount;i++)
                 {
                     var hotpro=_hotlist[i];
-                    HotHtml+='<tr><td width="49%"><img src="../images/'+hotpro["ImgSrc"]+'Hot.jpg" /></td>';
+                    HotHtml+='<tr><td width="49%"><img src="../images/productImg/'+hotpro["ImgSrc"]+'Hot.jpg" /></td>';
                     var realPrice=parseInt(hotpro["Price"])*parseInt(hotpro["DiscountType"])
                     HotHtml+='<td width="51%"><a target="_blank" href="/ProductInfo.aspx?proid='+hotpro["ProductId"]+'">'+hotpro["ProductId"]+'<br />'+hotpro["ProductNick"]+' </a><br /><span class="redfont1">福泰实价: ￥ '+ parseInt(realPrice/100) +'</span></td>';
                     HotHtml+='</tr>';
@@ -66,7 +66,7 @@
             for (var i=now;i<total;i++)
             {
                 var Pro=_productList[i];
-                TempHtml+='<li><img src="../images/'+Pro["ImgSrc"]+'.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" /><p><a href="/ProductInfo.aspx?proid='+Pro["ProductId"]+'" target="_blank">'+Pro["ProductId"]+'<br />';
+                TempHtml+='<li><img src="../images/productImg/'+Pro["ImgSrc"]+'.jpg" /> <img src="../images/icon_fdj.gif" class="fdjbtn" /><p><a href="/ProductInfo.aspx?proid='+Pro["ProductId"]+'" target="_blank">'+Pro["ProductId"]+'<br />';
                     var realPrice=parseInt(Pro["Price"])*parseInt(Pro["DiscountType"])
                 TempHtml+=Pro["ProductNick"]+' </a><br /><span class="redfont1">福泰实价: ￥'+parseInt(realPrice/100)+' </span></p></li>';
             }
