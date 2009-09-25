@@ -197,7 +197,7 @@
         <div class="addInfo">
             <a href="/NewIntro/NewExperience.aspx" target="_blank"><img src="dataimg/add_img.jpg" /></a>
             <p>
-                <strong><a href="#">置地广场旗舰店<br />
+                <strong><a href="/NewIntro/NewExperience.aspx" target="_blank">置地广场旗舰店<br />
                     地址：南京东路步行街<br />
                     409号置地广场921室</a></strong></p>
         </div>
