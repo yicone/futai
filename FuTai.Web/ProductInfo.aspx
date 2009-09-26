@@ -81,7 +81,7 @@
                       	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-                      市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+                      市场价：¥{$T.info.Product.Price}<br />
                       福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
                       {#if $T.islogin==true}
                       会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
@@ -153,8 +153,16 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>福泰百年承诺</strong></li> 
+                	<li><strong>1、双证双保险：</strong><br />
+   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
+<li><strong>2、终生免费清洗：</strong><br />
+   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
+<li><strong>3、30天退换货：</strong><br />
+   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
                 </ul>
+                <div class="hr"></div>
+                <h3>福泰百年承诺</h3>
+                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -180,8 +188,8 @@
                   <td width="310" valign="top"><p><img src="../images/custom_productimg2.jpg" width="288" height="214" /></p>
                   <p>&nbsp;</p>
                   <p>
-                    <input type="submit" name="button4" id="Submit1" class="btn1Style" value="发送给好友" />
-                    <input type="submit" name="button5" id="Submit2" class="btn1Style" value="收藏" />
+                    <input type="button" name="button4" id="Submit1" class="btn1Style" value="发送给好友" onclick="copyToClipBoard('{$T.info.Product.ProductId}')" />
+                    <input type="button" name="button5" id="Submit2" class="btn1Style" value="收藏" onclick="window.external.addFavorite(location.href,'{$T.info.Product.ProductId}')" />
                   </p></td>
                   <td width="320" valign="top" align="left">
                     <p style="line-height:23px; padding-bottom:10px">市场价：¥{$T.info.Product.Price} <br />
@@ -294,7 +302,7 @@
                       	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+市场价：¥{$T.info.Product.Price}<br />
 福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
 {#if $T.islogin==true}
 会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
@@ -368,8 +376,16 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>福泰百年承诺</strong></li> 
+                	<li><strong>1、双证双保险：</strong><br />
+   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
+<li><strong>2、终生免费清洗：</strong><br />
+   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
+<li><strong>3、30天退换货：</strong><br />
+   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
                 </ul>
+                <div class="hr"></div>
+                <h3>福泰百年承诺</h3>
+                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -396,7 +412,7 @@
                       	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+市场价：¥{$T.info.Product.Price}<br />
 福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
 {#if $T.islogin==true}
 会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
@@ -469,8 +485,16 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>福泰百年承诺</strong></li> 
+                	<li><strong>1、双证双保险：</strong><br />
+   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
+<li><strong>2、终生免费清洗：</strong><br />
+   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
+<li><strong>3、30天退换货：</strong><br />
+   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
                 </ul>
+                <div class="hr"></div>
+                <h3>福泰百年承诺</h3>
+                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -497,7 +521,7 @@
                       	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+市场价：¥{$T.info.Product.Price}<br />
 福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
 {#if $T.islogin==true}
 会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
@@ -543,8 +567,16 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>福泰百年承诺</strong></li> 
+                	<li><strong>1、双证双保险：</strong><br />
+   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
+<li><strong>2、终生免费清洗：</strong><br />
+   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
+<li><strong>3、30天退换货：</strong><br />
+   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
                 </ul>
+                <div class="hr"></div>
+                <h3>福泰百年承诺</h3>
+                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -571,7 +603,7 @@
                       	<div class="product_img"><img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S1.jpg" width="180" height="180" /></div>
                    	  <p align="center"><a href="#">查看大图</a></p></td>
                       <td valign="top" class="product_detail">
-市场价：<span class="redfont1"><strong>¥{$T.info.Product.Price}</strong></span><br />
+市场价：¥{$T.info.Product.Price}<br />
 福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span><br />
 {#if $T.islogin==true}
 会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
@@ -625,8 +657,16 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>福泰百年承诺</strong></li> 
+                	<li><strong>1、双证双保险：</strong><br />
+   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
+<li><strong>2、终生免费清洗：</strong><br />
+   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
+<li><strong>3、30天退换货：</strong><br />
+   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
                 </ul>
+                <div class="hr"></div>
+                <h3>福泰百年承诺</h3>
+                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -694,11 +734,19 @@
                 <div class="inner_hr"></div>
                 <p align="center">
                 <img src="../images/productImg/{$T.info.ConProduct.kuanhao}_S2.jpg" width="580" height="497" /> </p>
-                <h3>售后服务<a name="c"></a></h3>
+               <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>福泰百年承诺</strong></li> 
+                	<li><strong>1、双证双保险：</strong><br />
+   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
+<li><strong>2、终生免费清洗：</strong><br />
+   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
+<li><strong>3、30天退换货：</strong><br />
+   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
                 </ul>
+                <div class="hr"></div>
+                <h3>福泰百年承诺</h3>
+                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>

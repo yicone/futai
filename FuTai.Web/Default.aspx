@@ -27,66 +27,66 @@
         <ul class="i_plst1 i_plstbg1">
             <li>
                 <img src="dataimg/product_img1.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     <br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img1.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img1.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
             <li>
                 <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="/CustomBuy/CustomBuyCzuan.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
             </li>
         </ul>
         <div class="hr">
@@ -97,7 +97,7 @@
         </div>
         <img height="34" width="632" style="display: block;" src="images/index_midtitle2.jpg" />
         <h3 class="i_h3_1">
-            <a class="more" href="#">>>更多</a>挚爱专区</h3>
+            <a class="more" target="_blank" href="/ProductSeries.aspx?maintype=Rlove&menu=3">>>更多</a>挚爱专区</h3>
         <ul class="i_plst1 i_plstbg2">
             <li>
                 <h4>
@@ -107,7 +107,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
@@ -116,7 +116,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
@@ -125,11 +125,11 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
         </ul>
         <h3 class="i_h3_2">
-            <a class="more" href="#">>>更多</a>礼爱专区</h3>
+            <a class="more" target="_blank" href="/ProductSeries.aspx?maintype=Plove&menu=4">>>更多</a>礼爱专区</h3>
         <ul class="i_plst1 i_plstbg2">
             <li>
                 <h4>
@@ -139,7 +139,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
@@ -148,7 +148,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
@@ -157,11 +157,11 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
         </ul>
         <h3 class="i_h3_3">
-            <a class="more" href="#">>>更多</a>商务专区</h3>
+            <a class="more" target="_blank" href="/ProductSeries.aspx?maintype=Slove&menu=5">>>更多</a>商务专区</h3>
         <ul class="i_plst1 i_plstbg2">
             <li>
                 <h4>
@@ -171,7 +171,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
@@ -180,7 +180,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
@@ -189,7 +189,7 @@
                     <a href="#"><strong>花样年华</strong></a><br />
                     原价：￥900<br />
                     现价：￥780<br />
-                    <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                    <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
         </ul>
     </div>
@@ -206,12 +206,12 @@
         <div class="customBox">
             <ul>
                 <li><strong><a href="#">定制流程</a></strong></li>
-                <li><a href="/CustomBuy/CustomBuyCzuan.aspx">1,选择属于你的钻石</a></li>
-                <li><a href="#">2,选择属于你的款式</a></li>
-                <li><a href="#">3,国际名师精工镶嵌</a></li>
-                <li><a href="#">4,铭刻属于你的印记</a></li>
+                <li><a href="/CustomBuy/CustomBuyCzuan.aspx?productType=Diamond">1,选择属于你的钻石</a></li>
+                <li><a href="javascript:alert('暂未开放')">2,选择属于你的款式</a></li>
+                <li><a href="javascript:alert('暂未开放')">3,国际名师精工镶嵌</a></li>
+                <li><a href="javascript:alert('暂未开放')">4,铭刻属于你的印记</a></li>
             </ul>
-            <a href="#" class="buybtn">立刻订购</a>
+            <a href="javascript:alert( '订购热线：40088-10025')" class="buybtn">立刻订购</a>
         </div>
         <div class="hr">
         </div>
@@ -242,7 +242,7 @@
                 <a href="#">定制您的礼物</a></h3>
             <img src="images/customBox2_img.jpg" />
             <p>
-                <a class="buybtn" href="\PayMent\Login.aspx">立刻订购</a></p>
+                <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
         </div>
         <div class="hr">
         </div>

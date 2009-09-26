@@ -77,7 +77,7 @@
             <p style="color:white" align="center">
                 现有0000颗裸钻随您挑选</p>
             <p class="btnlst">
-                <a href="#">立刻订购</a><a href="#">立刻订购</a></p>
+                <a href="javascript:alert( '订购热线：40088-10025')">立刻订购</a> <a href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             <div class="hr2">
             </div>
             <h3>
@@ -121,24 +121,24 @@
         </div>
         <div class="rightlst1">
             <h3 class="titleStyle1">
-                <span class="more"><a href="#">>>更多</a></span><a href="#">热门评论</a></h3>
+                <span class="more"><a href="javascript:alert('暂未开放评论！')">>>更多</a></span><a href="javascript:alert('暂未开放评论！')">热门评论</a></h3>
             <div class="cont">
                 <p>
-                    <a href="#">质量没得说，价格公道， 很多细节的处理让人很温 馨...</a></p>
+                    <a href="javascript:alert('暂未开放评论！')">质量没得说，价格公道， 很多细节的处理让人很温 馨...</a></p>
                 <p>
-                    <span class="more">[<a href="#">详细</a>]</span>作者：林宣清</p>
+                    <span class="more">[<a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：林宣清</p>
                 <div class="hr3">
                 </div>
                 <p>
-                    <a href="#">非常好，比我想象的好， 包装，运输都很满意，我 第一次想试试看，...</a></p>
+                    <a href="javascript:alert('暂未开放评论！')">非常好，比我想象的好， 包装，运输都很满意，我 第一次想试试看，...</a></p>
                 <p>
-                    <span class="more"><a href="#">[</a><a href="#">详细</a>]</span>作者：林宣清</p>
+                    <span class="more"><a href="#">[</a><a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：林宣清</p>
                 <div class="hr3">
                 </div>
                 <p>
-                    <a href="#">配送速度超快，周六下午 订货今天就到了。包装很 环保，衣服质量没...</a></p>
+                    <a href="javascript:alert('暂未开放评论！')">配送速度超快，周六下午 订货今天就到了。包装很 环保，衣服质量没...</a></p>
                 <p>
-                    <span class="more">[<a href="#">详细</a>]</span>作者：林宣清</p>
+                    <span class="more">[<a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：林宣清</p>
             </div>
         </div>
     </div>

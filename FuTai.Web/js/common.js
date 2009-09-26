@@ -232,3 +232,18 @@ function searchbytype(mt,st,hotted)
         alert(result.error.Message);
     }
 }
+function copyToClipBoard(productid){
+
+    var clipBoardContent="";
+    clipBoardContent+="产品"+productid;
+
+    clipBoardContent+="：";
+
+    clipBoardContent+=this.location.href;
+
+    window.clipboardData.setData("Text",clipBoardContent);
+
+    alert("产品信息已复制！");
+
+}
+

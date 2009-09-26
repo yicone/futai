@@ -284,7 +284,7 @@ border:1px solid #BEAC8D; font-size:12px;
 /*bottomMenu*/
 .bottomMenu
 {
-	padding:20px 32px; background:#FFF; height:90px; overflow:hidden;
+	padding:20px 0px 20px 32px; background:#FFF; height:90px; overflow:hidden;
 }
 
 .bottomMenu li
@@ -337,7 +337,7 @@ border:1px solid #BEAC8D; font-size:12px;
 
 .bottomMenuLst2 li
 {
-	float:left; padding-right:12px;
+	float:left; padding-right:10px;
 }
 .copyright
 {

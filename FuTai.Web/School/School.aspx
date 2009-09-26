@@ -165,8 +165,6 @@
       </div>
   
 <div class="clearfix"></div>
-
-</div>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="cphTemplate" runat="server" ID="Content3">
 </asp:Content>

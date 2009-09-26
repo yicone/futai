@@ -233,7 +233,7 @@
                     金重:<span class="redfont1">¥{$T.record.Goldweight}</span><br />
                     工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />   
         {#else}      
-                    市场价:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    市场价:¥{$T.record.Price}<br />
                     福泰价:<span class="redfont1">¥{parseInt($T.record.Price*$T.record.DiscountType/100)}</span><br />
         {#/if}             
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
