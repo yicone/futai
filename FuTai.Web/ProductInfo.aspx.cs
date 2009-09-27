@@ -16,13 +16,16 @@ namespace FuTai.Web
     public partial class ProductInfo : BasePage
     {
         public string ProductId;
-
+        public string PairId;
+        public string TotalPrice;
         protected void Page_Load(object sender, EventArgs e)
         {
             AjaxPro.Utility.RegisterTypeForAjax(typeof(SearchHandler));
             if (!IsPostBack)
             {
                 ProductId = Request["proid"];
+                PairId = Request["pairid"];
+                TotalPrice = Request["total"];
             }
         }
     }

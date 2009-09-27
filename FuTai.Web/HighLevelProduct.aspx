@@ -5,6 +5,22 @@
 <asp:Content ContentPlaceHolderID="cphHead" runat="server" ID="Content1">
 <link href="/style/inner.css" rel="stylesheet" type="text/css" />
 <link href="/style/forum.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    function SwitchPro(id,obj)
+    {
+        $("#JinProduct li").each(function(){
+            this.className="";
+        });
+        obj.blur();
+        obj.parentNode.className="now";
+        $("#JinProList div").each(function(){
+            if ($(this).attr("id")!=id)
+                $(this).hide(); 
+            else
+                $("#"+id).css("display","block");
+        });
+    }
+</script>
 </asp:Content>
 <asp:Content ContentPlaceHolderID="cphContent" runat="server" ID="Content2">
 <uc1:ucLeft ID="ucLeft" runat="server" />
@@ -56,35 +72,125 @@
       <div class="hr"></div>
       <div class="box1">
         <h2>
-        	<ul class="tabSelect2">
-            	<li class="now"><a href="#">钻　 戒</a></li>
-                <li><a href="#">情侣对戒</a></li>
-                <li><a href="#">吊坠项链</a></li>
-                <li><a href="#">耳钉耳环</a></li>
-                <li><a href="#">手链手镯</a></li>
+        	<ul id="JinProduct" class="tabSelect2">
+            	<li class="now"><a onclick="SwitchPro('Diaomd',this)" href="javascript:void(0)">钻　 戒</a></li>
+                <li><a onclick="SwitchPro('Lovers',this)" href="javascript:void(0)">情侣对戒</a></li>
+                <li><a onclick="SwitchPro('DiaoZuan',this)" href="javascript:void(0)">吊坠项链</a></li>
+                <li><a onclick="SwitchPro('Ear',this)" href="javascript:void(0)">耳钉耳环</a></li>
+                <li><a onclick="SwitchPro('HandOrg',this)" href="javascript:void(0)">手链手镯</a></li>
             </ul>
         <span>福泰畅销精品：</span></h2>
-        <div class="cont">
-          <table width="100%" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td width="25%" height="215" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
-              <p><a href="#">PT900钻石戒指－lovemrak </a><br />
-                <span class="breakfont">市场报价: ￥2039 </span><br />
-              <span class="redfont1">福泰实价: ￥930 </span></p></td>
-              <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
-              <p><a href="#">PT900钻石戒指－lovemrak </a><br />
-                <span class="breakfont">市场报价: ￥2039 </span><br />
-              <span class="redfont1">福泰实价: ￥930 </span></p></td>
-              <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
-              <p><a href="#">PT900钻石戒指－lovemrak </a><br />
-                <span class="breakfont">市场报价: ￥2039 </span><br />
-              <span class="redfont1">福泰实价: ￥930 </span></p></td>
-              <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
-              <p><a href="#">PT900钻石戒指－lovemrak </a><br />
-                <span class="breakfont">市场报价: ￥2039 </span><br />
-              <span class="redfont1">福泰实价: ￥930 </span></p></td>
-            </tr>
-          </table>
+        <div id="JinProList">
+            <div id="Diaomd" class="cont" style="display:block">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="25%" height="215" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">这是钻戒PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                </tr>
+              </table>
+            </div>
+            <div id="Lovers" class="cont" style="display:none">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="25%" height="215" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">这是情侣PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                </tr>
+              </table>
+            </div>
+            <div id="DiaoZuan" class="cont" style="display:none">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="25%" height="215" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">这是吊坠PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                </tr>
+              </table>
+            </div>
+            <div id="Ear" class="cont" style="display:none">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="25%" height="215" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">这是耳环PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                </tr>
+              </table>
+            </div>
+            <div id="HandOrg" class="cont" style="display:none">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="25%" height="215" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">这是手镯PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                  <td width="25%" align="center"><p><img src="../images/classic_dataimg3.jpg" width="140" height="140" /></p>
+                  <p><a href="#">PT900钻石戒指－lovemrak </a><br />
+                    <span class="breakfont">市场报价: ￥2039 </span><br />
+                  <span class="redfont1">福泰实价: ￥930 </span></p></td>
+                </tr>
+              </table>
+            </div>
         </div>
       </div>
     </div>

@@ -526,8 +526,10 @@
 {#if $T.islogin==true}
 会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
 {#/if}
-款号：{$T.info.Product.ProductId}
-<br /><br /><br /><br /><br />
+款号：{$T.info.Product.ProductId}<br />
+相配对的戒指：<a href="/ProductInfo.aspx?proid=<%=PairId %>&pairid={$T.info.Product.ProductId}&total=<%=TotalPrice %>"><%=PairId %></a><br />
+对戒总价：<%=TotalPrice %>
+<br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
   <input type="button" name="button2" id="button11" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
@@ -645,7 +647,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">主宝重：{$T.info.Product.mainDiamondCarat}克</td>
+                    <td width="160" height="24">主宝重：{$T.info.ConProduct.mainDiamondCarat}克</td>
                     <td></td>
                   </tr>
                 </table>

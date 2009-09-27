@@ -61,10 +61,20 @@
 
         function searchProduct(all) {
             var typeIdCollection = [];
-            $('div.TypeSelect').find('li a[class=""]').each(function() {
-                var typeId = $(this).attr('typeid');
-                typeIdCollection.push(typeId);
+            $('div.TypeSelect').find('ul').each(function() {
+                if ($('li a[class=""]',this).size()==0)
+                {
+                    typeIdCollection.push(null);
+                }
+                else
+                {
+                    $(this).find('li a[class=""]').each(function(){
+                        var typeId = $(this).attr('typeid');
+                        typeIdCollection.push(typeId);
+                    });
+                }
             });
+            alert(typeIdCollection);
             var query = new Query();
             query.price1 = $('#price1').val();
             query.price2 = $('#price2').val();
@@ -258,13 +268,13 @@
                 <img src="/images/productImg/{$T.record.ImgSrc}.jpg" width="128" height="121" />
                 <img class="fdjbtn" src="/images/icon_fdj.gif" />
                 <p>
-                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}" target="_blank"><strong>{$T.record.PairId}</strong></a><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}&pairid={$T.record.PairRingId1}&total={$T.record.Price}" target="_blank"><strong>{$T.record.PairId}</strong></a><br />
         {#if $T.record.Type1==1}  
                     金重:<span class="redfont1">¥{$T.record.GoldWeight}</span><br />
                     工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />
         {#else}           
-                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}" target="_blank">男款:<span class="redfont1">¥{$T.record.Price0}</span></a><br />
-                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId1}" target="_blank">女款:<span class="redfont1">¥{$T.record.Price1}</span></a><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}&pairid={$T.record.PairRingId1}&total={$T.record.Price}" target="_blank">男款:<span class="redfont1">¥{$T.record.Price0}</span></a><br />
+                    <a href="/ProductInfo.aspx?proid={$T.record.PairRingId1}&pairid={$T.record.PairRingId0}&total={$T.record.Price}" target="_blank">女款:<span class="redfont1">¥{$T.record.Price1}</span></a><br />
                     总价:<span class="redfont1">¥{$T.record.Price}</span><br />
         {#/if}
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
