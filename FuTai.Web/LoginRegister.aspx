@@ -323,7 +323,7 @@
                                     <label>
                                         <input type="checkbox" name="checkbox" id="checkbox" />
                                     </label>
-                                    我已阅并同意《九钻珠宝网用户协议》 和 《用户隐私保护声明》
+                                    我已阅并同意《福泰珠宝网用户协议》 和 《用户隐私保护声明》
                                 </td>
                             </tr>
                             <tr>
@@ -450,7 +450,7 @@
                             世界三大品牌Cartier（卡地亚）、<br />
                             Tiffany&amp;Co（蒂凡尼）、<br />
                             BVLGARI（宝格丽）的钻石供应商<br />
-                            ——De Beers首席看货商，为九钻<br />
+                            首席看货商，为福泰<br />
                             直供顶级切工美钻</p>
                     </td>
                     <td width="25%" valign="top">

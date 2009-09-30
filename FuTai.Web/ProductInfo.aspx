@@ -129,7 +129,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">主宝重量：{$T.info.ConProduct.mainDiamondCarat}克</td>
+                    <td width="160" height="24">主宝重量：{$T.info.ConProduct.mainDiamondCarat}克拉</td>
                     <td></td>
                   </tr>
                   <tr>
@@ -137,7 +137,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克</td>
+                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克拉</td>
                     <td></td>
                   </tr>
                   <tr>
@@ -153,16 +153,8 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>1、双证双保险：</strong><br />
-   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
-<li><strong>2、终生免费清洗：</strong><br />
-   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
-<li><strong>3、30天退换货：</strong><br />
-   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
                 </ul>
-                <div class="hr"></div>
-                <h3>福泰百年承诺</h3>
-                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -192,8 +184,8 @@
                     <input type="button" name="button5" id="Submit2" class="btn1Style" value="收藏" onclick="window.external.addFavorite(location.href,'{$T.info.Product.ProductId}')" />
                   </p></td>
                   <td width="320" valign="top" align="left">
-                    <p style="line-height:23px; padding-bottom:10px">市场价：¥{$T.info.Product.Price} <br />
-                    福泰价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span>
+                    <p style="line-height:23px; padding-bottom:10px">福泰价：¥{$T.info.Product.Price} <br />
+                    折扣价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100)}</strong></span>
                     {#if $T.islogin==true}
                       <br />会员价：<span class="redfont1"><strong>¥{parseInt($T.info.Product.Price*$T.info.Product.DiscountType/100*UserAccNum)}</strong></span><br />
                       {#/if}
@@ -233,7 +225,7 @@
                   <td height="30"><p><strong>商品所在地： </strong>{$T.info.Product.Location}  </p>                  </td>
                 </tr>
                 <tr>
-                    <td height="30"><p><strong>内部编号</strong>：{$T.info.ConProduct.CertId}</p></td>
+                    <td height="30"><p><strong>GIA编号</strong>：{$T.info.ConProduct.CertId}</p></td>
                 </tr>
                 <tr>
                   <td><p><strong>主要参数: </strong></p>
@@ -248,7 +240,7 @@
                       </tr>
                       <tr>
                         <td height="30">钻石形状：{$T.info.ConProduct.CutStyle}</td>
-                        <td>产品规格：{$T.info.ConProduct.Diameter} </td>
+                        <td>钻石直径：{$T.info.ConProduct.Diameter} </td>
                       </tr>
                     </table>                    </td>
                 </tr>
@@ -262,7 +254,7 @@
                 </tr>
                 <tr>
                   <td>如果您有任何问题，请联系我们的珠宝顾问：<br />
-订购热线（免长途费）：400-700-2199 / 800-819-2199 在线珠宝客服 </td>
+订购热线（免长途费）：400-881-0025 在线珠宝客服 </td>
                 </tr>
                 <tr>
                   <td>&nbsp;</td>
@@ -376,16 +368,8 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>1、双证双保险：</strong><br />
-   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
-<li><strong>2、终生免费清洗：</strong><br />
-   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
-<li><strong>3、30天退换货：</strong><br />
-   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
                 </ul>
-                <div class="hr"></div>
-                <h3>福泰百年承诺</h3>
-                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -457,7 +441,7 @@
                     <td height="24" colspan="2"><strong>钻戒结构：</strong></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">主宝重量：{$T.info.ConProduct.mainDiamondCarat}
+                    <td width="160" height="24">主宝重量：{$T.info.ConProduct.mainDiamondCarat}克拉
                 </td>
                     <td></td>
                   </tr>
@@ -467,7 +451,7 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克
+                    <td width="160" height="24">副宝重量：{$T.info.ConProduct.otherDiamondCarat}克拉
                 </td>
                     <td></td>
                   </tr>
@@ -485,16 +469,8 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>1、双证双保险：</strong><br />
-   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
-<li><strong>2、终生免费清洗：</strong><br />
-   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
-<li><strong>3、30天退换货：</strong><br />
-   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
                 </ul>
-                <div class="hr"></div>
-                <h3>福泰百年承诺</h3>
-                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -569,16 +545,8 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>1、双证双保险：</strong><br />
-   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
-<li><strong>2、终生免费清洗：</strong><br />
-   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
-<li><strong>3、30天退换货：</strong><br />
-   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
                 </ul>
-                <div class="hr"></div>
-                <h3>福泰百年承诺</h3>
-                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -659,16 +627,8 @@
                 <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>1、双证双保险：</strong><br />
-   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
-<li><strong>2、终生免费清洗：</strong><br />
-   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
-<li><strong>3、30天退换货：</strong><br />
-   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
                 </ul>
-                <div class="hr"></div>
-                <h3>福泰百年承诺</h3>
-                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>
@@ -739,16 +699,8 @@
                <h3>售后服务<a name="c"></a></h3>
                 <div class="inner_hr"></div>
                 <ul>
-                	<li><strong>1、双证双保险：</strong><br />
-   福泰为每一颗所售钻石提供国际，国内的双证书，同时，福泰的所有产品由平安财险和中国人保提供第三方责任保险。</li> 
-<li><strong>2、终生免费清洗：</strong><br />
-   凡福泰所售产品，均终生享受在福泰体验中心的清洗服务。</li> 
-<li><strong>3、30天退换货：</strong><br />
-   您从福泰购买的正价商品发现质量问题，30天内享受全额退款服务。 </li>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
                 </ul>
-                <div class="hr"></div>
-                <h3>福泰百年承诺</h3>
-                <div class="inner_hr"></div>
                 <div class="hr"></div>
 <h3>保养常识<a name="d"></a></h3>
                 <div class="inner_hr"></div>

@@ -38,9 +38,9 @@
                 for (var i=0;i<ListCount;i++)
                 {
                     var hotpro=_hotlist[i];
-                    HotHtml+='<tr><td width="49%"><img src="../images/productImg/'+hotpro["ImgSrc"]+'Hot.jpg" /></td>';
+                    HotHtml+='<tr><td width="49%"><img src="../images/productImg/'+hotpro["ImgSrc"]+'.jpg" /></td>';
                     var realPrice=parseInt(hotpro["Price"])*parseInt(hotpro["DiscountType"])
-                    HotHtml+='<td width="51%"><a target="_blank" href="/ProductInfo.aspx?proid='+hotpro["ProductId"]+'">'+hotpro["ProductId"]+'<br />'+hotpro["ProductNick"]+' </a><br /><span class="redfont1">福泰实价: ￥ '+ parseInt(realPrice/100) +'</span></td>';
+                    HotHtml+='<td width="51%"><a target="_blank" href="/ProductInfo.aspx?proid='+hotpro["ProductId"]+'">'+hotpro["ProductId"]+'<br />'+hotpro["ProductNick"]+' </a><br /><span class="redfont1">福泰实价: <br/>￥ '+ parseInt(realPrice/100) +'</span></td>';
                     HotHtml+='</tr>';
                 }
                  HotHtml+='</table>';

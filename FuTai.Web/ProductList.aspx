@@ -74,7 +74,6 @@
                     });
                 }
             });
-            alert(typeIdCollection);
             var query = new Query();
             query.price1 = $('#price1').val();
             query.price2 = $('#price2').val();
@@ -242,11 +241,13 @@
         {#if $T.record.ProductType=="GoldOrnament"}  
                     金重:<span class="redfont1">¥{$T.record.Goldweight}</span><br />
                     工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />   
+                    <span class="grayfont1">订做请咨询福泰顾问</span>   
         {#else}      
                     市场价:¥{$T.record.Price}<br />
                     福泰价:<span class="redfont1">¥{parseInt($T.record.Price*$T.record.DiscountType/100)}</span><br />
+                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span>
         {#/if}             
-                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
+                    </p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>
         {#if ($T.record$index + 1) % 3 == 0 || $T.record$last}
@@ -272,12 +273,14 @@
         {#if $T.record.Type1==1}  
                     金重:<span class="redfont1">¥{$T.record.GoldWeight}</span><br />
                     工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />
+                    <span class="grayfont1">订做请咨询福泰顾问</span>
         {#else}           
                     <a href="/ProductInfo.aspx?proid={$T.record.PairRingId0}&pairid={$T.record.PairRingId1}&total={$T.record.Price}" target="_blank">男款:<span class="redfont1">¥{$T.record.Price0}</span></a><br />
                     <a href="/ProductInfo.aspx?proid={$T.record.PairRingId1}&pairid={$T.record.PairRingId0}&total={$T.record.Price}" target="_blank">女款:<span class="redfont1">¥{$T.record.Price1}</span></a><br />
                     总价:<span class="redfont1">¥{$T.record.Price}</span><br />
+                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span>
         {#/if}
-                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span></p>
+                    </p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>
         {#if ($T.record$index + 1) % 3 == 0 || $T.record$last}

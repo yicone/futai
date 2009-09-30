@@ -36,32 +36,32 @@
           <div class="div1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td><img src="../images/classic_dataimg1.jpg" width="202" height="247" /></td>
+                <td><img src="../images/FTR0038.jpg" width="202" height="247" /></td>
               </tr>
               <tr>
-                <td height="79" align="center"><a href="#">G750白金钻石吊坠－梦幻蝶舞 </a><br />
-                  <span class="breakfont">市场报价: ￥2039 </span><br />
-                  <span class="redfont1">福泰实价: ￥930 </span></td>
+                <td height="79" align="center"><a href="/ProductInfo.aspx?proid=S10330">S10330  </a><br />
+                  <span class="breakfont">市场报价: ￥111885 </span><br />
+                  <span class="redfont1">福泰实价: ￥59299 </span></td>
               </tr>
             </table>
           </div>
           <div class="div2">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="40%" height="135"><img src="../images/classic_dataimg2.jpg" width="100" height="100" /></td>
-                <td width="60%" valign="top"><p><a href="#">G750白金钻石吊坠－梦幻蝶舞 </a><br />
-                    <span class="breakfont">市场报价: ￥2039 </span><br />
-                    <span class="redfont1">福泰实价: ￥930</span></p></td>
+                <td width="40%" height="135"><img src="../images/R0950.jpg" width="100" height="100" /></td>
+                <td width="60%" valign="top"><p><a href="/ProductInfo.aspx?proid=S09866">S09866</a><br />
+                    <span class="breakfont">市场报价: ￥6985 </span><br />
+                    <span class="redfont1">福泰实价: ￥3702</span></p></td>
               </tr>
               <tr>
-                <td height="145"><img src="../images/classic_dataimg2.jpg" width="100" height="100" /></td>
-                <td valign="top"><p><a href="#">G750白金钻石吊坠－梦幻蝶舞 </a><br />
-                    <span class="breakfont">市场报价: ￥2039 </span><br />
-                    <span class="redfont1">福泰实价: ￥930</span></p></td>
+                <td height="145"><img src="../images/HP8967A.jpg" width="100" height="100" /></td>
+                <td valign="top"><p><a href="/ProductInfo.aspx?proid=S13537">S13537 </a><br />
+                    <span class="breakfont">市场报价: ￥3070 </span><br />
+                    <span class="redfont1">福泰实价: ￥1627</span></p></td>
               </tr>
               <tr>
                 <td height="135"><img src="../images/classic_dataimg2.jpg" width="100" height="100" /></td>
-                <td valign="top"><p><a href="#">G750白金钻石吊坠－梦幻蝶舞 </a><br />
+                <td valign="top"><p><a href="/ProductInfo.aspx?proid=S10330">G750白金钻石吊坠－梦幻蝶舞 </a><br />
                     <span class="breakfont">市场报价: ￥2039 </span><br />
                     <span class="redfont1">福泰实价: ￥930</span></p></td>
               </tr>

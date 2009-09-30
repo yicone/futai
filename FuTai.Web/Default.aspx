@@ -26,67 +26,68 @@
         <img height="34" width="632" src="images/index_midtitle1.jpg" />
         <ul class="i_plst1 i_plstbg1">
             <li>
-                <img src="dataimg/product_img1.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    <br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/FTR0038.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S10330" target="_blank"><strong>红色海洋</strong></a><br />
+                    
+                    
+                    福泰价：￥59299<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10330" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/FTR0027B.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S10318" target="_blank"><strong>魔力</strong></a><br />
+                    
+                    福泰价：￥16726<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10318" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/FTR0037-2.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S10325" target="_blank"><strong>缠绵</strong></a><br />
+                    
+                    福泰价：￥6917<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10325" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img1.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/R0958.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S10232" target="_blank"><strong>爱的诠释</strong></a><br />
+                    
+                    福泰价：￥5251<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10232" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/93114.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S06022" target="_blank"><strong>魅力四射</strong></a><br />
+                    
+                    福泰价：￥4642<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S06022" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/89746.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S06815" target="_blank"><strong>碧玉</strong></a><br />
+                    
+                    福泰价：￥1701<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S06815" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img1.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/H34067W.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S12387" target="_blank"><strong>亮点</strong></a><br />
+                    
+                    福泰价：￥7245<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S12387" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/97520.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S05009" target="_blank"><strong>浪漫缤纷</strong></a><br />
+                    
+                    福泰价：￥1822<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S05009" target="_blank">立刻订购</a></p>
             </li>
             <li>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="/ProductInfo.aspx?proid=S10810"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
-                    <a class="buybtn" href="/ProductInfo.aspx?proid=S10810" target="_blank">立刻订购</a></p>
+                <img src="dataimg/RA1253.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S13175" target="_blank"><strong>尊贵</strong></a><br />
+                    
+                    福泰价：￥3937<br />
+                    <a class="buybtn" href="/ProductInfo.aspx?proid=S13175" target="_blank">立刻订购</a></p>
             </li>
         </ul>
         <div class="hr">
@@ -102,29 +103,29 @@
             <li>
                 <h4>
                     情侣系列</h4>
-                <img src="dataimg/product_img1.jpg" />
+                <img src="dataimg/H33109.jpg" />
                 <p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                    <a href="/ProductInfo.aspx?proid=S12438" target="_blank"><strong>S12438</strong></a><br />
+                    
+                    福泰价：￥2051<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
                     婚庆系列</h4>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                <img src="dataimg/SE8361.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S12159" target="_blank"><strong>S12159</strong></a><br />
+                   
+                    福泰价：￥1696<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
                     周年婚庆系列</h4>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                <img src="dataimg/RA2077.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S13179" target="_blank"><strong>S13179</strong></a><br />
+                    
+                    福泰价：￥3821<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
         </ul>
@@ -134,29 +135,29 @@
             <li>
                 <h4>
                     送家人</h4>
-                <img src="dataimg/product_img1.jpg" />
+                <img src="dataimg/61032.jpg" />
                 <p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                    <a href="/ProductInfo.aspx?proid=S05290" target="_blank"><strong>S05290</strong></a><br />
+                   
+                    福泰价：￥2960<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
                     送爱人</h4>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                <img src="dataimg/999GZ04.jpg" /><p>
+                    <a  href="/ProductInfo.aspx?proid=A13994" target="_blank"><strong>A13994</strong></a><br />
+                    金重：2.41g<br />
+                    工费：￥50<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
                     送朋友</h4>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                <img src="dataimg/SA580.jpg" /><p>
+                    <a  href="/ProductInfo.aspx?proid=S14302" target="_blank"><strong>S14302 </strong></a><br />
+                    
+                    福泰价：￥2105<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
         </ul>
@@ -165,30 +166,30 @@
         <ul class="i_plst1 i_plstbg2">
             <li>
                 <h4>
-                    情侣系列</h4>
-                <img src="dataimg/product_img1.jpg" />
+                    送朋友</h4>
+                <img src="dataimg/SE10743.jpg" />
                 <p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                    <a  href="/ProductInfo.aspx?proid=S14284" target="_blank"><strong>S14284 </strong></a><br />
+                   
+                    福泰价：￥1583<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
-                    婚庆系列</h4>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                    送领导</h4>
+                <img src="dataimg/AB168.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S04797" target="_blank"><strong>S04797</strong></a><br />
+                    
+                    福泰价：￥1732<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
             <li>
                 <h4>
-                    周年婚庆系列</h4>
-                <img src="dataimg/product_img2.jpg" /><p>
-                    <a href="#"><strong>花样年华</strong></a><br />
-                    原价：￥900<br />
-                    现价：￥780<br />
+                    送客户</h4>
+                <img src="dataimg/QPE000039.jpg" /><p>
+                    <a href="/ProductInfo.aspx?proid=S13279" target="_blank"><strong>S13279</strong></a><br />
+                    
+                    福泰价：￥2395<br />
                     <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             </li>
         </ul>
@@ -199,7 +200,7 @@
             <p>
                 <strong><a href="/NewIntro/NewExperience.aspx" target="_blank">置地广场旗舰店<br />
                     地址：南京东路步行街<br />
-                    409号置地广场921室</a></strong></p>
+                    409号置地广场919-920室</a></strong></p>
         </div>
         <div class="hr">
         </div>
@@ -219,8 +220,8 @@
             <li><a href="/School/CustomMake.aspx?type=Custom">
                 <img src="images/i_rnavimg1.jpg" /><span>来料定制</span></a></li><li><a href="/School/CustomMake.aspx?type=CustomImg">
                     <img src="images/i_rnavimg2.jpg" /><span>来图定制</span></a></li><li><a href="/School/CustomMake.aspx?type=ReAlive">
-                        <img src="images/i_rnavimg3.jpg" /><span>破损重生</span></a></li><li><a href="/School/CustomMake.aspx?type=OldNew">
-                            <img src="images/i_rnavimg4.jpg" /><span>以旧换新</span></a></li>
+                        <img src="images/i_rnavimg3.jpg" /><span>涣然重生</span></a></li><li><a href="/School/CustomMake.aspx?type=OldNew">
+                            <img src="images/i_rnavimg4.jpg" /><span>旧貌新颜</span></a></li>
         </ul>
         <div class="hr">
         </div>
@@ -228,11 +229,11 @@
             <h3>
                 <a href="#">畅销排行榜</a></h3>
             <ul>
-                <li><a href="#">1、10招教你选购完美钻石</a></li>
-                <li><a href="#">2、戒指的戴法和含义</a></li>
-                <li><a href="#">3、铂金钻石首饰的保养</a></li>
-                <li><a href="#">4、钻石清洗方法简易三招</a></li>
-                <li><a href="#">5、铂金钻石首饰的保养</a></li>
+                <li><a href="/ProductInfo.aspx?proid=S13286" target="_blank">1、S13286男士钻戒</a></li>
+                <li><a href="/ProductInfo.aspx?proid=S14157" target="_blank">2、S14157钻石戒托</a></li>
+                <li><a href="/ProductInfo.aspx?proid=S14914" target="_blank">3、S14914钻石吊坠</a></li>
+                <li><a href="/ProductInfo.aspx?proid=S09866" target="_blank">4、S09866红宝石戒指</a></li>
+                <li><a href="/ProductInfo.aspx?proid=S09864" target="_blank">5、S09864翡翠戒指</a></li>
             </ul>
         </div>
         <div class="hr">

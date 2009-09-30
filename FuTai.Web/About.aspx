@@ -21,12 +21,7 @@ CMA证书双重认证，一钻双证，品质保障。</p>
   <br />
 </p>
 <div class="inner_hr"></div>
-<p><strong><br />
-  公司旗下商铺</strong><br />
-·福泰珠宝网 <a href="http://www.futaizhubao.com" target="_blank">www.futaizhubao.com</a><br />
-·Taobao商铺 <a href="http://shop33359061.taobao.com" target="_blank">shop33359061.taobao.com</a><br />
-·Liba网商铺 <a href="http://marry.sh.liba.com/shop/shop_show.php?shop_id=188" target="_blank">http://marry.sh.liba.com/shop/shop_show.php?shop_id=188</a><br />
-·上海团购网商铺<a href="http://shop179.shtuangou.com" target="_blank"> http://shop179.shtuangou.com</a></p>
+<p></p>
         </div>
       </div>
     	<div class="clearfix"></div>
