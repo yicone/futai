@@ -17,7 +17,7 @@ namespace FuTai.Web.HandShow
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(SearchHandler));
         }
     }
 }

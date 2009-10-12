@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="FuTai" Class="FuTaiDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SNDA-D834A0B17C\SQLEXPRESS;Initial Catalog=FuTai;Persist Security Info=True;User ID=sa" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString4" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=FuTai;Persist Security Info=True;User ID=sa" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Diamond" Member="Diamond">
     <Type Name="Diamond">
       <Column Name="DiamondID" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -154,6 +154,15 @@
       <Column Name="otherDiamondname" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="otherDiamondCarat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="otherDiamondshu" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HandShow" Member="HandShow">
+    <Type Name="HandShow">
+      <Column Name="HandShowId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="BuyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Ticket" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Src" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.product_InsertDiamond" Method="InsertDiamond">

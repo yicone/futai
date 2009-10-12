@@ -395,6 +395,7 @@
     <Content Include="images\productImg\nophotos_S2.jpg" />
     <Content Include="images\zhen.gif" />
     <Content Include="images\zhen1.gif" />
+    <Content Include="js\Cookie.js" />
     <Content Include="NewIntro\NewExperience.aspx" />
     <Content Include="School\CustomMake.aspx" />
     <Content Include="style\experience.css" />

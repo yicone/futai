@@ -107,12 +107,23 @@ namespace FuTai.Web
         }
 
         [AjaxPro.AjaxMethod]
+        public static object SearchHandShow()
+        {
+            var result = Singleton<HandShowBll>.Instance.SearchHandShow();
+            return result;
+        }
+        [AjaxPro.AjaxMethod]
         public static object SearchClassType(string MainType,string SubType, bool Hotted)
         {
             IEnumerable result = null;
             FuTaiDBDataContext cxt = FuTaiDBDataContextFactory.GetFuTaiDBContext();
             result = cxt.SearchByType(MainType,SubType,Hotted);
             return result;
+        }
+        [AjaxPro.AjaxMethod]
+        public static void MakeTicket(int id)
+        {
+            Singleton<HandShowBll>.Instance.MakeTicket(id);
         }
     }
 }

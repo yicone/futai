@@ -68,5 +68,11 @@
         <elementListCompartment Id="35d3e53a-5f2d-47a8-bf35-8ef00d016e69" absoluteBounds="9.765, 11.21, 1.9700000000000002, 2.2373046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="1f03f8b3-9917-4383-994f-65eb9fb3a5a3" absoluteBounds="0.625, 5, 2, 1.6169661458333331">
+      <DataClassMoniker Name="/FuTaiDBDataContext/HandShow" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9bd2b0c8-f550-4b7c-aabf-00b159f07f62" absoluteBounds="0.64000000000000012, 5.46, 1.9700000000000002, 1.0569661458333333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

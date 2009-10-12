@@ -232,6 +232,18 @@ function searchbytype(mt,st,hotted)
         alert(result.error.Message);
     }
 }
+function searchhandshow()
+{
+     var result = MyAjax.SearchHandShow();
+    if (!result.error) {
+        var list = result.value;
+        
+        return list;
+    }
+    else {
+        alert(result.error.Message);
+    }
+}
 function copyToClipBoard(productid){
 
     var clipBoardContent="";
@@ -246,4 +258,26 @@ function copyToClipBoard(productid){
     alert("产品信息已复制！");
 
 }
-
+function maketicket(id,ticketid)
+{
+    if (CheckCookie(id))
+    {
+        var obj=document.getElementById(ticketid);
+        obj.innerHTML=parseInt(obj.innerHTML)+1+"票";
+        var datet=new Date();
+        var expireDays=1000;
+        datet.setTime(datet.getTime()+expireDays*24*3600*1000);
+        var CookieName="Vote"+id;
+        setCookie(CookieName,"hasVoted",datet);
+        MyAjax.MakeTicket(id);
+    }
+    else
+    {
+        alert("您已对该用户投过票！");
+    }
+}
+function CheckCookie(id)
+{
+    var CookieName="Vote"+id;
+    return getCookie(CookieName);
+}

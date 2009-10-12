@@ -11,4075 +11,4244 @@
 
 namespace FuTai.Component
 {
-	using System.Data.Linq;
-	using System.Data.Linq.Mapping;
-	using System.Data;
-	using System.Collections.Generic;
-	using System.Reflection;
-	using System.Linq;
-	using System.Linq.Expressions;
-	using System.ComponentModel;
-	using System;
-	
-	
-	[System.Data.Linq.Mapping.DatabaseAttribute(Name="FuTai")]
-	public partial class FuTaiDBDataContext : System.Data.Linq.DataContext
-	{
-		
-		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
-		
-    #region Extensibility Method Definitions
-    partial void OnCreated();
-    partial void InsertDiamond(Diamond instance);
-    partial void UpdateDiamond(Diamond instance);
-    partial void DeleteDiamond(Diamond instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
-    partial void InsertDiamondGroup(DiamondGroup instance);
-    partial void UpdateDiamondGroup(DiamondGroup instance);
-    partial void DeleteDiamondGroup(DiamondGroup instance);
-    partial void InsertDiamondOrnament(DiamondOrnament instance);
-    partial void UpdateDiamondOrnament(DiamondOrnament instance);
-    partial void DeleteDiamondOrnament(DiamondOrnament instance);
-    partial void InsertDiamondRing(DiamondRing instance);
-    partial void UpdateDiamondRing(DiamondRing instance);
-    partial void DeleteDiamondRing(DiamondRing instance);
-    partial void InsertGoldOrnament(GoldOrnament instance);
-    partial void UpdateGoldOrnament(GoldOrnament instance);
-    partial void DeleteGoldOrnament(GoldOrnament instance);
-    partial void InsertJewel(Jewel instance);
-    partial void UpdateJewel(Jewel instance);
-    partial void DeleteJewel(Jewel instance);
-    partial void InsertPairRing(PairRing instance);
-    partial void UpdatePairRing(PairRing instance);
-    partial void DeletePairRing(PairRing instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
-    partial void InsertRingBracket(RingBracket instance);
-    partial void UpdateRingBracket(RingBracket instance);
-    partial void DeleteRingBracket(RingBracket instance);
-    #endregion
-		
-		public FuTaiDBDataContext() : 
-				base(global::FuTai.Component.Properties.Settings.Default.FuTaiConnectionString4, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public FuTaiDBDataContext(string connection) : 
-				base(connection, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public FuTaiDBDataContext(System.Data.IDbConnection connection) : 
-				base(connection, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public FuTaiDBDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
-				base(connection, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public FuTaiDBDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
-				base(connection, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Diamond> Diamond
-		{
-			get
-			{
-				return this.GetTable<Diamond>();
-			}
-		}
-		
-		public System.Data.Linq.Table<User> User
-		{
-			get
-			{
-				return this.GetTable<User>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DiamondGroup> DiamondGroup
-		{
-			get
-			{
-				return this.GetTable<DiamondGroup>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DiamondOrnament> DiamondOrnament
-		{
-			get
-			{
-				return this.GetTable<DiamondOrnament>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DiamondRing> DiamondRing
-		{
-			get
-			{
-				return this.GetTable<DiamondRing>();
-			}
-		}
-		
-		public System.Data.Linq.Table<GoldOrnament> GoldOrnament
-		{
-			get
-			{
-				return this.GetTable<GoldOrnament>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Goldprice> Goldprice
-		{
-			get
-			{
-				return this.GetTable<Goldprice>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Jewel> Jewel
-		{
-			get
-			{
-				return this.GetTable<Jewel>();
-			}
-		}
-		
-		public System.Data.Linq.Table<PairRing> PairRing
-		{
-			get
-			{
-				return this.GetTable<PairRing>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Product> Product
-		{
-			get
-			{
-				return this.GetTable<Product>();
-			}
-		}
-		
-		public System.Data.Linq.Table<RingBracket> RingBracket
-		{
-			get
-			{
-				return this.GetTable<RingBracket>();
-			}
-		}
-		
-		[Function(Name="dbo.product_InsertDiamond")]
-		public int InsertDiamond(
-					[Parameter(Name="FTId", DbType="VarChar(20)")] string fTId, 
-					[Parameter(Name="CounterId", DbType="VarChar(20)")] string counterId, 
-					[Parameter(Name="Status", DbType="Int")] System.Nullable<int> status, 
-					[Parameter(Name="Location", DbType="VarChar(20)")] string location, 
-					[Parameter(Name="DiscountType", DbType="Int")] System.Nullable<int> discountType, 
-					[Parameter(Name="Price", DbType="Money")] System.Nullable<decimal> price, 
-					[Parameter(Name="Carat", DbType="VarChar(20)")] string carat, 
-					[Parameter(Name="Clarity", DbType="VarChar(20)")] string clarity, 
-					[Parameter(Name="Color", DbType="VarChar(20)")] string color, 
-					[Parameter(Name="Cut", DbType="VarChar(20)")] string cut, 
-					[Parameter(Name="CutStyle", DbType="VarChar(20)")] string cutStyle, 
-					[Parameter(Name="Diameter", DbType="VarChar(20)")] string diameter, 
-					[Parameter(Name="CertType", DbType="Int")] System.Nullable<int> certType, 
-					[Parameter(Name="CertId", DbType="VarChar(20)")] string certId, 
-					[Parameter(Name="Polish", DbType="VarChar(20)")] string polish, 
-					[Parameter(Name="Symmetry", DbType="VarChar(20)")] string symmetry, 
-					[Parameter(Name="AH", DbType="VarChar(20)")] string aH, 
-					[Parameter(Name="Fluorescence", DbType="VarChar(20)")] string fluorescence)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fTId, counterId, status, location, discountType, price, carat, clarity, color, cut, cutStyle, diameter, certType, certId, polish, symmetry, aH, fluorescence);
-			return ((int)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchRingBracket")]
-		public ISingleResult<search_SearchRingBracketResult> SearchRingBracket([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
-			return ((ISingleResult<search_SearchRingBracketResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchDiamond")]
-		public ISingleResult<search_SearchDiamondResult> SearchDiamond([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
-			return ((ISingleResult<search_SearchDiamondResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchPairRing")]
-		public ISingleResult<search_SearchPairRingResult> SearchPairRing([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
-			return ((ISingleResult<search_SearchPairRingResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchByType")]
-		public ISingleResult<search_SearchByTypeResult1> SearchByType([Parameter(Name="MType", DbType="VarChar(20)")] string mType, [Parameter(Name="SType", DbType="VarChar(50)")] string sType, [Parameter(Name="Hotted", DbType="Bit")] System.Nullable<bool> hotted)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mType, sType, hotted);
-			return ((ISingleResult<search_SearchByTypeResult1>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchDiamondRing")]
-		public ISingleResult<search_SearchDiamondRingResult> SearchDiamondRing([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
-			return ((ISingleResult<search_SearchDiamondRingResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchDiamondOrnament")]
-		public ISingleResult<search_SearchDiamondOrnamentResult> SearchDiamondOrnament([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
-			return ((ISingleResult<search_SearchDiamondOrnamentResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchJewel")]
-		public ISingleResult<search_SearchJewelResult> SearchJewel([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
-			return ((ISingleResult<search_SearchJewelResult>)(result.ReturnValue));
-		}
-		
-		[Function(Name="dbo.search_SearchGoldOrnament")]
-		public ISingleResult<search_SearchGoldOrnamentResult> SearchGoldOrnament([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1, [Parameter(Name="Type2", DbType="Int")] System.Nullable<int> type2)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
-			return ((ISingleResult<search_SearchGoldOrnamentResult>)(result.ReturnValue));
-		}
-	}
-	
-	[Table(Name="dbo.Diamond")]
-	public partial class Diamond : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _DiamondID;
-		
-		private string _Carat;
-		
-		private string _Clarity;
-		
-		private string _Color;
-		
-		private string _Cut;
-		
-		private string _CutStyle;
-		
-		private string _Diameter;
-		
-		private string _CertType;
-		
-		private string _CertId;
-		
-		private string _Polish;
-		
-		private string _Symmetry;
-		
-		private string _AH;
-		
-		private string _Fluorescence;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDiamondIDChanging(string value);
-    partial void OnDiamondIDChanged();
-    partial void OnCaratChanging(string value);
-    partial void OnCaratChanged();
-    partial void OnClarityChanging(string value);
-    partial void OnClarityChanged();
-    partial void OnColorChanging(string value);
-    partial void OnColorChanged();
-    partial void OnCutChanging(string value);
-    partial void OnCutChanged();
-    partial void OnCutStyleChanging(string value);
-    partial void OnCutStyleChanged();
-    partial void OnDiameterChanging(string value);
-    partial void OnDiameterChanged();
-    partial void OnCertTypeChanging(string value);
-    partial void OnCertTypeChanged();
-    partial void OnCertIdChanging(string value);
-    partial void OnCertIdChanged();
-    partial void OnPolishChanging(string value);
-    partial void OnPolishChanged();
-    partial void OnSymmetryChanging(string value);
-    partial void OnSymmetryChanged();
-    partial void OnAHChanging(string value);
-    partial void OnAHChanged();
-    partial void OnFluorescenceChanging(string value);
-    partial void OnFluorescenceChanged();
-    #endregion
-		
-		public Diamond()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_DiamondID", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string DiamondID
-		{
-			get
-			{
-				return this._DiamondID;
-			}
-			set
-			{
-				if ((this._DiamondID != value))
-				{
-					this.OnDiamondIDChanging(value);
-					this.SendPropertyChanging();
-					this._DiamondID = value;
-					this.SendPropertyChanged("DiamondID");
-					this.OnDiamondIDChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Carat", DbType="VarChar(20)")]
-		public string Carat
-		{
-			get
-			{
-				return this._Carat;
-			}
-			set
-			{
-				if ((this._Carat != value))
-				{
-					this.OnCaratChanging(value);
-					this.SendPropertyChanging();
-					this._Carat = value;
-					this.SendPropertyChanged("Carat");
-					this.OnCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Clarity", DbType="VarChar(20)")]
-		public string Clarity
-		{
-			get
-			{
-				return this._Clarity;
-			}
-			set
-			{
-				if ((this._Clarity != value))
-				{
-					this.OnClarityChanging(value);
-					this.SendPropertyChanging();
-					this._Clarity = value;
-					this.SendPropertyChanged("Clarity");
-					this.OnClarityChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Color", DbType="VarChar(20)")]
-		public string Color
-		{
-			get
-			{
-				return this._Color;
-			}
-			set
-			{
-				if ((this._Color != value))
-				{
-					this.OnColorChanging(value);
-					this.SendPropertyChanging();
-					this._Color = value;
-					this.SendPropertyChanged("Color");
-					this.OnColorChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Cut", DbType="VarChar(20)")]
-		public string Cut
-		{
-			get
-			{
-				return this._Cut;
-			}
-			set
-			{
-				if ((this._Cut != value))
-				{
-					this.OnCutChanging(value);
-					this.SendPropertyChanging();
-					this._Cut = value;
-					this.SendPropertyChanged("Cut");
-					this.OnCutChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CutStyle", DbType="VarChar(20)")]
-		public string CutStyle
-		{
-			get
-			{
-				return this._CutStyle;
-			}
-			set
-			{
-				if ((this._CutStyle != value))
-				{
-					this.OnCutStyleChanging(value);
-					this.SendPropertyChanging();
-					this._CutStyle = value;
-					this.SendPropertyChanged("CutStyle");
-					this.OnCutStyleChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Diameter", DbType="VarChar(20)")]
-		public string Diameter
-		{
-			get
-			{
-				return this._Diameter;
-			}
-			set
-			{
-				if ((this._Diameter != value))
-				{
-					this.OnDiameterChanging(value);
-					this.SendPropertyChanging();
-					this._Diameter = value;
-					this.SendPropertyChanged("Diameter");
-					this.OnDiameterChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CertType", DbType="VarChar(20)")]
-		public string CertType
-		{
-			get
-			{
-				return this._CertType;
-			}
-			set
-			{
-				if ((this._CertType != value))
-				{
-					this.OnCertTypeChanging(value);
-					this.SendPropertyChanging();
-					this._CertType = value;
-					this.SendPropertyChanged("CertType");
-					this.OnCertTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CertId", DbType="VarChar(20)")]
-		public string CertId
-		{
-			get
-			{
-				return this._CertId;
-			}
-			set
-			{
-				if ((this._CertId != value))
-				{
-					this.OnCertIdChanging(value);
-					this.SendPropertyChanging();
-					this._CertId = value;
-					this.SendPropertyChanged("CertId");
-					this.OnCertIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Polish", DbType="VarChar(20)")]
-		public string Polish
-		{
-			get
-			{
-				return this._Polish;
-			}
-			set
-			{
-				if ((this._Polish != value))
-				{
-					this.OnPolishChanging(value);
-					this.SendPropertyChanging();
-					this._Polish = value;
-					this.SendPropertyChanged("Polish");
-					this.OnPolishChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Symmetry", DbType="VarChar(20)")]
-		public string Symmetry
-		{
-			get
-			{
-				return this._Symmetry;
-			}
-			set
-			{
-				if ((this._Symmetry != value))
-				{
-					this.OnSymmetryChanging(value);
-					this.SendPropertyChanging();
-					this._Symmetry = value;
-					this.SendPropertyChanged("Symmetry");
-					this.OnSymmetryChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_AH", DbType="VarChar(20)")]
-		public string AH
-		{
-			get
-			{
-				return this._AH;
-			}
-			set
-			{
-				if ((this._AH != value))
-				{
-					this.OnAHChanging(value);
-					this.SendPropertyChanging();
-					this._AH = value;
-					this.SendPropertyChanged("AH");
-					this.OnAHChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Fluorescence", DbType="VarChar(20)")]
-		public string Fluorescence
-		{
-			get
-			{
-				return this._Fluorescence;
-			}
-			set
-			{
-				if ((this._Fluorescence != value))
-				{
-					this.OnFluorescenceChanging(value);
-					this.SendPropertyChanging();
-					this._Fluorescence = value;
-					this.SendPropertyChanged("Fluorescence");
-					this.OnFluorescenceChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserId;
-		
-		private string _CardId;
-		
-		private string _Email;
-		
-		private string _NickName;
-		
-		private string _Password;
-		
-		private System.Nullable<int> _Authority;
-		
-		private string _UserName;
-		
-		private System.Nullable<bool> _Sex;
-		
-		private string _Phone;
-		
-		private string _Impression;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnCardIdChanging(string value);
-    partial void OnCardIdChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnNickNameChanging(string value);
-    partial void OnNickNameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnAuthorityChanging(System.Nullable<int> value);
-    partial void OnAuthorityChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnSexChanging(System.Nullable<bool> value);
-    partial void OnSexChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    partial void OnImpressionChanging(string value);
-    partial void OnImpressionChanged();
-    #endregion
-		
-		public User()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CardId", DbType="VarChar(20)")]
-		public string CardId
-		{
-			get
-			{
-				return this._CardId;
-			}
-			set
-			{
-				if ((this._CardId != value))
-				{
-					this.OnCardIdChanging(value);
-					this.SendPropertyChanging();
-					this._CardId = value;
-					this.SendPropertyChanged("CardId");
-					this.OnCardIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Email", DbType="VarChar(40)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_NickName", DbType="NVarChar(20)")]
-		public string NickName
-		{
-			get
-			{
-				return this._NickName;
-			}
-			set
-			{
-				if ((this._NickName != value))
-				{
-					this.OnNickNameChanging(value);
-					this.SendPropertyChanging();
-					this._NickName = value;
-					this.SendPropertyChanged("NickName");
-					this.OnNickNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Password", DbType="VarChar(50)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Authority", DbType="Int")]
-		public System.Nullable<int> Authority
-		{
-			get
-			{
-				return this._Authority;
-			}
-			set
-			{
-				if ((this._Authority != value))
-				{
-					this.OnAuthorityChanging(value);
-					this.SendPropertyChanging();
-					this._Authority = value;
-					this.SendPropertyChanged("Authority");
-					this.OnAuthorityChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_UserName", DbType="NVarChar(20)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Sex", DbType="Bit")]
-		public System.Nullable<bool> Sex
-		{
-			get
-			{
-				return this._Sex;
-			}
-			set
-			{
-				if ((this._Sex != value))
-				{
-					this.OnSexChanging(value);
-					this.SendPropertyChanging();
-					this._Sex = value;
-					this.SendPropertyChanged("Sex");
-					this.OnSexChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Phone", DbType="NChar(10)")]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Impression", DbType="NVarChar(200)")]
-		public string Impression
-		{
-			get
-			{
-				return this._Impression;
-			}
-			set
-			{
-				if ((this._Impression != value))
-				{
-					this.OnImpressionChanging(value);
-					this.SendPropertyChanging();
-					this._Impression = value;
-					this.SendPropertyChanged("Impression");
-					this.OnImpressionChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.DiamondGroup")]
-	public partial class DiamondGroup : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _DiamondGroupId;
-		
-		private System.Nullable<int> _UserId;
-		
-		private System.Nullable<int> _DiamondId;
-		
-		private string _MetalType;
-		
-		private string _Style;
-		
-		private System.Nullable<int> _RingBracketId;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<System.DateTime> _UpdateDate;
-		
-		private System.Nullable<System.DateTime> _DeleteDate;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDiamondGroupIdChanging(int value);
-    partial void OnDiamondGroupIdChanged();
-    partial void OnUserIdChanging(System.Nullable<int> value);
-    partial void OnUserIdChanged();
-    partial void OnDiamondIdChanging(System.Nullable<int> value);
-    partial void OnDiamondIdChanged();
-    partial void OnMetalTypeChanging(string value);
-    partial void OnMetalTypeChanged();
-    partial void OnStyleChanging(string value);
-    partial void OnStyleChanged();
-    partial void OnRingBracketIdChanging(System.Nullable<int> value);
-    partial void OnRingBracketIdChanged();
-    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreateDateChanged();
-    partial void OnUpdateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnUpdateDateChanged();
-    partial void OnDeleteDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnDeleteDateChanged();
-    #endregion
-		
-		public DiamondGroup()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_DiamondGroupId", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int DiamondGroupId
-		{
-			get
-			{
-				return this._DiamondGroupId;
-			}
-			set
-			{
-				if ((this._DiamondGroupId != value))
-				{
-					this.OnDiamondGroupIdChanging(value);
-					this.SendPropertyChanging();
-					this._DiamondGroupId = value;
-					this.SendPropertyChanged("DiamondGroupId");
-					this.OnDiamondGroupIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_UserId", DbType="Int")]
-		public System.Nullable<int> UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_DiamondId", DbType="Int")]
-		public System.Nullable<int> DiamondId
-		{
-			get
-			{
-				return this._DiamondId;
-			}
-			set
-			{
-				if ((this._DiamondId != value))
-				{
-					this.OnDiamondIdChanging(value);
-					this.SendPropertyChanging();
-					this._DiamondId = value;
-					this.SendPropertyChanged("DiamondId");
-					this.OnDiamondIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MetalType", DbType="VarChar(20)")]
-		public string MetalType
-		{
-			get
-			{
-				return this._MetalType;
-			}
-			set
-			{
-				if ((this._MetalType != value))
-				{
-					this.OnMetalTypeChanging(value);
-					this.SendPropertyChanging();
-					this._MetalType = value;
-					this.SendPropertyChanged("MetalType");
-					this.OnMetalTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Style", DbType="VarChar(20)")]
-		public string Style
-		{
-			get
-			{
-				return this._Style;
-			}
-			set
-			{
-				if ((this._Style != value))
-				{
-					this.OnStyleChanging(value);
-					this.SendPropertyChanging();
-					this._Style = value;
-					this.SendPropertyChanged("Style");
-					this.OnStyleChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_RingBracketId", DbType="Int")]
-		public System.Nullable<int> RingBracketId
-		{
-			get
-			{
-				return this._RingBracketId;
-			}
-			set
-			{
-				if ((this._RingBracketId != value))
-				{
-					this.OnRingBracketIdChanging(value);
-					this.SendPropertyChanging();
-					this._RingBracketId = value;
-					this.SendPropertyChanged("RingBracketId");
-					this.OnRingBracketIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_UpdateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> UpdateDate
-		{
-			get
-			{
-				return this._UpdateDate;
-			}
-			set
-			{
-				if ((this._UpdateDate != value))
-				{
-					this.OnUpdateDateChanging(value);
-					this.SendPropertyChanging();
-					this._UpdateDate = value;
-					this.SendPropertyChanged("UpdateDate");
-					this.OnUpdateDateChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_DeleteDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> DeleteDate
-		{
-			get
-			{
-				return this._DeleteDate;
-			}
-			set
-			{
-				if ((this._DeleteDate != value))
-				{
-					this.OnDeleteDateChanging(value);
-					this.SendPropertyChanging();
-					this._DeleteDate = value;
-					this.SendPropertyChanged("DeleteDate");
-					this.OnDeleteDateChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.DiamondOrnament")]
-	public partial class DiamondOrnament : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _DiamondOrnamentId;
-		
-		private string _OrnamentType;
-		
-		private string _kuanhao;
-		
-		private string _RingType;
-		
-		private string _Goldweight;
-		
-		private string _mainDiamondCarat;
-		
-		private System.Nullable<int> _Type1;
-		
-		private System.Nullable<int> _Type2;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDiamondOrnamentIdChanging(string value);
-    partial void OnDiamondOrnamentIdChanged();
-    partial void OnOrnamentTypeChanging(string value);
-    partial void OnOrnamentTypeChanged();
-    partial void OnkuanhaoChanging(string value);
-    partial void OnkuanhaoChanged();
-    partial void OnRingTypeChanging(string value);
-    partial void OnRingTypeChanged();
-    partial void OnGoldweightChanging(string value);
-    partial void OnGoldweightChanged();
-    partial void OnmainDiamondCaratChanging(string value);
-    partial void OnmainDiamondCaratChanged();
-    partial void OnType1Changing(System.Nullable<int> value);
-    partial void OnType1Changed();
-    partial void OnType2Changing(System.Nullable<int> value);
-    partial void OnType2Changed();
-    #endregion
-		
-		public DiamondOrnament()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_DiamondOrnamentId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string DiamondOrnamentId
-		{
-			get
-			{
-				return this._DiamondOrnamentId;
-			}
-			set
-			{
-				if ((this._DiamondOrnamentId != value))
-				{
-					this.OnDiamondOrnamentIdChanging(value);
-					this.SendPropertyChanging();
-					this._DiamondOrnamentId = value;
-					this.SendPropertyChanged("DiamondOrnamentId");
-					this.OnDiamondOrnamentIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
-		public string OrnamentType
-		{
-			get
-			{
-				return this._OrnamentType;
-			}
-			set
-			{
-				if ((this._OrnamentType != value))
-				{
-					this.OnOrnamentTypeChanging(value);
-					this.SendPropertyChanging();
-					this._OrnamentType = value;
-					this.SendPropertyChanged("OrnamentType");
-					this.OnOrnamentTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(10)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this.OnkuanhaoChanging(value);
-					this.SendPropertyChanging();
-					this._kuanhao = value;
-					this.SendPropertyChanged("kuanhao");
-					this.OnkuanhaoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this.OnRingTypeChanging(value);
-					this.SendPropertyChanging();
-					this._RingType = value;
-					this.SendPropertyChanged("RingType");
-					this.OnRingTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldweight", DbType="VarChar(20)")]
-		public string Goldweight
-		{
-			get
-			{
-				return this._Goldweight;
-			}
-			set
-			{
-				if ((this._Goldweight != value))
-				{
-					this.OnGoldweightChanging(value);
-					this.SendPropertyChanging();
-					this._Goldweight = value;
-					this.SendPropertyChanged("Goldweight");
-					this.OnGoldweightChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this.OnmainDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._mainDiamondCarat = value;
-					this.SendPropertyChanged("mainDiamondCarat");
-					this.OnmainDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this.OnType1Changing(value);
-					this.SendPropertyChanging();
-					this._Type1 = value;
-					this.SendPropertyChanged("Type1");
-					this.OnType1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type2", DbType="Int")]
-		public System.Nullable<int> Type2
-		{
-			get
-			{
-				return this._Type2;
-			}
-			set
-			{
-				if ((this._Type2 != value))
-				{
-					this.OnType2Changing(value);
-					this.SendPropertyChanging();
-					this._Type2 = value;
-					this.SendPropertyChanged("Type2");
-					this.OnType2Changed();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.DiamondRing")]
-	public partial class DiamondRing : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _DiamondRingId;
-		
-		private string _StockNumber;
-		
-		private string _OrnamentType;
-		
-		private string _kuanhao;
-		
-		private System.Nullable<int> _Type1;
-		
-		private string _RingType;
-		
-		private string _mainDiamondCarat;
-		
-		private string _otherDiamondname;
-		
-		private string _otherDiamondCarat;
-		
-		private string _otherDiamondshu;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnDiamondRingIdChanging(string value);
-    partial void OnDiamondRingIdChanged();
-    partial void OnStockNumberChanging(string value);
-    partial void OnStockNumberChanged();
-    partial void OnOrnamentTypeChanging(string value);
-    partial void OnOrnamentTypeChanged();
-    partial void OnkuanhaoChanging(string value);
-    partial void OnkuanhaoChanged();
-    partial void OnType1Changing(System.Nullable<int> value);
-    partial void OnType1Changed();
-    partial void OnRingTypeChanging(string value);
-    partial void OnRingTypeChanged();
-    partial void OnmainDiamondCaratChanging(string value);
-    partial void OnmainDiamondCaratChanged();
-    partial void OnotherDiamondnameChanging(string value);
-    partial void OnotherDiamondnameChanged();
-    partial void OnotherDiamondCaratChanging(string value);
-    partial void OnotherDiamondCaratChanged();
-    partial void OnotherDiamondshuChanging(string value);
-    partial void OnotherDiamondshuChanged();
-    #endregion
-		
-		public DiamondRing()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_DiamondRingId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string DiamondRingId
-		{
-			get
-			{
-				return this._DiamondRingId;
-			}
-			set
-			{
-				if ((this._DiamondRingId != value))
-				{
-					this.OnDiamondRingIdChanging(value);
-					this.SendPropertyChanging();
-					this._DiamondRingId = value;
-					this.SendPropertyChanged("DiamondRingId");
-					this.OnDiamondRingIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_StockNumber", DbType="VarChar(20)")]
-		public string StockNumber
-		{
-			get
-			{
-				return this._StockNumber;
-			}
-			set
-			{
-				if ((this._StockNumber != value))
-				{
-					this.OnStockNumberChanging(value);
-					this.SendPropertyChanging();
-					this._StockNumber = value;
-					this.SendPropertyChanged("StockNumber");
-					this.OnStockNumberChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
-		public string OrnamentType
-		{
-			get
-			{
-				return this._OrnamentType;
-			}
-			set
-			{
-				if ((this._OrnamentType != value))
-				{
-					this.OnOrnamentTypeChanging(value);
-					this.SendPropertyChanging();
-					this._OrnamentType = value;
-					this.SendPropertyChanged("OrnamentType");
-					this.OnOrnamentTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(10)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this.OnkuanhaoChanging(value);
-					this.SendPropertyChanging();
-					this._kuanhao = value;
-					this.SendPropertyChanged("kuanhao");
-					this.OnkuanhaoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this.OnType1Changing(value);
-					this.SendPropertyChanging();
-					this._Type1 = value;
-					this.SendPropertyChanged("Type1");
-					this.OnType1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this.OnRingTypeChanging(value);
-					this.SendPropertyChanging();
-					this._RingType = value;
-					this.SendPropertyChanged("RingType");
-					this.OnRingTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this.OnmainDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._mainDiamondCarat = value;
-					this.SendPropertyChanged("mainDiamondCarat");
-					this.OnmainDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondname", DbType="VarChar(20)")]
-		public string otherDiamondname
-		{
-			get
-			{
-				return this._otherDiamondname;
-			}
-			set
-			{
-				if ((this._otherDiamondname != value))
-				{
-					this.OnotherDiamondnameChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondname = value;
-					this.SendPropertyChanged("otherDiamondname");
-					this.OnotherDiamondnameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondCarat", DbType="VarChar(20)")]
-		public string otherDiamondCarat
-		{
-			get
-			{
-				return this._otherDiamondCarat;
-			}
-			set
-			{
-				if ((this._otherDiamondCarat != value))
-				{
-					this.OnotherDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondCarat = value;
-					this.SendPropertyChanged("otherDiamondCarat");
-					this.OnotherDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondshu", DbType="VarChar(20)")]
-		public string otherDiamondshu
-		{
-			get
-			{
-				return this._otherDiamondshu;
-			}
-			set
-			{
-				if ((this._otherDiamondshu != value))
-				{
-					this.OnotherDiamondshuChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondshu = value;
-					this.SendPropertyChanged("otherDiamondshu");
-					this.OnotherDiamondshuChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.GoldOrnament")]
-	public partial class GoldOrnament : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _GoldOrnamentId;
-		
-		private string _OrnamentType;
-		
-		private string _RingType;
-		
-		private string _kuanhao;
-		
-		private string _Goldweight;
-		
-		private System.Nullable<int> _Goldprice;
-		
-		private string _gongfei;
-		
-		private System.Nullable<int> _Type1;
-		
-		private System.Nullable<int> _Type2;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnGoldOrnamentIdChanging(string value);
-    partial void OnGoldOrnamentIdChanged();
-    partial void OnOrnamentTypeChanging(string value);
-    partial void OnOrnamentTypeChanged();
-    partial void OnRingTypeChanging(string value);
-    partial void OnRingTypeChanged();
-    partial void OnkuanhaoChanging(string value);
-    partial void OnkuanhaoChanged();
-    partial void OnGoldweightChanging(string value);
-    partial void OnGoldweightChanged();
-    partial void OnGoldpriceChanging(System.Nullable<int> value);
-    partial void OnGoldpriceChanged();
-    partial void OngongfeiChanging(string value);
-    partial void OngongfeiChanged();
-    partial void OnType1Changing(System.Nullable<int> value);
-    partial void OnType1Changed();
-    partial void OnType2Changing(System.Nullable<int> value);
-    partial void OnType2Changed();
-    #endregion
-		
-		public GoldOrnament()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_GoldOrnamentId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GoldOrnamentId
-		{
-			get
-			{
-				return this._GoldOrnamentId;
-			}
-			set
-			{
-				if ((this._GoldOrnamentId != value))
-				{
-					this.OnGoldOrnamentIdChanging(value);
-					this.SendPropertyChanging();
-					this._GoldOrnamentId = value;
-					this.SendPropertyChanged("GoldOrnamentId");
-					this.OnGoldOrnamentIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
-		public string OrnamentType
-		{
-			get
-			{
-				return this._OrnamentType;
-			}
-			set
-			{
-				if ((this._OrnamentType != value))
-				{
-					this.OnOrnamentTypeChanging(value);
-					this.SendPropertyChanging();
-					this._OrnamentType = value;
-					this.SendPropertyChanged("OrnamentType");
-					this.OnOrnamentTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this.OnRingTypeChanging(value);
-					this.SendPropertyChanging();
-					this._RingType = value;
-					this.SendPropertyChanged("RingType");
-					this.OnRingTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="VarChar(50)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this.OnkuanhaoChanging(value);
-					this.SendPropertyChanging();
-					this._kuanhao = value;
-					this.SendPropertyChanged("kuanhao");
-					this.OnkuanhaoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldweight", DbType="VarChar(20)")]
-		public string Goldweight
-		{
-			get
-			{
-				return this._Goldweight;
-			}
-			set
-			{
-				if ((this._Goldweight != value))
-				{
-					this.OnGoldweightChanging(value);
-					this.SendPropertyChanging();
-					this._Goldweight = value;
-					this.SendPropertyChanged("Goldweight");
-					this.OnGoldweightChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldprice", DbType="Int")]
-		public System.Nullable<int> Goldprice
-		{
-			get
-			{
-				return this._Goldprice;
-			}
-			set
-			{
-				if ((this._Goldprice != value))
-				{
-					this.OnGoldpriceChanging(value);
-					this.SendPropertyChanging();
-					this._Goldprice = value;
-					this.SendPropertyChanged("Goldprice");
-					this.OnGoldpriceChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_gongfei", DbType="VarChar(20)")]
-		public string gongfei
-		{
-			get
-			{
-				return this._gongfei;
-			}
-			set
-			{
-				if ((this._gongfei != value))
-				{
-					this.OngongfeiChanging(value);
-					this.SendPropertyChanging();
-					this._gongfei = value;
-					this.SendPropertyChanged("gongfei");
-					this.OngongfeiChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this.OnType1Changing(value);
-					this.SendPropertyChanging();
-					this._Type1 = value;
-					this.SendPropertyChanged("Type1");
-					this.OnType1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type2", DbType="Int")]
-		public System.Nullable<int> Type2
-		{
-			get
-			{
-				return this._Type2;
-			}
-			set
-			{
-				if ((this._Type2 != value))
-				{
-					this.OnType2Changing(value);
-					this.SendPropertyChanging();
-					this._Type2 = value;
-					this.SendPropertyChanged("Type2");
-					this.OnType2Changed();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.Goldprice")]
-	public partial class Goldprice
-	{
-		
-		private int _GoldpriceID;
-		
-		private string _GoldType;
-		
-		private System.Nullable<decimal> _Goldprice1;
-		
-		private System.Nullable<System.DateTime> _updatetime;
-		
-		public Goldprice()
-		{
-		}
-		
-		[Column(Storage="_GoldpriceID", DbType="Int NOT NULL")]
-		public int GoldpriceID
-		{
-			get
-			{
-				return this._GoldpriceID;
-			}
-			set
-			{
-				if ((this._GoldpriceID != value))
-				{
-					this._GoldpriceID = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_GoldType", DbType="Char(10)")]
-		public string GoldType
-		{
-			get
-			{
-				return this._GoldType;
-			}
-			set
-			{
-				if ((this._GoldType != value))
-				{
-					this._GoldType = value;
-				}
-			}
-		}
-		
-		[Column(Name="Goldprice", Storage="_Goldprice1", DbType="Money")]
-		public System.Nullable<decimal> Goldprice1
-		{
-			get
-			{
-				return this._Goldprice1;
-			}
-			set
-			{
-				if ((this._Goldprice1 != value))
-				{
-					this._Goldprice1 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_updatetime", DbType="DateTime")]
-		public System.Nullable<System.DateTime> updatetime
-		{
-			get
-			{
-				return this._updatetime;
-			}
-			set
-			{
-				if ((this._updatetime != value))
-				{
-					this._updatetime = value;
-				}
-			}
-		}
-	}
-	
-	[Table(Name="dbo.Jewel")]
-	public partial class Jewel : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _JewelId;
-		
-		private string _JewelType;
-		
-		private string _RingType;
-		
-		private string _kuanhao;
-		
-		private string _mainDiamondCarat;
-		
-		private System.Nullable<int> _Type1;
-		
-		private string _otherDiamondname;
-		
-		private string _otherDiamondCarat;
-		
-		private string _otherDiamondshu;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnJewelIdChanging(string value);
-    partial void OnJewelIdChanged();
-    partial void OnJewelTypeChanging(string value);
-    partial void OnJewelTypeChanged();
-    partial void OnRingTypeChanging(string value);
-    partial void OnRingTypeChanged();
-    partial void OnkuanhaoChanging(string value);
-    partial void OnkuanhaoChanged();
-    partial void OnmainDiamondCaratChanging(string value);
-    partial void OnmainDiamondCaratChanged();
-    partial void OnType1Changing(System.Nullable<int> value);
-    partial void OnType1Changed();
-    partial void OnotherDiamondnameChanging(string value);
-    partial void OnotherDiamondnameChanged();
-    partial void OnotherDiamondCaratChanging(string value);
-    partial void OnotherDiamondCaratChanged();
-    partial void OnotherDiamondshuChanging(string value);
-    partial void OnotherDiamondshuChanged();
-    #endregion
-		
-		public Jewel()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_JewelId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string JewelId
-		{
-			get
-			{
-				return this._JewelId;
-			}
-			set
-			{
-				if ((this._JewelId != value))
-				{
-					this.OnJewelIdChanging(value);
-					this.SendPropertyChanging();
-					this._JewelId = value;
-					this.SendPropertyChanged("JewelId");
-					this.OnJewelIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_JewelType", DbType="NChar(10)")]
-		public string JewelType
-		{
-			get
-			{
-				return this._JewelType;
-			}
-			set
-			{
-				if ((this._JewelType != value))
-				{
-					this.OnJewelTypeChanging(value);
-					this.SendPropertyChanging();
-					this._JewelType = value;
-					this.SendPropertyChanged("JewelType");
-					this.OnJewelTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this.OnRingTypeChanging(value);
-					this.SendPropertyChanging();
-					this._RingType = value;
-					this.SendPropertyChanged("RingType");
-					this.OnRingTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(20)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this.OnkuanhaoChanging(value);
-					this.SendPropertyChanging();
-					this._kuanhao = value;
-					this.SendPropertyChanged("kuanhao");
-					this.OnkuanhaoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this.OnmainDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._mainDiamondCarat = value;
-					this.SendPropertyChanged("mainDiamondCarat");
-					this.OnmainDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this.OnType1Changing(value);
-					this.SendPropertyChanging();
-					this._Type1 = value;
-					this.SendPropertyChanged("Type1");
-					this.OnType1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondname", DbType="VarChar(20)")]
-		public string otherDiamondname
-		{
-			get
-			{
-				return this._otherDiamondname;
-			}
-			set
-			{
-				if ((this._otherDiamondname != value))
-				{
-					this.OnotherDiamondnameChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondname = value;
-					this.SendPropertyChanged("otherDiamondname");
-					this.OnotherDiamondnameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondCarat", DbType="VarChar(20)")]
-		public string otherDiamondCarat
-		{
-			get
-			{
-				return this._otherDiamondCarat;
-			}
-			set
-			{
-				if ((this._otherDiamondCarat != value))
-				{
-					this.OnotherDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondCarat = value;
-					this.SendPropertyChanged("otherDiamondCarat");
-					this.OnotherDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondshu", DbType="VarChar(20)")]
-		public string otherDiamondshu
-		{
-			get
-			{
-				return this._otherDiamondshu;
-			}
-			set
-			{
-				if ((this._otherDiamondshu != value))
-				{
-					this.OnotherDiamondshuChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondshu = value;
-					this.SendPropertyChanged("otherDiamondshu");
-					this.OnotherDiamondshuChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.PairRing")]
-	public partial class PairRing : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _PairRingId;
-		
-		private string _StockNumber;
-		
-		private string _RingType;
-		
-		private string _kuanhao;
-		
-		private System.Nullable<int> _Type1;
-		
-		private string _PairId;
-		
-		private System.Nullable<bool> _Sex;
-		
-		private string _mainDiamondCarat;
-		
-		private string _otherDiamondname;
-		
-		private string _otherDiamondCarat;
-		
-		private string _otherDiamondshu;
-		
-		private string _gongfei;
-		
-		private string _Goldweight;
-		
-		private System.Nullable<int> _Goldprice;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnPairRingIdChanging(string value);
-    partial void OnPairRingIdChanged();
-    partial void OnStockNumberChanging(string value);
-    partial void OnStockNumberChanged();
-    partial void OnRingTypeChanging(string value);
-    partial void OnRingTypeChanged();
-    partial void OnkuanhaoChanging(string value);
-    partial void OnkuanhaoChanged();
-    partial void OnType1Changing(System.Nullable<int> value);
-    partial void OnType1Changed();
-    partial void OnPairIdChanging(string value);
-    partial void OnPairIdChanged();
-    partial void OnSexChanging(System.Nullable<bool> value);
-    partial void OnSexChanged();
-    partial void OnmainDiamondCaratChanging(string value);
-    partial void OnmainDiamondCaratChanged();
-    partial void OnotherDiamondnameChanging(string value);
-    partial void OnotherDiamondnameChanged();
-    partial void OnotherDiamondCaratChanging(string value);
-    partial void OnotherDiamondCaratChanged();
-    partial void OnotherDiamondshuChanging(string value);
-    partial void OnotherDiamondshuChanged();
-    partial void OngongfeiChanging(string value);
-    partial void OngongfeiChanged();
-    partial void OnGoldweightChanging(string value);
-    partial void OnGoldweightChanged();
-    partial void OnGoldpriceChanging(System.Nullable<int> value);
-    partial void OnGoldpriceChanged();
-    #endregion
-		
-		public PairRing()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_PairRingId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string PairRingId
-		{
-			get
-			{
-				return this._PairRingId;
-			}
-			set
-			{
-				if ((this._PairRingId != value))
-				{
-					this.OnPairRingIdChanging(value);
-					this.SendPropertyChanging();
-					this._PairRingId = value;
-					this.SendPropertyChanged("PairRingId");
-					this.OnPairRingIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_StockNumber", DbType="NChar(10)")]
-		public string StockNumber
-		{
-			get
-			{
-				return this._StockNumber;
-			}
-			set
-			{
-				if ((this._StockNumber != value))
-				{
-					this.OnStockNumberChanging(value);
-					this.SendPropertyChanging();
-					this._StockNumber = value;
-					this.SendPropertyChanged("StockNumber");
-					this.OnStockNumberChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="NChar(10)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this.OnRingTypeChanging(value);
-					this.SendPropertyChanging();
-					this._RingType = value;
-					this.SendPropertyChanged("RingType");
-					this.OnRingTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(20)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this.OnkuanhaoChanging(value);
-					this.SendPropertyChanging();
-					this._kuanhao = value;
-					this.SendPropertyChanged("kuanhao");
-					this.OnkuanhaoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this.OnType1Changing(value);
-					this.SendPropertyChanging();
-					this._Type1 = value;
-					this.SendPropertyChanged("Type1");
-					this.OnType1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_PairId", DbType="Char(10)")]
-		public string PairId
-		{
-			get
-			{
-				return this._PairId;
-			}
-			set
-			{
-				if ((this._PairId != value))
-				{
-					this.OnPairIdChanging(value);
-					this.SendPropertyChanging();
-					this._PairId = value;
-					this.SendPropertyChanged("PairId");
-					this.OnPairIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Sex", DbType="Bit")]
-		public System.Nullable<bool> Sex
-		{
-			get
-			{
-				return this._Sex;
-			}
-			set
-			{
-				if ((this._Sex != value))
-				{
-					this.OnSexChanging(value);
-					this.SendPropertyChanging();
-					this._Sex = value;
-					this.SendPropertyChanged("Sex");
-					this.OnSexChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this.OnmainDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._mainDiamondCarat = value;
-					this.SendPropertyChanged("mainDiamondCarat");
-					this.OnmainDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondname", DbType="VarChar(20)")]
-		public string otherDiamondname
-		{
-			get
-			{
-				return this._otherDiamondname;
-			}
-			set
-			{
-				if ((this._otherDiamondname != value))
-				{
-					this.OnotherDiamondnameChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondname = value;
-					this.SendPropertyChanged("otherDiamondname");
-					this.OnotherDiamondnameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondCarat", DbType="VarChar(20)")]
-		public string otherDiamondCarat
-		{
-			get
-			{
-				return this._otherDiamondCarat;
-			}
-			set
-			{
-				if ((this._otherDiamondCarat != value))
-				{
-					this.OnotherDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondCarat = value;
-					this.SendPropertyChanged("otherDiamondCarat");
-					this.OnotherDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondshu", DbType="VarChar(20)")]
-		public string otherDiamondshu
-		{
-			get
-			{
-				return this._otherDiamondshu;
-			}
-			set
-			{
-				if ((this._otherDiamondshu != value))
-				{
-					this.OnotherDiamondshuChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondshu = value;
-					this.SendPropertyChanged("otherDiamondshu");
-					this.OnotherDiamondshuChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_gongfei", DbType="VarChar(20)")]
-		public string gongfei
-		{
-			get
-			{
-				return this._gongfei;
-			}
-			set
-			{
-				if ((this._gongfei != value))
-				{
-					this.OngongfeiChanging(value);
-					this.SendPropertyChanging();
-					this._gongfei = value;
-					this.SendPropertyChanged("gongfei");
-					this.OngongfeiChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldweight", DbType="VarChar(20)")]
-		public string Goldweight
-		{
-			get
-			{
-				return this._Goldweight;
-			}
-			set
-			{
-				if ((this._Goldweight != value))
-				{
-					this.OnGoldweightChanging(value);
-					this.SendPropertyChanging();
-					this._Goldweight = value;
-					this.SendPropertyChanged("Goldweight");
-					this.OnGoldweightChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldprice", DbType="Int")]
-		public System.Nullable<int> Goldprice
-		{
-			get
-			{
-				return this._Goldprice;
-			}
-			set
-			{
-				if ((this._Goldprice != value))
-				{
-					this.OnGoldpriceChanging(value);
-					this.SendPropertyChanging();
-					this._Goldprice = value;
-					this.SendPropertyChanged("Goldprice");
-					this.OnGoldpriceChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.Product")]
-	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnProductIdChanging(string value);
-    partial void OnProductIdChanged();
-    partial void OnProductTypeChanging(string value);
-    partial void OnProductTypeChanged();
-    partial void OnFTIdChanging(string value);
-    partial void OnFTIdChanged();
-    partial void OnCounterIdChanging(string value);
-    partial void OnCounterIdChanged();
-    partial void OnPriceChanging(System.Nullable<decimal> value);
-    partial void OnPriceChanged();
-    partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
-    partial void OnCreateDateChanged();
-    partial void OnStatusChanging(System.Nullable<int> value);
-    partial void OnStatusChanged();
-    partial void OnLocationChanging(string value);
-    partial void OnLocationChanged();
-    partial void OnDiscountTypeChanging(System.Nullable<int> value);
-    partial void OnDiscountTypeChanged();
-    partial void OnMainTypeChanging(string value);
-    partial void OnMainTypeChanged();
-    partial void OnSubTypeChanging(string value);
-    partial void OnSubTypeChanged();
-    partial void OnProductNickChanging(string value);
-    partial void OnProductNickChanged();
-    partial void OnHottedChanging(System.Nullable<bool> value);
-    partial void OnHottedChanged();
-    #endregion
-		
-		public Product()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this.OnProductIdChanging(value);
-					this.SendPropertyChanging();
-					this._ProductId = value;
-					this.SendPropertyChanged("ProductId");
-					this.OnProductIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this.OnProductTypeChanging(value);
-					this.SendPropertyChanging();
-					this._ProductType = value;
-					this.SendPropertyChanged("ProductType");
-					this.OnProductTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this.OnFTIdChanging(value);
-					this.SendPropertyChanging();
-					this._FTId = value;
-					this.SendPropertyChanged("FTId");
-					this.OnFTIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this.OnCounterIdChanging(value);
-					this.SendPropertyChanging();
-					this._CounterId = value;
-					this.SendPropertyChanged("CounterId");
-					this.OnCounterIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this.OnPriceChanging(value);
-					this.SendPropertyChanging();
-					this._Price = value;
-					this.SendPropertyChanged("Price");
-					this.OnPriceChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this.OnCreateDateChanging(value);
-					this.SendPropertyChanging();
-					this._CreateDate = value;
-					this.SendPropertyChanged("CreateDate");
-					this.OnCreateDateChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this.OnStatusChanging(value);
-					this.SendPropertyChanging();
-					this._Status = value;
-					this.SendPropertyChanged("Status");
-					this.OnStatusChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this.OnLocationChanging(value);
-					this.SendPropertyChanging();
-					this._Location = value;
-					this.SendPropertyChanged("Location");
-					this.OnLocationChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this.OnDiscountTypeChanging(value);
-					this.SendPropertyChanging();
-					this._DiscountType = value;
-					this.SendPropertyChanged("DiscountType");
-					this.OnDiscountTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this.OnMainTypeChanging(value);
-					this.SendPropertyChanging();
-					this._MainType = value;
-					this.SendPropertyChanged("MainType");
-					this.OnMainTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this.OnSubTypeChanging(value);
-					this.SendPropertyChanging();
-					this._SubType = value;
-					this.SendPropertyChanged("SubType");
-					this.OnSubTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this.OnProductNickChanging(value);
-					this.SendPropertyChanging();
-					this._ProductNick = value;
-					this.SendPropertyChanged("ProductNick");
-					this.OnProductNickChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this.OnHottedChanging(value);
-					this.SendPropertyChanging();
-					this._Hotted = value;
-					this.SendPropertyChanged("Hotted");
-					this.OnHottedChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.RingBracket")]
-	public partial class RingBracket : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _BracketId;
-		
-		private string _MetalType;
-		
-		private string _kuanhao;
-		
-		private string _Style;
-		
-		private System.Nullable<int> _StyleId;
-		
-		private System.Nullable<int> _Type1;
-		
-		private System.Nullable<int> _Type2;
-		
-		private string _Craft;
-		
-		private string _Goldweight;
-		
-		private string _otherDiamondname;
-		
-		private string _otherDiamondCarat;
-		
-		private string _otherDiamondshu;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnBracketIdChanging(string value);
-    partial void OnBracketIdChanged();
-    partial void OnMetalTypeChanging(string value);
-    partial void OnMetalTypeChanged();
-    partial void OnkuanhaoChanging(string value);
-    partial void OnkuanhaoChanged();
-    partial void OnStyleChanging(string value);
-    partial void OnStyleChanged();
-    partial void OnStyleIdChanging(System.Nullable<int> value);
-    partial void OnStyleIdChanged();
-    partial void OnType1Changing(System.Nullable<int> value);
-    partial void OnType1Changed();
-    partial void OnType2Changing(System.Nullable<int> value);
-    partial void OnType2Changed();
-    partial void OnCraftChanging(string value);
-    partial void OnCraftChanged();
-    partial void OnGoldweightChanging(string value);
-    partial void OnGoldweightChanged();
-    partial void OnotherDiamondnameChanging(string value);
-    partial void OnotherDiamondnameChanged();
-    partial void OnotherDiamondCaratChanging(string value);
-    partial void OnotherDiamondCaratChanged();
-    partial void OnotherDiamondshuChanging(string value);
-    partial void OnotherDiamondshuChanged();
-    #endregion
-		
-		public RingBracket()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_BracketId", DbType="Char(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string BracketId
-		{
-			get
-			{
-				return this._BracketId;
-			}
-			set
-			{
-				if ((this._BracketId != value))
-				{
-					this.OnBracketIdChanging(value);
-					this.SendPropertyChanging();
-					this._BracketId = value;
-					this.SendPropertyChanged("BracketId");
-					this.OnBracketIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_MetalType", DbType="VarChar(20)")]
-		public string MetalType
-		{
-			get
-			{
-				return this._MetalType;
-			}
-			set
-			{
-				if ((this._MetalType != value))
-				{
-					this.OnMetalTypeChanging(value);
-					this.SendPropertyChanging();
-					this._MetalType = value;
-					this.SendPropertyChanged("MetalType");
-					this.OnMetalTypeChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="VarChar(20)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this.OnkuanhaoChanging(value);
-					this.SendPropertyChanging();
-					this._kuanhao = value;
-					this.SendPropertyChanged("kuanhao");
-					this.OnkuanhaoChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Style", DbType="VarChar(20)")]
-		public string Style
-		{
-			get
-			{
-				return this._Style;
-			}
-			set
-			{
-				if ((this._Style != value))
-				{
-					this.OnStyleChanging(value);
-					this.SendPropertyChanging();
-					this._Style = value;
-					this.SendPropertyChanged("Style");
-					this.OnStyleChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_StyleId", DbType="Int")]
-		public System.Nullable<int> StyleId
-		{
-			get
-			{
-				return this._StyleId;
-			}
-			set
-			{
-				if ((this._StyleId != value))
-				{
-					this.OnStyleIdChanging(value);
-					this.SendPropertyChanging();
-					this._StyleId = value;
-					this.SendPropertyChanged("StyleId");
-					this.OnStyleIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this.OnType1Changing(value);
-					this.SendPropertyChanging();
-					this._Type1 = value;
-					this.SendPropertyChanged("Type1");
-					this.OnType1Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_Type2", DbType="Int")]
-		public System.Nullable<int> Type2
-		{
-			get
-			{
-				return this._Type2;
-			}
-			set
-			{
-				if ((this._Type2 != value))
-				{
-					this.OnType2Changing(value);
-					this.SendPropertyChanging();
-					this._Type2 = value;
-					this.SendPropertyChanged("Type2");
-					this.OnType2Changed();
-				}
-			}
-		}
-		
-		[Column(Storage="_Craft", DbType="VarChar(20)")]
-		public string Craft
-		{
-			get
-			{
-				return this._Craft;
-			}
-			set
-			{
-				if ((this._Craft != value))
-				{
-					this.OnCraftChanging(value);
-					this.SendPropertyChanging();
-					this._Craft = value;
-					this.SendPropertyChanged("Craft");
-					this.OnCraftChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldweight", DbType="VarChar(20)")]
-		public string Goldweight
-		{
-			get
-			{
-				return this._Goldweight;
-			}
-			set
-			{
-				if ((this._Goldweight != value))
-				{
-					this.OnGoldweightChanging(value);
-					this.SendPropertyChanging();
-					this._Goldweight = value;
-					this.SendPropertyChanged("Goldweight");
-					this.OnGoldweightChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondname", DbType="VarChar(20)")]
-		public string otherDiamondname
-		{
-			get
-			{
-				return this._otherDiamondname;
-			}
-			set
-			{
-				if ((this._otherDiamondname != value))
-				{
-					this.OnotherDiamondnameChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondname = value;
-					this.SendPropertyChanged("otherDiamondname");
-					this.OnotherDiamondnameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondCarat", DbType="VarChar(20)")]
-		public string otherDiamondCarat
-		{
-			get
-			{
-				return this._otherDiamondCarat;
-			}
-			set
-			{
-				if ((this._otherDiamondCarat != value))
-				{
-					this.OnotherDiamondCaratChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondCarat = value;
-					this.SendPropertyChanged("otherDiamondCarat");
-					this.OnotherDiamondCaratChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondshu", DbType="VarChar(20)")]
-		public string otherDiamondshu
-		{
-			get
-			{
-				return this._otherDiamondshu;
-			}
-			set
-			{
-				if ((this._otherDiamondshu != value))
-				{
-					this.OnotherDiamondshuChanging(value);
-					this.SendPropertyChanging();
-					this._otherDiamondshu = value;
-					this.SendPropertyChanged("otherDiamondshu");
-					this.OnotherDiamondshuChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	public partial class search_SearchRingBracketResult
-	{
-		
-		private string _BracketId;
-		
-		private string _MetalType;
-		
-		private string _kuanhao;
-		
-		private string _Style;
-		
-		private System.Nullable<int> _StyleId;
-		
-		private System.Nullable<int> _Type1;
-		
-		private System.Nullable<int> _Type2;
-		
-		private string _Craft;
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		public search_SearchRingBracketResult()
-		{
-		}
-		
-		[Column(Storage="_BracketId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string BracketId
-		{
-			get
-			{
-				return this._BracketId;
-			}
-			set
-			{
-				if ((this._BracketId != value))
-				{
-					this._BracketId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MetalType", DbType="VarChar(20)")]
-		public string MetalType
-		{
-			get
-			{
-				return this._MetalType;
-			}
-			set
-			{
-				if ((this._MetalType != value))
-				{
-					this._MetalType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="VarChar(20)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this._kuanhao = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Style", DbType="VarChar(20)")]
-		public string Style
-		{
-			get
-			{
-				return this._Style;
-			}
-			set
-			{
-				if ((this._Style != value))
-				{
-					this._Style = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_StyleId", DbType="Int")]
-		public System.Nullable<int> StyleId
-		{
-			get
-			{
-				return this._StyleId;
-			}
-			set
-			{
-				if ((this._StyleId != value))
-				{
-					this._StyleId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this._Type1 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type2", DbType="Int")]
-		public System.Nullable<int> Type2
-		{
-			get
-			{
-				return this._Type2;
-			}
-			set
-			{
-				if ((this._Type2 != value))
-				{
-					this._Type2 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Craft", DbType="VarChar(20)")]
-		public string Craft
-		{
-			get
-			{
-				return this._Craft;
-			}
-			set
-			{
-				if ((this._Craft != value))
-				{
-					this._Craft = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-	}
-	
-	public partial class search_SearchDiamondResult
-	{
-		
-		private string _DiamondID;
-		
-		private string _Carat;
-		
-		private string _Clarity;
-		
-		private string _Color;
-		
-		private string _Cut;
-		
-		private string _CutStyle;
-		
-		private string _Diameter;
-		
-		private string _CertType;
-		
-		private string _CertId;
-		
-		private string _Polish;
-		
-		private string _Symmetry;
-		
-		private string _AH;
-		
-		private string _Fluorescence;
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		public search_SearchDiamondResult()
-		{
-		}
-		
-		[Column(Storage="_DiamondID", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string DiamondID
-		{
-			get
-			{
-				return this._DiamondID;
-			}
-			set
-			{
-				if ((this._DiamondID != value))
-				{
-					this._DiamondID = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Carat", DbType="VarChar(20)")]
-		public string Carat
-		{
-			get
-			{
-				return this._Carat;
-			}
-			set
-			{
-				if ((this._Carat != value))
-				{
-					this._Carat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Clarity", DbType="VarChar(20)")]
-		public string Clarity
-		{
-			get
-			{
-				return this._Clarity;
-			}
-			set
-			{
-				if ((this._Clarity != value))
-				{
-					this._Clarity = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Color", DbType="VarChar(20)")]
-		public string Color
-		{
-			get
-			{
-				return this._Color;
-			}
-			set
-			{
-				if ((this._Color != value))
-				{
-					this._Color = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Cut", DbType="VarChar(20)")]
-		public string Cut
-		{
-			get
-			{
-				return this._Cut;
-			}
-			set
-			{
-				if ((this._Cut != value))
-				{
-					this._Cut = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CutStyle", DbType="VarChar(20)")]
-		public string CutStyle
-		{
-			get
-			{
-				return this._CutStyle;
-			}
-			set
-			{
-				if ((this._CutStyle != value))
-				{
-					this._CutStyle = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Diameter", DbType="VarChar(20)")]
-		public string Diameter
-		{
-			get
-			{
-				return this._Diameter;
-			}
-			set
-			{
-				if ((this._Diameter != value))
-				{
-					this._Diameter = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CertType", DbType="VarChar(20)")]
-		public string CertType
-		{
-			get
-			{
-				return this._CertType;
-			}
-			set
-			{
-				if ((this._CertType != value))
-				{
-					this._CertType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CertId", DbType="VarChar(20)")]
-		public string CertId
-		{
-			get
-			{
-				return this._CertId;
-			}
-			set
-			{
-				if ((this._CertId != value))
-				{
-					this._CertId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Polish", DbType="VarChar(20)")]
-		public string Polish
-		{
-			get
-			{
-				return this._Polish;
-			}
-			set
-			{
-				if ((this._Polish != value))
-				{
-					this._Polish = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Symmetry", DbType="VarChar(20)")]
-		public string Symmetry
-		{
-			get
-			{
-				return this._Symmetry;
-			}
-			set
-			{
-				if ((this._Symmetry != value))
-				{
-					this._Symmetry = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_AH", DbType="VarChar(20)")]
-		public string AH
-		{
-			get
-			{
-				return this._AH;
-			}
-			set
-			{
-				if ((this._AH != value))
-				{
-					this._AH = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Fluorescence", DbType="VarChar(20)")]
-		public string Fluorescence
-		{
-			get
-			{
-				return this._Fluorescence;
-			}
-			set
-			{
-				if ((this._Fluorescence != value))
-				{
-					this._Fluorescence = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-	}
+    using System.Data.Linq;
+    using System.Data.Linq.Mapping;
+    using System.Data;
+    using System.Collections.Generic;
+    using System.Reflection;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.ComponentModel;
+    using System;
+
+
+    [System.Data.Linq.Mapping.DatabaseAttribute(Name = "FuTai")]
+    public partial class FuTaiDBDataContext : System.Data.Linq.DataContext
+    {
+
+        private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
+
+        #region Extensibility Method Definitions
+        partial void OnCreated();
+        partial void InsertDiamond(Diamond instance);
+        partial void UpdateDiamond(Diamond instance);
+        partial void DeleteDiamond(Diamond instance);
+        partial void InsertUser(User instance);
+        partial void UpdateUser(User instance);
+        partial void DeleteUser(User instance);
+        partial void InsertDiamondGroup(DiamondGroup instance);
+        partial void UpdateDiamondGroup(DiamondGroup instance);
+        partial void DeleteDiamondGroup(DiamondGroup instance);
+        partial void InsertDiamondOrnament(DiamondOrnament instance);
+        partial void UpdateDiamondOrnament(DiamondOrnament instance);
+        partial void DeleteDiamondOrnament(DiamondOrnament instance);
+        partial void InsertDiamondRing(DiamondRing instance);
+        partial void UpdateDiamondRing(DiamondRing instance);
+        partial void DeleteDiamondRing(DiamondRing instance);
+        partial void InsertGoldOrnament(GoldOrnament instance);
+        partial void UpdateGoldOrnament(GoldOrnament instance);
+        partial void DeleteGoldOrnament(GoldOrnament instance);
+        partial void InsertJewel(Jewel instance);
+        partial void UpdateJewel(Jewel instance);
+        partial void DeleteJewel(Jewel instance);
+        partial void InsertPairRing(PairRing instance);
+        partial void UpdatePairRing(PairRing instance);
+        partial void DeletePairRing(PairRing instance);
+        partial void InsertProduct(Product instance);
+        partial void UpdateProduct(Product instance);
+        partial void DeleteProduct(Product instance);
+        partial void InsertRingBracket(RingBracket instance);
+        partial void UpdateRingBracket(RingBracket instance);
+        partial void DeleteRingBracket(RingBracket instance);
+        partial void InsertHandShow(HandShow instance);
+        partial void UpdateHandShow(HandShow instance);
+        partial void DeleteHandShow(HandShow instance);
+        #endregion
+
+        public FuTaiDBDataContext() :
+            base(global::FuTai.Component.Properties.Settings.Default.FuTaiConnectionString5, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public FuTaiDBDataContext(string connection) :
+            base(connection, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public FuTaiDBDataContext(System.Data.IDbConnection connection) :
+            base(connection, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public FuTaiDBDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) :
+            base(connection, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public FuTaiDBDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) :
+            base(connection, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public System.Data.Linq.Table<Diamond> Diamond
+        {
+            get
+            {
+                return this.GetTable<Diamond>();
+            }
+        }
+
+        public System.Data.Linq.Table<User> User
+        {
+            get
+            {
+                return this.GetTable<User>();
+            }
+        }
+
+        public System.Data.Linq.Table<DiamondGroup> DiamondGroup
+        {
+            get
+            {
+                return this.GetTable<DiamondGroup>();
+            }
+        }
+
+        public System.Data.Linq.Table<DiamondOrnament> DiamondOrnament
+        {
+            get
+            {
+                return this.GetTable<DiamondOrnament>();
+            }
+        }
+
+        public System.Data.Linq.Table<DiamondRing> DiamondRing
+        {
+            get
+            {
+                return this.GetTable<DiamondRing>();
+            }
+        }
+
+        public System.Data.Linq.Table<GoldOrnament> GoldOrnament
+        {
+            get
+            {
+                return this.GetTable<GoldOrnament>();
+            }
+        }
+
+        public System.Data.Linq.Table<Goldprice> Goldprice
+        {
+            get
+            {
+                return this.GetTable<Goldprice>();
+            }
+        }
+
+        public System.Data.Linq.Table<Jewel> Jewel
+        {
+            get
+            {
+                return this.GetTable<Jewel>();
+            }
+        }
+
+        public System.Data.Linq.Table<PairRing> PairRing
+        {
+            get
+            {
+                return this.GetTable<PairRing>();
+            }
+        }
+
+        public System.Data.Linq.Table<Product> Product
+        {
+            get
+            {
+                return this.GetTable<Product>();
+            }
+        }
+
+        public System.Data.Linq.Table<RingBracket> RingBracket
+        {
+            get
+            {
+                return this.GetTable<RingBracket>();
+            }
+        }
+
+        public System.Data.Linq.Table<HandShow> HandShow
+        {
+            get
+            {
+                return this.GetTable<HandShow>();
+            }
+        }
+
+        [Function(Name = "dbo.product_InsertDiamond")]
+        public int InsertDiamond(
+                    [Parameter(Name = "FTId", DbType = "VarChar(20)")] string fTId,
+                    [Parameter(Name = "CounterId", DbType = "VarChar(20)")] string counterId,
+                    [Parameter(Name = "Status", DbType = "Int")] System.Nullable<int> status,
+                    [Parameter(Name = "Location", DbType = "VarChar(20)")] string location,
+                    [Parameter(Name = "DiscountType", DbType = "Int")] System.Nullable<int> discountType,
+                    [Parameter(Name = "Price", DbType = "Money")] System.Nullable<decimal> price,
+                    [Parameter(Name = "Carat", DbType = "VarChar(20)")] string carat,
+                    [Parameter(Name = "Clarity", DbType = "VarChar(20)")] string clarity,
+                    [Parameter(Name = "Color", DbType = "VarChar(20)")] string color,
+                    [Parameter(Name = "Cut", DbType = "VarChar(20)")] string cut,
+                    [Parameter(Name = "CutStyle", DbType = "VarChar(20)")] string cutStyle,
+                    [Parameter(Name = "Diameter", DbType = "VarChar(20)")] string diameter,
+                    [Parameter(Name = "CertType", DbType = "Int")] System.Nullable<int> certType,
+                    [Parameter(Name = "CertId", DbType = "VarChar(20)")] string certId,
+                    [Parameter(Name = "Polish", DbType = "VarChar(20)")] string polish,
+                    [Parameter(Name = "Symmetry", DbType = "VarChar(20)")] string symmetry,
+                    [Parameter(Name = "AH", DbType = "VarChar(20)")] string aH,
+                    [Parameter(Name = "Fluorescence", DbType = "VarChar(20)")] string fluorescence)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fTId, counterId, status, location, discountType, price, carat, clarity, color, cut, cutStyle, diameter, certType, certId, polish, symmetry, aH, fluorescence);
+            return ((int)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchRingBracket")]
+        public ISingleResult<search_SearchRingBracketResult> SearchRingBracket([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1, [Parameter(Name = "Type2", DbType = "Int")] System.Nullable<int> type2)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
+            return ((ISingleResult<search_SearchRingBracketResult>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchDiamond")]
+        public ISingleResult<search_SearchDiamondResult> SearchDiamond([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1, [Parameter(Name = "Type2", DbType = "Int")] System.Nullable<int> type2)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
+            return ((ISingleResult<search_SearchDiamondResult>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchPairRing")]
+        public ISingleResult<search_SearchPairRingResult> SearchPairRing([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
+            return ((ISingleResult<search_SearchPairRingResult>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchByType")]
+        public ISingleResult<search_SearchByTypeResult1> SearchByType([Parameter(Name = "MType", DbType = "VarChar(20)")] string mType, [Parameter(Name = "SType", DbType = "VarChar(50)")] string sType, [Parameter(Name = "Hotted", DbType = "Bit")] System.Nullable<bool> hotted)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mType, sType, hotted);
+            return ((ISingleResult<search_SearchByTypeResult1>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchDiamondRing")]
+        public ISingleResult<search_SearchDiamondRingResult> SearchDiamondRing([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
+            return ((ISingleResult<search_SearchDiamondRingResult>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchDiamondOrnament")]
+        public ISingleResult<search_SearchDiamondOrnamentResult> SearchDiamondOrnament([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
+            return ((ISingleResult<search_SearchDiamondOrnamentResult>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchJewel")]
+        public ISingleResult<search_SearchJewelResult> SearchJewel([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
+            return ((ISingleResult<search_SearchJewelResult>)(result.ReturnValue));
+        }
+
+        [Function(Name = "dbo.search_SearchGoldOrnament")]
+        public ISingleResult<search_SearchGoldOrnamentResult> SearchGoldOrnament([Parameter(Name = "Price1", DbType = "Decimal")] System.Nullable<decimal> price1, [Parameter(Name = "Price2", DbType = "Decimal")] System.Nullable<decimal> price2, [Parameter(Name = "Type1", DbType = "Int")] System.Nullable<int> type1, [Parameter(Name = "Type2", DbType = "Int")] System.Nullable<int> type2)
+        {
+            IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1, type2);
+            return ((ISingleResult<search_SearchGoldOrnamentResult>)(result.ReturnValue));
+        }
+    }
+
+    [Table(Name = "dbo.Diamond")]
+    public partial class Diamond : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _DiamondID;
+
+        private string _Carat;
+
+        private string _Clarity;
+
+        private string _Color;
+
+        private string _Cut;
+
+        private string _CutStyle;
+
+        private string _Diameter;
+
+        private string _CertType;
+
+        private string _CertId;
+
+        private string _Polish;
+
+        private string _Symmetry;
+
+        private string _AH;
+
+        private string _Fluorescence;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnDiamondIDChanging(string value);
+        partial void OnDiamondIDChanged();
+        partial void OnCaratChanging(string value);
+        partial void OnCaratChanged();
+        partial void OnClarityChanging(string value);
+        partial void OnClarityChanged();
+        partial void OnColorChanging(string value);
+        partial void OnColorChanged();
+        partial void OnCutChanging(string value);
+        partial void OnCutChanged();
+        partial void OnCutStyleChanging(string value);
+        partial void OnCutStyleChanged();
+        partial void OnDiameterChanging(string value);
+        partial void OnDiameterChanged();
+        partial void OnCertTypeChanging(string value);
+        partial void OnCertTypeChanged();
+        partial void OnCertIdChanging(string value);
+        partial void OnCertIdChanged();
+        partial void OnPolishChanging(string value);
+        partial void OnPolishChanged();
+        partial void OnSymmetryChanging(string value);
+        partial void OnSymmetryChanged();
+        partial void OnAHChanging(string value);
+        partial void OnAHChanged();
+        partial void OnFluorescenceChanging(string value);
+        partial void OnFluorescenceChanged();
+        #endregion
+
+        public Diamond()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_DiamondID", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string DiamondID
+        {
+            get
+            {
+                return this._DiamondID;
+            }
+            set
+            {
+                if ((this._DiamondID != value))
+                {
+                    this.OnDiamondIDChanging(value);
+                    this.SendPropertyChanging();
+                    this._DiamondID = value;
+                    this.SendPropertyChanged("DiamondID");
+                    this.OnDiamondIDChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Carat", DbType = "VarChar(20)")]
+        public string Carat
+        {
+            get
+            {
+                return this._Carat;
+            }
+            set
+            {
+                if ((this._Carat != value))
+                {
+                    this.OnCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._Carat = value;
+                    this.SendPropertyChanged("Carat");
+                    this.OnCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Clarity", DbType = "VarChar(20)")]
+        public string Clarity
+        {
+            get
+            {
+                return this._Clarity;
+            }
+            set
+            {
+                if ((this._Clarity != value))
+                {
+                    this.OnClarityChanging(value);
+                    this.SendPropertyChanging();
+                    this._Clarity = value;
+                    this.SendPropertyChanged("Clarity");
+                    this.OnClarityChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Color", DbType = "VarChar(20)")]
+        public string Color
+        {
+            get
+            {
+                return this._Color;
+            }
+            set
+            {
+                if ((this._Color != value))
+                {
+                    this.OnColorChanging(value);
+                    this.SendPropertyChanging();
+                    this._Color = value;
+                    this.SendPropertyChanged("Color");
+                    this.OnColorChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Cut", DbType = "VarChar(20)")]
+        public string Cut
+        {
+            get
+            {
+                return this._Cut;
+            }
+            set
+            {
+                if ((this._Cut != value))
+                {
+                    this.OnCutChanging(value);
+                    this.SendPropertyChanging();
+                    this._Cut = value;
+                    this.SendPropertyChanged("Cut");
+                    this.OnCutChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CutStyle", DbType = "VarChar(20)")]
+        public string CutStyle
+        {
+            get
+            {
+                return this._CutStyle;
+            }
+            set
+            {
+                if ((this._CutStyle != value))
+                {
+                    this.OnCutStyleChanging(value);
+                    this.SendPropertyChanging();
+                    this._CutStyle = value;
+                    this.SendPropertyChanged("CutStyle");
+                    this.OnCutStyleChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Diameter", DbType = "VarChar(20)")]
+        public string Diameter
+        {
+            get
+            {
+                return this._Diameter;
+            }
+            set
+            {
+                if ((this._Diameter != value))
+                {
+                    this.OnDiameterChanging(value);
+                    this.SendPropertyChanging();
+                    this._Diameter = value;
+                    this.SendPropertyChanged("Diameter");
+                    this.OnDiameterChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CertType", DbType = "VarChar(20)")]
+        public string CertType
+        {
+            get
+            {
+                return this._CertType;
+            }
+            set
+            {
+                if ((this._CertType != value))
+                {
+                    this.OnCertTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._CertType = value;
+                    this.SendPropertyChanged("CertType");
+                    this.OnCertTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CertId", DbType = "VarChar(20)")]
+        public string CertId
+        {
+            get
+            {
+                return this._CertId;
+            }
+            set
+            {
+                if ((this._CertId != value))
+                {
+                    this.OnCertIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._CertId = value;
+                    this.SendPropertyChanged("CertId");
+                    this.OnCertIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Polish", DbType = "VarChar(20)")]
+        public string Polish
+        {
+            get
+            {
+                return this._Polish;
+            }
+            set
+            {
+                if ((this._Polish != value))
+                {
+                    this.OnPolishChanging(value);
+                    this.SendPropertyChanging();
+                    this._Polish = value;
+                    this.SendPropertyChanged("Polish");
+                    this.OnPolishChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Symmetry", DbType = "VarChar(20)")]
+        public string Symmetry
+        {
+            get
+            {
+                return this._Symmetry;
+            }
+            set
+            {
+                if ((this._Symmetry != value))
+                {
+                    this.OnSymmetryChanging(value);
+                    this.SendPropertyChanging();
+                    this._Symmetry = value;
+                    this.SendPropertyChanged("Symmetry");
+                    this.OnSymmetryChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_AH", DbType = "VarChar(20)")]
+        public string AH
+        {
+            get
+            {
+                return this._AH;
+            }
+            set
+            {
+                if ((this._AH != value))
+                {
+                    this.OnAHChanging(value);
+                    this.SendPropertyChanging();
+                    this._AH = value;
+                    this.SendPropertyChanged("AH");
+                    this.OnAHChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Fluorescence", DbType = "VarChar(20)")]
+        public string Fluorescence
+        {
+            get
+            {
+                return this._Fluorescence;
+            }
+            set
+            {
+                if ((this._Fluorescence != value))
+                {
+                    this.OnFluorescenceChanging(value);
+                    this.SendPropertyChanging();
+                    this._Fluorescence = value;
+                    this.SendPropertyChanged("Fluorescence");
+                    this.OnFluorescenceChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.[User]")]
+    public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private int _UserId;
+
+        private string _CardId;
+
+        private string _Email;
+
+        private string _NickName;
+
+        private string _Password;
+
+        private System.Nullable<int> _Authority;
+
+        private string _UserName;
+
+        private System.Nullable<bool> _Sex;
+
+        private string _Phone;
+
+        private string _Impression;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnUserIdChanging(int value);
+        partial void OnUserIdChanged();
+        partial void OnCardIdChanging(string value);
+        partial void OnCardIdChanged();
+        partial void OnEmailChanging(string value);
+        partial void OnEmailChanged();
+        partial void OnNickNameChanging(string value);
+        partial void OnNickNameChanged();
+        partial void OnPasswordChanging(string value);
+        partial void OnPasswordChanged();
+        partial void OnAuthorityChanging(System.Nullable<int> value);
+        partial void OnAuthorityChanged();
+        partial void OnUserNameChanging(string value);
+        partial void OnUserNameChanged();
+        partial void OnSexChanging(System.Nullable<bool> value);
+        partial void OnSexChanged();
+        partial void OnPhoneChanging(string value);
+        partial void OnPhoneChanged();
+        partial void OnImpressionChanging(string value);
+        partial void OnImpressionChanged();
+        #endregion
+
+        public User()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_UserId", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
+        public int UserId
+        {
+            get
+            {
+                return this._UserId;
+            }
+            set
+            {
+                if ((this._UserId != value))
+                {
+                    this.OnUserIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._UserId = value;
+                    this.SendPropertyChanged("UserId");
+                    this.OnUserIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CardId", DbType = "VarChar(20)")]
+        public string CardId
+        {
+            get
+            {
+                return this._CardId;
+            }
+            set
+            {
+                if ((this._CardId != value))
+                {
+                    this.OnCardIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._CardId = value;
+                    this.SendPropertyChanged("CardId");
+                    this.OnCardIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Email", DbType = "VarChar(40)")]
+        public string Email
+        {
+            get
+            {
+                return this._Email;
+            }
+            set
+            {
+                if ((this._Email != value))
+                {
+                    this.OnEmailChanging(value);
+                    this.SendPropertyChanging();
+                    this._Email = value;
+                    this.SendPropertyChanged("Email");
+                    this.OnEmailChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_NickName", DbType = "NVarChar(20)")]
+        public string NickName
+        {
+            get
+            {
+                return this._NickName;
+            }
+            set
+            {
+                if ((this._NickName != value))
+                {
+                    this.OnNickNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._NickName = value;
+                    this.SendPropertyChanged("NickName");
+                    this.OnNickNameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Password", DbType = "VarChar(50)")]
+        public string Password
+        {
+            get
+            {
+                return this._Password;
+            }
+            set
+            {
+                if ((this._Password != value))
+                {
+                    this.OnPasswordChanging(value);
+                    this.SendPropertyChanging();
+                    this._Password = value;
+                    this.SendPropertyChanged("Password");
+                    this.OnPasswordChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Authority", DbType = "Int")]
+        public System.Nullable<int> Authority
+        {
+            get
+            {
+                return this._Authority;
+            }
+            set
+            {
+                if ((this._Authority != value))
+                {
+                    this.OnAuthorityChanging(value);
+                    this.SendPropertyChanging();
+                    this._Authority = value;
+                    this.SendPropertyChanged("Authority");
+                    this.OnAuthorityChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_UserName", DbType = "NVarChar(20)")]
+        public string UserName
+        {
+            get
+            {
+                return this._UserName;
+            }
+            set
+            {
+                if ((this._UserName != value))
+                {
+                    this.OnUserNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._UserName = value;
+                    this.SendPropertyChanged("UserName");
+                    this.OnUserNameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Sex", DbType = "Bit")]
+        public System.Nullable<bool> Sex
+        {
+            get
+            {
+                return this._Sex;
+            }
+            set
+            {
+                if ((this._Sex != value))
+                {
+                    this.OnSexChanging(value);
+                    this.SendPropertyChanging();
+                    this._Sex = value;
+                    this.SendPropertyChanged("Sex");
+                    this.OnSexChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Phone", DbType = "NChar(10)")]
+        public string Phone
+        {
+            get
+            {
+                return this._Phone;
+            }
+            set
+            {
+                if ((this._Phone != value))
+                {
+                    this.OnPhoneChanging(value);
+                    this.SendPropertyChanging();
+                    this._Phone = value;
+                    this.SendPropertyChanged("Phone");
+                    this.OnPhoneChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Impression", DbType = "NVarChar(200)")]
+        public string Impression
+        {
+            get
+            {
+                return this._Impression;
+            }
+            set
+            {
+                if ((this._Impression != value))
+                {
+                    this.OnImpressionChanging(value);
+                    this.SendPropertyChanging();
+                    this._Impression = value;
+                    this.SendPropertyChanged("Impression");
+                    this.OnImpressionChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.DiamondGroup")]
+    public partial class DiamondGroup : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private int _DiamondGroupId;
+
+        private System.Nullable<int> _UserId;
+
+        private System.Nullable<int> _DiamondId;
+
+        private string _MetalType;
+
+        private string _Style;
+
+        private System.Nullable<int> _RingBracketId;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<System.DateTime> _UpdateDate;
+
+        private System.Nullable<System.DateTime> _DeleteDate;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnDiamondGroupIdChanging(int value);
+        partial void OnDiamondGroupIdChanged();
+        partial void OnUserIdChanging(System.Nullable<int> value);
+        partial void OnUserIdChanged();
+        partial void OnDiamondIdChanging(System.Nullable<int> value);
+        partial void OnDiamondIdChanged();
+        partial void OnMetalTypeChanging(string value);
+        partial void OnMetalTypeChanged();
+        partial void OnStyleChanging(string value);
+        partial void OnStyleChanged();
+        partial void OnRingBracketIdChanging(System.Nullable<int> value);
+        partial void OnRingBracketIdChanged();
+        partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+        partial void OnCreateDateChanged();
+        partial void OnUpdateDateChanging(System.Nullable<System.DateTime> value);
+        partial void OnUpdateDateChanged();
+        partial void OnDeleteDateChanging(System.Nullable<System.DateTime> value);
+        partial void OnDeleteDateChanged();
+        #endregion
+
+        public DiamondGroup()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_DiamondGroupId", DbType = "Int NOT NULL", IsPrimaryKey = true)]
+        public int DiamondGroupId
+        {
+            get
+            {
+                return this._DiamondGroupId;
+            }
+            set
+            {
+                if ((this._DiamondGroupId != value))
+                {
+                    this.OnDiamondGroupIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._DiamondGroupId = value;
+                    this.SendPropertyChanged("DiamondGroupId");
+                    this.OnDiamondGroupIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_UserId", DbType = "Int")]
+        public System.Nullable<int> UserId
+        {
+            get
+            {
+                return this._UserId;
+            }
+            set
+            {
+                if ((this._UserId != value))
+                {
+                    this.OnUserIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._UserId = value;
+                    this.SendPropertyChanged("UserId");
+                    this.OnUserIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_DiamondId", DbType = "Int")]
+        public System.Nullable<int> DiamondId
+        {
+            get
+            {
+                return this._DiamondId;
+            }
+            set
+            {
+                if ((this._DiamondId != value))
+                {
+                    this.OnDiamondIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._DiamondId = value;
+                    this.SendPropertyChanged("DiamondId");
+                    this.OnDiamondIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_MetalType", DbType = "VarChar(20)")]
+        public string MetalType
+        {
+            get
+            {
+                return this._MetalType;
+            }
+            set
+            {
+                if ((this._MetalType != value))
+                {
+                    this.OnMetalTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._MetalType = value;
+                    this.SendPropertyChanged("MetalType");
+                    this.OnMetalTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Style", DbType = "VarChar(20)")]
+        public string Style
+        {
+            get
+            {
+                return this._Style;
+            }
+            set
+            {
+                if ((this._Style != value))
+                {
+                    this.OnStyleChanging(value);
+                    this.SendPropertyChanging();
+                    this._Style = value;
+                    this.SendPropertyChanged("Style");
+                    this.OnStyleChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_RingBracketId", DbType = "Int")]
+        public System.Nullable<int> RingBracketId
+        {
+            get
+            {
+                return this._RingBracketId;
+            }
+            set
+            {
+                if ((this._RingBracketId != value))
+                {
+                    this.OnRingBracketIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._RingBracketId = value;
+                    this.SendPropertyChanged("RingBracketId");
+                    this.OnRingBracketIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this.OnCreateDateChanging(value);
+                    this.SendPropertyChanging();
+                    this._CreateDate = value;
+                    this.SendPropertyChanged("CreateDate");
+                    this.OnCreateDateChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_UpdateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> UpdateDate
+        {
+            get
+            {
+                return this._UpdateDate;
+            }
+            set
+            {
+                if ((this._UpdateDate != value))
+                {
+                    this.OnUpdateDateChanging(value);
+                    this.SendPropertyChanging();
+                    this._UpdateDate = value;
+                    this.SendPropertyChanged("UpdateDate");
+                    this.OnUpdateDateChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_DeleteDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> DeleteDate
+        {
+            get
+            {
+                return this._DeleteDate;
+            }
+            set
+            {
+                if ((this._DeleteDate != value))
+                {
+                    this.OnDeleteDateChanging(value);
+                    this.SendPropertyChanging();
+                    this._DeleteDate = value;
+                    this.SendPropertyChanged("DeleteDate");
+                    this.OnDeleteDateChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.DiamondOrnament")]
+    public partial class DiamondOrnament : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _DiamondOrnamentId;
+
+        private string _OrnamentType;
+
+        private string _kuanhao;
+
+        private string _RingType;
+
+        private string _Goldweight;
+
+        private string _mainDiamondCarat;
+
+        private System.Nullable<int> _Type1;
+
+        private System.Nullable<int> _Type2;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnDiamondOrnamentIdChanging(string value);
+        partial void OnDiamondOrnamentIdChanged();
+        partial void OnOrnamentTypeChanging(string value);
+        partial void OnOrnamentTypeChanged();
+        partial void OnkuanhaoChanging(string value);
+        partial void OnkuanhaoChanged();
+        partial void OnRingTypeChanging(string value);
+        partial void OnRingTypeChanged();
+        partial void OnGoldweightChanging(string value);
+        partial void OnGoldweightChanged();
+        partial void OnmainDiamondCaratChanging(string value);
+        partial void OnmainDiamondCaratChanged();
+        partial void OnType1Changing(System.Nullable<int> value);
+        partial void OnType1Changed();
+        partial void OnType2Changing(System.Nullable<int> value);
+        partial void OnType2Changed();
+        #endregion
+
+        public DiamondOrnament()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_DiamondOrnamentId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string DiamondOrnamentId
+        {
+            get
+            {
+                return this._DiamondOrnamentId;
+            }
+            set
+            {
+                if ((this._DiamondOrnamentId != value))
+                {
+                    this.OnDiamondOrnamentIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._DiamondOrnamentId = value;
+                    this.SendPropertyChanged("DiamondOrnamentId");
+                    this.OnDiamondOrnamentIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_OrnamentType", DbType = "NChar(10)")]
+        public string OrnamentType
+        {
+            get
+            {
+                return this._OrnamentType;
+            }
+            set
+            {
+                if ((this._OrnamentType != value))
+                {
+                    this.OnOrnamentTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._OrnamentType = value;
+                    this.SendPropertyChanged("OrnamentType");
+                    this.OnOrnamentTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(10)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this.OnkuanhaoChanging(value);
+                    this.SendPropertyChanging();
+                    this._kuanhao = value;
+                    this.SendPropertyChanged("kuanhao");
+                    this.OnkuanhaoChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this.OnRingTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._RingType = value;
+                    this.SendPropertyChanged("RingType");
+                    this.OnRingTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldweight", DbType = "VarChar(20)")]
+        public string Goldweight
+        {
+            get
+            {
+                return this._Goldweight;
+            }
+            set
+            {
+                if ((this._Goldweight != value))
+                {
+                    this.OnGoldweightChanging(value);
+                    this.SendPropertyChanging();
+                    this._Goldweight = value;
+                    this.SendPropertyChanged("Goldweight");
+                    this.OnGoldweightChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this.OnmainDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._mainDiamondCarat = value;
+                    this.SendPropertyChanged("mainDiamondCarat");
+                    this.OnmainDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this.OnType1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type1 = value;
+                    this.SendPropertyChanged("Type1");
+                    this.OnType1Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type2", DbType = "Int")]
+        public System.Nullable<int> Type2
+        {
+            get
+            {
+                return this._Type2;
+            }
+            set
+            {
+                if ((this._Type2 != value))
+                {
+                    this.OnType2Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type2 = value;
+                    this.SendPropertyChanged("Type2");
+                    this.OnType2Changed();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.DiamondRing")]
+    public partial class DiamondRing : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _DiamondRingId;
+
+        private string _StockNumber;
+
+        private string _OrnamentType;
+
+        private string _kuanhao;
+
+        private System.Nullable<int> _Type1;
+
+        private string _RingType;
+
+        private string _mainDiamondCarat;
+
+        private string _otherDiamondname;
+
+        private string _otherDiamondCarat;
+
+        private string _otherDiamondshu;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnDiamondRingIdChanging(string value);
+        partial void OnDiamondRingIdChanged();
+        partial void OnStockNumberChanging(string value);
+        partial void OnStockNumberChanged();
+        partial void OnOrnamentTypeChanging(string value);
+        partial void OnOrnamentTypeChanged();
+        partial void OnkuanhaoChanging(string value);
+        partial void OnkuanhaoChanged();
+        partial void OnType1Changing(System.Nullable<int> value);
+        partial void OnType1Changed();
+        partial void OnRingTypeChanging(string value);
+        partial void OnRingTypeChanged();
+        partial void OnmainDiamondCaratChanging(string value);
+        partial void OnmainDiamondCaratChanged();
+        partial void OnotherDiamondnameChanging(string value);
+        partial void OnotherDiamondnameChanged();
+        partial void OnotherDiamondCaratChanging(string value);
+        partial void OnotherDiamondCaratChanged();
+        partial void OnotherDiamondshuChanging(string value);
+        partial void OnotherDiamondshuChanged();
+        #endregion
+
+        public DiamondRing()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_DiamondRingId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string DiamondRingId
+        {
+            get
+            {
+                return this._DiamondRingId;
+            }
+            set
+            {
+                if ((this._DiamondRingId != value))
+                {
+                    this.OnDiamondRingIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._DiamondRingId = value;
+                    this.SendPropertyChanged("DiamondRingId");
+                    this.OnDiamondRingIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_StockNumber", DbType = "VarChar(20)")]
+        public string StockNumber
+        {
+            get
+            {
+                return this._StockNumber;
+            }
+            set
+            {
+                if ((this._StockNumber != value))
+                {
+                    this.OnStockNumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._StockNumber = value;
+                    this.SendPropertyChanged("StockNumber");
+                    this.OnStockNumberChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_OrnamentType", DbType = "NChar(10)")]
+        public string OrnamentType
+        {
+            get
+            {
+                return this._OrnamentType;
+            }
+            set
+            {
+                if ((this._OrnamentType != value))
+                {
+                    this.OnOrnamentTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._OrnamentType = value;
+                    this.SendPropertyChanged("OrnamentType");
+                    this.OnOrnamentTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(10)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this.OnkuanhaoChanging(value);
+                    this.SendPropertyChanging();
+                    this._kuanhao = value;
+                    this.SendPropertyChanged("kuanhao");
+                    this.OnkuanhaoChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this.OnType1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type1 = value;
+                    this.SendPropertyChanged("Type1");
+                    this.OnType1Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this.OnRingTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._RingType = value;
+                    this.SendPropertyChanged("RingType");
+                    this.OnRingTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this.OnmainDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._mainDiamondCarat = value;
+                    this.SendPropertyChanged("mainDiamondCarat");
+                    this.OnmainDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondname", DbType = "VarChar(20)")]
+        public string otherDiamondname
+        {
+            get
+            {
+                return this._otherDiamondname;
+            }
+            set
+            {
+                if ((this._otherDiamondname != value))
+                {
+                    this.OnotherDiamondnameChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondname = value;
+                    this.SendPropertyChanged("otherDiamondname");
+                    this.OnotherDiamondnameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondCarat", DbType = "VarChar(20)")]
+        public string otherDiamondCarat
+        {
+            get
+            {
+                return this._otherDiamondCarat;
+            }
+            set
+            {
+                if ((this._otherDiamondCarat != value))
+                {
+                    this.OnotherDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondCarat = value;
+                    this.SendPropertyChanged("otherDiamondCarat");
+                    this.OnotherDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondshu", DbType = "VarChar(20)")]
+        public string otherDiamondshu
+        {
+            get
+            {
+                return this._otherDiamondshu;
+            }
+            set
+            {
+                if ((this._otherDiamondshu != value))
+                {
+                    this.OnotherDiamondshuChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondshu = value;
+                    this.SendPropertyChanged("otherDiamondshu");
+                    this.OnotherDiamondshuChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.GoldOrnament")]
+    public partial class GoldOrnament : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _GoldOrnamentId;
+
+        private string _OrnamentType;
+
+        private string _RingType;
+
+        private string _kuanhao;
+
+        private string _Goldweight;
+
+        private System.Nullable<int> _Goldprice;
+
+        private string _gongfei;
+
+        private System.Nullable<int> _Type1;
+
+        private System.Nullable<int> _Type2;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnGoldOrnamentIdChanging(string value);
+        partial void OnGoldOrnamentIdChanged();
+        partial void OnOrnamentTypeChanging(string value);
+        partial void OnOrnamentTypeChanged();
+        partial void OnRingTypeChanging(string value);
+        partial void OnRingTypeChanged();
+        partial void OnkuanhaoChanging(string value);
+        partial void OnkuanhaoChanged();
+        partial void OnGoldweightChanging(string value);
+        partial void OnGoldweightChanged();
+        partial void OnGoldpriceChanging(System.Nullable<int> value);
+        partial void OnGoldpriceChanged();
+        partial void OngongfeiChanging(string value);
+        partial void OngongfeiChanged();
+        partial void OnType1Changing(System.Nullable<int> value);
+        partial void OnType1Changed();
+        partial void OnType2Changing(System.Nullable<int> value);
+        partial void OnType2Changed();
+        #endregion
+
+        public GoldOrnament()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_GoldOrnamentId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string GoldOrnamentId
+        {
+            get
+            {
+                return this._GoldOrnamentId;
+            }
+            set
+            {
+                if ((this._GoldOrnamentId != value))
+                {
+                    this.OnGoldOrnamentIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._GoldOrnamentId = value;
+                    this.SendPropertyChanged("GoldOrnamentId");
+                    this.OnGoldOrnamentIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_OrnamentType", DbType = "NChar(10)")]
+        public string OrnamentType
+        {
+            get
+            {
+                return this._OrnamentType;
+            }
+            set
+            {
+                if ((this._OrnamentType != value))
+                {
+                    this.OnOrnamentTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._OrnamentType = value;
+                    this.SendPropertyChanged("OrnamentType");
+                    this.OnOrnamentTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this.OnRingTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._RingType = value;
+                    this.SendPropertyChanged("RingType");
+                    this.OnRingTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "VarChar(50)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this.OnkuanhaoChanging(value);
+                    this.SendPropertyChanging();
+                    this._kuanhao = value;
+                    this.SendPropertyChanged("kuanhao");
+                    this.OnkuanhaoChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldweight", DbType = "VarChar(20)")]
+        public string Goldweight
+        {
+            get
+            {
+                return this._Goldweight;
+            }
+            set
+            {
+                if ((this._Goldweight != value))
+                {
+                    this.OnGoldweightChanging(value);
+                    this.SendPropertyChanging();
+                    this._Goldweight = value;
+                    this.SendPropertyChanged("Goldweight");
+                    this.OnGoldweightChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldprice", DbType = "Int")]
+        public System.Nullable<int> Goldprice
+        {
+            get
+            {
+                return this._Goldprice;
+            }
+            set
+            {
+                if ((this._Goldprice != value))
+                {
+                    this.OnGoldpriceChanging(value);
+                    this.SendPropertyChanging();
+                    this._Goldprice = value;
+                    this.SendPropertyChanged("Goldprice");
+                    this.OnGoldpriceChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_gongfei", DbType = "VarChar(20)")]
+        public string gongfei
+        {
+            get
+            {
+                return this._gongfei;
+            }
+            set
+            {
+                if ((this._gongfei != value))
+                {
+                    this.OngongfeiChanging(value);
+                    this.SendPropertyChanging();
+                    this._gongfei = value;
+                    this.SendPropertyChanged("gongfei");
+                    this.OngongfeiChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this.OnType1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type1 = value;
+                    this.SendPropertyChanged("Type1");
+                    this.OnType1Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type2", DbType = "Int")]
+        public System.Nullable<int> Type2
+        {
+            get
+            {
+                return this._Type2;
+            }
+            set
+            {
+                if ((this._Type2 != value))
+                {
+                    this.OnType2Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type2 = value;
+                    this.SendPropertyChanged("Type2");
+                    this.OnType2Changed();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.Goldprice")]
+    public partial class Goldprice
+    {
+
+        private int _GoldpriceID;
+
+        private string _GoldType;
+
+        private System.Nullable<decimal> _Goldprice1;
+
+        private System.Nullable<System.DateTime> _updatetime;
+
+        public Goldprice()
+        {
+        }
+
+        [Column(Storage = "_GoldpriceID", DbType = "Int NOT NULL")]
+        public int GoldpriceID
+        {
+            get
+            {
+                return this._GoldpriceID;
+            }
+            set
+            {
+                if ((this._GoldpriceID != value))
+                {
+                    this._GoldpriceID = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_GoldType", DbType = "Char(10)")]
+        public string GoldType
+        {
+            get
+            {
+                return this._GoldType;
+            }
+            set
+            {
+                if ((this._GoldType != value))
+                {
+                    this._GoldType = value;
+                }
+            }
+        }
+
+        [Column(Name = "Goldprice", Storage = "_Goldprice1", DbType = "Money")]
+        public System.Nullable<decimal> Goldprice1
+        {
+            get
+            {
+                return this._Goldprice1;
+            }
+            set
+            {
+                if ((this._Goldprice1 != value))
+                {
+                    this._Goldprice1 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_updatetime", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> updatetime
+        {
+            get
+            {
+                return this._updatetime;
+            }
+            set
+            {
+                if ((this._updatetime != value))
+                {
+                    this._updatetime = value;
+                }
+            }
+        }
+    }
+
+    [Table(Name = "dbo.Jewel")]
+    public partial class Jewel : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _JewelId;
+
+        private string _JewelType;
+
+        private string _RingType;
+
+        private string _kuanhao;
+
+        private string _mainDiamondCarat;
+
+        private System.Nullable<int> _Type1;
+
+        private string _otherDiamondname;
+
+        private string _otherDiamondCarat;
+
+        private string _otherDiamondshu;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnJewelIdChanging(string value);
+        partial void OnJewelIdChanged();
+        partial void OnJewelTypeChanging(string value);
+        partial void OnJewelTypeChanged();
+        partial void OnRingTypeChanging(string value);
+        partial void OnRingTypeChanged();
+        partial void OnkuanhaoChanging(string value);
+        partial void OnkuanhaoChanged();
+        partial void OnmainDiamondCaratChanging(string value);
+        partial void OnmainDiamondCaratChanged();
+        partial void OnType1Changing(System.Nullable<int> value);
+        partial void OnType1Changed();
+        partial void OnotherDiamondnameChanging(string value);
+        partial void OnotherDiamondnameChanged();
+        partial void OnotherDiamondCaratChanging(string value);
+        partial void OnotherDiamondCaratChanged();
+        partial void OnotherDiamondshuChanging(string value);
+        partial void OnotherDiamondshuChanged();
+        #endregion
+
+        public Jewel()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_JewelId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string JewelId
+        {
+            get
+            {
+                return this._JewelId;
+            }
+            set
+            {
+                if ((this._JewelId != value))
+                {
+                    this.OnJewelIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._JewelId = value;
+                    this.SendPropertyChanged("JewelId");
+                    this.OnJewelIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_JewelType", DbType = "NChar(10)")]
+        public string JewelType
+        {
+            get
+            {
+                return this._JewelType;
+            }
+            set
+            {
+                if ((this._JewelType != value))
+                {
+                    this.OnJewelTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._JewelType = value;
+                    this.SendPropertyChanged("JewelType");
+                    this.OnJewelTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this.OnRingTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._RingType = value;
+                    this.SendPropertyChanged("RingType");
+                    this.OnRingTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(20)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this.OnkuanhaoChanging(value);
+                    this.SendPropertyChanging();
+                    this._kuanhao = value;
+                    this.SendPropertyChanged("kuanhao");
+                    this.OnkuanhaoChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this.OnmainDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._mainDiamondCarat = value;
+                    this.SendPropertyChanged("mainDiamondCarat");
+                    this.OnmainDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this.OnType1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type1 = value;
+                    this.SendPropertyChanged("Type1");
+                    this.OnType1Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondname", DbType = "VarChar(20)")]
+        public string otherDiamondname
+        {
+            get
+            {
+                return this._otherDiamondname;
+            }
+            set
+            {
+                if ((this._otherDiamondname != value))
+                {
+                    this.OnotherDiamondnameChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondname = value;
+                    this.SendPropertyChanged("otherDiamondname");
+                    this.OnotherDiamondnameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondCarat", DbType = "VarChar(20)")]
+        public string otherDiamondCarat
+        {
+            get
+            {
+                return this._otherDiamondCarat;
+            }
+            set
+            {
+                if ((this._otherDiamondCarat != value))
+                {
+                    this.OnotherDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondCarat = value;
+                    this.SendPropertyChanged("otherDiamondCarat");
+                    this.OnotherDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondshu", DbType = "VarChar(20)")]
+        public string otherDiamondshu
+        {
+            get
+            {
+                return this._otherDiamondshu;
+            }
+            set
+            {
+                if ((this._otherDiamondshu != value))
+                {
+                    this.OnotherDiamondshuChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondshu = value;
+                    this.SendPropertyChanged("otherDiamondshu");
+                    this.OnotherDiamondshuChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.PairRing")]
+    public partial class PairRing : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _PairRingId;
+
+        private string _StockNumber;
+
+        private string _RingType;
+
+        private string _kuanhao;
+
+        private System.Nullable<int> _Type1;
+
+        private string _PairId;
+
+        private System.Nullable<bool> _Sex;
+
+        private string _mainDiamondCarat;
+
+        private string _otherDiamondname;
+
+        private string _otherDiamondCarat;
+
+        private string _otherDiamondshu;
+
+        private string _gongfei;
+
+        private string _Goldweight;
+
+        private System.Nullable<int> _Goldprice;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnPairRingIdChanging(string value);
+        partial void OnPairRingIdChanged();
+        partial void OnStockNumberChanging(string value);
+        partial void OnStockNumberChanged();
+        partial void OnRingTypeChanging(string value);
+        partial void OnRingTypeChanged();
+        partial void OnkuanhaoChanging(string value);
+        partial void OnkuanhaoChanged();
+        partial void OnType1Changing(System.Nullable<int> value);
+        partial void OnType1Changed();
+        partial void OnPairIdChanging(string value);
+        partial void OnPairIdChanged();
+        partial void OnSexChanging(System.Nullable<bool> value);
+        partial void OnSexChanged();
+        partial void OnmainDiamondCaratChanging(string value);
+        partial void OnmainDiamondCaratChanged();
+        partial void OnotherDiamondnameChanging(string value);
+        partial void OnotherDiamondnameChanged();
+        partial void OnotherDiamondCaratChanging(string value);
+        partial void OnotherDiamondCaratChanged();
+        partial void OnotherDiamondshuChanging(string value);
+        partial void OnotherDiamondshuChanged();
+        partial void OngongfeiChanging(string value);
+        partial void OngongfeiChanged();
+        partial void OnGoldweightChanging(string value);
+        partial void OnGoldweightChanged();
+        partial void OnGoldpriceChanging(System.Nullable<int> value);
+        partial void OnGoldpriceChanged();
+        #endregion
+
+        public PairRing()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_PairRingId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string PairRingId
+        {
+            get
+            {
+                return this._PairRingId;
+            }
+            set
+            {
+                if ((this._PairRingId != value))
+                {
+                    this.OnPairRingIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._PairRingId = value;
+                    this.SendPropertyChanged("PairRingId");
+                    this.OnPairRingIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_StockNumber", DbType = "NChar(10)")]
+        public string StockNumber
+        {
+            get
+            {
+                return this._StockNumber;
+            }
+            set
+            {
+                if ((this._StockNumber != value))
+                {
+                    this.OnStockNumberChanging(value);
+                    this.SendPropertyChanging();
+                    this._StockNumber = value;
+                    this.SendPropertyChanged("StockNumber");
+                    this.OnStockNumberChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "NChar(10)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this.OnRingTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._RingType = value;
+                    this.SendPropertyChanged("RingType");
+                    this.OnRingTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(20)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this.OnkuanhaoChanging(value);
+                    this.SendPropertyChanging();
+                    this._kuanhao = value;
+                    this.SendPropertyChanged("kuanhao");
+                    this.OnkuanhaoChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this.OnType1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type1 = value;
+                    this.SendPropertyChanged("Type1");
+                    this.OnType1Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_PairId", DbType = "Char(10)")]
+        public string PairId
+        {
+            get
+            {
+                return this._PairId;
+            }
+            set
+            {
+                if ((this._PairId != value))
+                {
+                    this.OnPairIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._PairId = value;
+                    this.SendPropertyChanged("PairId");
+                    this.OnPairIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Sex", DbType = "Bit")]
+        public System.Nullable<bool> Sex
+        {
+            get
+            {
+                return this._Sex;
+            }
+            set
+            {
+                if ((this._Sex != value))
+                {
+                    this.OnSexChanging(value);
+                    this.SendPropertyChanging();
+                    this._Sex = value;
+                    this.SendPropertyChanged("Sex");
+                    this.OnSexChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this.OnmainDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._mainDiamondCarat = value;
+                    this.SendPropertyChanged("mainDiamondCarat");
+                    this.OnmainDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondname", DbType = "VarChar(20)")]
+        public string otherDiamondname
+        {
+            get
+            {
+                return this._otherDiamondname;
+            }
+            set
+            {
+                if ((this._otherDiamondname != value))
+                {
+                    this.OnotherDiamondnameChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondname = value;
+                    this.SendPropertyChanged("otherDiamondname");
+                    this.OnotherDiamondnameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondCarat", DbType = "VarChar(20)")]
+        public string otherDiamondCarat
+        {
+            get
+            {
+                return this._otherDiamondCarat;
+            }
+            set
+            {
+                if ((this._otherDiamondCarat != value))
+                {
+                    this.OnotherDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondCarat = value;
+                    this.SendPropertyChanged("otherDiamondCarat");
+                    this.OnotherDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondshu", DbType = "VarChar(20)")]
+        public string otherDiamondshu
+        {
+            get
+            {
+                return this._otherDiamondshu;
+            }
+            set
+            {
+                if ((this._otherDiamondshu != value))
+                {
+                    this.OnotherDiamondshuChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondshu = value;
+                    this.SendPropertyChanged("otherDiamondshu");
+                    this.OnotherDiamondshuChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_gongfei", DbType = "VarChar(20)")]
+        public string gongfei
+        {
+            get
+            {
+                return this._gongfei;
+            }
+            set
+            {
+                if ((this._gongfei != value))
+                {
+                    this.OngongfeiChanging(value);
+                    this.SendPropertyChanging();
+                    this._gongfei = value;
+                    this.SendPropertyChanged("gongfei");
+                    this.OngongfeiChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldweight", DbType = "VarChar(20)")]
+        public string Goldweight
+        {
+            get
+            {
+                return this._Goldweight;
+            }
+            set
+            {
+                if ((this._Goldweight != value))
+                {
+                    this.OnGoldweightChanging(value);
+                    this.SendPropertyChanging();
+                    this._Goldweight = value;
+                    this.SendPropertyChanged("Goldweight");
+                    this.OnGoldweightChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldprice", DbType = "Int")]
+        public System.Nullable<int> Goldprice
+        {
+            get
+            {
+                return this._Goldprice;
+            }
+            set
+            {
+                if ((this._Goldprice != value))
+                {
+                    this.OnGoldpriceChanging(value);
+                    this.SendPropertyChanging();
+                    this._Goldprice = value;
+                    this.SendPropertyChanged("Goldprice");
+                    this.OnGoldpriceChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.Product")]
+    public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        private string _ProductNick;
+
+        private System.Nullable<bool> _Hotted;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnProductIdChanging(string value);
+        partial void OnProductIdChanged();
+        partial void OnProductTypeChanging(string value);
+        partial void OnProductTypeChanged();
+        partial void OnFTIdChanging(string value);
+        partial void OnFTIdChanged();
+        partial void OnCounterIdChanging(string value);
+        partial void OnCounterIdChanged();
+        partial void OnPriceChanging(System.Nullable<decimal> value);
+        partial void OnPriceChanged();
+        partial void OnCreateDateChanging(System.Nullable<System.DateTime> value);
+        partial void OnCreateDateChanged();
+        partial void OnStatusChanging(System.Nullable<int> value);
+        partial void OnStatusChanged();
+        partial void OnLocationChanging(string value);
+        partial void OnLocationChanged();
+        partial void OnDiscountTypeChanging(System.Nullable<int> value);
+        partial void OnDiscountTypeChanged();
+        partial void OnMainTypeChanging(string value);
+        partial void OnMainTypeChanged();
+        partial void OnSubTypeChanging(string value);
+        partial void OnSubTypeChanged();
+        partial void OnProductNickChanging(string value);
+        partial void OnProductNickChanged();
+        partial void OnHottedChanging(System.Nullable<bool> value);
+        partial void OnHottedChanged();
+        #endregion
+
+        public Product()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this.OnProductIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._ProductId = value;
+                    this.SendPropertyChanged("ProductId");
+                    this.OnProductIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this.OnProductTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._ProductType = value;
+                    this.SendPropertyChanged("ProductType");
+                    this.OnProductTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this.OnFTIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._FTId = value;
+                    this.SendPropertyChanged("FTId");
+                    this.OnFTIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this.OnCounterIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._CounterId = value;
+                    this.SendPropertyChanged("CounterId");
+                    this.OnCounterIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this.OnPriceChanging(value);
+                    this.SendPropertyChanging();
+                    this._Price = value;
+                    this.SendPropertyChanged("Price");
+                    this.OnPriceChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this.OnCreateDateChanging(value);
+                    this.SendPropertyChanging();
+                    this._CreateDate = value;
+                    this.SendPropertyChanged("CreateDate");
+                    this.OnCreateDateChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this.OnStatusChanging(value);
+                    this.SendPropertyChanging();
+                    this._Status = value;
+                    this.SendPropertyChanged("Status");
+                    this.OnStatusChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this.OnLocationChanging(value);
+                    this.SendPropertyChanging();
+                    this._Location = value;
+                    this.SendPropertyChanged("Location");
+                    this.OnLocationChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this.OnDiscountTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._DiscountType = value;
+                    this.SendPropertyChanged("DiscountType");
+                    this.OnDiscountTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this.OnMainTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._MainType = value;
+                    this.SendPropertyChanged("MainType");
+                    this.OnMainTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this.OnSubTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._SubType = value;
+                    this.SendPropertyChanged("SubType");
+                    this.OnSubTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+        public string ProductNick
+        {
+            get
+            {
+                return this._ProductNick;
+            }
+            set
+            {
+                if ((this._ProductNick != value))
+                {
+                    this.OnProductNickChanging(value);
+                    this.SendPropertyChanging();
+                    this._ProductNick = value;
+                    this.SendPropertyChanged("ProductNick");
+                    this.OnProductNickChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Hotted", DbType = "Bit")]
+        public System.Nullable<bool> Hotted
+        {
+            get
+            {
+                return this._Hotted;
+            }
+            set
+            {
+                if ((this._Hotted != value))
+                {
+                    this.OnHottedChanging(value);
+                    this.SendPropertyChanging();
+                    this._Hotted = value;
+                    this.SendPropertyChanged("Hotted");
+                    this.OnHottedChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.RingBracket")]
+    public partial class RingBracket : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private string _BracketId;
+
+        private string _MetalType;
+
+        private string _kuanhao;
+
+        private string _Style;
+
+        private System.Nullable<int> _StyleId;
+
+        private System.Nullable<int> _Type1;
+
+        private System.Nullable<int> _Type2;
+
+        private string _Craft;
+
+        private string _Goldweight;
+
+        private string _otherDiamondname;
+
+        private string _otherDiamondCarat;
+
+        private string _otherDiamondshu;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnBracketIdChanging(string value);
+        partial void OnBracketIdChanged();
+        partial void OnMetalTypeChanging(string value);
+        partial void OnMetalTypeChanged();
+        partial void OnkuanhaoChanging(string value);
+        partial void OnkuanhaoChanged();
+        partial void OnStyleChanging(string value);
+        partial void OnStyleChanged();
+        partial void OnStyleIdChanging(System.Nullable<int> value);
+        partial void OnStyleIdChanged();
+        partial void OnType1Changing(System.Nullable<int> value);
+        partial void OnType1Changed();
+        partial void OnType2Changing(System.Nullable<int> value);
+        partial void OnType2Changed();
+        partial void OnCraftChanging(string value);
+        partial void OnCraftChanged();
+        partial void OnGoldweightChanging(string value);
+        partial void OnGoldweightChanged();
+        partial void OnotherDiamondnameChanging(string value);
+        partial void OnotherDiamondnameChanged();
+        partial void OnotherDiamondCaratChanging(string value);
+        partial void OnotherDiamondCaratChanged();
+        partial void OnotherDiamondshuChanging(string value);
+        partial void OnotherDiamondshuChanged();
+        #endregion
+
+        public RingBracket()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_BracketId", DbType = "Char(10) NOT NULL", CanBeNull = false, IsPrimaryKey = true)]
+        public string BracketId
+        {
+            get
+            {
+                return this._BracketId;
+            }
+            set
+            {
+                if ((this._BracketId != value))
+                {
+                    this.OnBracketIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._BracketId = value;
+                    this.SendPropertyChanged("BracketId");
+                    this.OnBracketIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_MetalType", DbType = "VarChar(20)")]
+        public string MetalType
+        {
+            get
+            {
+                return this._MetalType;
+            }
+            set
+            {
+                if ((this._MetalType != value))
+                {
+                    this.OnMetalTypeChanging(value);
+                    this.SendPropertyChanging();
+                    this._MetalType = value;
+                    this.SendPropertyChanged("MetalType");
+                    this.OnMetalTypeChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "VarChar(20)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this.OnkuanhaoChanging(value);
+                    this.SendPropertyChanging();
+                    this._kuanhao = value;
+                    this.SendPropertyChanged("kuanhao");
+                    this.OnkuanhaoChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Style", DbType = "VarChar(20)")]
+        public string Style
+        {
+            get
+            {
+                return this._Style;
+            }
+            set
+            {
+                if ((this._Style != value))
+                {
+                    this.OnStyleChanging(value);
+                    this.SendPropertyChanging();
+                    this._Style = value;
+                    this.SendPropertyChanged("Style");
+                    this.OnStyleChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_StyleId", DbType = "Int")]
+        public System.Nullable<int> StyleId
+        {
+            get
+            {
+                return this._StyleId;
+            }
+            set
+            {
+                if ((this._StyleId != value))
+                {
+                    this.OnStyleIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._StyleId = value;
+                    this.SendPropertyChanged("StyleId");
+                    this.OnStyleIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this.OnType1Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type1 = value;
+                    this.SendPropertyChanged("Type1");
+                    this.OnType1Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_Type2", DbType = "Int")]
+        public System.Nullable<int> Type2
+        {
+            get
+            {
+                return this._Type2;
+            }
+            set
+            {
+                if ((this._Type2 != value))
+                {
+                    this.OnType2Changing(value);
+                    this.SendPropertyChanging();
+                    this._Type2 = value;
+                    this.SendPropertyChanged("Type2");
+                    this.OnType2Changed();
+                }
+            }
+        }
+
+        [Column(Storage = "_Craft", DbType = "VarChar(20)")]
+        public string Craft
+        {
+            get
+            {
+                return this._Craft;
+            }
+            set
+            {
+                if ((this._Craft != value))
+                {
+                    this.OnCraftChanging(value);
+                    this.SendPropertyChanging();
+                    this._Craft = value;
+                    this.SendPropertyChanged("Craft");
+                    this.OnCraftChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldweight", DbType = "VarChar(20)")]
+        public string Goldweight
+        {
+            get
+            {
+                return this._Goldweight;
+            }
+            set
+            {
+                if ((this._Goldweight != value))
+                {
+                    this.OnGoldweightChanging(value);
+                    this.SendPropertyChanging();
+                    this._Goldweight = value;
+                    this.SendPropertyChanged("Goldweight");
+                    this.OnGoldweightChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondname", DbType = "VarChar(20)")]
+        public string otherDiamondname
+        {
+            get
+            {
+                return this._otherDiamondname;
+            }
+            set
+            {
+                if ((this._otherDiamondname != value))
+                {
+                    this.OnotherDiamondnameChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondname = value;
+                    this.SendPropertyChanged("otherDiamondname");
+                    this.OnotherDiamondnameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondCarat", DbType = "VarChar(20)")]
+        public string otherDiamondCarat
+        {
+            get
+            {
+                return this._otherDiamondCarat;
+            }
+            set
+            {
+                if ((this._otherDiamondCarat != value))
+                {
+                    this.OnotherDiamondCaratChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondCarat = value;
+                    this.SendPropertyChanged("otherDiamondCarat");
+                    this.OnotherDiamondCaratChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondshu", DbType = "VarChar(20)")]
+        public string otherDiamondshu
+        {
+            get
+            {
+                return this._otherDiamondshu;
+            }
+            set
+            {
+                if ((this._otherDiamondshu != value))
+                {
+                    this.OnotherDiamondshuChanging(value);
+                    this.SendPropertyChanging();
+                    this._otherDiamondshu = value;
+                    this.SendPropertyChanged("otherDiamondshu");
+                    this.OnotherDiamondshuChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    [Table(Name = "dbo.HandShow")]
+    public partial class HandShow : INotifyPropertyChanging, INotifyPropertyChanged
+    {
+
+        private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+
+        private int _HandShowId;
+
+        private string _UserName;
+
+        private System.Nullable<System.DateTime> _BuyDate;
+
+        private System.Nullable<int> _Ticket;
+
+        private string _Src;
+
+        #region Extensibility Method Definitions
+        partial void OnLoaded();
+        partial void OnValidate(System.Data.Linq.ChangeAction action);
+        partial void OnCreated();
+        partial void OnHandShowIdChanging(int value);
+        partial void OnHandShowIdChanged();
+        partial void OnUserNameChanging(string value);
+        partial void OnUserNameChanged();
+        partial void OnBuyDateChanging(System.Nullable<System.DateTime> value);
+        partial void OnBuyDateChanged();
+        partial void OnTicketChanging(System.Nullable<int> value);
+        partial void OnTicketChanged();
+        partial void OnSrcChanging(string value);
+        partial void OnSrcChanged();
+        #endregion
+
+        public HandShow()
+        {
+            OnCreated();
+        }
+
+        [Column(Storage = "_HandShowId", AutoSync = AutoSync.OnInsert, DbType = "Int NOT NULL IDENTITY", IsPrimaryKey = true, IsDbGenerated = true)]
+        public int HandShowId
+        {
+            get
+            {
+                return this._HandShowId;
+            }
+            set
+            {
+                if ((this._HandShowId != value))
+                {
+                    this.OnHandShowIdChanging(value);
+                    this.SendPropertyChanging();
+                    this._HandShowId = value;
+                    this.SendPropertyChanged("HandShowId");
+                    this.OnHandShowIdChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_UserName", DbType = "VarChar(20)")]
+        public string UserName
+        {
+            get
+            {
+                return this._UserName;
+            }
+            set
+            {
+                if ((this._UserName != value))
+                {
+                    this.OnUserNameChanging(value);
+                    this.SendPropertyChanging();
+                    this._UserName = value;
+                    this.SendPropertyChanged("UserName");
+                    this.OnUserNameChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_BuyDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> BuyDate
+        {
+            get
+            {
+                return this._BuyDate;
+            }
+            set
+            {
+                if ((this._BuyDate != value))
+                {
+                    this.OnBuyDateChanging(value);
+                    this.SendPropertyChanging();
+                    this._BuyDate = value;
+                    this.SendPropertyChanged("BuyDate");
+                    this.OnBuyDateChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Ticket", DbType = "Int")]
+        public System.Nullable<int> Ticket
+        {
+            get
+            {
+                return this._Ticket;
+            }
+            set
+            {
+                if ((this._Ticket != value))
+                {
+                    this.OnTicketChanging(value);
+                    this.SendPropertyChanging();
+                    this._Ticket = value;
+                    this.SendPropertyChanged("Ticket");
+                    this.OnTicketChanged();
+                }
+            }
+        }
+
+        [Column(Storage = "_Src", DbType = "VarChar(40)")]
+        public string Src
+        {
+            get
+            {
+                return this._Src;
+            }
+            set
+            {
+                if ((this._Src != value))
+                {
+                    this.OnSrcChanging(value);
+                    this.SendPropertyChanging();
+                    this._Src = value;
+                    this.SendPropertyChanged("Src");
+                    this.OnSrcChanged();
+                }
+            }
+        }
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void SendPropertyChanging()
+        {
+            if ((this.PropertyChanging != null))
+            {
+                this.PropertyChanging(this, emptyChangingEventArgs);
+            }
+        }
+
+        protected virtual void SendPropertyChanged(String propertyName)
+        {
+            if ((this.PropertyChanged != null))
+            {
+                this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+
+    public partial class search_SearchRingBracketResult
+    {
+
+        private string _BracketId;
+
+        private string _MetalType;
+
+        private string _kuanhao;
+
+        private string _Style;
+
+        private System.Nullable<int> _StyleId;
+
+        private System.Nullable<int> _Type1;
+
+        private System.Nullable<int> _Type2;
+
+        private string _Craft;
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        public search_SearchRingBracketResult()
+        {
+        }
+
+        [Column(Storage = "_BracketId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string BracketId
+        {
+            get
+            {
+                return this._BracketId;
+            }
+            set
+            {
+                if ((this._BracketId != value))
+                {
+                    this._BracketId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MetalType", DbType = "VarChar(20)")]
+        public string MetalType
+        {
+            get
+            {
+                return this._MetalType;
+            }
+            set
+            {
+                if ((this._MetalType != value))
+                {
+                    this._MetalType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "VarChar(20)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this._kuanhao = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Style", DbType = "VarChar(20)")]
+        public string Style
+        {
+            get
+            {
+                return this._Style;
+            }
+            set
+            {
+                if ((this._Style != value))
+                {
+                    this._Style = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_StyleId", DbType = "Int")]
+        public System.Nullable<int> StyleId
+        {
+            get
+            {
+                return this._StyleId;
+            }
+            set
+            {
+                if ((this._StyleId != value))
+                {
+                    this._StyleId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this._Type1 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type2", DbType = "Int")]
+        public System.Nullable<int> Type2
+        {
+            get
+            {
+                return this._Type2;
+            }
+            set
+            {
+                if ((this._Type2 != value))
+                {
+                    this._Type2 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Craft", DbType = "VarChar(20)")]
+        public string Craft
+        {
+            get
+            {
+                return this._Craft;
+            }
+            set
+            {
+                if ((this._Craft != value))
+                {
+                    this._Craft = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+    }
+
+    public partial class search_SearchDiamondResult
+    {
+
+        private string _DiamondID;
+
+        private string _Carat;
+
+        private string _Clarity;
+
+        private string _Color;
+
+        private string _Cut;
+
+        private string _CutStyle;
+
+        private string _Diameter;
+
+        private string _CertType;
+
+        private string _CertId;
+
+        private string _Polish;
+
+        private string _Symmetry;
+
+        private string _AH;
+
+        private string _Fluorescence;
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        public search_SearchDiamondResult()
+        {
+        }
+
+        [Column(Storage = "_DiamondID", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string DiamondID
+        {
+            get
+            {
+                return this._DiamondID;
+            }
+            set
+            {
+                if ((this._DiamondID != value))
+                {
+                    this._DiamondID = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Carat", DbType = "VarChar(20)")]
+        public string Carat
+        {
+            get
+            {
+                return this._Carat;
+            }
+            set
+            {
+                if ((this._Carat != value))
+                {
+                    this._Carat = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Clarity", DbType = "VarChar(20)")]
+        public string Clarity
+        {
+            get
+            {
+                return this._Clarity;
+            }
+            set
+            {
+                if ((this._Clarity != value))
+                {
+                    this._Clarity = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Color", DbType = "VarChar(20)")]
+        public string Color
+        {
+            get
+            {
+                return this._Color;
+            }
+            set
+            {
+                if ((this._Color != value))
+                {
+                    this._Color = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Cut", DbType = "VarChar(20)")]
+        public string Cut
+        {
+            get
+            {
+                return this._Cut;
+            }
+            set
+            {
+                if ((this._Cut != value))
+                {
+                    this._Cut = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CutStyle", DbType = "VarChar(20)")]
+        public string CutStyle
+        {
+            get
+            {
+                return this._CutStyle;
+            }
+            set
+            {
+                if ((this._CutStyle != value))
+                {
+                    this._CutStyle = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Diameter", DbType = "VarChar(20)")]
+        public string Diameter
+        {
+            get
+            {
+                return this._Diameter;
+            }
+            set
+            {
+                if ((this._Diameter != value))
+                {
+                    this._Diameter = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CertType", DbType = "VarChar(20)")]
+        public string CertType
+        {
+            get
+            {
+                return this._CertType;
+            }
+            set
+            {
+                if ((this._CertType != value))
+                {
+                    this._CertType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CertId", DbType = "VarChar(20)")]
+        public string CertId
+        {
+            get
+            {
+                return this._CertId;
+            }
+            set
+            {
+                if ((this._CertId != value))
+                {
+                    this._CertId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Polish", DbType = "VarChar(20)")]
+        public string Polish
+        {
+            get
+            {
+                return this._Polish;
+            }
+            set
+            {
+                if ((this._Polish != value))
+                {
+                    this._Polish = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Symmetry", DbType = "VarChar(20)")]
+        public string Symmetry
+        {
+            get
+            {
+                return this._Symmetry;
+            }
+            set
+            {
+                if ((this._Symmetry != value))
+                {
+                    this._Symmetry = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_AH", DbType = "VarChar(20)")]
+        public string AH
+        {
+            get
+            {
+                return this._AH;
+            }
+            set
+            {
+                if ((this._AH != value))
+                {
+                    this._AH = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Fluorescence", DbType = "VarChar(20)")]
+        public string Fluorescence
+        {
+            get
+            {
+                return this._Fluorescence;
+            }
+            set
+            {
+                if ((this._Fluorescence != value))
+                {
+                    this._Fluorescence = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+    }
 
     public partial class search_SearchPairRingResult
     {
@@ -4099,7 +4268,6 @@ namespace FuTai.Component
         private string _GoldWeight;
 
         private int _Type1;
-
         private string _StockNumber0;
 
         private string _StockNumber1;
@@ -4322,73 +4490,72 @@ namespace FuTai.Component
             }
         }
     }
-	
-	public partial class search_SearchByTypeResult1
-	{
-		
-		private string _ProductId;
-		
-		private string _ProductType;
 
+    public partial class search_SearchByTypeResult1
+    {
+
+        private string _ProductId;
+
+        private string _ProductType;
         private string _ImgSrc;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-		public search_SearchByTypeResult1()
-		{
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        private string _ProductNick;
+
+        private System.Nullable<bool> _Hotted;
+
+        public search_SearchByTypeResult1()
+        {
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
 
         [Column(Storage = "_ImgSrc", DbType = "VarChar(20)")]
         public string ImgSrc
@@ -4405,1870 +4572,1870 @@ namespace FuTai.Component
                 }
             }
         }
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this._ProductNick = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this._Hotted = value;
-				}
-			}
-		}
-	}
-	
-	public partial class search_SearchDiamondRingResult
-	{
-		
-		private string _DiamondRingId;
-		
-		private string _StockNumber;
-		
-		private string _OrnamentType;
-		
-		private string _kuanhao;
-		
-		private System.Nullable<int> _Type1;
-		
-		private string _RingType;
-		
-		private string _mainDiamondCarat;
-		
-		private string _otherDiamondname;
-		
-		private string _otherDiamondCarat;
-		
-		private string _otherDiamondshu;
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-		private string _ImgSrc;
-		
-		public search_SearchDiamondRingResult()
-		{
-		}
-		
-		[Column(Storage="_DiamondRingId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string DiamondRingId
-		{
-			get
-			{
-				return this._DiamondRingId;
-			}
-			set
-			{
-				if ((this._DiamondRingId != value))
-				{
-					this._DiamondRingId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_StockNumber", DbType="VarChar(20)")]
-		public string StockNumber
-		{
-			get
-			{
-				return this._StockNumber;
-			}
-			set
-			{
-				if ((this._StockNumber != value))
-				{
-					this._StockNumber = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
-		public string OrnamentType
-		{
-			get
-			{
-				return this._OrnamentType;
-			}
-			set
-			{
-				if ((this._OrnamentType != value))
-				{
-					this._OrnamentType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(10)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this._kuanhao = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this._Type1 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this._RingType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this._mainDiamondCarat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondname", DbType="VarChar(20)")]
-		public string otherDiamondname
-		{
-			get
-			{
-				return this._otherDiamondname;
-			}
-			set
-			{
-				if ((this._otherDiamondname != value))
-				{
-					this._otherDiamondname = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondCarat", DbType="VarChar(20)")]
-		public string otherDiamondCarat
-		{
-			get
-			{
-				return this._otherDiamondCarat;
-			}
-			set
-			{
-				if ((this._otherDiamondCarat != value))
-				{
-					this._otherDiamondCarat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondshu", DbType="VarChar(20)")]
-		public string otherDiamondshu
-		{
-			get
-			{
-				return this._otherDiamondshu;
-			}
-			set
-			{
-				if ((this._otherDiamondshu != value))
-				{
-					this._otherDiamondshu = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this._ProductNick = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this._Hotted = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ImgSrc", DbType="VarChar(40)")]
-		public string ImgSrc
-		{
-			get
-			{
-				return this._ImgSrc;
-			}
-			set
-			{
-				if ((this._ImgSrc != value))
-				{
-					this._ImgSrc = value;
-				}
-			}
-		}
-	}
-	
-	public partial class search_SearchDiamondOrnamentResult
-	{
-		
-		private string _DiamondOrnamentId;
-		
-		private string _OrnamentType;
-		
-		private string _kuanhao;
-		
-		private string _RingType;
-		
-		private string _Goldweight;
-		
-		private string _mainDiamondCarat;
-		
-		private System.Nullable<int> _Type1;
-		
-		private System.Nullable<int> _Type2;
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-		private string _ImgSrc;
-		
-		public search_SearchDiamondOrnamentResult()
-		{
-		}
-		
-		[Column(Storage="_DiamondOrnamentId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string DiamondOrnamentId
-		{
-			get
-			{
-				return this._DiamondOrnamentId;
-			}
-			set
-			{
-				if ((this._DiamondOrnamentId != value))
-				{
-					this._DiamondOrnamentId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
-		public string OrnamentType
-		{
-			get
-			{
-				return this._OrnamentType;
-			}
-			set
-			{
-				if ((this._OrnamentType != value))
-				{
-					this._OrnamentType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(10)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this._kuanhao = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this._RingType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldweight", DbType="VarChar(20)")]
-		public string Goldweight
-		{
-			get
-			{
-				return this._Goldweight;
-			}
-			set
-			{
-				if ((this._Goldweight != value))
-				{
-					this._Goldweight = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this._mainDiamondCarat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this._Type1 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type2", DbType="Int")]
-		public System.Nullable<int> Type2
-		{
-			get
-			{
-				return this._Type2;
-			}
-			set
-			{
-				if ((this._Type2 != value))
-				{
-					this._Type2 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this._ProductNick = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this._Hotted = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ImgSrc", DbType="VarChar(40)")]
-		public string ImgSrc
-		{
-			get
-			{
-				return this._ImgSrc;
-			}
-			set
-			{
-				if ((this._ImgSrc != value))
-				{
-					this._ImgSrc = value;
-				}
-			}
-		}
-	}
-	
-	public partial class search_SearchJewelResult
-	{
-		
-		private string _JewelId;
-		
-		private string _JewelType;
-		
-		private string _RingType;
-		
-		private string _kuanhao;
-		
-		private string _mainDiamondCarat;
-		
-		private System.Nullable<int> _Type1;
-		
-		private string _otherDiamondname;
-		
-		private string _otherDiamondCarat;
-		
-		private string _otherDiamondshu;
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-		private string _ImgSrc;
-		
-		public search_SearchJewelResult()
-		{
-		}
-		
-		[Column(Storage="_JewelId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string JewelId
-		{
-			get
-			{
-				return this._JewelId;
-			}
-			set
-			{
-				if ((this._JewelId != value))
-				{
-					this._JewelId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_JewelType", DbType="NChar(10)")]
-		public string JewelType
-		{
-			get
-			{
-				return this._JewelType;
-			}
-			set
-			{
-				if ((this._JewelType != value))
-				{
-					this._JewelType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this._RingType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="Char(20)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this._kuanhao = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_mainDiamondCarat", DbType="VarChar(20)")]
-		public string mainDiamondCarat
-		{
-			get
-			{
-				return this._mainDiamondCarat;
-			}
-			set
-			{
-				if ((this._mainDiamondCarat != value))
-				{
-					this._mainDiamondCarat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this._Type1 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondname", DbType="VarChar(20)")]
-		public string otherDiamondname
-		{
-			get
-			{
-				return this._otherDiamondname;
-			}
-			set
-			{
-				if ((this._otherDiamondname != value))
-				{
-					this._otherDiamondname = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondCarat", DbType="VarChar(20)")]
-		public string otherDiamondCarat
-		{
-			get
-			{
-				return this._otherDiamondCarat;
-			}
-			set
-			{
-				if ((this._otherDiamondCarat != value))
-				{
-					this._otherDiamondCarat = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_otherDiamondshu", DbType="VarChar(20)")]
-		public string otherDiamondshu
-		{
-			get
-			{
-				return this._otherDiamondshu;
-			}
-			set
-			{
-				if ((this._otherDiamondshu != value))
-				{
-					this._otherDiamondshu = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this._ProductNick = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this._Hotted = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ImgSrc", DbType="VarChar(40)")]
-		public string ImgSrc
-		{
-			get
-			{
-				return this._ImgSrc;
-			}
-			set
-			{
-				if ((this._ImgSrc != value))
-				{
-					this._ImgSrc = value;
-				}
-			}
-		}
-	}
-	
-	public partial class search_SearchGoldOrnamentResult
-	{
-		
-		private string _GoldOrnamentId;
-		
-		private string _OrnamentType;
-		
-		private string _RingType;
-		
-		private string _kuanhao;
-		
-		private string _Goldweight;
-		
-		private System.Nullable<int> _Goldprice;
-		
-		private string _gongfei;
-		
-		private System.Nullable<int> _Type1;
-		
-		private System.Nullable<int> _Type2;
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-		private string _ImgSrc;
-		
-		public search_SearchGoldOrnamentResult()
-		{
-		}
-		
-		[Column(Storage="_GoldOrnamentId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string GoldOrnamentId
-		{
-			get
-			{
-				return this._GoldOrnamentId;
-			}
-			set
-			{
-				if ((this._GoldOrnamentId != value))
-				{
-					this._GoldOrnamentId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_OrnamentType", DbType="NChar(10)")]
-		public string OrnamentType
-		{
-			get
-			{
-				return this._OrnamentType;
-			}
-			set
-			{
-				if ((this._OrnamentType != value))
-				{
-					this._OrnamentType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_RingType", DbType="VarChar(20)")]
-		public string RingType
-		{
-			get
-			{
-				return this._RingType;
-			}
-			set
-			{
-				if ((this._RingType != value))
-				{
-					this._RingType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_kuanhao", DbType="VarChar(50)")]
-		public string kuanhao
-		{
-			get
-			{
-				return this._kuanhao;
-			}
-			set
-			{
-				if ((this._kuanhao != value))
-				{
-					this._kuanhao = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldweight", DbType="VarChar(20)")]
-		public string Goldweight
-		{
-			get
-			{
-				return this._Goldweight;
-			}
-			set
-			{
-				if ((this._Goldweight != value))
-				{
-					this._Goldweight = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Goldprice", DbType="Int")]
-		public System.Nullable<int> Goldprice
-		{
-			get
-			{
-				return this._Goldprice;
-			}
-			set
-			{
-				if ((this._Goldprice != value))
-				{
-					this._Goldprice = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_gongfei", DbType="VarChar(20)")]
-		public string gongfei
-		{
-			get
-			{
-				return this._gongfei;
-			}
-			set
-			{
-				if ((this._gongfei != value))
-				{
-					this._gongfei = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type1", DbType="Int")]
-		public System.Nullable<int> Type1
-		{
-			get
-			{
-				return this._Type1;
-			}
-			set
-			{
-				if ((this._Type1 != value))
-				{
-					this._Type1 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Type2", DbType="Int")]
-		public System.Nullable<int> Type2
-		{
-			get
-			{
-				return this._Type2;
-			}
-			set
-			{
-				if ((this._Type2 != value))
-				{
-					this._Type2 = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this._ProductNick = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this._Hotted = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ImgSrc", DbType="VarChar(40)")]
-		public string ImgSrc
-		{
-			get
-			{
-				return this._ImgSrc;
-			}
-			set
-			{
-				if ((this._ImgSrc != value))
-				{
-					this._ImgSrc = value;
-				}
-			}
-		}
-	}
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+        public string ProductNick
+        {
+            get
+            {
+                return this._ProductNick;
+            }
+            set
+            {
+                if ((this._ProductNick != value))
+                {
+                    this._ProductNick = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Hotted", DbType = "Bit")]
+        public System.Nullable<bool> Hotted
+        {
+            get
+            {
+                return this._Hotted;
+            }
+            set
+            {
+                if ((this._Hotted != value))
+                {
+                    this._Hotted = value;
+                }
+            }
+        }
+    }
+
+    public partial class search_SearchDiamondRingResult
+    {
+
+        private string _DiamondRingId;
+
+        private string _StockNumber;
+
+        private string _OrnamentType;
+
+        private string _kuanhao;
+
+        private System.Nullable<int> _Type1;
+
+        private string _RingType;
+
+        private string _mainDiamondCarat;
+
+        private string _otherDiamondname;
+
+        private string _otherDiamondCarat;
+
+        private string _otherDiamondshu;
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        private string _ProductNick;
+
+        private System.Nullable<bool> _Hotted;
+
+        private string _ImgSrc;
+
+        public search_SearchDiamondRingResult()
+        {
+        }
+
+        [Column(Storage = "_DiamondRingId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string DiamondRingId
+        {
+            get
+            {
+                return this._DiamondRingId;
+            }
+            set
+            {
+                if ((this._DiamondRingId != value))
+                {
+                    this._DiamondRingId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_StockNumber", DbType = "VarChar(20)")]
+        public string StockNumber
+        {
+            get
+            {
+                return this._StockNumber;
+            }
+            set
+            {
+                if ((this._StockNumber != value))
+                {
+                    this._StockNumber = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_OrnamentType", DbType = "NChar(10)")]
+        public string OrnamentType
+        {
+            get
+            {
+                return this._OrnamentType;
+            }
+            set
+            {
+                if ((this._OrnamentType != value))
+                {
+                    this._OrnamentType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(10)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this._kuanhao = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this._Type1 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this._RingType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this._mainDiamondCarat = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondname", DbType = "VarChar(20)")]
+        public string otherDiamondname
+        {
+            get
+            {
+                return this._otherDiamondname;
+            }
+            set
+            {
+                if ((this._otherDiamondname != value))
+                {
+                    this._otherDiamondname = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondCarat", DbType = "VarChar(20)")]
+        public string otherDiamondCarat
+        {
+            get
+            {
+                return this._otherDiamondCarat;
+            }
+            set
+            {
+                if ((this._otherDiamondCarat != value))
+                {
+                    this._otherDiamondCarat = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondshu", DbType = "VarChar(20)")]
+        public string otherDiamondshu
+        {
+            get
+            {
+                return this._otherDiamondshu;
+            }
+            set
+            {
+                if ((this._otherDiamondshu != value))
+                {
+                    this._otherDiamondshu = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+        public string ProductNick
+        {
+            get
+            {
+                return this._ProductNick;
+            }
+            set
+            {
+                if ((this._ProductNick != value))
+                {
+                    this._ProductNick = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Hotted", DbType = "Bit")]
+        public System.Nullable<bool> Hotted
+        {
+            get
+            {
+                return this._Hotted;
+            }
+            set
+            {
+                if ((this._Hotted != value))
+                {
+                    this._Hotted = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(40)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
+    }
+
+    public partial class search_SearchDiamondOrnamentResult
+    {
+
+        private string _DiamondOrnamentId;
+
+        private string _OrnamentType;
+
+        private string _kuanhao;
+
+        private string _RingType;
+
+        private string _Goldweight;
+
+        private string _mainDiamondCarat;
+
+        private System.Nullable<int> _Type1;
+
+        private System.Nullable<int> _Type2;
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        private string _ProductNick;
+
+        private System.Nullable<bool> _Hotted;
+
+        private string _ImgSrc;
+
+        public search_SearchDiamondOrnamentResult()
+        {
+        }
+
+        [Column(Storage = "_DiamondOrnamentId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string DiamondOrnamentId
+        {
+            get
+            {
+                return this._DiamondOrnamentId;
+            }
+            set
+            {
+                if ((this._DiamondOrnamentId != value))
+                {
+                    this._DiamondOrnamentId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_OrnamentType", DbType = "NChar(10)")]
+        public string OrnamentType
+        {
+            get
+            {
+                return this._OrnamentType;
+            }
+            set
+            {
+                if ((this._OrnamentType != value))
+                {
+                    this._OrnamentType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(10)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this._kuanhao = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this._RingType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldweight", DbType = "VarChar(20)")]
+        public string Goldweight
+        {
+            get
+            {
+                return this._Goldweight;
+            }
+            set
+            {
+                if ((this._Goldweight != value))
+                {
+                    this._Goldweight = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this._mainDiamondCarat = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this._Type1 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type2", DbType = "Int")]
+        public System.Nullable<int> Type2
+        {
+            get
+            {
+                return this._Type2;
+            }
+            set
+            {
+                if ((this._Type2 != value))
+                {
+                    this._Type2 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+        public string ProductNick
+        {
+            get
+            {
+                return this._ProductNick;
+            }
+            set
+            {
+                if ((this._ProductNick != value))
+                {
+                    this._ProductNick = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Hotted", DbType = "Bit")]
+        public System.Nullable<bool> Hotted
+        {
+            get
+            {
+                return this._Hotted;
+            }
+            set
+            {
+                if ((this._Hotted != value))
+                {
+                    this._Hotted = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(40)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
+    }
+
+    public partial class search_SearchJewelResult
+    {
+
+        private string _JewelId;
+
+        private string _JewelType;
+
+        private string _RingType;
+
+        private string _kuanhao;
+
+        private string _mainDiamondCarat;
+
+        private System.Nullable<int> _Type1;
+
+        private string _otherDiamondname;
+
+        private string _otherDiamondCarat;
+
+        private string _otherDiamondshu;
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        private string _ProductNick;
+
+        private System.Nullable<bool> _Hotted;
+
+        private string _ImgSrc;
+
+        public search_SearchJewelResult()
+        {
+        }
+
+        [Column(Storage = "_JewelId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string JewelId
+        {
+            get
+            {
+                return this._JewelId;
+            }
+            set
+            {
+                if ((this._JewelId != value))
+                {
+                    this._JewelId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_JewelType", DbType = "NChar(10)")]
+        public string JewelType
+        {
+            get
+            {
+                return this._JewelType;
+            }
+            set
+            {
+                if ((this._JewelType != value))
+                {
+                    this._JewelType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this._RingType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "Char(20)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this._kuanhao = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_mainDiamondCarat", DbType = "VarChar(20)")]
+        public string mainDiamondCarat
+        {
+            get
+            {
+                return this._mainDiamondCarat;
+            }
+            set
+            {
+                if ((this._mainDiamondCarat != value))
+                {
+                    this._mainDiamondCarat = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this._Type1 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondname", DbType = "VarChar(20)")]
+        public string otherDiamondname
+        {
+            get
+            {
+                return this._otherDiamondname;
+            }
+            set
+            {
+                if ((this._otherDiamondname != value))
+                {
+                    this._otherDiamondname = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondCarat", DbType = "VarChar(20)")]
+        public string otherDiamondCarat
+        {
+            get
+            {
+                return this._otherDiamondCarat;
+            }
+            set
+            {
+                if ((this._otherDiamondCarat != value))
+                {
+                    this._otherDiamondCarat = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_otherDiamondshu", DbType = "VarChar(20)")]
+        public string otherDiamondshu
+        {
+            get
+            {
+                return this._otherDiamondshu;
+            }
+            set
+            {
+                if ((this._otherDiamondshu != value))
+                {
+                    this._otherDiamondshu = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+        public string ProductNick
+        {
+            get
+            {
+                return this._ProductNick;
+            }
+            set
+            {
+                if ((this._ProductNick != value))
+                {
+                    this._ProductNick = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Hotted", DbType = "Bit")]
+        public System.Nullable<bool> Hotted
+        {
+            get
+            {
+                return this._Hotted;
+            }
+            set
+            {
+                if ((this._Hotted != value))
+                {
+                    this._Hotted = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(40)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
+    }
+
+    public partial class search_SearchGoldOrnamentResult
+    {
+
+        private string _GoldOrnamentId;
+
+        private string _OrnamentType;
+
+        private string _RingType;
+
+        private string _kuanhao;
+
+        private string _Goldweight;
+
+        private System.Nullable<int> _Goldprice;
+
+        private string _gongfei;
+
+        private System.Nullable<int> _Type1;
+
+        private System.Nullable<int> _Type2;
+
+        private string _ProductId;
+
+        private string _ProductType;
+
+        private string _FTId;
+
+        private string _CounterId;
+
+        private System.Nullable<decimal> _Price;
+
+        private System.Nullable<System.DateTime> _CreateDate;
+
+        private System.Nullable<int> _Status;
+
+        private string _Location;
+
+        private System.Nullable<int> _DiscountType;
+
+        private string _MainType;
+
+        private string _SubType;
+
+        private string _ProductNick;
+
+        private System.Nullable<bool> _Hotted;
+
+        private string _ImgSrc;
+
+        public search_SearchGoldOrnamentResult()
+        {
+        }
+
+        [Column(Storage = "_GoldOrnamentId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string GoldOrnamentId
+        {
+            get
+            {
+                return this._GoldOrnamentId;
+            }
+            set
+            {
+                if ((this._GoldOrnamentId != value))
+                {
+                    this._GoldOrnamentId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_OrnamentType", DbType = "NChar(10)")]
+        public string OrnamentType
+        {
+            get
+            {
+                return this._OrnamentType;
+            }
+            set
+            {
+                if ((this._OrnamentType != value))
+                {
+                    this._OrnamentType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_RingType", DbType = "VarChar(20)")]
+        public string RingType
+        {
+            get
+            {
+                return this._RingType;
+            }
+            set
+            {
+                if ((this._RingType != value))
+                {
+                    this._RingType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_kuanhao", DbType = "VarChar(50)")]
+        public string kuanhao
+        {
+            get
+            {
+                return this._kuanhao;
+            }
+            set
+            {
+                if ((this._kuanhao != value))
+                {
+                    this._kuanhao = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldweight", DbType = "VarChar(20)")]
+        public string Goldweight
+        {
+            get
+            {
+                return this._Goldweight;
+            }
+            set
+            {
+                if ((this._Goldweight != value))
+                {
+                    this._Goldweight = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Goldprice", DbType = "Int")]
+        public System.Nullable<int> Goldprice
+        {
+            get
+            {
+                return this._Goldprice;
+            }
+            set
+            {
+                if ((this._Goldprice != value))
+                {
+                    this._Goldprice = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_gongfei", DbType = "VarChar(20)")]
+        public string gongfei
+        {
+            get
+            {
+                return this._gongfei;
+            }
+            set
+            {
+                if ((this._gongfei != value))
+                {
+                    this._gongfei = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public System.Nullable<int> Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this._Type1 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type2", DbType = "Int")]
+        public System.Nullable<int> Type2
+        {
+            get
+            {
+                return this._Type2;
+            }
+            set
+            {
+                if ((this._Type2 != value))
+                {
+                    this._Type2 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductId", DbType = "Char(10) NOT NULL", CanBeNull = false)]
+        public string ProductId
+        {
+            get
+            {
+                return this._ProductId;
+            }
+            set
+            {
+                if ((this._ProductId != value))
+                {
+                    this._ProductId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductType", DbType = "VarChar(20) NOT NULL", CanBeNull = false)]
+        public string ProductType
+        {
+            get
+            {
+                return this._ProductType;
+            }
+            set
+            {
+                if ((this._ProductType != value))
+                {
+                    this._ProductType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_FTId", DbType = "VarChar(20)")]
+        public string FTId
+        {
+            get
+            {
+                return this._FTId;
+            }
+            set
+            {
+                if ((this._FTId != value))
+                {
+                    this._FTId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CounterId", DbType = "VarChar(20)")]
+        public string CounterId
+        {
+            get
+            {
+                return this._CounterId;
+            }
+            set
+            {
+                if ((this._CounterId != value))
+                {
+                    this._CounterId = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Price", DbType = "Money")]
+        public System.Nullable<decimal> Price
+        {
+            get
+            {
+                return this._Price;
+            }
+            set
+            {
+                if ((this._Price != value))
+                {
+                    this._Price = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_CreateDate", DbType = "DateTime")]
+        public System.Nullable<System.DateTime> CreateDate
+        {
+            get
+            {
+                return this._CreateDate;
+            }
+            set
+            {
+                if ((this._CreateDate != value))
+                {
+                    this._CreateDate = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Status", DbType = "Int")]
+        public System.Nullable<int> Status
+        {
+            get
+            {
+                return this._Status;
+            }
+            set
+            {
+                if ((this._Status != value))
+                {
+                    this._Status = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Location", DbType = "VarChar(20)")]
+        public string Location
+        {
+            get
+            {
+                return this._Location;
+            }
+            set
+            {
+                if ((this._Location != value))
+                {
+                    this._Location = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_DiscountType", DbType = "Int")]
+        public System.Nullable<int> DiscountType
+        {
+            get
+            {
+                return this._DiscountType;
+            }
+            set
+            {
+                if ((this._DiscountType != value))
+                {
+                    this._DiscountType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_MainType", DbType = "VarChar(20)")]
+        public string MainType
+        {
+            get
+            {
+                return this._MainType;
+            }
+            set
+            {
+                if ((this._MainType != value))
+                {
+                    this._MainType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_SubType", DbType = "VarChar(50)")]
+        public string SubType
+        {
+            get
+            {
+                return this._SubType;
+            }
+            set
+            {
+                if ((this._SubType != value))
+                {
+                    this._SubType = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ProductNick", DbType = "VarChar(20)")]
+        public string ProductNick
+        {
+            get
+            {
+                return this._ProductNick;
+            }
+            set
+            {
+                if ((this._ProductNick != value))
+                {
+                    this._ProductNick = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Hotted", DbType = "Bit")]
+        public System.Nullable<bool> Hotted
+        {
+            get
+            {
+                return this._Hotted;
+            }
+            set
+            {
+                if ((this._Hotted != value))
+                {
+                    this._Hotted = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(40)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
+    }
 }
 #pragma warning restore 1591
