@@ -107,6 +107,12 @@ namespace FuTai.Web
         }
 
         [AjaxPro.AjaxMethod]
+        public static object SerachCombineDiamond(string DiamondId, string RingId)
+        {
+            var result = Singleton<ProductBll>.Instance.SerachCombineDiamond(DiamondId,RingId);
+            return result;
+        }
+        [AjaxPro.AjaxMethod]
         public static object SearchHandShow()
         {
             var result = Singleton<HandShowBll>.Instance.SearchHandShow();

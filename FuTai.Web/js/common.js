@@ -104,7 +104,7 @@ function getUrlParam(name)  //取值
 	  if (r != null) 
 		return unescape(r[2]); 
 	  else 
-		return "Default";
+		return null;
 }
 
 

@@ -8,11 +8,19 @@
     <script type="text/javascript" src="/js/jquery.jtemplates-0.7.5.pack.js"></script>
 
     <script type="text/javascript">
+        var DiamondId;
+        var IsCustom;
         var _productList;
         var _pageNo = 1;
         var _pageCount = 0;
         var _pageSize = 9;
         $(document).ready(function() {
+            if (getUrlParam("productType")=="RingBracket" && getUrlParam("IsCustom")=="true")
+                $(".Pstep").show();
+        
+            DiamondId=(getUrlParam("Diamond")==null || getUrlParam("Diamond")=="")?"" : getUrlParam("Diamond");
+            IsCustom=(getUrlParam("IsCustom")=="true" && DiamondId!="")? true: false;    //选择戒托处理
+            
             var productType = '<%= this.ProductType %>';
             var list = getCategoryList(productType);
 
@@ -97,11 +105,19 @@
             _pageCount = Math.ceil(_productList.length / _pageSize);
             if (_pageCount < 0) _pageCount = 0;
 
-            if(productType != "PairRing"){
-                renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize});
-            }else{
-                $('#product-list').attr('id', 'pairring-list');
-                renderTemplate('pairring-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+            if (IsCustom)
+            {
+                $("#product-list").attr("id","Custom");
+                renderTemplate('Custom', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize});
+            }
+            else
+            {
+                if(productType != "PairRing"){
+                    renderTemplate('product-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize});
+                }else{
+                    $('#product-list').attr('id', 'pairring-list');
+                    renderTemplate('pairring-list', { 'productList': _productList, 'pageBegin': 0, 'pageSize': _pageSize });
+                }
             }
             $('li.pager').text('1/' + _pageCount);
         }
@@ -124,7 +140,8 @@
 
             var pageBegin = (pageNo - 1) * _pageSize;
             
-            renderTemplate('product-list', { 'productList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize});
+            var id=IsCustom?"Custom":"product-list";
+            renderTemplate(id, { 'productList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize});
         }
 
         function switchType($link) {
@@ -142,6 +159,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
     <uc1:ucLeft ID="ucLeft" runat="server" />
     <div class="inner_main">
+        <p class="Pstep" align="right" style="display:none"><img src="../images/custom_step2.jpg" /></p>
         <div class="SiteMap">
             <p>
                 <a href="/Default.aspx">首页</a> > <span>
@@ -280,6 +298,39 @@
                     总价:<span class="redfont1">¥{$T.record.Price}</span><br />
                     <span class="grayfont1">不论材质（铂金，K金）都可订做</span>
         {#/if}
+                    </p>
+            </li>
+        <%--如果是每行最后一项, 或者是列表的最后一项--%>
+        {#if ($T.record$index + 1) % 3 == 0 || $T.record$last}
+        </ul>
+        <div class="clearfix">
+        </div>
+        {#/if}
+        {#/for}
+    </textarea>
+    
+    <textarea id="Custom-template" style="display: none">
+        {#foreach $T.productList as record begin=$T.pageBegin count=$T.pageSize}
+        <%--如果是每行的第一项--%>
+        {#if $T.record$index % 3 == 0 || $T.record$first}
+        <div class="inner_hr">
+        </div>
+        <ul class="inner_list1">
+        {#/if}
+             <li>
+                <img src="/images/productImg/{$T.record.kuanhao}.jpg" width="128" height="121" />
+                <img class="fdjbtn" src="/images/icon_fdj.gif" />
+                <p>
+                    <a href="/ProductInfo.aspx?RingBraId={$T.record.ProductId}&DiamondId={DiamondId}&IsCustom=true" target="_blank"><strong>{$T.record.ProductId}</strong></a><br />
+        {#if $T.record.ProductType=="GoldOrnament"}  
+                    金重:<span class="redfont1">¥{$T.record.Goldweight}</span><br />
+                    工费:<span class="redfont1">¥{$T.record.gongfei}</span><br />   
+                    <span class="grayfont1">订做请咨询福泰顾问</span>   
+        {#else}      
+                    市场价:¥{$T.record.Price}<br />
+                    福泰价:<span class="redfont1">¥{parseInt($T.record.Price*$T.record.DiscountType/100)}</span><br />
+                    <span class="grayfont1">不论材质（铂金，K金）都可订做</span>
+        {#/if}             
                     </p>
             </li>
         <%--如果是每行最后一项, 或者是列表的最后一项--%>

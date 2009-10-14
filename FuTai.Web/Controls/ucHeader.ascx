@@ -74,7 +74,7 @@
     </div>
     <ul class="topNav">
         <li><a id="Index" href="/Default.aspx">首 页</a></li>
-        <li><a id="Diamond" href="/CustomBuy/CustomBuyCzuan.aspx?productType=Diamond">裸 钻</a></li>
+        <li><a id="Diamond" href="/CustomBuy/CustomBuyCzuan.aspx?productType=Diamond&IsCustom=false">裸 钻</a></li>
         <li><a id="RingBracket" href="/ProductList.aspx?productType=RingBracket">戒 托</a></li>
         <li><a id="DiamondRing" href="/ProductList.aspx?productType=DiamondRing">钻 戒</a></li>
         <li><a id="PairRing" href="/ProductList.aspx?productType=PairRing">对 戒</a></li>

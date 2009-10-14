@@ -206,7 +206,7 @@
         </div>
         <div class="customBox">
             <ul>
-                <li><strong><a href="#">定制流程</a></strong></li>
+                <li><strong><a href="/CustomBuy/CustomBuyCzuan.aspx">定制流程</a></strong></li>
                 <li><a href="/CustomBuy/CustomBuyCzuan.aspx?productType=Diamond">1,选择属于你的钻石</a></li>
                 <li><a href="javascript:alert('暂未开放')">2,选择属于你的款式</a></li>
                 <li><a href="javascript:alert('暂未开放')">3,国际名师精工镶嵌</a></li>

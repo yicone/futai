@@ -71,6 +71,8 @@ border:1px solid #BEAC8D; font-size:12px;
 	background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF; height:23px; line-height:22px;
 }
 
+.JieTuo,.JieTuo:hover{ display:inline-block; background:#7A5E33; border:1px solid #BEAC8D; font-size:12px; color:#FFFFFF; height:22px; line-height:22px; width:87px; text-decoration:none; text-align:center; margin-top:-3px}
+
 .btn2Style
 {
 	background:url(../images/btn_buy.gif) no-repeat left #A40000; border:1px solid #FF0000; font-size:12px; color:#FFFFFF; height:23px; line-height:22px; padding-left:15px;

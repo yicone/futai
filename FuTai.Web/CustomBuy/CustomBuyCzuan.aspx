@@ -9,7 +9,7 @@
     <script type="text/javascript" src="../js/CustomSear.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            if (getUrlParam("productType")=="Diamond")
+            if (getUrlParam("productType")=="Diamond" && getUrlParam("IsCustom")=="false")
                 $(".Pstep").hide();
         });
     </script> 

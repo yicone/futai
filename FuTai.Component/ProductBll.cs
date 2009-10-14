@@ -11,10 +11,60 @@ namespace FuTai.Component
         public Product Product { get; set; }
         public object ConProduct {get;set;}
     }
-
+    public class CombineResult
+    {
+        public ProductResult DiamondResult { get; set; }
+        public ProductResult RingResult { get; set; }
+    }
 
     public class ProductBll : BaseBll
     {
+        public CombineResult SerachCombineDiamond(string DiamondId, string RingId)
+        {
+            ProductResult ResultDiamond = new ProductResult();
+            ProductResult ResultRing = new ProductResult();
+            CombineResult result = new CombineResult();
+
+            using (var dataContext = DataContext)  //Diamond
+            {
+                var a = from p in dataContext.Product
+                        where p.ProductId == DiamondId
+                        select p;
+
+                var productD = a.SingleOrDefault();
+                ResultDiamond.Product = productD;
+
+                var a1 = from d in dataContext.Diamond
+                         where d.DiamondID == DiamondId
+                         select d;
+
+                var diamond = a1.SingleOrDefault();
+                ResultDiamond.ConProduct = diamond;
+            }
+
+            using (var dataContext = DataContext)  //RingBracket
+            {
+                var r = from p in dataContext.Product
+                        where p.ProductId == RingId
+                        select p;
+
+                var productR = r.SingleOrDefault();
+                ResultRing.Product = productR;
+
+                var r1 = from d in dataContext.RingBracket
+                         where d.BracketId == RingId
+                         select d;
+
+                var ringbracket = r1.SingleOrDefault();
+                ResultRing.ConProduct = ringbracket;
+            }
+
+            result.DiamondResult = ResultDiamond;
+            result.RingResult = ResultRing;
+
+            return result;
+
+        }
         public ProductResult SearchProduct(string productId)
         {
             ProductResult result = new ProductResult();

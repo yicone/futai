@@ -7,7 +7,13 @@
     <script type="text/javascript" src="/js/jquery.jtemplates-0.7.5.pack.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            setTimeout("ShowProduct()",200);
+            if (getUrlParam("IsCustom")=="true")
+            {
+                $(".Pstep").show();
+                setTimeout("ShowDiamondRing()",200);
+            }
+            else
+                setTimeout("ShowProduct()",200);
         });
         function ShowProduct()
         {
@@ -50,14 +56,34 @@
                 alert(result.error.Message);
             }
         }
+            function ShowDiamondRing()
+            {
+                var Did=getUrlParam("DiamondId");
+                var Rid=getUrlParam("RingBraId");
+                var result = MyAjax.SerachCombineDiamond(Did,Rid);
+                if(!result.error){
+                    if (result.value.RingResult.Product==null || result.value.DiamondResult.Product==null)
+                    {
+                        alert("错误的参数");
+                        location.href='/Default.aspx';
+                        return;
+                    }
+                     $('#productinfo').attr('id', 'combine');
+                        renderTemplate('combine',{ 'diamondinfo':result.value.DiamondResult,'ringinfo':result.value.RingResult,'islogin':IsLogin});
+                }
+                else{
+                    alert(result.error.Message);
+                }
+            }
     </script>
 </asp:Content>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="cphContent">
     <uc1:ucLeft ID="ucLeft3" runat="server" />
    	  <div class="inner_main">
-        	<div class="SiteMap">
-            
-            <p><a href="\Default.aspx">首页 &gt;</a> &gt; 产品信息 </p>
+   	    <p class="Pstep" align="right" style="display:none"><img src="../images/custom_step3.jpg" /></p>
+    	<div class="SiteMap">
+        
+        <p><a href="\Default.aspx">首页 &gt;</a> &gt; 产品信息 </p>
             
        	</div>
             <div class="hr"></div>
@@ -204,8 +230,9 @@
                   <p><a href="#">如何定制？</a> &nbsp;  <a href="#">联系福泰</a></p>
                   <p>&nbsp;</p>
                   <p>
-                    <input type="button" name="button3" id="Submit3" class="btn1Style" value="给商品留言" onclick="alert('暂未开放')" />
-                    <input type="button" name="button2" id="Submit4" class="btn1Style" value="联系福泰珠宝顾问" onclick="alert('暂未开放')" />
+                    <a href="/ProductList.aspx?productType=RingBracket&IsCustom=true&Diamond={$T.info.Product.ProductId}" class="JieTuo">选择戒托</a>
+                    <input type="button" name="button3" id="Submit3" class="btn1Style" value="给商品留言" onclick="alert('暂未开放')" style="vertical-align:middle" />
+                    <input type="button" name="button2" id="Submit4" class="btn1Style" value="联系福泰顾问" onclick="alert('暂未开放')" style="vertical-align:middle" />
                   </p>
                     </td>
                 </tr>
@@ -717,5 +744,112 @@
       	  </div>
     </textarea>
     
+    <textarea id="combine-template" style="display:none">
+        <div class="box1">
+       	    <h2><span>个性定制组合样式</span></h2>
+                <div class="cont">
+                  <table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                      <td width="300" valign="top">
+                      	<div class="product_img"><img src="../images/{$T.ringinfo.ConProduct.kuanhao}Combin.jpg" width="180" height="180" /></div>
+                   	  <p align="center"><a href="#">查看大图</a></p></td>
+                      <td valign="top" class="product_detail">总价格：<span class="redfont1"><strong>¥{parseInt($T.diamondinfo.Product.Price)+parseInt($T.ringinfo.Product.Price)} </strong></span><br />
+                        <strong>钻石: </strong><br />
+编号：{$T.diamondinfo.Product.ProductId}，产地：{$T.diamondinfo.Product.Location}，重量：{$T.diamondinfo.ConProduct.Carat}克拉，净度：{$T.diamondinfo.ConProduct.Clarity}<br />切工：{$T.diamondinfo.ConProduct.Cut}，颜色：{$T.diamondinfo.ConProduct.Color} <br />
+<strong>钻托: </strong><br />
+编号：{$T.ringinfo.Product.ProductId}，产地：{$T.ringinfo.Product.Location}，款式：{$T.ringinfo.ConProduct.Style}，材质：{$T.ringinfo.ConProduct.MetalType}
+<div class="inner_hr2"></div>
+<p align="center">
+  <input type="button" name="button2" id="Submit8" class="btn2Style" value=" 放入购物车 " onclick="alert('即将推出')" />
+  &nbsp;
+  <input type="button" name="button3" id="Submit9" class="btn1Style" value=" 重新选择 " onclick="location='/ProductList.aspx?productType=RingBracket&IsCustom=true&Diamond={$T.diamondinfo.Product.ProductId}'" />
+</p>
+</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+            <div class="hr"></div>
+        	<div class="box1">
+        	  <h2>
+        	    <p><a href="#">详细参数</a> <a href="#">产品图片</a> <a href="#">刻字图标</a> <a href="#">配送实物</a> <a href="#">售后服务</a> <a href="#">保养常识</a></p><span>商品详细信息</span></h2>
+        	  <div class="cont">
+              	<h3>详细参数</h3>
+                <div class="inner_hr"></div>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="24" colspan="2"> <strong>证书号：{$T.diamondinfo.ConProduct.CertId} </strong></td>
+                  </tr>
+                  <tr>
+                    <td width="160" height="24">钻石重量：{$T.diamondinfo.ConProduct.Carat}克拉           </td>
+                    <td>钻石色泽：{$T.diamondinfo.ConProduct.Color}色</td>
+                  </tr>
+                  <tr>
+                    <td height="24">钻石切工：{$T.diamondinfo.ConProduct.Cut}               <br /></td>
+                    <td>钻石净度：{$T.diamondinfo.ConProduct.Clarity} </td>
+                  </tr>
+                  <tr>
+                    <td height="24">钻石形状：{$T.diamondinfo.ConProduct.CutStyle} <br /></td>
+                    <td> 产品规格：{$T.diamondinfo.ConProduct.Diameter}</td>
+                  </tr>
+                  <tr>
+                    <td height="24">抛光：{$T.diamondinfo.ConProduct.Polish}                   </td>
+                    <td>对称性：{$T.diamondinfo.ConProduct.Symmetry} 荧光：{$T.diamondinfo.ConProduct.Fluorescence}</td>
+                  </tr>
+                </table>
+                <div class="hr"></div>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="24" colspan="2"><strong>款式号：{$T.ringinfo.ConProduct.StyleId} </strong></td>
+                  </tr>
+                  <tr>
+                    <td width="160" height="24">材质：{$T.ringinfo.ConProduct.MetalType}<br /></td>
+                    <td>款式：{$T.ringinfo.ConProduct.Style}</td>
+                  </tr>
+                </table>
+                <div class="hr"></div>
+                <h3>产品图片</h3>
+                <div class="inner_hr"></div>
+                <p align="center">
+                <img src="../images/{$T.ringinfo.ConProduct.kuanhao}Combin_S2.jpg" width="580" height="497" /> </p>
+                <h3>售后服务</h3>
+                <div class="inner_hr"></div>
+                <ul>
+                	<li><a href="NewIntro/NewExperience.aspx?type=Promise"><strong>福泰百年承诺</strong></a></li> 
+                </ul>
+                <div class="hr"></div>
+<h3>保养常识<a name="d"></a></h3>
+                <div class="inner_hr"></div>
+                <ul>
+                	<li>1、饰品不佩戴时请平放（不要曲折）或放在首饰盒里；</li> 
+<li>2、饰品应避免接触酸性化学物质（化妆品、香水、清洁剂），以免导致氧化； </li>
+<li>3、睡觉、作家务时请不要佩戴饰品，以免因受力折断； </li>
+<li>4、钻石表面易沾染油污，定期在家中用温水叫少量清洁精浸泡后，用软毛牙刷轻轻刷洗并清水洗净擦干即可保持闪亮；</li> 
+<li>5、您可以随时携带饰品到我们的体验中心进行清洗，保养。</li>
+                </ul>
+                <h4><br />
+                </h4>
+</div>
+      	  </div>
+      	  
+      	  <div class="hr"></div>
+          <div class="tabSelect">
+          	<ul>
+            	<li class="now"><a href="#">款式评论</a></li>
+                <li><a href="#">常见问题</a></li>
+            </ul>
+            <div class="clearfix"></div>
+            <div class="cont">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="100" align="center"><p>该款式评论为空!</p></td>
+                </tr>
+                <tr>
+                  <td height="50" align="center"><input type="submit" name="button4" id="Submit10" class="btn1Style" value=" 我要评论 " /></td>
+                </tr>
+              </table>
+            </div>
+          </div>
+    </textarea>
 </asp:Content>
 

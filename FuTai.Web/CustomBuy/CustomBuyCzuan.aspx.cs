@@ -22,7 +22,6 @@ namespace FuTai.Web.CustomBuy
             if (!IsPostBack)
             {
                 AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
-                string proid = Request["proid"];
                 string Type = Request["productType"];
                 if (Type == "Diamond")
                 {
