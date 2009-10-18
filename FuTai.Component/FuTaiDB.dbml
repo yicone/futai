@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="FuTai" Class="FuTaiDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=FuTai;Persist Security Info=True;User ID=sa" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString5" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=FuTai;Integrated Security=True" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Diamond" Member="Diamond">
     <Type Name="Diamond">
       <Column Name="DiamondID" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -163,6 +163,18 @@
       <Column Name="BuyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="Ticket" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Src" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Comment" Member="Comment">
+    <Type Name="Comment">
+      <Column Name="CommentId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NickName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="ProductId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Title" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Content" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="AuditStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.product_InsertDiamond" Method="InsertDiamond">

@@ -18,6 +18,14 @@ function renderTemplate(containerId, data) {
     $('#' + containerId).setTemplateElement(containerId + '-template');
     $('#' + containerId).processTemplate(data);
 }
+// 用于使用jTemplate输出时间的情形
+function formatDate(date){
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var formattedDate = [year, month, day].join('-');
+    return formattedDate;
+}
 
 function regSwitchText($textbox, defaultWord) {
     $textbox.val(defaultWord).css('color', '#999');

@@ -11,6 +11,15 @@
 namespace FuTai.Web.Controls {
     
     
-    public partial class ucLeft {
+    public partial class ucComment {
+        
+        /// <summary>
+        /// ucCaptcha1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::FuTai.Web.Controls.ucCaptcha ucCaptcha1;
     }
 }

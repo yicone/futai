@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -33,6 +33,10 @@
     <Reference Include="AjaxPro.2, Version=9.2.17.1, Culture=neutral, PublicKeyToken=4735ae9824c7d3ec, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FuTai.Component\ThirdLib\AjaxPro.2.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\FuTai.Component\ThirdLib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -79,6 +83,23 @@
     </Compile>
     <Compile Include="BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.ashx.cs">
+      <DependentUpon>Captcha.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucCaptcha.ascx.cs">
+      <DependentUpon>ucCaptcha.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucCaptcha.ascx.designer.cs">
+      <DependentUpon>ucCaptcha.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ucComment.ascx.cs">
+      <DependentUpon>ucComment.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ucComment.ascx.designer.cs">
+      <DependentUpon>ucComment.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\ucDataTable.ascx.cs">
       <DependentUpon>ucDataTable.ascx</DependentUpon>
@@ -383,6 +404,8 @@
     <Content Include="style\forum.css" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Controls\ucCaptcha.ascx" />
+    <Content Include="Controls\ucComment.ascx" />
     <Content Include="Controls\ucDataTable.ascx" />
     <Content Include="images\02.jpg" />
     <Content Include="images\03.jpg" />
@@ -548,6 +571,7 @@
     <Content Include="ProductInfo.aspx" />
     <Content Include="SearchHigh.aspx" />
     <Content Include="UserAccount.xml" />
+    <Content Include="Captcha.ashx" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
   <ItemGroup>

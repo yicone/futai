@@ -11,6 +11,6 @@
 namespace FuTai.Web.Controls {
     
     
-    public partial class ucLeft {
+    public partial class ucCaptcha {
     }
 }

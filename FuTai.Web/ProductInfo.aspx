@@ -1,10 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master" CodeBehind="ProductInfo.aspx.cs" Inherits="FuTai.Web.ProductInfo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master"
+    CodeBehind="ProductInfo.aspx.cs" Inherits="FuTai.Web.ProductInfo" %>
 
-<%@ Register src="/Controls/ucLeft.ascx" tagname="ucLeft" tagprefix="uc1" %>
+<%@ Register Src="/Controls/ucLeft.ascx" TagName="ucLeft" TagPrefix="uc1" %>
+<%@ Register Src="Controls/ucComment.ascx" TagName="ucComment" TagPrefix="uc2" %>
 <asp:Content ID="head" runat="server" ContentPlaceHolderID="cphHead">
-<link type="text/css" rel="stylesheet" href="/style/custom.css" />
+    <link type="text/css" rel="stylesheet" href="/style/custom.css" />
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
+
     <script type="text/javascript" src="/js/jquery.jtemplates-0.7.5.pack.js"></script>
+
     <script type="text/javascript">
         $(document).ready(function(){
             if (getUrlParam("IsCustom")=="true")
@@ -76,25 +80,29 @@
                 }
             }
     </script>
+
 </asp:Content>
 <asp:Content ID="Content1" runat="server" ContentPlaceHolderID="cphContent">
     <uc1:ucLeft ID="ucLeft3" runat="server" />
-   	  <div class="inner_main">
-   	    <p class="Pstep" align="right" style="display:none"><img src="../images/custom_step3.jpg" /></p>
-    	<div class="SiteMap">
-        
-        <p><a href="\Default.aspx">首页 &gt;</a> &gt; 产品信息 </p>
-            
-       	</div>
-            <div class="hr"></div>
-            
+    <div class="inner_main">
+        <p class="Pstep" align="right" style="display: none">
+            <img src="../images/custom_step3.jpg" /></p>
+        <div class="SiteMap">
+            <p>
+                <a href="\Default.aspx">首页 &gt;</a> &gt; 产品信息
+            </p>
+        </div>
+        <div class="hr">
+        </div>
         <div id="productinfo">
             <!-- 模板生成 -->
         </div>
-        
-   	  </div>
-    	<div class="clearfix"></div>
-      
+        <div class="hr">
+        </div>
+        <uc2:ucComment ID="ucComment1" runat="server" />
+    </div>
+    <div class="clearfix">
+    </div>
 </asp:Content>
 <asp:Content ID="Content2" runat="server" ContentPlaceHolderID="cphTemplate">
     <textarea id="jewel-template" style="display: none">
@@ -196,7 +204,6 @@
 </div>
       	  </div>
     </textarea>
-    
     <textarea id="diamond-template" style="display: none">
         <div class="box1">
            	  <h2><span>裸钻信息</span></h2>
@@ -308,9 +315,7 @@
             </div>
         </div>
         <div class="clearfix"></div>
-        <div class="hr"></div>  
     </textarea>
-    
     <textarea id="ringbracket-template" style="display: none">
         <div class="box1">
        	    <h2><span>戒托信息</span></h2>
@@ -412,7 +417,6 @@
 </div>
       	  </div>
     </textarea>
-    
     <textarea id="diamondring-template" style="display: none">
         <div class="box1">
        	    <h2><span>钻戒信息</span></h2>
@@ -513,7 +517,6 @@
 </div>
       	  </div>
     </textarea>
-    
     <textarea id="pairring-template" style="display: none">
          <div class="box1">
        	    <h2><span>对戒信息</span></h2>
@@ -589,7 +592,6 @@
 </div>
       	  </div>
     </textarea>
-    
     <textarea id="diamondornament-template" style="display: none">
         <div class="box1">
        	    <h2><span>钻饰信息</span></h2>
@@ -671,7 +673,6 @@
 </div>
       	  </div>
     </textarea>
-    
     <textarea id="goldornament-template" style="display: none">
         <div class="box1">
        	    <h2><span>金饰信息</span></h2>
@@ -743,8 +744,7 @@
 </div>
       	  </div>
     </textarea>
-    
-    <textarea id="combine-template" style="display:none">
+    <textarea id="combine-template" style="display: none">
         <div class="box1">
        	    <h2><span>个性定制组合样式</span></h2>
                 <div class="cont">
@@ -852,4 +852,3 @@
           </div>
     </textarea>
 </asp:Content>
-
