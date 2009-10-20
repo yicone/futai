@@ -45,3 +45,9 @@ doc: 整理了数据库文档(使用SQL Doc 2). MS Word版: FuTaiDBDoc.doc		HTML版: FuTaiDB
 update: 添加了产品评论功能
 update: common.js中添加了格式化ajaxpro序列化返回的时间值为yyyy-MM-dd格式
 update: 添加了验证码功能
+update: 修改web.config, 启用log4net记录日志
+doc: 添加了数据库脚本文件 , "database.sql"
+
+2009-10-20 20:05
+update: 添加了详细注册页面, /DetailedRegister.aspx (目前为有任何链接链入此页面)
+update: 数据库的版本管理方式, 由"分离/附加"变更为"备份/还原"

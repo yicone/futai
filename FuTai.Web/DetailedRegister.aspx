@@ -4,7 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
     <link type="text/css" rel="stylesheet" href="/style/custom.css" />
-<style type="text/css">
+    <style type="text/css">
         .TipBox2
         {
             border: solid 1px #E17D7E;
@@ -15,6 +15,7 @@
     </style>
 
     <script type="text/javascript" src="/js/jquery.error-1.0.0.js "></script>
+
     <script type="text/javascript">
         $(document).ready(function() {
             $('#user_register').click(function() {
@@ -121,7 +122,7 @@
     </script>
 
 </asp:Content>
-<asp:Content id="Content2" contentplaceholderid="cphContent" runat="server">
+<asp:content id="Content2" contentplaceholderid="cphContent" runat="server">
     <div class="custom_main1">
         <div class="hr">
         </div>
@@ -290,6 +291,6 @@
         <div class="clearfix">
         </div>
     </div>
-</asp:Content>
-<asp:Content id="Content3" contentplaceholderid="cphTemplate" runat="server">
-</asp:Content>
+</asp:content>
+<asp:content id="Content3" contentplaceholderid="cphTemplate" runat="server">
+</asp:content>
