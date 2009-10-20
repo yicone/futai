@@ -19,14 +19,13 @@
         $(document).ready(function() {
             $('#user_register').click(function() {
 
-                var userName = $('#userName').val();
+                var email = $('#email').val();
                 var passowrd = $('#passowrd').val();
                 var passwordAnswer = $('#passwordAnswer').val();
                 var birthDate = $('#birthDate').val();
                 var sex = $('#sex').val();
                 var trueName = $('#trueName').val();
                 var nickName = $('#nickName').val();
-                var email = $('#email').val();
                 var phone = $('#phone').val();
 
                 if (!email) {
@@ -48,7 +47,7 @@
                     $('#password').error('请输入密码');
                     return false;
                 } else if (!/^[a-zA-Z0-9]{6,20}$/.test(password)) {
-                $('#password').error('密码格式不正确');
+                    $('#password').error('密码格式不正确');
                     return false;
                 }
 
@@ -72,15 +71,14 @@
                     }
                 }
 
-                var result = User.Register(userName, passowrd, passwordAnswer,
-                birthDate, sex, trueName, nickName,
-                email, phone)
+                var result = BaseAjax.Register(email, passowrd, passwordAnswer,
+                                    birthDate, sex, trueName, nickName, phone);
             });
         });
     </script>
 
 </asp:Content>
-<asp:content id="Content2" contentplaceholderid="cphContent" runat="server">
+<asp:Content id="Content2" contentplaceholderid="cphContent" runat="server">
     <div class="custom_main1">
         <div class="hr">
         </div>
@@ -95,11 +93,11 @@
                         <tbody>
                             <tr>
                                 <td width="134" align="right">
-                                    会员网络用户名：
+                                    您的E-mail地址：
                                 </td>
                                 <td width="245">
                                     <label>
-                                        <input type="text" id="userName" name="userName" />
+                                        <input type="text" id="email" name="email" />
                                         <br />
                                     </label>
                                 </td>
@@ -146,7 +144,7 @@
                             </tr>
                             <tr>
                                 <td align="right">
-                                    呢称：<br />
+                                    设置昵称：<br />
                                 </td>
                                 <td>
                                     <input type="text" id="nickName" name="nickName" />
@@ -154,15 +152,7 @@
                             </tr>
                             <tr>
                                 <td align="right">
-                                    会员电子邮箱：<br />
-                                </td>
-                                <td>
-                                    <input type="text" id="email" name="email" />
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right">
-                                    会员联系电话：
+                                    联系电话：
                                 </td>
                                 <td>
                                     <input type="text" id="phone" name="phone" />
@@ -241,6 +231,6 @@
         <div class="clearfix">
         </div>
     </div>
-</asp:content>
-<asp:content id="Content3" contentplaceholderid="cphTemplate" runat="server">
-</asp:content>
+</asp:Content>
+<asp:Content id="Content3" contentplaceholderid="cphTemplate" runat="server">
+</asp:Content>

@@ -11,25 +11,24 @@ using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
 using System.Xml.Linq;
 using FuTai.Component;
+using AjaxPro;
 
 namespace FuTai.Web
 {
-    [AjaxPro.AjaxNamespace("User")]
+    [AjaxNamespace("BaseAjax")]
     public partial class DetailedRegister : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            AjaxPro.Utility.RegisterTypeForAjax(this.GetType());
+            AjaxPro.Utility.RegisterTypeForAjax(typeof(DetailedRegister));
         }
 
         [AjaxPro.AjaxMethod]
-        public void Register(string userName, string passowrd, string passwordAnswer,
-            DateTime? birthDate, bool? sex, string trueName, string nickName,
-            string email, string phone)
+        public void Register(string email, string passowrd, string passwordAnswer,
+            DateTime? birthDate, bool? sex, string trueName, string nickName, string phone)
         {
-            Singleton<UserBll>.Instance.Register(userName, passowrd, passwordAnswer,
-                birthDate, sex, trueName, nickName,
-                email, phone);
+            Singleton<UserBll>.Instance.Register(email, passowrd, passwordAnswer,
+                birthDate, sex, trueName, nickName,phone);
         }
     }
 }

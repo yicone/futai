@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FuTai.Component", "FuTai.Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E911CA2C-6D43-4E86-839E-06002EAEAD3E}"
 	ProjectSection(SolutionItems) = preProject
+		database.txt = database.txt
 		DataBase\FuTaiDBDoc.sqldoc = DataBase\FuTaiDBDoc.sqldoc
 		字典.txt = 字典.txt
 		开发日志.txt = 开发日志.txt
