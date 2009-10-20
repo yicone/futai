@@ -34,16 +34,18 @@ namespace FuTai.Component
             SendActiveCode(user.UserId);
         }
 
-        public void Register(string email, string passowrd, string passwordAnswer,
-            DateTime? birthDate, bool? sex, string trueName, string nickName, string phone)
+        public void Register(string email, string passowrd, string passwordAnswer, string passwordQuestion,
+            DateTime? birthDate, bool? sex, string userName, string nickName, string phone)
         {
             User user = new User()
             {
                 Email = email,
                 Password = passowrd,
+                PasswordAnswer = passwordAnswer,
+                PasswordQuestion = passwordQuestion,
                 BirthDate = birthDate,
                 Sex = sex,
-                UserName = trueName,
+                UserName = userName,
                 NickName = nickName,
                 Phone = phone,
                 Authority = (int)UserAuthority.Web

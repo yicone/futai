@@ -170,6 +170,8 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
       <Column Name="NickName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PasswordAnswer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PasswordQuestion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Authority" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="UserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />

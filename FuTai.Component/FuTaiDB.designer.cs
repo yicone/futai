@@ -3439,6 +3439,10 @@ namespace FuTai.Component
 		
 		private string _Password;
 		
+		private string _PasswordAnswer;
+		
+		private string _PasswordQuestion;
+		
 		private System.Nullable<int> _Authority;
 		
 		private string _UserName;
@@ -3465,6 +3469,10 @@ namespace FuTai.Component
     partial void OnNickNameChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
+    partial void OnPasswordAnswerChanging(string value);
+    partial void OnPasswordAnswerChanged();
+    partial void OnPasswordQuestionChanging(string value);
+    partial void OnPasswordQuestionChanged();
     partial void OnAuthorityChanging(System.Nullable<int> value);
     partial void OnAuthorityChanged();
     partial void OnUserNameChanging(string value);
@@ -3580,6 +3588,46 @@ namespace FuTai.Component
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PasswordAnswer", DbType="VarChar(50)")]
+		public string PasswordAnswer
+		{
+			get
+			{
+				return this._PasswordAnswer;
+			}
+			set
+			{
+				if ((this._PasswordAnswer != value))
+				{
+					this.OnPasswordAnswerChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordAnswer = value;
+					this.SendPropertyChanged("PasswordAnswer");
+					this.OnPasswordAnswerChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_PasswordQuestion", DbType="VarChar(50)")]
+		public string PasswordQuestion
+		{
+			get
+			{
+				return this._PasswordQuestion;
+			}
+			set
+			{
+				if ((this._PasswordQuestion != value))
+				{
+					this.OnPasswordQuestionChanging(value);
+					this.SendPropertyChanging();
+					this._PasswordQuestion = value;
+					this.SendPropertyChanged("PasswordQuestion");
+					this.OnPasswordQuestionChanged();
 				}
 			}
 		}

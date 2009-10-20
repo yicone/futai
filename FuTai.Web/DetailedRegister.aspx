@@ -21,10 +21,12 @@
 
                 var email = $('#email').val();
                 var passowrd = $('#passowrd').val();
+                var passowrd2 = $('#passowrd2').val();
                 var passwordAnswer = $('#passwordAnswer').val();
+                var passwordQuestion = $('#passwordQuestion').val();
                 var birthDate = $('#birthDate').val();
                 var sex = $('#sex').val();
-                var trueName = $('#trueName').val();
+                var userName = $('#userName').val();
                 var nickName = $('#nickName').val();
                 var phone = $('#phone').val();
 
@@ -43,6 +45,7 @@
                     }
                 }
 
+                // todo: 密码可以包含某些特殊字符
                 if (!password) {
                     $('#password').error('请输入密码');
                     return false;
@@ -56,10 +59,44 @@
                     return false;
                 }
 
+                if (!passwordAnswer) {
+                    $('#passwordAnswer').error('请输入密码找回问题');
+                    return false;
+                } else if (!/^[\S]{3,20}$/.test(passwordAnswer)) {
+                    $('#passwordAnswer').error('密码问题过短');
+                }
+
+                if (!passwordQuestion) {
+                    $('#passwordQuestion').error('请输入密码问题答案');
+                    return false;
+                } else if (!/^[\S]{3,20}$/.test(passwordQuestion)) {
+                    $('#passwordQuestion').error('密码答案过短');
+                }
+
+                // todo: 必须是日期格式, 如yyyy-MM-dd; 考虑使用js日期组件
+                if (!birthDate) {
+                    $('#birthDate').error('请输入生日');
+                    return false;
+                }
+
+                // todo: 性别采用下拉选择
+                if (!sex) {
+                    $('#sex').error('请选择性别');
+                    return false;
+                }
+
+                // todo: 用户名不能包含数字或特殊字符
+                if (!userName || !/^[\w]{2, 20}$/.test(userName.length)) {
+                    $('#userName').error('请输入真实姓名');
+                    return false;
+                }
+
+                // todo: 昵称不能包含某些特殊字符
+                // todo: 确认昵称是否需要判定重复
                 if (!nickName) {
                     $('#nickName').error('请输入昵称');
                     return false;
-                } else if (nickName.length <= 3) {
+                } else if (!/^[\w]{2, 20}$/.test(nickName)) {
                     $('#nickName').error('昵称应为4-10个字符');
                     return false;
                 } else {
@@ -71,8 +108,14 @@
                     }
                 }
 
-                var result = BaseAjax.Register(email, passowrd, passwordAnswer,
-                                    birthDate, sex, trueName, nickName, phone);
+                // todo: 验证电话格式
+                if (!phone || !/^\d{8, 20}/.test(phone)) {
+                    $('#phone').error('请输入联系电话');
+                    return false;
+                }
+
+                var result = BaseAjax.Register(email, passowrd, passwordAnswer, passwordQuestion,
+                                    birthDate, sex, userName, nickName, phone);
             });
         });
     </script>
@@ -120,6 +163,22 @@
                             </tr>
                             <tr>
                                 <td align="right">
+                                    密码找回问题：<br />
+                                </td>
+                                <td>
+                                    <input type="text" id="passwordAnswer" name="passwordAnswer" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    密码问题答案：<br />
+                                </td>
+                                <td>
+                                    <input type="text" id="passwordQuestion" name="passwordQuestion" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
                                     生日：<br />
                                 </td>
                                 <td>
@@ -139,7 +198,7 @@
                                     真实姓名：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="trueName" name="trueName" />
+                                    <input type="text" id="userName" name="userName" />
                                 </td>
                             </tr>
                             <tr>

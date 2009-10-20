@@ -24,10 +24,10 @@ namespace FuTai.Web
         }
 
         [AjaxPro.AjaxMethod]
-        public void Register(string email, string passowrd, string passwordAnswer,
+        public void Register(string email, string passowrd, string passwordAnswer, string passwordQuestion,
             DateTime? birthDate, bool? sex, string trueName, string nickName, string phone)
         {
-            Singleton<UserBll>.Instance.Register(email, passowrd, passwordAnswer,
+            Singleton<UserBll>.Instance.Register(email, passowrd, passwordAnswer, passwordQuestion,
                 birthDate, sex, trueName, nickName,phone);
         }
     }
