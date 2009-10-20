@@ -1,24 +1,96 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/SiteMaster.Master" AutoEventWireup="true"
     CodeBehind="DetailedRegister.aspx.cs" Inherits="FuTai.Web.DetailedRegister" Title="新用户注册" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">   
+<asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
     <link type="text/css" rel="stylesheet" href="/style/custom.css" />
+<style type="text/css">
+        .TipBox2
+        {
+            border: solid 1px #E17D7E;
+            padding: 0px 1px 0px 25px;
+            font-size: 12px;
+            background: #FEEAE3 url(images/wrongbg.gif) no-repeat 5px 0px;
+        }
+    </style>
+
+    <script type="text/javascript" src="/js/jquery.error-1.0.0.js "></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $
+        $(document).ready(function() {
+            $('#user_register').click(function() {
+
+                var userName = $('#userName').val();
+                var passowrd = $('#passowrd').val();
+                var passwordAnswer = $('#passwordAnswer').val();
+                var birthDate = $('#birthDate').val();
+                var sex = $('#sex').val();
+                var trueName = $('#trueName').val();
+                var nickName = $('#nickName').val();
+                var email = $('#email').val();
+                var phone = $('#phone').val();
+
+                if (!email) {
+                    $('#email').error('请输入E-mail地址');
+                    return false;
+                } else if (!/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(email)) {
+                    $('#email').error('邮箱格式不正确');
+                    return false;
+                } else {
+                    var r = BaseAjax.CheckEmailExists(email);
+                    var exists = r.value;
+                    if (exists) {
+                        $('#email').error('邮箱已存在');
+                        return false;
+                    }
+                }
+
+                if (!password) {
+                    $('#password').error('请输入密码');
+                    return false;
+                } else if (!/^[a-zA-Z0-9]{6,20}$/.test(password)) {
+                $('#password').error('密码格式不正确');
+                    return false;
+                }
+
+                if (password2 != password) {
+                    $('#password2').error('两次输入的密码不一致');
+                    return false;
+                }
+
+                if (!nickName) {
+                    $('#nickName').error('请输入昵称');
+                    return false;
+                } else if (nickName.length <= 3) {
+                    $('#nickName').error('昵称应为4-10个字符');
+                    return false;
+                } else {
+                    var r = BaseAjax.CheckNicknameExists(nickName);
+                    var exists = r.value;
+                    if (exists) {
+                        $('#nickName').error('昵称已存在');
+                        return false;
+                    }
+                }
+
+                var result = User.Register(userName, passowrd, passwordAnswer,
+                birthDate, sex, trueName, nickName,
+                email, phone)
+            });
         });
     </script>
+
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="cphContent" runat="server">
+<asp:content id="Content2" contentplaceholderid="cphContent" runat="server">
     <div class="custom_main1">
-        <div class="hr" ></div>
+        <div class="hr">
+        </div>
         <div style="margin: 0pt auto; width: 600px;">
             <div class="box1 cartBox">
                 <h2>
                     <span>新用户注册：</span></h2>
                 <div class="cont">
-                    <div class="clearfix" ></div>
+                    <div class="clearfix">
+                    </div>
                     <table width="400" cellspacing="0" cellpadding="5" border="0" align="center">
                         <tbody>
                             <tr>
@@ -27,25 +99,25 @@
                                 </td>
                                 <td width="245">
                                     <label>
-                                        <input type="text" id="textfield5" name="textfield5" />
+                                        <input type="text" id="userName" name="userName" />
                                         <br />
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
-                                    用户名密码：<br />
+                                    设置密码：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield6" name="textfield7" />
+                                    <input type="text" id="passowrd" name="passowrd" />
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
-                                    密码找回问题：<br />
+                                    确认密码：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield7" name="textfield8" />
+                                    <input type="text" id="password2" name="password2" />
                                 </td>
                             </tr>
                             <tr>
@@ -53,7 +125,7 @@
                                     生日：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield8" name="textfield9" />
+                                    <input type="text" id="birthDate" name="birthDate" />
                                 </td>
                             </tr>
                             <tr>
@@ -61,7 +133,7 @@
                                     性别：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield10" name="textfield10" />
+                                    <input type="text" id="sex" name="sex" />
                                 </td>
                             </tr>
                             <tr>
@@ -69,7 +141,7 @@
                                     真实姓名：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield11" name="textfield11" />
+                                    <input type="text" id="trueName" name="trueName" />
                                 </td>
                             </tr>
                             <tr>
@@ -77,7 +149,7 @@
                                     呢称：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield12" name="textfield12" />
+                                    <input type="text" id="nickName" name="nickName" />
                                 </td>
                             </tr>
                             <tr>
@@ -85,7 +157,7 @@
                                     会员电子邮箱：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield13" name="textfield13" />
+                                    <input type="text" id="email" name="email" />
                                 </td>
                             </tr>
                             <tr>
@@ -93,14 +165,14 @@
                                     会员联系电话：
                                 </td>
                                 <td>
-                                    <input type="text" id="textfield14" name="textfield14" />
+                                    <input type="text" id="phone" name="phone" />
                                 </td>
                             </tr>
                             <tr>
                                 <td align="right">
                                 </td>
                                 <td>
-                                    <input type="submit" value=" 注 册  " class="btn1Style" id="button4" name="button4" />
+                                    <input type="button" value=" 注 册  " class="btn1Style" id="user_register" name="user_register" />
                                 </td>
                             </tr>
                         </tbody>
@@ -108,11 +180,13 @@
                 </div>
             </div>
         </div>
-        <div class="clearfix" ></div>
+        <div class="clearfix">
+        </div>
         <div class="inner_bottomcont">
             <h4 class="cartBtnbox">
                 福泰的企业精神——创新！分享！快乐！</h4>
-            <div class="inner_hr" ></div>
+            <div class="inner_hr">
+            </div>
             <table width="100%" cellspacing="0" cellpadding="0" border="0" class="cartTable2">
                 <tbody>
                     <tr>
@@ -164,8 +238,9 @@
                 </tbody>
             </table>
         </div>
-        <div class="clearfix" ></div>
+        <div class="clearfix">
+        </div>
     </div>
-</asp:Content>
-<asp:Content ID="Content3" ContentPlaceHolderID="cphTemplate" runat="server">
-</asp:Content>
+</asp:content>
+<asp:content id="Content3" contentplaceholderid="cphTemplate" runat="server">
+</asp:content>
