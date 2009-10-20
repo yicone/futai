@@ -8,12 +8,6 @@
         <elementListCompartment Id="c5a4b9bf-6c63-4b5b-b9b1-81336a4fdcee" absoluteBounds="0.765, 1.2100000000000009, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="4d1db3ba-ea10-459c-802f-16c697bdbc0e" absoluteBounds="3.75, 0.75, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/FuTaiDBDataContext/User" />
-      <nestedChildShapes>
-        <elementListCompartment Id="a4bf7855-8417-4d6a-9b06-afb166334250" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="6858714e-9ac4-4c15-a720-924f2088742a" absoluteBounds="3.75, 4.75, 2, 2.5401025390624996">
       <DataClassMoniker Name="/FuTaiDBDataContext/DiamondGroup" />
       <nestedChildShapes>
@@ -78,6 +72,12 @@
       <DataClassMoniker Name="/FuTaiDBDataContext/Comment" />
       <nestedChildShapes>
         <elementListCompartment Id="12a308de-bb6f-4bac-8877-0e68d91f1ae4" absoluteBounds="5.015, 4.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ea68025b-1a77-44f6-aaa1-b88182b95628" absoluteBounds="4, 1, 2, 3.1170068359375">
+      <DataClassMoniker Name="/FuTaiDBDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="df66f4fa-b36e-4fe6-a1f7-7a4ad9a09c58" absoluteBounds="4.015, 1.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

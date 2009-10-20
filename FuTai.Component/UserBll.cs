@@ -17,28 +17,47 @@ namespace FuTai.Component
     {
         public void Register(string email, string nickname, string password)
         {
-            try
-            {
-                User user = new User()
-                    {
-                        Email = email,
-                        NickName = nickname,
-                        Password = password,
-                        Authority = (int)UserAuthority.Web
-                    };
-
-                using (var context = BaseBll.DataContext)
+            User user = new User()
                 {
-                    context.User.InsertOnSubmit(user);
-                    context.SubmitChanges();
-                }
+                    Email = email,
+                    NickName = nickname,
+                    Password = password,
+                    Authority = (int)UserAuthority.Web
+                };
 
-                SendActiveCode(user.UserId);
-            }
-            catch (Exception ex)
+            using (var context = BaseBll.DataContext)
             {
-                throw ex;
+                context.User.InsertOnSubmit(user);
+                context.SubmitChanges();
             }
+
+            SendActiveCode(user.UserId);
+        }
+
+        public void Register(string userName, string passowrd, string passwordAnswer,
+            DateTime? birthDate, bool? sex, string trueName, string nickName,
+            string email, string phone)
+        {
+            User user = new User()
+            {
+                UserName = userName,
+                Password = passowrd,
+                BirthDate = birthDate,
+                Sex = sex,
+                TrueName = trueName,
+                NickName = nickName,
+                Email = email,
+                Phone = phone,
+                Authority = (int)UserAuthority.Web
+            };
+
+            using (var context = BaseBll.DataContext)
+            {
+                context.User.InsertOnSubmit(user);
+                context.SubmitChanges();
+            }
+
+            SendActiveCode(user.UserId);
         }
 
         private void SendActiveCode(int? userId)

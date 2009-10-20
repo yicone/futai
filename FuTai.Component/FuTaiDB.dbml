@@ -18,20 +18,6 @@
       <Column Name="Fluorescence" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[User]" Member="User">
-    <Type Name="User">
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CardId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
-      <Column Name="NickName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Authority" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="UserName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="Sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="Phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Column Name="Impression" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.DiamondGroup" Member="DiamondGroup">
     <Type Name="DiamondGroup">
       <Column Name="DiamondGroupId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -175,6 +161,22 @@
       <Column Name="Content" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="AuditStatus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="User">
+    <Type Name="User">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CardId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="NickName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Authority" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TrueName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sex" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Impression" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.product_InsertDiamond" Method="InsertDiamond">

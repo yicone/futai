@@ -164,6 +164,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DetailedRegister.aspx.cs">
+      <DependentUpon>DetailedRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailedRegister.aspx.designer.cs">
+      <DependentUpon>DetailedRegister.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -414,6 +421,7 @@
     <Content Include="Controls\ucCaptcha.ascx" />
     <Content Include="Controls\ucComment.ascx" />
     <Content Include="Controls\ucDataTable.ascx" />
+    <Content Include="DetailedRegister.aspx" />
     <Content Include="images\02.jpg" />
     <Content Include="images\03.jpg" />
     <Content Include="images\04.jpg" />

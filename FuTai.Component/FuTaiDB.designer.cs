@@ -33,9 +33,6 @@ namespace FuTai.Component
     partial void InsertDiamond(Diamond instance);
     partial void UpdateDiamond(Diamond instance);
     partial void DeleteDiamond(Diamond instance);
-    partial void InsertUser(User instance);
-    partial void UpdateUser(User instance);
-    partial void DeleteUser(User instance);
     partial void InsertDiamondGroup(DiamondGroup instance);
     partial void UpdateDiamondGroup(DiamondGroup instance);
     partial void DeleteDiamondGroup(DiamondGroup instance);
@@ -66,6 +63,9 @@ namespace FuTai.Component
     partial void InsertComment(Comment instance);
     partial void UpdateComment(Comment instance);
     partial void DeleteComment(Comment instance);
+    partial void InsertUser(User instance);
+    partial void UpdateUser(User instance);
+    partial void DeleteUser(User instance);
     #endregion
 		
 		public FuTaiDBDataContext() : 
@@ -103,14 +103,6 @@ namespace FuTai.Component
 			get
 			{
 				return this.GetTable<Diamond>();
-			}
-		}
-		
-		public System.Data.Linq.Table<User> User
-		{
-			get
-			{
-				return this.GetTable<User>();
 			}
 		}
 		
@@ -199,6 +191,14 @@ namespace FuTai.Component
 			get
 			{
 				return this.GetTable<Comment>();
+			}
+		}
+		
+		public System.Data.Linq.Table<User> User
+		{
+			get
+			{
+				return this.GetTable<User>();
 			}
 		}
 		
@@ -609,284 +609,6 @@ namespace FuTai.Component
 					this._Fluorescence = value;
 					this.SendPropertyChanged("Fluorescence");
 					this.OnFluorescenceChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[Table(Name="dbo.[User]")]
-	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserId;
-		
-		private string _CardId;
-		
-		private string _Email;
-		
-		private string _NickName;
-		
-		private string _Password;
-		
-		private System.Nullable<int> _Authority;
-		
-		private string _UserName;
-		
-		private System.Nullable<bool> _Sex;
-		
-		private string _Phone;
-		
-		private string _Impression;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnCardIdChanging(string value);
-    partial void OnCardIdChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
-    partial void OnNickNameChanging(string value);
-    partial void OnNickNameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    partial void OnAuthorityChanging(System.Nullable<int> value);
-    partial void OnAuthorityChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnSexChanging(System.Nullable<bool> value);
-    partial void OnSexChanged();
-    partial void OnPhoneChanging(string value);
-    partial void OnPhoneChanged();
-    partial void OnImpressionChanging(string value);
-    partial void OnImpressionChanged();
-    #endregion
-		
-		public User()
-		{
-			OnCreated();
-		}
-		
-		[Column(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_CardId", DbType="VarChar(20)")]
-		public string CardId
-		{
-			get
-			{
-				return this._CardId;
-			}
-			set
-			{
-				if ((this._CardId != value))
-				{
-					this.OnCardIdChanging(value);
-					this.SendPropertyChanging();
-					this._CardId = value;
-					this.SendPropertyChanged("CardId");
-					this.OnCardIdChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Email", DbType="VarChar(40)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_NickName", DbType="NVarChar(20)")]
-		public string NickName
-		{
-			get
-			{
-				return this._NickName;
-			}
-			set
-			{
-				if ((this._NickName != value))
-				{
-					this.OnNickNameChanging(value);
-					this.SendPropertyChanging();
-					this._NickName = value;
-					this.SendPropertyChanged("NickName");
-					this.OnNickNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Password", DbType="VarChar(50)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Authority", DbType="Int")]
-		public System.Nullable<int> Authority
-		{
-			get
-			{
-				return this._Authority;
-			}
-			set
-			{
-				if ((this._Authority != value))
-				{
-					this.OnAuthorityChanging(value);
-					this.SendPropertyChanging();
-					this._Authority = value;
-					this.SendPropertyChanged("Authority");
-					this.OnAuthorityChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_UserName", DbType="NVarChar(20)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Sex", DbType="Bit")]
-		public System.Nullable<bool> Sex
-		{
-			get
-			{
-				return this._Sex;
-			}
-			set
-			{
-				if ((this._Sex != value))
-				{
-					this.OnSexChanging(value);
-					this.SendPropertyChanging();
-					this._Sex = value;
-					this.SendPropertyChanged("Sex");
-					this.OnSexChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Phone", DbType="NChar(10)")]
-		public string Phone
-		{
-			get
-			{
-				return this._Phone;
-			}
-			set
-			{
-				if ((this._Phone != value))
-				{
-					this.OnPhoneChanging(value);
-					this.SendPropertyChanging();
-					this._Phone = value;
-					this.SendPropertyChanged("Phone");
-					this.OnPhoneChanged();
-				}
-			}
-		}
-		
-		[Column(Storage="_Impression", DbType="NVarChar(200)")]
-		public string Impression
-		{
-			get
-			{
-				return this._Impression;
-			}
-			set
-			{
-				if ((this._Impression != value))
-				{
-					this.OnImpressionChanging(value);
-					this.SendPropertyChanging();
-					this._Impression = value;
-					this.SendPropertyChanged("Impression");
-					this.OnImpressionChanged();
 				}
 			}
 		}
@@ -3676,6 +3398,332 @@ namespace FuTai.Component
 					this._AuditStatus = value;
 					this.SendPropertyChanged("AuditStatus");
 					this.OnAuditStatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.[User]")]
+	public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private string _UserName;
+		
+		private string _CardId;
+		
+		private string _Email;
+		
+		private string _NickName;
+		
+		private string _Password;
+		
+		private System.Nullable<int> _Authority;
+		
+		private string _TrueName;
+		
+		private System.Nullable<System.DateTime> _BirthDate;
+		
+		private System.Nullable<bool> _Sex;
+		
+		private string _Phone;
+		
+		private string _Impression;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnCardIdChanging(string value);
+    partial void OnCardIdChanged();
+    partial void OnEmailChanging(string value);
+    partial void OnEmailChanged();
+    partial void OnNickNameChanging(string value);
+    partial void OnNickNameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    partial void OnAuthorityChanging(System.Nullable<int> value);
+    partial void OnAuthorityChanged();
+    partial void OnTrueNameChanging(string value);
+    partial void OnTrueNameChanged();
+    partial void OnBirthDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnBirthDateChanged();
+    partial void OnSexChanging(System.Nullable<bool> value);
+    partial void OnSexChanged();
+    partial void OnPhoneChanging(string value);
+    partial void OnPhoneChanged();
+    partial void OnImpressionChanging(string value);
+    partial void OnImpressionChanged();
+    #endregion
+		
+		public User()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_UserName", DbType="VarChar(20)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CardId", DbType="VarChar(20)")]
+		public string CardId
+		{
+			get
+			{
+				return this._CardId;
+			}
+			set
+			{
+				if ((this._CardId != value))
+				{
+					this.OnCardIdChanging(value);
+					this.SendPropertyChanging();
+					this._CardId = value;
+					this.SendPropertyChanged("CardId");
+					this.OnCardIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Email", DbType="VarChar(40)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this.OnEmailChanging(value);
+					this.SendPropertyChanging();
+					this._Email = value;
+					this.SendPropertyChanged("Email");
+					this.OnEmailChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_NickName", DbType="NVarChar(20)")]
+		public string NickName
+		{
+			get
+			{
+				return this._NickName;
+			}
+			set
+			{
+				if ((this._NickName != value))
+				{
+					this.OnNickNameChanging(value);
+					this.SendPropertyChanging();
+					this._NickName = value;
+					this.SendPropertyChanged("NickName");
+					this.OnNickNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Password", DbType="VarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Authority", DbType="Int")]
+		public System.Nullable<int> Authority
+		{
+			get
+			{
+				return this._Authority;
+			}
+			set
+			{
+				if ((this._Authority != value))
+				{
+					this.OnAuthorityChanging(value);
+					this.SendPropertyChanging();
+					this._Authority = value;
+					this.SendPropertyChanged("Authority");
+					this.OnAuthorityChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_TrueName", DbType="VarChar(50)")]
+		public string TrueName
+		{
+			get
+			{
+				return this._TrueName;
+			}
+			set
+			{
+				if ((this._TrueName != value))
+				{
+					this.OnTrueNameChanging(value);
+					this.SendPropertyChanging();
+					this._TrueName = value;
+					this.SendPropertyChanged("TrueName");
+					this.OnTrueNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_BirthDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> BirthDate
+		{
+			get
+			{
+				return this._BirthDate;
+			}
+			set
+			{
+				if ((this._BirthDate != value))
+				{
+					this.OnBirthDateChanging(value);
+					this.SendPropertyChanging();
+					this._BirthDate = value;
+					this.SendPropertyChanged("BirthDate");
+					this.OnBirthDateChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Sex", DbType="Bit")]
+		public System.Nullable<bool> Sex
+		{
+			get
+			{
+				return this._Sex;
+			}
+			set
+			{
+				if ((this._Sex != value))
+				{
+					this.OnSexChanging(value);
+					this.SendPropertyChanging();
+					this._Sex = value;
+					this.SendPropertyChanged("Sex");
+					this.OnSexChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Phone", DbType="NChar(10)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this.OnPhoneChanging(value);
+					this.SendPropertyChanging();
+					this._Phone = value;
+					this.SendPropertyChanged("Phone");
+					this.OnPhoneChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_Impression", DbType="VarChar(200)")]
+		public string Impression
+		{
+			get
+			{
+				return this._Impression;
+			}
+			set
+			{
+				if ((this._Impression != value))
+				{
+					this.OnImpressionChanging(value);
+					this.SendPropertyChanging();
+					this._Impression = value;
+					this.SendPropertyChanged("Impression");
+					this.OnImpressionChanged();
 				}
 			}
 		}

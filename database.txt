@@ -1,0 +1,75 @@
+USE [FuTai]
+GO
+
+/****** Object:  Table [dbo].[Comment]    Script Date: 10/20/2009 08:39:59 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Comment](
+	[CommentId] [int] IDENTITY(1,1) NOT NULL,
+	[UserId] [int] NOT NULL,
+	[NickName] [varchar](20) NULL,
+	[ProductId] [varchar](20) NULL,
+	[Title] [varchar](50) NOT NULL,
+	[Content] [varchar](1000) NOT NULL,
+	[CreateDate] [datetime] NOT NULL,
+	[AuditStatus] [int] NOT NULL,
+ CONSTRAINT [PK_Comment] PRIMARY KEY CLUSTERED 
+(
+	[CommentId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Comment] ADD  CONSTRAINT [DF_Comment_CreateDate]  DEFAULT (getdate()) FOR [CreateDate]
+GO
+
+ALTER TABLE [dbo].[Comment] ADD  CONSTRAINT [DF_Comment_AuditStatus]  DEFAULT ((0)) FOR [AuditStatus]
+GO
+
+
+
+/****** Object:  Table [dbo].[User]    Script Date: 10/20/2009 08:39:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[User](
+	[UserId] [int] IDENTITY(1,1) NOT NULL,
+	[UserName] [varchar](20) NULL,
+	[CardId] [varchar](20) NULL,
+	[Email] [varchar](40) NULL,
+	[NickName] [nvarchar](20) NULL,
+	[Password] [varchar](50) NULL,
+	[Authority] [int] NULL,
+	[TrueName] [varchar](50) NULL,
+	[BirthDate] [datetime] NULL,
+	[Sex] [bit] NULL,
+	[Phone] [nchar](10) NULL,
+	[Impression] [varchar](200) NULL,
+ CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED 
+(
+	[UserId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+

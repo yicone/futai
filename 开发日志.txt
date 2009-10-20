@@ -39,3 +39,9 @@ http://jtemplates.tpython.com/
 note: SSMS 2008 在Windows 7环境中附加数据库时, 使用管理员运行无效, 尝试后得出需要用Windows验证方式连接, 而不能以SQL验证方式连接
 update: 更新了dbml文件
 doc: 整理了数据库文档(使用SQL Doc 2). MS Word版: FuTaiDBDoc.doc		HTML版: FuTaiDBDoc/main.html 
+
+
+2009-10-18 18:26
+update: 添加了产品评论功能
+update: common.js中添加了格式化ajaxpro序列化返回的时间值为yyyy-MM-dd格式
+update: 添加了验证码功能
