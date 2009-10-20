@@ -4496,8 +4496,19 @@ namespace FuTai.Component
 		
 		private string _PairId;
 		
+        private string _PairRingId0;
+
+        private string _PairRingId1;
+
 		private System.Nullable<decimal> _Price;
 		
+        private string _ImgSrc;
+
+        private string _gongfei;
+
+        private string _GoldWeight;
+
+        private int _Type1;
 		private string _StockNumber0;
 		
 		private string _StockNumber1;
@@ -4527,6 +4538,37 @@ namespace FuTai.Component
 				}
 			}
 		}
+        [Column(Storage = "_PairRingId0", DbType = "Char(10)")]
+        public string PairRingId0
+        {
+            get
+            {
+                return this._PairRingId0;
+            }
+            set
+            {
+                if ((this._PairRingId0 != value))
+                {
+                    this._PairRingId0 = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_PairRingId1", DbType = "Char(10)")]
+        public string PairRingId1
+        {
+            get
+            {
+                return this._PairRingId1;
+            }
+            set
+            {
+                if ((this._PairRingId1 != value))
+                {
+                    this._PairRingId1 = value;
+                }
+            }
+        }
 		
 		[Column(Storage="_Price", DbType="Money")]
 		public System.Nullable<decimal> Price
@@ -4540,9 +4582,73 @@ namespace FuTai.Component
 				if ((this._Price != value))
 				{
 					this._Price = value;
-				}
-			}
-		}
+                }
+            }
+        }
+
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(20)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_gongfei", DbType = "VarChar(20)")]
+        public string gongfei
+        {
+            get
+            {
+                return this._gongfei;
+            }
+            set
+            {
+                if ((this._gongfei != value))
+                {
+                    this._gongfei = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_GoldWeight", DbType = "VarChar(20)")]
+        public string GoldWeight
+        {
+            get
+            {
+                return this._GoldWeight;
+            }
+            set
+            {
+                if ((this._GoldWeight != value))
+                {
+                    this._GoldWeight = value;
+                }
+            }
+        }
+
+        [Column(Storage = "_Type1", DbType = "Int")]
+        public int Type1
+        {
+            get
+            {
+                return this._Type1;
+            }
+            set
+            {
+                if ((this._Type1 != value))
+                {
+                    this._Type1 = value;
+                }
+            }
+        }
 		
 		[Column(Storage="_StockNumber0", DbType="NChar(10)")]
 		public string StockNumber0
@@ -4631,6 +4737,7 @@ namespace FuTai.Component
 		private string _ProductId;
 		
 		private string _ProductType;
+        private string _ImgSrc;
 		
 		private string _FTId;
 		
@@ -4689,6 +4796,21 @@ namespace FuTai.Component
 				}
 			}
 		}
+        [Column(Storage = "_ImgSrc", DbType = "VarChar(20)")]
+        public string ImgSrc
+        {
+            get
+            {
+                return this._ImgSrc;
+            }
+            set
+            {
+                if ((this._ImgSrc != value))
+                {
+                    this._ImgSrc = value;
+                }
+            }
+        }
 		
 		[Column(Storage="_FTId", DbType="VarChar(20)")]
 		public string FTId
