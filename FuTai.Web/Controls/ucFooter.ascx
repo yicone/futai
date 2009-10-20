@@ -2,10 +2,10 @@
 <div class="bottomMenu">
         	<div class="AddInfo">
             	<p class="i_bottom_icon1"><strong>全国客服：</strong>40088-10025</p>
-                <p class="i_bottom_icon2"><strong>服务时间：</strong>9:00-21:00</p>
+                <p class="i_bottom_icon2"><strong>服务时间：</strong>9:30-20:00</p>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center"><p><a href="#" class="buybtn">在线客服</a></p></td>
+    <td align="center"><p><a href="/OnLineService.aspx" class="buybtn">在线客服</a></p></td>
     </tr>
   <tr>
     <td align="center"><p><a href="/NewIntro/NewExperience.aspx?type=Help" class="buybtn" target="_blank">帮助中心</a></p></td>

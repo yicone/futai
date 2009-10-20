@@ -11,6 +11,7 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
+            SetOnLineService();
             if (getUrlParam("IsCustom")=="true")
             {
                 $(".Pstep").show();

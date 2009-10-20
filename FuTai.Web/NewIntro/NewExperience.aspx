@@ -19,7 +19,7 @@
           	<div class="experience_left">
                 <div class="experience_shop">
                     <img src="../images/experience_shop.jpg" />
-                    <p><strong>地    址</strong>：南京东路步行街409号置地广场921室</p>
+                    <p><strong>地    址</strong>：南京东路步行街409号置地广场919-920室</p>
                 </div>
                 <div class="hr"></div>
                 <div class="experience_map">
@@ -40,21 +40,21 @@
                 	<ul>
                     	<li>置地广场旗舰店 </li>
 <li><strong>地    址：</strong>南京东路步行街
-  409号置地广场921室</li>
-<li><strong>邮    编：</strong></li>
-<li><strong>电    话：</strong></li>
-<li><strong>营业时间：</strong></li>
-<li><strong>交    通：</strong> 公交集散点换乘方式</li>
+  409号置地广场919-920室</li>
+<li><strong>邮    编：200001</strong></li>
+<li><strong>电    话：400-881-0025</strong></li>
+<li><strong>营业时间：AM:9:30--PM:8:00</strong></li>
+<li><strong>交    通：</strong> 地铁2号线（南京东路站4号出口），21，37，123，584，802，946，旅游10号线</li>
 
-<li><strong>免费咨询电话：</strong></li>
+<li><strong>免费咨询电话：<br/>400-881-0025</strong></li>
 
 <li><strong>客服邮箱：</strong></li>
 
-<li><strong>在线客服：</strong> 可以直接点击在线客服进行交
-  流或者增加客服MSN、QQ，得
-  到您所需要的帮助。</li>
- 
-</li>
+<li><strong>在线客服：</strong><br/> 
+QQ：<br/>454365219；304457988；410321061；623184442；<br/>
+MSN：futaizhubao@futaizhubao.com；
+futaizhubao@hotmail.com；
+futaizhubao@msn.com；</li>
                     </ul>
                 </div>
             </div>
@@ -359,36 +359,45 @@ function toggleLev1Div(nDivIdx){
       </div>
   </asp:Panel>  
   <asp:Panel ID="Pa_Promise" runat="server" Visible="false">
+  <SCRIPT language=JavaScript>
+function toggleLev1Div(nDivIdx){
+		if ('block' == document.getElementById(nDivIdx).style.display){
+			document.getElementById(nDivIdx).style.display = 'none';
+		} else {
+			document.getElementById(nDivIdx).style.display = 'block';
+		}
+	}
+</SCRIPT>
         <div class="box1">
           <h2><span>百年承诺：</span></h2>
-          <div class="cont school_detail">
-            <p class="noindent"><strong>1、一钻双证，品质保障。</strong><br />
-              一钻双证是指同一粒钻石的品质经过国际和国家级权威检测机构的双重认证，4C定级相同，级别可靠。<br />
-              2008年4月，福泰珠宝率先推出一钻双证的新规则。有一钻双证的保障，钻石级别更可靠，升值更有底气。客户相同的付出，一钻双证令性价比更高。（了解更多有关一钻双证）</p>
-            <p class="noindent"><strong>2、福泰的每一粒钻石都是历经10万人次加工打磨的完美钻石；</strong><br />
-              福泰珠宝特别重视钻石的切工，因为钻石的4C以重量为首，颜色、净度代表天然品质，而只有切工是可以经人力而体现钻石之美的唯一因素。因此，福泰珠宝不销售切工总评EX以下的钻石，每一粒钻石都是历经10万人次加工打磨的完美钻石。</p>
-            <p class="noindent"><strong>3、首饰个性化刻字，让您的首饰记录专属您的幸福记号；</strong><br />
-              首饰承载着爱和祝福，亲人或者朋友在不同的时间，不同的地点，用不同的首饰，表达了不同的情感。一个名字、一个日期、一个特殊的约定。。。。。。福泰为您精心铭刻上去，记录下专属于您的幸福记号。</p>
-            <p class="noindent"><strong>4、福泰首饰终生享受免费的专业清洗和保养；</strong><br />
-              在长期的佩戴之后，珠宝首饰会变脏、变旧，简单的清洁可以在家里自己进行（了解首饰如何保养），  同时福泰提供专业的清洗和保养，您只要携带好首饰和相关发票前来，所有服务 均是免费的。<br />
-              温馨提示：为免您久侯，福泰建议您选择周一到周五的工作时间前来，周末及节假日的首饰保养敬请提前预约。</p>
-            <p class="noindent"><strong>5、福泰首饰享受终生的免费维修（人为因素损坏除外）</strong><br />
-              长期的佩戴后，珠宝首饰有可能出现镶石松动，佩戴首饰从事体力劳动还有可能导致戒圈变形等情况，这些都需要专业的工艺师进行维修、整形，福泰首饰享受终生的免费维修。<br />
-              温馨提示：首饰受人为因素如巨大的撞击导致主石受损、镶石脱落等情况不在免费范围内，福泰将根据贴金、补钻等情况收取相应材料成本。</p>
-            <p class="noindent"><strong>6、福泰GIA钻石首饰享受免工费换新款一次；</strong><br />
-              福泰每月都会推出新款，在福泰所购GIA钻石享受一次免工费换新款的机会。<br />
+          <div class="cont school_detail bainian">
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C1')"><strong>1、一钻双证，品质保障。</strong></a><br />
+             <span class="answer" id="C1"> 一钻双证是指同一粒钻石的品质经过国际和国家级权威检测机构的双重认证，4C定级相同，级别可靠。<br />
+              2008年4月，福泰珠宝率先推出一钻双证的新规则。有一钻双证的保障，钻石级别更可靠，升值更有底气。客户相同的付出，一钻双证令性价比更高。（<a href="/School/Ceif.aspx" >了解更多有关一钻双证</a>）</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C2')"><strong>2、福泰的每一粒钻石都是历经10万人次加工打磨的完美钻石；</strong></a><br />
+              <span class="answer" id="C2">福泰珠宝特别重视钻石的切工，因为钻石的4C以重量为首，颜色、净度代表天然品质，而只有切工是可以经人力而体现钻石之美的唯一因素。因此，福泰珠宝不销售切工总评EX以下的钻石，每一粒钻石都是历经10万人次加工打磨的完美钻石。</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C3')"><strong>3、首饰个性化刻字，让您的首饰记录专属您的幸福记号；</strong></a><br />
+              <span class="answer" id="C3">首饰承载着爱和祝福，亲人或者朋友在不同的时间，不同的地点，用不同的首饰，表达了不同的情感。一个名字、一个日期、一个特殊的约定。。。。。。福泰为您精心铭刻上去，记录下专属于您的幸福记号。</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C4')"><strong>4、福泰首饰终生享受免费的专业清洗和保养；</strong></a><br />
+              <span class="answer" id="C4">在长期的佩戴之后，珠宝首饰会变脏、变旧，简单的清洁可以在家里自己进行（了解首饰如何保养），  同时福泰提供专业的清洗和保养，您只要携带好首饰和相关发票前来，所有服务 均是免费的。<br />
+              温馨提示：为免您久侯，福泰建议您选择周一到周五的工作时间前来，周末及节假日的首饰保养敬请提前预约。</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C5')"><strong>5、福泰首饰享受终生的免费维修（人为因素损坏除外）</strong></a><br />
+              <span class="answer" id="C5">长期的佩戴后，珠宝首饰有可能出现镶石松动，佩戴首饰从事体力劳动还有可能导致戒圈变形等情况，这些都需要专业的工艺师进行维修、整形，福泰首饰享受终生的免费维修。<br />
+              温馨提示：首饰受人为因素如巨大的撞击导致主石受损、镶石脱落等情况不在免费范围内，福泰将根据贴金、补钻等情况收取相应材料成本。</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C6')"><strong>6、福泰GIA钻石首饰享受免工费换新款一次；</strong></a><br />
+              <span class="answer" id="C6">福泰每月都会推出新款，在福泰所购GIA钻石享受一次免工费换新款的机会。<br />
               温馨提示：* 仅限在福泰购买的GIA钻石首饰；<br />
               * 请携带原购买凭证、福泰会员卡及GIA证书；<br />
               * 简单款式（不配副钻）免工费100元，豪华款式（配副钻）免工费200元。<br />
-              * 原旧托福泰按当日回收价回收，或者由客人自行处理。</p>
-            <p class="noindent"><strong>7、福泰GIA裸钻享受以小换大，原价回收的服务（不参与同期促销）</strong><br />
-              随着婚后生活的越来越稳定，越来越富足，原来的婚戒可能会觉得还不够大，需要换成更大、级别更高的钻石，福泰想你所想，在以小换大的同时，原来所购的钻石我们原价回收。<br />
+              * 原旧托福泰按当日回收价回收，或者由客人自行处理。</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C7')"><strong>7、福泰GIA裸钻享受以小换大，原价回收的服务（不参与同期促销）</strong></a><br />
+              <span class="answer" id="C7">随着婚后生活的越来越稳定，越来越富足，原来的婚戒可能会觉得还不够大，需要换成更大、级别更高的钻石，福泰想你所想，在以小换大的同时，原来所购的钻石我们原价回收。<br />
               温馨提示：*仅限GIA裸钻回收，原戒托可由福泰按回收价回收，或由客人自行处理；<br />
               *原购裸钻注明是特价，不参加活动的，不能享受本条服务；<br />
-              *以小换大的GIA裸钻不能享受当期的促销活动，按福泰正常售价换购。</p>
-            <p class="noindent"><strong>8、福泰珠宝顾问为您提供终生免费的专业珠宝咨询；</strong><br />
-              钻石作为珠宝中标准化程度很高的品种，除了4C以外尚且还有荧光、全深比等一般人不了解的指标在影响着价格，就不论其它如翡翠、珍珠、猫眼、红蓝宝石等这些不甚熟悉的品种了。福泰珠宝从业十年，深知珠宝的品鉴、选购中深藏着专业性、复杂性很高的知识，我们愿意作您终生的珠宝顾问，为您提供免费的咨询服务。</p>
-            <p class="noindent">成为福泰会员，优惠更多，福利更精彩。</p></div></div>
+              *以小换大的GIA裸钻不能享受当期的促销活动，按福泰正常售价换购。</span></p>
+            <p class="noindent"><a href="###" onclick="toggleLev1Div('C8')"><strong>8、福泰珠宝顾问为您提供终生免费的专业珠宝咨询；</strong></a><br />
+              <span class="answer" id="C8">钻石作为珠宝中标准化程度很高的品种，除了4C以外尚且还有荧光、全深比等一般人不了解的指标在影响着价格，就不论其它如翡翠、珍珠、猫眼、红蓝宝石等这些不甚熟悉的品种了。福泰珠宝从业十年，深知珠宝的品鉴、选购中深藏着专业性、复杂性很高的知识，我们愿意作您终生的珠宝顾问，为您提供免费的咨询服务。</span></p>
+            <a href="/NewIntro/NewExperience.aspx?type=VIP"><p class="noindent">成为福泰会员，优惠更多，福利更精彩。</p></a></div></div>
   </asp:Panel>   
       </div>
       <div class="clearfix"></div>

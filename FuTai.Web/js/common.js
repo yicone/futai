@@ -266,6 +266,7 @@ function copyToClipBoard(productid){
     alert("产品信息已复制！");
 
 }
+
 function maketicket(id,ticketid)
 {
     if (IsLogin)
@@ -293,4 +294,16 @@ function CheckCookie(id)
 {
     var CookieName="Vote"+id;
     return getCookie(CookieName);
+}
+
+
+function SetOnLineService()
+{
+    var Service ='<div id="OnLineSer" class="online_kf"><div class="online_kftile"><p>欢迎光临福泰珠宝点击“开始交谈”即可与客服对话<br/><br/><a href="#"><img src="../images/olkf_btn1.gif"width="58"height="18"/></a><a href="#"><img src="../images/olkf_btn2.gif"width="58"height="18"/></a></p></div><div class="online_kflist"><table width="100%"border="0"cellspacing="0"cellpadding="0"><tr><td><a href="javascript:void(0)" onclick="document.getElementById(\'online_kflist\').style.display=\'block\'"><img src="../images/olkf_title.jpg"width="133"height="27"/></a></td></tr></table><table width="100%"border="0"cellspacing="0"cellpadding="0"class="online_kftable"id="online_kflist"><tr><td align="center"><a href="###"onclick="document.getElementById(\'online_kflist\').style.display=\'none\'"><img src="../images/olkf_close.jpg"width="76"height="16"/></a></td></tr><tr><td><table width="100%"border="0"cellspacing="010"cellpadding="0"><tr><td><p>1.个人信息描述</p><p>状态：<img src="../images/olkf_online.gif"width="12"height="12"/>在线<br/>QQ：888888888<br/>MSN：<br/>8888@hotmail.com</p></td></tr></table></td></tr><tr><td><table width="100%"border="0"cellspacing="010"cellpadding="0"><tr><td><p>2.个人信息描述</p><p>状态：<img src="../images/olkf_online.gif"width="12"height="12"/>在线<br/>QQ：888888888<br/>MSN：<br/>8888@hotmail.com</p></td></tr></table></td></tr><tr><td><table width="100%"border="0"cellspacing="010"cellpadding="0"><tr><td><p>3.个人信息描述</p><p>状态：<img src="../images/olkf_leave.gif"width="12"height="12"/>离线<br/>QQ：888888888<br/>MSN：<br/>8888@hotmail.com</p></td></tr></table></td></tr><tr><td><table width="100%"border="0"cellspacing="010"cellpadding="0"><tr><td><p>4.个人信息描述</p><p>状态：<img src="../images/olkf_leave.gif"width="12"height="12"/>离线<br/>QQ：888888888<br/>MSN：<br/>8888@hotmail.com</p></td></tr></table></td></tr></table></div></div>';
+    var TopHeight=150;
+    $("body").append(Service);
+    $(window).scroll(function(){
+        var $target=$("#OnLineSer");
+        $target.css("top",document.documentElement.scrollTop+TopHeight+"px");
+    });
 }

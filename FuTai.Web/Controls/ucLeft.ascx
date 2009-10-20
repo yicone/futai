@@ -75,24 +75,25 @@
             <p align="center">
                 <img src="/dataimg/searchbox_img.jpg" /></p>
             <p style="color:white" align="center">
-                现有0000颗裸钻随您挑选</p>
+                现有0582颗裸钻随您挑选</p>
             <p class="btnlst">
-                <a href="javascript:alert( '订购热线：40088-10025')">立刻订购</a> <a href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
+                <a href="/CustomBuy/CustomBuyCzuan.aspx?productType=Diamond">立刻搜索</a> <a href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
             <div class="hr2">
             </div>
             <h3>
                 一钻双证</h3>
             <div style="padding-top: 10px;">
-                <a href="/School/Ceif.aspx" target="_blank"><img height="93" width="60" style="margin-right: 15px;" src="/images/zhen.gif" /><img
-                    height="93" width="60" src="/images/zhen1.gif" /></a></div>
+                <a href="/School/Ceif.aspx" target="_blank"><img height="93" width="60" style="margin-right: 15px;" src="/images/zhen1.gif" /><img
+                    height="93" width="60" src="/images/zhen.gif" /></a></div>
             <div class="hr2">
             </div>
             <h3>
-                今日金价</h3>
+                福泰今日金价</h3>
             <ul class="pricelst">
-                <li><a href="#">PT950： 310.00元/克</a></li>
-                <li><a href="#">PT900： 300.00元/克</a></li>
-                <li><a href="#">G750 ： 185.00元/克</a></li>
+                <li><a >PT950： 360.00元/克</a></li>
+                <li><a >PT900： 360.00元/克</a></li>
+                <li><a >G750 ： 238.00元/克</a></li>
+                <li><a >Au999： 260.00元/克</a></li>
             </ul>
         </div>
         <div class="hr">
@@ -102,14 +103,15 @@
                 <span class="more"><a href="/School/School.aspx">>>更多</a></span><a href="/School/School.aspx">福泰学院</a></h3>
             <div class="cont">
                 <p>
-                    上班族女人 购买钻石窍门 计划购物，别打乱了收支 平衡，消费前先做预算， 购买珠宝钻饰更应如此…</p>
+                    钻石传说是神的眼泪，是天上星星陨落地球的碎片，丘比特的"爱神之箭"的箭头上镶满了钻石，所以才有神奇的爱的魔力，这
+些美丽的传说都表达了人们对钻石所赋予的独特情感…</p>
                 <div class="hr3">
                 </div>
                 <ul>
-                    <li><a href="#">10招教你选购完美钻石 婚戒</a></li>
-                    <li><a href="#">戒指的戴法和含义</a></li>
-                    <li><a href="#">铂金钻石首饰的保养</a></li>
-                    <li><a href="#">钻石清洗方法简易三招</a></li>
+                    <li><a href="/School/SchoolProfile.aspx?field=zhuanshi">钻石学堂</a></li>
+                    <li><a href="/School/SchoolProfile.aspx?field=feicui">翡翠学堂</a></li>
+                    <li><a href="/School/SchoolProfile.aspx?field=ColorfulJewel">有色宝石学堂</a></li>
+                    <li><a href="/School/SchoolProfile.aspx?field=Gold">黄金铂金学堂</a></li>
                 </ul>
             </div>
         </div>
@@ -126,19 +128,19 @@
                 <p>
                     <a href="javascript:alert('暂未开放评论！')">质量没得说，价格公道， 很多细节的处理让人很温 馨...</a></p>
                 <p>
-                    <span class="more">[<a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：林宣清</p>
+                    <span class="more">[<a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：小不点</p>
                 <div class="hr3">
                 </div>
                 <p>
                     <a href="javascript:alert('暂未开放评论！')">非常好，比我想象的好， 包装，运输都很满意，我 第一次想试试看，...</a></p>
                 <p>
-                    <span class="more"><a href="#">[</a><a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：林宣清</p>
+                    <span class="more"><a href="#">[</a><a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：王晴</p>
                 <div class="hr3">
                 </div>
                 <p>
-                    <a href="javascript:alert('暂未开放评论！')">配送速度超快，周六下午 订货今天就到了。包装很 环保，衣服质量没...</a></p>
+                    <a href="javascript:alert('暂未开放评论！')">配送速度超快，周六下午 订货今天就到了。包装很 环保，质量没...</a></p>
                 <p>
-                    <span class="more">[<a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：林宣清</p>
+                    <span class="more">[<a href="javascript:alert('暂未开放评论！')">详细</a>]</span>作者：李超</p>
             </div>
         </div>
     </div>

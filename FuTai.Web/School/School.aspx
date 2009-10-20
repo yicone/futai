@@ -95,10 +95,11 @@
             <div class="cont school_cont1">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
-                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold">&gt; 红蓝宝石简介</a><br />
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold">&gt; PT900、18K金首饰护理
+</a><br />
                   </strong></td>
-                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold"> &gt; 红蓝宝的品质分级 </a></strong></td>
-                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold">&gt; 红蓝宝的产地</a></strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Gold"> &gt; 黄金饰品的保养 </a></strong></td>
+                 
                 </tr>
               </table>
             </div>
@@ -108,9 +109,9 @@
             <div class="cont school_cont1">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
-                  <td><strong><a href="/School/SchoolProfile.aspx?field=Player">&gt; 分类</a><br />
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Player">&gt; 首饰选择</a><br />
                   </strong></td>
-                  <td><strong><a href="/School/SchoolProfile.aspx?field=Player"> &gt; 保养 </a></strong></td>
+                  <td><strong><a href="/School/SchoolProfile.aspx?field=Player"> &gt; 首饰佩带 </a></strong></td>
                 </tr>
               </table>
             </div>
@@ -128,24 +129,7 @@
       宝石学院(GIA)签订发行</td>
   </tr>
 </table>
-<div class="inner_hr3"></div>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40%" align="center"><img src="../images/school_dataimg4.jpg" width="79" height="50" /></td>
-    <td width="60%">GIA钻石等级证书是世界<br />
-      第一的宝石证书,由美国<br />
-      宝石学院(GIA)签订发行</td>
-  </tr>
-</table>
-<div class="inner_hr3"></div>
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="40%" align="center"><img src="../images/school_dataimg4.jpg" width="79" height="50" /></td>
-    <td width="60%">GIA钻石等级证书是世界<br />
-      第一的宝石证书,由美国<br />
-      宝石学院(GIA)签订发行</td>
-    </tr>
-</table>
+
           </div>
         </div>
         <div class="school_box">

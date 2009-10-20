@@ -27,8 +27,8 @@
                    <th>抛光</th>
                    <th> 对称</th>
                    <th>证书        </th>
-                   <th>市场价        </th>
-                   <th>福泰价      </th>
+                   <th>福泰价        </th>
+                   <th>折扣价      </th>
                    <th>明细</th>
                  </tr>
                </table>

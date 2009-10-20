@@ -283,3 +283,11 @@ margin:0; height:500px; overflow:hidden;
 .question_list .answer {
 	background:url(../images/faq_a1.gif) top left no-repeat; padding-left:30px; display:none;
 }
+.bainian a strong
+{
+	display:block;  no-repeat left; padding-left:30px;
+}
+
+.bainian .answer {
+	 top left no-repeat; padding-left:30px; display:none;
+}

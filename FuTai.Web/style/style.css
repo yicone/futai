@@ -14,6 +14,10 @@ ul,li
 	list-style:none;
 }
 
+input,textarea
+{
+	font-size:12px;
+}
 /*background*/
 body
 {
@@ -339,9 +343,44 @@ border:1px solid #BEAC8D; font-size:12px;
 
 .bottomMenuLst2 li
 {
-	float:left; padding-right:10px;
+	float:left; padding-right:12px;
 }
 .copyright
 {
 	color:#68553A; line-height:20px;
+}
+.online_kf
+{
+	position:absolute; top:150px; right:0px; width:300px;
+}
+
+.online_kftile
+{
+	background:url(../images/kefu_talk.jpg); width:229px; height:115px; position:absolute; right:0;
+}
+
+.online_kftile p
+{
+	width:125px; height:80px; line-height:18px; font-size:14px; margin:15px;
+}
+
+.online_kflist
+{
+	width:133px; position:absolute; top:150px; right:0; border:1px solid #7D0000; background:#FFF;
+}
+
+.online_kftable td
+{
+	background:url(../images/olkf_listbg.jpg) no-repeat top;
+	
+}
+
+.online_kftable td td
+{
+	background:none;
+}
+
+.online_kftable td p
+{
+	 line-height:18px;
 }

@@ -65,8 +65,8 @@
         <img height="70" width="200" src="/images/logo.jpg" /></div>
     <div class="userMenu">
         <p>
-            <a id="linkLogin" href="/LoginRegister.aspx">登录</a>|<a id="linkLogon" href="/LoginRegister.aspx">注册</a>|<a href="/Account/MyAccount.aspx">我的帐户</a>|<a href="/ProduceCart.aspx">购物车</a>|<a
-                href="#">个性定制订单查询</a>|<a href="/NewIntro/NewExperience.aspx?type=Help" target="_blank">帮助中心</a>|<a href="/NewIntro/NewExperience.aspx" target="_blank">体验中心</a></p>
+            <a id="linkLogin" href="/LoginRegister.aspx">登录</a>|<a id="linkLogon" href="/LoginRegister.aspx">注册</a>|<a href="javascript:alert('暂未开放！')">我的帐户</a>|<a href="javascript:alert('暂未开放！')">购物车</a>|<a
+                href="javascript:alert('暂未开放！')">个性定制订单查询</a>|<a href="/NewIntro/NewExperience.aspx?type=Help" target="_blank">帮助中心</a>|<a href="/NewIntro/NewExperience.aspx" target="_blank">体验中心</a></p>
     </div>
     <div class="bookNum">
         <img src="/images/booknum.jpg" /></div>
@@ -91,7 +91,7 @@
     </div>
     <div class="searchBox">
         <p class="searchIntro">
-            百度电子商务首铺 诚信商户</p>
+            淘宝商务首铺 诚信商户；篱笆网诚信商家；大众点评网诚信商家</p>
         <p class="searchInput">
             search :
             <select id="selectProduct">   <%--style="word-spacing:1.0em;"--%>
@@ -101,7 +101,7 @@
                 <option value="PairRing">对戒</option>
                 <option value="DiamondOrnament">钻饰</option>
                 <option value="GoldOrnament">金饰</option>
-                <option value="Jewel">珠宝</option>
+                <option value="Jewel">宝石</option>
             </select>
             for :
             <select id="selectPrice">

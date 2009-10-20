@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -187,6 +187,13 @@
     </Compile>
     <Compile Include="NewIntro\NewExperience.aspx.designer.cs">
       <DependentUpon>NewExperience.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OnLineService.aspx.cs">
+      <DependentUpon>OnLineService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OnLineService.aspx.designer.cs">
+      <DependentUpon>OnLineService.aspx</DependentUpon>
     </Compile>
     <Compile Include="School\Ceif.aspx.cs">
       <DependentUpon>Ceif.aspx</DependentUpon>
@@ -413,6 +420,8 @@
     <Content Include="images\05.jpg" />
     <Content Include="images\06.jpg" />
     <Content Include="images\100y.jpg" />
+    <Content Include="images\100yintro_hr.jpg" />
+    <Content Include="images\100y_introbg.jpg" />
     <Content Include="images\37792.jpg" />
     <Content Include="images\50111.jpg" />
     <Content Include="images\61032.jpg" />
@@ -437,17 +446,40 @@
     <Content Include="images\add_img5.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\bei01.jpg" />
+    <Content Include="images\classic_bg2.jpg" />
+    <Content Include="images\classic_dataimg1.gif" />
     <Content Include="images\customimg10.png" />
     <Content Include="images\customimg13.png" />
     <Content Include="images\customimg7.png" />
     <Content Include="images\custom_detailpic.jpg" />
     <Content Include="images\custom_img.jpg" />
+    <Content Include="images\diamondcard.jpg" />
     <Content Include="images\faq_a1.gif" />
     <Content Include="images\faq_q.gif" />
     <Content Include="images\FTR0038.jpg" />
+    <Content Include="images\ft_school_bg1.jpg" />
+    <Content Include="images\ft_school_bg2.jpg" />
+    <Content Include="images\ft_school_bg3.jpg" />
+    <Content Include="images\ft_school_bg4.jpg" />
+    <Content Include="images\ft_school_bg5.jpg" />
+    <Content Include="images\ft_school_bg6.jpg" />
     <Content Include="images\HP8967A.jpg" />
+    <Content Include="images\index_classic.jpg" />
+    <Content Include="images\index_classicimg.jpg" />
+    <Content Include="images\index_classicmore.jpg" />
+    <Content Include="images\kefu_hr.jpg" />
+    <Content Include="images\kefu_img.jpg" />
+    <Content Include="images\kefu_talk.jpg" />
+    <Content Include="images\kefu_zaixian.jpg" />
     <Content Include="images\kuanhaoRing.jpg" />
     <Content Include="images\kuanhaoRingHot.jpg" />
+    <Content Include="images\olkf_btn1.gif" />
+    <Content Include="images\olkf_btn2.gif" />
+    <Content Include="images\olkf_close.jpg" />
+    <Content Include="images\olkf_leave.gif" />
+    <Content Include="images\olkf_listbg.jpg" />
+    <Content Include="images\olkf_online.gif" />
+    <Content Include="images\olkf_title.jpg" />
     <Content Include="images\productImg\nophotos.jpg" />
     <Content Include="images\productImg\nophotos_S1.jpg" />
     <Content Include="images\productImg\nophotos_S2.jpg" />
@@ -460,6 +492,7 @@
     <Content Include="images\zhen1.gif" />
     <Content Include="js\Cookie.js" />
     <Content Include="NewIntro\NewExperience.aspx" />
+    <Content Include="OnLineService.aspx" />
     <Content Include="School\CustomMake.aspx" />
     <Content Include="style\experience.css" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
