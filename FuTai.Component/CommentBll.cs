@@ -51,7 +51,15 @@ namespace FuTai.Component
 
                     if (a != null)
                     {
-                        list = a.ToList();
+                        try
+                        {
+                            list = a.ToList();
+                        }
+                        catch (Exception ex)
+                        {
+                            LogHelper.Logger.Error(ex);
+                            throw;
+                        }
                     }
                 }
                 else

@@ -127,9 +127,28 @@ namespace FuTai.Web
             return result;
         }
         [AjaxPro.AjaxMethod]
-        public static void MakeTicket(int id)
+        public static void MakeTicket(int id)       //HandShow
         {
-            Singleton<HandShowBll>.Instance.MakeTicket(id);
+            User NowUser = (User)HttpContext.Current.Session["CurrentUser"];
+            string ip = HttpContext.Current.Request.UserHostAddress;
+
+            Singleton<HandShowBll>.Instance.MakeTicket(id, (int)NowUser.UserId,ip);
+        }
+
+        [AjaxPro.AjaxMethod]
+        public static object CheckDB(int tid)       
+        {
+            User NowUser = (User)HttpContext.Current.Session["CurrentUser"];
+            var result = Singleton<UserBll>.Instance.DBCheck((int)NowUser.UserId, tid);
+            return result;
+        }
+
+        [AjaxPro.AjaxMethod]
+        public static object IpCheck(int id)
+        {
+            string ip = HttpContext.Current.Request.UserHostAddress;
+            var result = Singleton<UserBll>.Instance.CheckIP(id.ToString(), ip);
+            return result;
         }
     }
 }

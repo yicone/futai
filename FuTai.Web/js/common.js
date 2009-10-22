@@ -269,9 +269,8 @@ function copyToClipBoard(productid){
 
 function maketicket(id,ticketid)
 {
-    if (IsLogin)
-    {
-        if (CheckCookie(id))
+    if (IsLogin) {
+        if (CheckCookie(id) && checkdatabase(id) && ipcheck(id))
         {
             var obj=document.getElementById(ticketid);
             obj.innerHTML=parseInt(obj.innerHTML)+1+"票";
@@ -290,7 +289,24 @@ function maketicket(id,ticketid)
     else
         alert("请先登录！");
 }
-function CheckCookie(id)
+function checkdatabase(id)  //数据库验证
+{
+    var result=MyAjax.CheckDB(id.toString());
+    if (!result.error)
+        return result.value;
+    else
+        alert(result.error.Message)
+}
+function ipcheck(id)  //IP验证
+{
+    var result=MyAjax.IpCheck(id);
+    if (!result.error)
+        return result.value;
+    else
+        alert(result.error.Message);
+}
+
+function CheckCookie(id)  //Cookie验证
 {
     var CookieName="Vote"+id;
     return getCookie(CookieName);

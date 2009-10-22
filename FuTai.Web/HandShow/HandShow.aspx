@@ -106,7 +106,7 @@
             {#foreach $T.showList as record begin=$T.pageBegin count=$T.pageSize}
           	    <li><img src="../images/{$T.record.Src}.jpg" /> <a href="javascript:void(0)" onclick="window.open('../images/{$T.record.Src}.jpg','','width=700,height=467'); return false"><img src="../images/icon_fdj.gif" class="fdjbtn" /></a>
           	      <p>姓名：{$T.record.UserName}<br />
-          	      购买日期：{$T.record.BuyDate.toLocaleDateString().replace("年","-").replace("月","-").replace("日","")}<br />
+          	      购买日期：{$T.record.BuyDate.getYear()+"-"+($T.record.BuyDate.getMonth()+1)+"-"+$T.record.BuyDate.getDate()}<br />
                   当前票数：<span class="redfont1" id="ticket{$T.record.HandShowId}">{$T.record.Ticket}票</span><br />
        	          <a href="javascript:maketicket({$T.record.HandShowId},'ticket{$T.record.HandShowId}')" class="buybtn">我要投票</a></p>
        	        </li>

@@ -148,5 +148,55 @@ namespace FuTai.Component
 
             return (q.Count() != 0);
         }
+        public bool DBCheck(int uid, int tid)
+        {
+            User user = DataContext.User.First(d => d.UserId == uid);
+            
+            string ticketcol = user.Ticket;
+            bool rvalue=true;
+            if (ticketcol != null)
+            {
+                string[] ticketarr = ticketcol.Split(',');
+                for (int i = 0; i < ticketarr.Length; i++)
+                {
+                    if (ticketarr[i] == tid.ToString())
+                    {
+                        rvalue = false;
+                        break;
+                    }
+                }
+            }
+
+            return rvalue;
+            //return !ticketcol.Contains(tid.ToString());
+        }
+        public bool CheckIP(string tid, string ip)
+        {
+            var q = from r in DataContext.IpAddress
+                    where r.IP == ip
+                    select r;
+            List<IpAddress> ipcol = new List<IpAddress>();
+            ipcol = q.ToList();
+            
+            bool rvalue = true;
+
+            if (ipcol.Count != 0)
+            {
+                IpAddress Ipaddress = DataContext.IpAddress.First(i => i.IP == ip);
+
+                string ticketcol = Ipaddress.Ticket;
+                string[] ticketarr = ticketcol.Split(',');
+                for (int a = 0; a < ticketarr.Length; a++)
+                {
+                    if (ticketarr[a] == tid)
+                    {
+                        rvalue = false;
+                        break;
+                    }
+                }
+            }
+
+            return rvalue;
+        }
     }
 }
