@@ -228,7 +228,7 @@
         <div class="rankLst">
             <h3>
                 <a href="#">畅销排行榜</a></h3>
-            <ul>
+            <ul style="padding-top:8px; padding-bottom:9px">
                 <li><a href="/ProductInfo.aspx?proid=S13286" target="_blank">1、S13286男士钻戒</a></li>
                 <li><a href="/ProductInfo.aspx?proid=S14157" target="_blank">2、S14157钻石戒托</a></li>
                 <li><a href="/ProductInfo.aspx?proid=S14914" target="_blank">3、S14914钻石吊坠</a></li>
@@ -238,29 +238,67 @@
         </div>
         <div class="hr">
         </div>
-        <div class="customBox2">
-            <h3>
-                <a href="#">定制您的礼物</a></h3>
-            <img src="images/customBox2_img.jpg" />
-            <p>
-                <a class="buybtn" href="javascript:alert( '订购热线：40088-10025')">立刻订购</a></p>
-        </div>
-        <div class="hr">
-        </div>
-        <div class="ad">
-            <img src="images/i_ad1.jpg" /></div>
-        <div class="hr">
-        </div>
-        <div class="ad">
-            <img src="images/i_ad2.jpg" /></div>
-        <div class="hr">
-        </div>
-        <div class="ad">
-            <img src="images/i_ad3.jpg" /></div>
-        <div class="hr">
-        </div>
-        <div class="ad">
-            <img src="images/i_ad4.jpg" /></div>
+        <div class="rankLst">
+              <h3><a href="#">精品裸钻推荐</a></h3>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="classiclist">
+                <tr>
+                  <td height="102" valign="top"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                      <td valign="top">1.</td>
+                      <td valign="top"><img src="images/index_classicimg.jpg" width="32" height="34" /></td>
+                      <td valign="top">克拉：0.25ct<br />
+                        切工：EXCELLENT <br />
+                        颜色：D <br />
+                        净度：VVS1 <br />
+                        <span class="prize">8折￥5,700</span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="102" valign="top"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                      <td valign="top">2.</td>
+                      <td valign="top"><img src="images/index_classicimg.jpg" width="32" height="34" /></td>
+                      <td valign="top">克拉：0.25ct<br />
+                        切工：EXCELLENT <br />
+                        颜色：D <br />
+                        净度：VVS1 <br />
+                        <span class="prize">8折￥5,700</span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="102" valign="top"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                      <td valign="top">3.</td>
+                      <td valign="top"><img src="images/index_classicimg.jpg" width="32" height="34" /></td>
+                      <td valign="top">克拉：0.25ct<br />
+                        切工：EXCELLENT <br />
+                        颜色：D <br />
+                        净度：VVS1 <br />
+                        <span class="prize">8折￥5,700</span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td height="102" valign="top"><table width="100%" border="0" cellspacing="5" cellpadding="0">
+                    <tr>
+                      <td valign="top">4.</td>
+                      <td valign="top"><img src="images/index_classicimg.jpg" width="32" height="34" /></td>
+                      <td valign="top">克拉：0.25ct<br />
+                        切工：EXCELLENT <br />
+                        颜色：D <br />
+                        净度：VVS1 <br />
+                        <span class="prize">8折￥5,700</span></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="top"><a href="#"><img src="images/index_classicmore.jpg" width="71" height="21" /></a></td>
+                </tr>
+              </table>
+          </div>
+        
     </div>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphTemplate" runat="server">

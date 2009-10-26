@@ -56,8 +56,7 @@
 </script>
 
 <div class="tabSelect">
-    <div id="comment-list">
-    </div>
+    <a name="replay"></a>
     <ul>
         <li class="now">添加评论</li>
     </ul>
@@ -137,12 +136,30 @@
                 </tr>
             </tbody>
         </table>
+        
+    <div id="comment-list">
+    
+    </div>
     </div>
 </div>
 <textarea id="comment-list-template" style="display: none">
+    <table width="92%" border="0" align="center" cellpadding="0" cellspacing="0" class="inner_msghistory">
+                
     {#foreach $T.list as comment}
-        <div style="font-size:12px;padding:0px 5px;">
-        <span>{ $T.comment.Title } | { $T.comment.Content }</span>     <span>{ $T.comment.NickName }|{ formatDate($T.comment.CreateDate) }</span>
-        </div>
+        <tr>
+          <td align="center"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left"><a href="#">{ $T.comment.NickName }</a> 说：</td>
+              <td align="right">{ formatDate($T.comment.CreateDate) }</td>
+            </tr>
+            <tr>
+              <td align="left">{ $T.comment.Content }</td>
+              <td align="right" valign="bottom"></td>
+            </tr>
+          </table></td>
+        </tr>
+        
     {#/for}
+    
+             </table>
 </textarea>

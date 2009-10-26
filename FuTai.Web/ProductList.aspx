@@ -139,8 +139,9 @@
             $('li.pager').text(pageNo + '/' + _pageCount);
 
             var pageBegin = (pageNo - 1) * _pageSize;
-            
-            var id=IsCustom?"Custom":"product-list";
+
+            var productType = '<%= this.ProductType %>';
+            var id = IsCustom ? "Custom" : productType == "PairRing" ? "pairring-list" : "product-list";
             renderTemplate(id, { 'productList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize});
         }
 

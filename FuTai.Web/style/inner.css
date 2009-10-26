@@ -291,3 +291,23 @@ margin:0; height:500px; overflow:hidden;
 .bainian .answer {
 	 top left no-repeat; padding-left:30px; display:none;
 }
+
+.inner_msghistory 
+{
+	margin:10px 0; margin:0 auto;
+}
+
+.inner_msghistory td
+{
+	padding:15px 0; border-top:1px solid #C0B39F;
+}
+
+.inner_msghistory td a
+{
+	color:#795E33; font-weight:bold;
+}
+
+.inner_msghistory td td
+{
+	padding:0; border:none;
+}

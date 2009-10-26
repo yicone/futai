@@ -12,5 +12,5 @@
     }
 </script>
 
-<img id="captchar" style="border-width:0px;" src="/Captcha.ashx" alt="看不清, 换一张" />  
+<img id="captchar" style="border-width:0px;" src="/Captcha.ashx" align="absmiddle" alt="看不清, 换一张" />  
 <a href="javascript:void(0);" onclick="javascript:Captchar_refresh();" >看不清, 换一张</a>

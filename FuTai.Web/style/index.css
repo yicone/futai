@@ -226,3 +226,43 @@ p,li,td
 {
 	margin-top:10px;
 }
+
+.rankLst
+{
+	border:1px solid #FFF; background:#74572D;
+}
+
+.right h3
+{
+	font-size:12px; padding-left:30px
+}
+
+.rankLst h3
+{
+	background:url(../images/i_righttitle.jpg); height:28px; line-height:28px; 
+}
+
+.rankLst ul
+{
+	padding:15px 10px;
+}
+
+.rankLst li a
+{
+	color:#FFF; line-height:22px; 
+}
+
+.classiclist td
+{
+	background:url(../images/index_classic.jpg) top no-repeat #B08E4C; padding:5px 0;
+}
+
+.classiclist td td
+{
+	background:none; padding:0; color:#FFF;
+}
+
+.prize
+{
+	color:#FF0;
+}
