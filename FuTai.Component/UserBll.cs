@@ -98,8 +98,14 @@ namespace FuTai.Component
 
             if (q.Count() > 0)
             {
+                //todo:写入登录时间
+                User nowuser = DataContext.User.First( e => (isEmailAccount?e.Email : e.NickName) ==emailOrNickname);
+                nowuser.LoginDate = Convert.ToDateTime(DateTime.Now);
+                DataContext.SubmitChanges();
+
                 return q.Single();
             }
+
 
             return null;
         }
