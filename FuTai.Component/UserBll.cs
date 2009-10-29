@@ -48,7 +48,8 @@ namespace FuTai.Component
                 UserName = userName,
                 NickName = nickName,
                 Phone = phone,
-                Authority = (int)UserAuthority.Web
+                Authority = (int)UserAuthority.Web,
+                LoginDate=DateTime.Now
             };
 
             using (var context = BaseBll.DataContext)
@@ -88,7 +89,7 @@ namespace FuTai.Component
         { }
 
 
-        public User Login(string emailOrNickname, string password)
+        public User Login(string emailOrNickname, string password,string ip)
         {
             bool isEmailAccount = (emailOrNickname.IndexOf('@') >= 0);
 
@@ -98,11 +99,16 @@ namespace FuTai.Component
 
             if (q.Count() > 0)
             {
+<<<<<<< .mine
+                //todo:写入登录时间
+                MakeLoginTime(isEmailAccount,emailOrNickname,ip);
+=======
                 //todo:写入登录时间
                 User nowuser = DataContext.User.First( e => (isEmailAccount?e.Email : e.NickName) ==emailOrNickname);
                 nowuser.LoginDate = Convert.ToDateTime(DateTime.Now);
                 DataContext.SubmitChanges();
 
+>>>>>>> .r101
                 return q.Single();
             }
 
@@ -110,6 +116,31 @@ namespace FuTai.Component
             return null;
         }
 
+        public void MakeLoginTime(bool isEmail,string emailornick,string ip)
+        {
+            using (var datacontext = BaseBll.DataContext)
+            {
+                User nowuser = datacontext.User.First(e => (isEmail ? e.Email : e.NickName) == emailornick);
+                if (nowuser.LoginDate.ToString("yy/MM/dd").CompareTo(DateTime.Now.ToString("yy/MM/dd")) != 0)
+                { 
+                    //清空所有投票限制记录
+                    nowuser.Ticket = "";
+
+                    var r = from a in datacontext.IpAddress
+                            where a.IP == ip
+                            select a;
+
+                    if (r.Count() > 0)
+                    {
+                        IpAddress ipaddress = datacontext.IpAddress.First(e => e.IP == ip);
+                        ipaddress.Ticket="";
+                    }
+                }
+
+                nowuser.LoginDate = DateTime.Now;
+                datacontext.SubmitChanges();
+            }
+        }
 
         #region Helper
         public static User GetUser(int? userId)
