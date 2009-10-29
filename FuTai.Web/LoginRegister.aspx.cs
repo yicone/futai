@@ -29,7 +29,8 @@ namespace FuTai.Web
         [AjaxMethod]
         public static bool Login(string emailOrNickname, string password)
         {
-            User user = Singleton<UserBll>.Instance.Login(emailOrNickname, password);
+            string Ip=HttpContext.Current.Request.UserHostAddress;
+            User user = Singleton<UserBll>.Instance.Login(emailOrNickname, password,Ip);
             if (user != null)
             {
                 HttpContext.Current.Session["CurrentUser"] = user;
