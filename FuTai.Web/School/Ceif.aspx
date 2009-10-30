@@ -3,7 +3,7 @@
 <%@ Register src="/Controls/ucLeft.ascx" tagname="ucLeft" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
-
+    <link type="text/css" rel="stylesheet" href="/style/forum.css" />
     <script type="text/javascript">
         $(document).ready(function() {
             
@@ -18,7 +18,7 @@
         </div>
         <div class="box1">
           <h2><span><strong>福泰信誉  一钻双证</strong>：</span></h2>
-          <div class="cont school_detail">
+          <div class="cont school_detail diamondcard">
           <div class="noindent">
             <p>福泰珠宝承诺所售美钻经由国际权威鉴定机构（如GIA）之专业检测，一钻一证对应，身份独一无二。<br />
               <br />

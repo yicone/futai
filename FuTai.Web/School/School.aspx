@@ -15,7 +15,7 @@
         <div class="school_left">
         <div class="box1">
           <h2><span>钻石：</span></h2>
-          <div class="cont school_detail">
+          <div class="cont school_detail ft_school_bg1">
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
               <tr>
                 <td><strong><a href="/School/SchoolProfile.aspx?field=zhuanshi">&gt; 钻石的含义及历史             </a><br />
@@ -38,7 +38,7 @@
         </div>
           <div class="box1">
             <h2><span>翡翠：</span></h2>
-            <div class="cont school_cont1">
+            <div class="cont school_cont1 ft_school_bg2">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
                   <td><strong><a href="/School/SchoolProfile.aspx?field=feicui">&gt; 翡翠的矿物组成 </a><br />
@@ -58,7 +58,7 @@
           </div>
           <div class="box1">
             <h2><span>珍珠：</span></h2>
-            <div class="cont school_cont1">
+            <div class="cont school_cont1 ft_school_bg3">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
                   <td><strong><a href="/School/SchoolProfile.aspx?field=ZhenZhu">&gt; 简介</a><br />
@@ -79,7 +79,7 @@
           </div>
           <div class="box1">
             <h2><span>有色宝石：</span></h2>
-            <div class="cont school_cont1">
+            <div class="cont school_cont1 ft_school_bg4">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
                   <td><strong><a href="/School/SchoolProfile.aspx?field=ColorfulJewel">&gt; 红蓝宝石简介</a><br />
@@ -92,7 +92,7 @@
           </div>
           <div class="box1">
             <h2><span>素金：</span></h2>
-            <div class="cont school_cont1">
+            <div class="cont school_cont1 ft_school_bg5">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
                   <td><strong><a href="/School/SchoolProfile.aspx?field=Gold">&gt; PT900、18K金首饰护理
@@ -106,7 +106,7 @@
           </div>
           <div class="box1">
             <h2><span>首饰选择和佩带：</span></h2>
-            <div class="cont school_cont1">
+            <div class="cont school_cont1 ft_school_bg6">
               <table width="100%" border="0" cellspacing="0" cellpadding="0" class="DeTb">
                 <tr>
                   <td><strong><a href="/School/SchoolProfile.aspx?field=Player">&gt; 首饰选择</a><br />
@@ -129,7 +129,24 @@
       宝石学院(GIA)签订发行</td>
   </tr>
 </table>
-
+<div class="inner_hr3"></div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="40%" align="center"><img src="../images/school_dataimg4.jpg" width="79" height="50" /></td>
+    <td width="60%">GIA钻石等级证书是世界<br />
+      第一的宝石证书,由美国<br />
+      宝石学院(GIA)签订发行</td>
+  </tr>
+</table>
+<div class="inner_hr3"></div>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="40%" align="center"><img src="../images/school_dataimg4.jpg" width="79" height="50" /></td>
+    <td width="60%">GIA钻石等级证书是世界<br />
+      第一的宝石证书,由美国<br />
+      宝石学院(GIA)签订发行</td>
+    </tr>
+</table>
           </div>
         </div>
         <div class="school_box">

@@ -269,16 +269,17 @@ function copyToClipBoard(productid){
 
 function maketicket(id,ticketid)
 {
+        alert(document.cookie);
     if (IsLogin) {
-        if (CheckCookie(id) && checkdatabase(id) && ipcheck(id))
+        if (checkdatabase(id) && ipcheck(id))     //CheckCookie(id) && 
         {
             var obj=document.getElementById(ticketid);
             obj.innerHTML=parseInt(obj.innerHTML)+1+"票";
-            var datet=new Date();
-            var expireDays=1000;
-            datet.setTime(datet.getTime()+expireDays*24*3600*1000);
-            var CookieName="Vote"+id;
-            setCookie(CookieName,"hasVoted",datet);
+//            var datet=new Date();
+//            var expireDays=1000;
+//            datet.setTime(datet.getTime()+expireDays*24*3600*1000);
+//            var CookieName="Vote"+id;
+//            setCookie(CookieName,"hasVoted",datet);
             MyAjax.MakeTicket(id);
         }
         else

@@ -370,7 +370,7 @@ function toggleLev1Div(nDivIdx){
 </SCRIPT>
         <div class="box1">
           <h2><span>百年承诺：</span></h2>
-          <div class="cont school_detail bainian">
+          <div class="cont school_detail bnintrobg bainian">
             <p class="noindent"><a href="###" onclick="toggleLev1Div('C1')"><strong>1、一钻双证，品质保障。</strong></a><br />
              <span class="answer" id="C1"> 一钻双证是指同一粒钻石的品质经过国际和国家级权威检测机构的双重认证，4C定级相同，级别可靠。<br />
               2008年4月，福泰珠宝率先推出一钻双证的新规则。有一钻双证的保障，钻石级别更可靠，升值更有底气。客户相同的付出，一钻双证令性价比更高。（<a href="/School/Ceif.aspx" >了解更多有关一钻双证</a>）</span></p>

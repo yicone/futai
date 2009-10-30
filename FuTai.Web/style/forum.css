@@ -127,6 +127,20 @@
 	background:url(../images/classic_bg.jpg) top no-repeat #000; height:421px; position:relative;
 }
 
+.classic_cont a
+{
+	color:#FFF;
+}
+
+.classic_cont .breakfont
+{
+	color:#000;
+}
+
+.classic_cont .redfont1
+{
+	color:#FFF100;
+}
 .classic_cont .div1
 {
 	position:absolute; width:202px; height:330px; left:89px; top:126px;
@@ -215,4 +229,68 @@
 .series_miancont .inner_hr
 {
 	margin:10px 0;
+}
+.box1 .bnintrobg
+{
+	background:url(../images/100y_introbg.jpg) no-repeat top #F4F0E7; padding-top:220px;
+}
+
+.bnintrobg p
+{
+	font-weight:bold;
+}
+
+.bnintrobg .hr
+{
+	background:url(../images/100yintro_hr.jpg); height:16px; margin:10px 0; margin-top:20px;
+}
+
+.ft_school_bg1
+{
+	background:url(../images/ft_school_bg1.jpg) no-repeat right bottom #F0EAE4;
+}
+
+.ft_school_bg2
+{
+	background:url(../images/ft_school_bg2.jpg) no-repeat right bottom #F0EAE4;
+}
+
+.ft_school_bg3
+{
+	background:url(../images/ft_school_bg3.jpg) no-repeat right bottom #F0EAE4;
+}
+
+.ft_school_bg4
+{
+	background:url(../images/ft_school_bg4.jpg) no-repeat right bottom #F0EAE4;
+}
+
+.ft_school_bg5
+{
+	background:url(../images/ft_school_bg5.jpg) no-repeat right bottom #F0EAE4;
+}
+
+.ft_school_bg6
+{
+	background:url(../images/ft_school_bg6.jpg) no-repeat right bottom #F0EAE4;
+}
+
+.classic_bg2
+{
+	background:url(../images/classic_bg2.jpg) top repeat-x;
+}
+
+.box1 .diamondcard
+{
+	background:url(../images/diamondcard.jpg) no-repeat top #F8F7F3; padding-top:530px;
+}
+
+.box1 .diamondcard .question
+{
+	color:#73582D; font-size:14px; font-weight:bold;
+}
+
+.box1 .kefuintro
+{
+	background:#F8F4EE;
 }

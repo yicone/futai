@@ -207,6 +207,25 @@ margin:0; height:500px; overflow:hidden;
 	 border:1px solid #BEAC8D; margin-top:27px;
 }
 
+.tabSelect .cont ul
+{
+	position:relative;
+}
+
+.tabSelect .cont li
+{
+	height:auto; padding:0; line-height:normal; border:none; background:none; margin:0;
+}
+
+.tabSelect .cont .PageSelect
+{
+	padding-right:30px;
+}
+
+.tabSelect .cont .PageSelect li
+{
+	line-height:22px; margin:0 5px;
+}
 .inner_btnlist
 {
 	margin-top:10px;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 
 namespace FuTai.Component
 {
@@ -99,16 +100,14 @@ namespace FuTai.Component
 
             if (q.Count() > 0)
             {
-<<<<<<< .mine
+
                 //todo:写入登录时间
                 MakeLoginTime(isEmailAccount,emailOrNickname,ip);
-=======
+
                 //todo:写入登录时间
                 User nowuser = DataContext.User.First( e => (isEmailAccount?e.Email : e.NickName) ==emailOrNickname);
                 nowuser.LoginDate = Convert.ToDateTime(DateTime.Now);
                 DataContext.SubmitChanges();
-
->>>>>>> .r101
                 return q.Single();
             }
 
@@ -126,6 +125,16 @@ namespace FuTai.Component
                     //清空所有投票限制记录
                     nowuser.Ticket = "";
 
+                    ////BanCookie
+                    //foreach (string key in HttpContext.Current.Request.Cookies.AllKeys)
+                    //{
+                    //    HttpCookie cookie = HttpContext.Current.Request.Cookies[key];
+                    //    cookie.Expires = DateTime.MinValue;
+                    //    HttpContext.Current.Response.Cookies.Add(cookie);
+                    //}
+
+
+                    //Clear IP
                     var r = from a in datacontext.IpAddress
                             where a.IP == ip
                             select a;
