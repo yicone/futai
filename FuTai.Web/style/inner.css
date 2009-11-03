@@ -77,6 +77,36 @@ display:block; margin:0 auto;
 text-align:center; line-height:22px; padding-left:8px; padding-right:8px;
 }
 
+.inner_list1_zxs .left
+{
+	float:left; width:200px;
+}
+
+.inner_list1_zxs .fupiaoTitle
+{
+	font-size:14px; line-height:18px;
+}
+
+.inner_list1_zxs .fupiao
+{
+	font-size:20px; color:#F00; font-weight:bold; line-height:28px;
+}
+
+.inner_list1_zxs td
+{
+	padding:10px 0;
+}
+
+.inner_list1_zxs .date
+{
+	padding-top:5px; display:block;
+}
+
+.inner_list1_zxs .right
+{
+	float:right; width:140px;
+}
+
 .fdjbtn
 {
 padding-top:10px;
@@ -262,6 +292,11 @@ margin:0; height:500px; overflow:hidden;
 .buybtn
 {
 	background:url(../images/i_buybtn.gif); display:block; width:71px; height:21px; text-align:center; line-height:21px; margin-top:5px;
+}
+
+.handshow_list 
+{
+	height:auto; min-height:100px; _height:100px;
 }
 
 .handshow_list li

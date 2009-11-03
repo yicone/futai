@@ -10,7 +10,7 @@
           <NativeDebugging>False</NativeDebugging>
           <SQLDebugging>False</SQLDebugging>
           <PublishCopyOption>RunFiles</PublishCopyOption>
-          <PublishTargetLocation>C:\Documents and Settings\lijiayin\桌面\Futai10.23\</PublishTargetLocation>
+          <PublishTargetLocation>C:\Documents and Settings\lijiayin\桌面\FuTai11.2\</PublishTargetLocation>
           <PublishDeleteAllFiles>True</PublishDeleteAllFiles>
           <PublishCopyAppData>True</PublishCopyAppData>
           <ExternalProgram>
@@ -23,7 +23,6 @@
           </StartWorkingDirectory>
           <EnableENC>False</EnableENC>
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
-          <EnableWcfTestClientForSVC>False</EnableWcfTestClientForSVC>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

@@ -11,9 +11,17 @@
         var _productList;
         var _pageNo = 1;
         var _pageCount = 0;
-        var _pageSize = 9;
+        var _pageSize = 10;
         var top3;
         $(document).ready(function() {
+            $("body").append('<div id="top3-list" class="online_zsxlist"></div>');
+            var TopHeight=150;
+            $(window).scroll(function(){
+                var $target=$("#top3-list");
+                $target.css("top",document.documentElement.scrollTop+TopHeight+"px");
+            });
+            
+            
             _productList = searchhandshow();
             renderTemplate('handshow-list', { 'showList': _productList, 'pageBegin': 0, 'pageSize': _pageSize});
             _pageCount=parseInt(_productList.length/_pageSize)<1?1:Math.ceil(_productList.length/_pageSize);
@@ -59,8 +67,7 @@
         <div class="box1">
           <h2><span><strong>真手绣</strong>：</span></h2>
           <div class="cont" style="padding-left:30px; padding-right:30px">
-          	<div class="handshow_left">
-            	<p class="handshow_left_num">共有 <span class="redfont1" id="procount1">160</span> 件</p>
+            <p class="handshow_left_num">共有 <span class="redfont1" id="procount1">160</span> 件</p>
           	  <ul class="PageSelect">
           	    <li id="count1">1/50</li>
           	    <li><a href="javascript:showpage()"><img src="../images/pageselect_left.gif" /></a></li>
@@ -77,53 +84,92 @@
           	    <li><a href="javascript:showpage(true)"><img src="../images/pageselect_next.gif" /></a></li>
        	      </ul>
               <div class="clearfix"></div>
-            </div>
-            <div class="handshow_right">
-           	  <div class="box1">
-               	<h2><span><strong>真手秀排行榜</strong>：</span></h2>
-               	<div id="top3-list">
-                    <!--模板ING--->
-                  </div>
-                </div>
-                <div class="hr"></div>
-              <div class="box1">
-               	<h2><span><strong>分类礼品推荐</strong>：</span></h2>
-                <ul class="handshow_ad">
-                	<li><img src="../images/handshow_pic3.jpg" /></li>
-                    <li><img src="../images/handshow_pic4.jpg" /></li>
-                    <li><img src="../images/handshow_pic5.jpg" /></li>
-                </ul>
-                </div>
-            </div>
-            <div class="clearfix"></div>
           </div></div></div>
           <div class="clearfix"></div>
-       <div class="hr"></div>
+       <div class="hr"></div>     
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphTemplate" runat="server" >
     <textarea id="handshow-list-template" style="display: none">
-        <ul class="inner_list1">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="inner_list1_zxs">
+            <tr>
             {#foreach $T.showList as record begin=$T.pageBegin count=$T.pageSize}
-          	    <li><img src="../images/{$T.record.Src}.jpg" /> <a href="javascript:void(0)" onclick="window.open('../images/{$T.record.Src}.jpg','','width=700,height=467'); return false"><img src="../images/icon_fdj.gif" class="fdjbtn" /></a>
+                <td width="50%"><div class="left"><a href="#" onClick="window.open('../images/{$T.record.Src}.jpg','','width=700,height=467'); return false"><img src="../images/{$T.record.Src}.gif" /></a></div><div class="right">
+                  <p style="line-height:30px"><strong>昵称：</strong>{$T.record.UserName}<br />
+                  <span class="fupiaoTitle"><strong>祝福指数：</strong></span><br />
+                  <span class="fupiao">{$T.record.Ticket}福票</span>
+                  <a href="javascript:maketicket({$T.record.HandShowId},'ticket{$T.record.HandShowId}')" class="buybtn">我要祝福她</a>
+                  <span class="date"><strong>购买日期：</strong>{$T.record.BuyDate.getYear()+"-"+($T.record.BuyDate.getMonth()+1)+"-"+$T.record.BuyDate.getDate()}</span>
+                  </p>
+                </div>
+               </td>
+               {#if $T.record$last}
+                   {#if ($T.record$index+1)%2!=0}
+                   <td width="50%"></td>
+                   {#/if}
+                </tr>
+               {#/if}
+               {#if ($T.record$index+1)%2==0 && $T.record$index!=0 }
+                   </tr>
+                   <tr>
+               {#/if}
+            
+          	    <%--<li><img src="../images/{$T.record.Src}.jpg" /> <a href="javascript:void(0)" onclick="window.open('../images/{$T.record.Src}.jpg','','width=700,height=467'); return false"><img src="../images/icon_fdj.gif" class="fdjbtn" /></a>
           	      <p>姓名：{$T.record.UserName}<br />
           	      购买日期：{$T.record.BuyDate.getYear()+"-"+($T.record.BuyDate.getMonth()+1)+"-"+$T.record.BuyDate.getDate()}<br />
                   当前票数：<span class="redfont1" id="ticket{$T.record.HandShowId}">{$T.record.Ticket}票</span><br />
        	          <a href="javascript:maketicket({$T.record.HandShowId},'ticket{$T.record.HandShowId}')" class="buybtn">我要投票</a></p>
-       	        </li>
+       	        </li>--%>
        	     {#/for}
-       	      </ul>
-       	      <div class="clearfix"></div>
+         </table>
     </textarea>
     <textarea id="top3-list-template" style="display:none">
-        <ul class="handshow_list">
-          {#foreach $T.topList as record begin=$T.pageBegin count=$T.pageSize}
-       	  <li><img src="../images/handshow_pic2.jpg" />
-        	<p>姓名：{$T.record.UserName}<br />
-        	 购买日期：<br />{$T.record.BuyDate.toLocaleDateString().replace("年","-").replace("月","-").replace("日","")}<br />
-       	     当前票数：<span class="redfont1">{$T.record.Ticket}票</span>
-            </p><div class="clearfix"></div>
-            </li>
-          {#/for}
-      </ul>
+        <div class="online_zsx2list_border">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>            <img src="../images/olkf_title.gif" height="27" style="cursor:pointer" onclick="document.getElementById('online_kflist').style.display='block'" /></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="online_kftable" id="online_kflist" bgcolor="#FFFFFF">
+            <tr>
+              <td align="center"><a href="###" onclick="document.getElementById('online_kflist').style.display='none'"><img src="../images/olkf_close.jpg" width="76" height="16" /></a></td>
+            </tr>
+            {#foreach $T.topList as record begin=$T.pageBegin count=$T.pageSize}
+            <tr>
+              <td><table width="100%" border="0" cellpadding="0" cellspacing="10">
+                <tr>
+                  <td width="41%"><img src="../images/zsx_img2.gif" width="59" height="72" /></td>
+                  <td width="59%"><p><strong>姓名：</strong>{$T.record.UserName}<br />
+                    <strong>购买日期：</strong><br />
+                    {$T.record.BuyDate.toLocaleDateString().replace("年","-").replace("月","-").replace("日","")}<br />
+<span class="redfont1"><strong>祝福指数:</strong> {$T.record.Ticket}票</span></p></td>
+                </tr>
+              </table></td>
+            </tr>
+            {#/for}
+          </table>
+          </div>
+          <div class="online_zsx2list_border" style="display:block; margin-top:10px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td><img src="../images/olkf_zsx2title.gif" width="180" height="27" style="cursor:pointer" onclick="document.getElementById('online_kflist2').style.display='block'" /></td>
+              </tr>
+              </table>
+              <table id="online_kflist2" width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+              <tr>
+                <td align="center"><a href="#" onclick="document.getElementById('online_kflist2').style.display='none'"><img src="../images/olkf_close.jpg" width="76" height="16" /></a></td>
+              </tr>
+              <tr>
+                <td align="center">
+                <div>
+                <table width="100%" border="0" cellspacing="10" cellpadding="0">
+                  <tr>
+                    <td><img src="../images/zsx2_handshow_pic3.gif" width="158" height="82" /></td>
+                  </tr>
+                </table>
+                </div>
+                </td>
+              </tr>
+            </table>
+        </div>
     </textarea>
 </asp:Content>

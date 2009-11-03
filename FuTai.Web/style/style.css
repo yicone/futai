@@ -369,6 +369,16 @@ border:1px solid #BEAC8D; font-size:12px;
 	width:133px; position:absolute; top:150px; right:0; border:1px solid #7D0000; background:#FFF;
 }
 
+.online_zsxlist
+{
+	width:182px; position:absolute; top:150px; right:0;
+}
+
+.online_zsx2list_border
+{
+	border:1px solid #7D0000; 
+}
+
 .online_kftable td
 {
 	background:url(../images/olkf_listbg.jpg) no-repeat top;

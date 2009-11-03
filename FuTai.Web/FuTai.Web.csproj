@@ -487,7 +487,9 @@
     <Content Include="images\olkf_leave.gif" />
     <Content Include="images\olkf_listbg.jpg" />
     <Content Include="images\olkf_online.gif" />
+    <Content Include="images\olkf_title.gif" />
     <Content Include="images\olkf_title.jpg" />
+    <Content Include="images\olkf_zsx2title.gif" />
     <Content Include="images\productImg\nophotos.jpg" />
     <Content Include="images\productImg\nophotos_S1.jpg" />
     <Content Include="images\productImg\nophotos_S2.jpg" />
@@ -498,6 +500,9 @@
     <Content Include="images\wrongbg.jpg" />
     <Content Include="images\zhen.gif" />
     <Content Include="images\zhen1.gif" />
+    <Content Include="images\zsx2_handshow_pic3.gif" />
+    <Content Include="images\zsx_img1.gif" />
+    <Content Include="images\zsx_img2.gif" />
     <Content Include="js\Cookie.js" />
     <Content Include="NewIntro\NewExperience.aspx" />
     <Content Include="OnLineService.aspx" />
