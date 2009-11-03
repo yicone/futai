@@ -269,7 +269,6 @@ function copyToClipBoard(productid){
 
 function maketicket(id,ticketid)
 {
-        alert(document.cookie);
     if (IsLogin) {
         if (checkdatabase(id) && ipcheck(id))     //CheckCookie(id) && 
         {
