@@ -161,7 +161,10 @@
 
                 var success = r.value;
                 if (success) {
-                    location.href = "/";
+                    if (getUrlParam("type")=="handshow")
+                        location.href = "/HandSHow/HandShow.aspx";
+                    else
+                        location.href = "/";
                 } else {
                     alert('登录失败, 请重试');
                 }

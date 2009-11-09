@@ -95,8 +95,8 @@
             {#foreach $T.showList as record begin=$T.pageBegin count=$T.pageSize}
                 <td width="50%"><div class="left"><a href="#" onClick="window.open('../images/{$T.record.Src}.jpg','','width=700,height=467'); return false"><img src="../images/{$T.record.Src}.gif" /></a></div><div class="right">
                   <p style="line-height:30px"><strong>昵称：</strong>{$T.record.UserName}<br />
-                  <span class="fupiaoTitle"><strong>祝福指数：</strong></span><br />
-                  <span class="fupiao">{$T.record.Ticket}福票</span>
+                  <span class="fupiaoTitle"><strong>祝福指数：</strong></span>
+                  <span style="display:block; height:30px" id="ticket{$T.record.HandShowId}" class="fupiao">{$T.record.Ticket}福票</span>
                   <a href="javascript:maketicket({$T.record.HandShowId},'ticket{$T.record.HandShowId}')" class="buybtn">我要祝福她</a>
                   <span class="date"><strong>购买日期：</strong>{$T.record.BuyDate.getYear()+"-"+($T.record.BuyDate.getMonth()+1)+"-"+$T.record.BuyDate.getDate()}</span>
                   </p>

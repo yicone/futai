@@ -1,6 +1,9 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucHeader.ascx.cs" Inherits="FuTai.Web.Controls.ucHeader" %>
 <script type="text/javascript">
     $(function() {
+        if (GetFile()=="HandShow")
+            $("#linkLogin").attr('href','/LoginRegister.aspx?type=handshow');
+            
         $('#btnSearch').click(function() {
             var productType = $('#selectProduct').val();
             var price1 = $('#selectPrice option:selected').attr('price1');

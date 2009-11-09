@@ -23,7 +23,8 @@ namespace FuTai.Component
                     Email = email,
                     NickName = nickname,
                     Password = password,
-                    Authority = (int)UserAuthority.Web
+                    Authority = (int)UserAuthority.Web,
+                    LoginDate=DateTime.Now
                 };
 
             using (var context = BaseBll.DataContext)
@@ -95,13 +96,13 @@ namespace FuTai.Component
             bool isEmailAccount = (emailOrNickname.IndexOf('@') >= 0);
 
             var q = from u in DataContext.User
-                    where (isEmailAccount ? u.Email : u.NickName) == emailOrNickname
+                    where (isEmailAccount ? u.Email : u.NickName) == emailOrNickname && u.Password==password
                     select u;
 
             if (q.Count() > 0)
             {
 
-                //todo:写入登录时间
+                //todo:取消投票限制
                 MakeLoginTime(isEmailAccount,emailOrNickname,ip);
 
                 //todo:写入登录时间
@@ -142,7 +143,12 @@ namespace FuTai.Component
                     if (r.Count() > 0)
                     {
                         IpAddress ipaddress = datacontext.IpAddress.First(e => e.IP == ip);
-                        ipaddress.Ticket="";
+                        //判断IP时间
+                        if (ipaddress.LoginDate.ToString("yy/MM/dd").CompareTo(DateTime.Now.ToString("yy/MM/dd")) != 0)
+                        {
+                            ipaddress.Ticket = "";
+                        }
+                        ipaddress.LoginDate = Convert.ToDateTime(DateTime.Now);
                     }
                 }
 

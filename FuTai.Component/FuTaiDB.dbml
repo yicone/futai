@@ -186,6 +186,7 @@
     <Type Name="IpAddress">
       <Column Name="IP" Type="System.String" DbType="VarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Ticket" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LoginDate" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.product_InsertDiamond" Method="InsertDiamond">

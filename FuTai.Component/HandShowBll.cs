@@ -62,6 +62,7 @@ namespace FuTai.Component
                 {
                     IpDB.IP = IP;
                     IpDB.Ticket = id.ToString();
+                    IpDB.LoginDate = Convert.ToDateTime(DateTime.Now);
                     dataContext.IpAddress.InsertOnSubmit(IpDB);
                 }
                 else
@@ -71,6 +72,8 @@ namespace FuTai.Component
                         ipaddress.Ticket += "," + id.ToString();
                     else
                         ipaddress.Ticket += id.ToString();
+
+                    IpDB.LoginDate = Convert.ToDateTime(DateTime.Now);
                 }
 
                 dataContext.SubmitChanges();

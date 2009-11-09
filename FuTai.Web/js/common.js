@@ -273,7 +273,7 @@ function maketicket(id,ticketid)
         if (checkdatabase(id) && ipcheck(id))     //CheckCookie(id) && 
         {
             var obj=document.getElementById(ticketid);
-            obj.innerHTML=parseInt(obj.innerHTML)+1+"票";
+            obj.innerHTML=parseInt(obj.innerHTML)+1+"福票";
 //            var datet=new Date();
 //            var expireDays=1000;
 //            datet.setTime(datet.getTime()+expireDays*24*3600*1000);
