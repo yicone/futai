@@ -21,12 +21,13 @@
             $('#user_register').click(function() {
 
                 var email = $('#email').val();
-                var passowrd = $('#passowrd').val();
-                var passowrd2 = $('#passowrd2').val();
+                var password = $('#password').val();
+                var password2 = $('#password2').val();
                 var passwordAnswer = $('#passwordAnswer').val();
                 var passwordQuestion = $('#passwordQuestion').val();
-                var birthDate = $('#birthDate').val();
-                var sex = $('#sex').val();
+                var birthDate =new Date($('#birthYear').val(),$('#birthMonth').val(),$('#birthDate').val());
+                
+                var sex = $('#sex').val()=="true"?true:false;
                 var userName = $('#userName').val();
                 var nickName = $('#nickName').val();
                 var phone = $('#phone').val();
@@ -81,13 +82,13 @@
                 }
 
                 // todo: 性别采用下拉选择
-                if (!sex) {
-                    $('#sex').error('请选择性别');
-                    return false;
-                }
+//                if (!sex) {
+//                    $('#sex').error('请选择性别');
+//                    return false;
+//                }
 
                 // todo: 用户名不能包含数字或特殊字符
-                if (!userName || !/^[\w]{2, 20}$/.test(userName.length)) {
+                if (!userName || !(userName.length>2 && userName.length<20)) {
                     $('#userName').error('请输入真实姓名');
                     return false;
                 }
@@ -97,7 +98,7 @@
                 if (!nickName) {
                     $('#nickName').error('请输入昵称');
                     return false;
-                } else if (!/^[\w]{2, 20}$/.test(nickName)) {
+                } else if (!(nickName.length>=4 && nickName.length<=10  )) {
                     $('#nickName').error('昵称应为4-10个字符');
                     return false;
                 } else {
@@ -110,13 +111,20 @@
                 }
 
                 // todo: 验证电话格式
-                if (!phone || !/^\d{8, 20}/.test(phone)) {
-                    $('#phone').error('请输入联系电话');
+                if (!phone || !(phone.length>=8 && phone.length<=10)) {
+                    $('#phone').error('联系电话格式错误');
                     return false;
                 }
 
-                var result = BaseAjax.Register(email, passowrd, passwordAnswer, passwordQuestion,
-                                    birthDate, sex, userName, nickName, phone);
+                var result = BaseAjax.Register(email, password, passwordAnswer, passwordQuestion,birthDate, sex, userName, nickName, phone);
+                if (!result.error)
+                {
+                    alert("恭喜您注册成功!您将自动登录到福泰钻石");
+                    BaseAjax.Login(email, password);
+                    location.href="/Default.aspx";
+                }
+                else
+                    alert(result.error.Message);
             });
         });
     </script>
@@ -151,7 +159,7 @@
                                     设置密码：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="passowrd" name="passowrd" />
+                                    <input type="password" id="password" name="password" style="width:127px" />
                                 </td>
                             </tr>
                             <tr>
@@ -159,7 +167,7 @@
                                     确认密码：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="password2" name="password2" />
+                                    <input type="password" id="password2" name="password2" style="width:127px" />
                                 </td>
                             </tr>
                             <tr>
@@ -183,7 +191,95 @@
                                     生日：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="birthDate" name="birthDate" />
+                                    <select id="birthYear">
+                                        <option>1970</option>
+                                        <option>1971</option>
+                                        <option>1972</option>
+                                        <option>1973</option>
+                                        <option>1974</option>
+                                        <option>1975</option>
+                                        <option>1976</option>
+                                        <option>1977</option>
+                                        <option>1978</option>
+                                        <option>1979</option>
+                                        <option>1980</option>
+                                        <option>1981</option>
+                                        <option>1982</option>
+                                        <option>1983</option>
+                                        <option>1984</option>
+                                        <option>1985</option>
+                                        <option>1986</option>
+                                        <option>1987</option>
+                                        <option>1988</option>
+                                        <option>1989</option>
+                                        <option>1990</option>
+                                        <option>1991</option>
+                                        <option>1992</option>
+                                        <option>1993</option>
+                                        <option>1994</option>
+                                        <option>1995</option>
+                                        <option>1996</option>
+                                        <option>1997</option>
+                                        <option>1998</option>
+                                        <option>1999</option>
+                                        <option>2000</option>
+                                        <option>2001</option>
+                                        <option>2002</option>
+                                        <option>2003</option>
+                                        <option>2004</option>
+                                        <option>2005</option>
+                                        <option>2006</option>
+                                        <option>2007</option>
+                                        <option>2008</option>
+                                        <option>2009</option>
+                                    </select> 年 <select id="birthMonth">
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                    </select> 月 
+                                        <select id="birthDate">
+                                        <option>01</option>
+                                        <option>02</option>
+                                        <option>03</option>
+                                        <option>04</option>
+                                        <option>05</option>
+                                        <option>06</option>
+                                        <option>07</option>
+                                        <option>08</option>
+                                        <option>09</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                        <option>15</option>
+                                        <option>16</option>
+                                        <option>17</option>
+                                        <option>18</option>
+                                        <option>19</option>
+                                        <option>20</option>
+                                        <option>21</option>
+                                        <option>22</option>
+                                        <option>23</option>
+                                        <option>24</option>
+                                        <option>25</option>
+                                        <option>26</option>
+                                        <option>27</option>
+                                        <option>28</option>
+                                        <option>29</option>
+                                        <option>30</option>
+                                        <option>31</option>
+                                    </select>
+                                     日
                                 </td>
                             </tr>
                             <tr>
@@ -191,7 +287,10 @@
                                     性别：<br />
                                 </td>
                                 <td>
-                                    <input type="text" id="sex" name="sex" />
+                                    <select id="sex" name="sex" style="width:131px">
+                                        <option value="true">男</option>
+                                        <option value="false">女</option>
+                                    </select>
                                 </td>
                             </tr>
                             <tr>

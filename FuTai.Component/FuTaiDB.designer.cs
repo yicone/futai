@@ -72,7 +72,7 @@ namespace FuTai.Component
     #endregion
 		
 		public FuTaiDBDataContext() : 
-				base(global::FuTai.Component.Properties.Settings.Default.FuTaiConnectionString6, mappingSource)
+				base(global::FuTai.Component.Properties.Settings.Default.FuTaiConnectionString5, mappingSource)
 		{
 			OnCreated();
 		}
@@ -252,13 +252,6 @@ namespace FuTai.Component
 			return ((ISingleResult<search_SearchDiamondResult>)(result.ReturnValue));
 		}
 		
-		[Function(Name="dbo.search_SearchByType")]
-		public ISingleResult<search_SearchByTypeResult1> SearchByType([Parameter(Name="MType", DbType="VarChar(20)")] string mType, [Parameter(Name="SType", DbType="VarChar(50)")] string sType, [Parameter(Name="Hotted", DbType="Bit")] System.Nullable<bool> hotted)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mType, sType, hotted);
-			return ((ISingleResult<search_SearchByTypeResult1>)(result.ReturnValue));
-		}
-		
 		[Function(Name="dbo.search_SearchDiamondRing")]
 		public ISingleResult<search_SearchDiamondRingResult> SearchDiamondRing([Parameter(Name="Price1", DbType="Decimal")] System.Nullable<decimal> price1, [Parameter(Name="Price2", DbType="Decimal")] System.Nullable<decimal> price2, [Parameter(Name="Type1", DbType="Int")] System.Nullable<int> type1)
 		{
@@ -292,6 +285,13 @@ namespace FuTai.Component
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), price1, price2, type1);
 			return ((ISingleResult<search_SearchPairRingResult>)(result.ReturnValue));
+		}
+		
+		[Function(Name="dbo.search_SearchByType")]
+		public ISingleResult<search_SearchByTypeResult> SearchByType([Parameter(Name="MType", DbType="VarChar(20)")] string mType, [Parameter(Name="SType", DbType="VarChar(50)")] string sType, [Parameter(Name="Hotted", DbType="Bit")] System.Nullable<bool> hotted)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), mType, sType, hotted);
+			return ((ISingleResult<search_SearchByTypeResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -2402,6 +2402,8 @@ namespace FuTai.Component
 		
 		private System.Nullable<bool> _Hotted;
 		
+		private string _ImgSrc;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2432,6 +2434,8 @@ namespace FuTai.Component
     partial void OnProductNickChanged();
     partial void OnHottedChanging(System.Nullable<bool> value);
     partial void OnHottedChanged();
+    partial void OnImgSrcChanging(string value);
+    partial void OnImgSrcChanged();
     #endregion
 		
 		public Product()
@@ -2695,6 +2699,26 @@ namespace FuTai.Component
 					this._Hotted = value;
 					this.SendPropertyChanged("Hotted");
 					this.OnHottedChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ImgSrc", DbType="varchar(40)", CanBeNull=false)]
+		public string ImgSrc
+		{
+			get
+			{
+				return this._ImgSrc;
+			}
+			set
+			{
+				if ((this._ImgSrc != value))
+				{
+					this.OnImgSrcChanging(value);
+					this.SendPropertyChanging();
+					this._ImgSrc = value;
+					this.SendPropertyChanged("ImgSrc");
+					this.OnImgSrcChanged();
 				}
 			}
 		}
@@ -4732,248 +4756,6 @@ namespace FuTai.Component
 		}
 	}
 	
-	public partial class search_SearchByTypeResult1
-	{
-		
-		private string _ProductId;
-		
-		private string _ProductType;
-		
-		private string _FTId;
-		
-		private string _CounterId;
-		
-		private System.Nullable<decimal> _Price;
-		
-		private System.Nullable<System.DateTime> _CreateDate;
-		
-		private System.Nullable<int> _Status;
-		
-		private string _Location;
-		
-		private System.Nullable<int> _DiscountType;
-		
-		private string _MainType;
-		
-		private string _SubType;
-		
-		private string _ProductNick;
-		
-		private System.Nullable<bool> _Hotted;
-		
-		public search_SearchByTypeResult1()
-		{
-		}
-		
-		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
-		public string ProductId
-		{
-			get
-			{
-				return this._ProductId;
-			}
-			set
-			{
-				if ((this._ProductId != value))
-				{
-					this._ProductId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
-		public string ProductType
-		{
-			get
-			{
-				return this._ProductType;
-			}
-			set
-			{
-				if ((this._ProductType != value))
-				{
-					this._ProductType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_FTId", DbType="VarChar(20)")]
-		public string FTId
-		{
-			get
-			{
-				return this._FTId;
-			}
-			set
-			{
-				if ((this._FTId != value))
-				{
-					this._FTId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CounterId", DbType="VarChar(20)")]
-		public string CounterId
-		{
-			get
-			{
-				return this._CounterId;
-			}
-			set
-			{
-				if ((this._CounterId != value))
-				{
-					this._CounterId = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Price", DbType="Money")]
-		public System.Nullable<decimal> Price
-		{
-			get
-			{
-				return this._Price;
-			}
-			set
-			{
-				if ((this._Price != value))
-				{
-					this._Price = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_CreateDate", DbType="DateTime")]
-		public System.Nullable<System.DateTime> CreateDate
-		{
-			get
-			{
-				return this._CreateDate;
-			}
-			set
-			{
-				if ((this._CreateDate != value))
-				{
-					this._CreateDate = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Status", DbType="Int")]
-		public System.Nullable<int> Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Location", DbType="VarChar(20)")]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_DiscountType", DbType="Int")]
-		public System.Nullable<int> DiscountType
-		{
-			get
-			{
-				return this._DiscountType;
-			}
-			set
-			{
-				if ((this._DiscountType != value))
-				{
-					this._DiscountType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_MainType", DbType="VarChar(20)")]
-		public string MainType
-		{
-			get
-			{
-				return this._MainType;
-			}
-			set
-			{
-				if ((this._MainType != value))
-				{
-					this._MainType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_SubType", DbType="VarChar(50)")]
-		public string SubType
-		{
-			get
-			{
-				return this._SubType;
-			}
-			set
-			{
-				if ((this._SubType != value))
-				{
-					this._SubType = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
-		public string ProductNick
-		{
-			get
-			{
-				return this._ProductNick;
-			}
-			set
-			{
-				if ((this._ProductNick != value))
-				{
-					this._ProductNick = value;
-				}
-			}
-		}
-		
-		[Column(Storage="_Hotted", DbType="Bit")]
-		public System.Nullable<bool> Hotted
-		{
-			get
-			{
-				return this._Hotted;
-			}
-			set
-			{
-				if ((this._Hotted != value))
-				{
-					this._Hotted = value;
-				}
-			}
-		}
-	}
-	
 	public partial class search_SearchDiamondRingResult
 	{
 		
@@ -6935,6 +6717,266 @@ namespace FuTai.Component
 				if ((this._CreateDate != value))
 				{
 					this._CreateDate = value;
+				}
+			}
+		}
+	}
+	
+	public partial class search_SearchByTypeResult
+	{
+		
+		private string _ProductId;
+		
+		private string _ProductType;
+		
+		private string _FTId;
+		
+		private string _CounterId;
+		
+		private System.Nullable<decimal> _Price;
+		
+		private System.Nullable<System.DateTime> _CreateDate;
+		
+		private System.Nullable<int> _Status;
+		
+		private string _Location;
+		
+		private System.Nullable<int> _DiscountType;
+		
+		private string _MainType;
+		
+		private string _SubType;
+		
+		private string _ProductNick;
+		
+		private System.Nullable<bool> _Hotted;
+		
+		private string _ImgSrc;
+		
+		public search_SearchByTypeResult()
+		{
+		}
+		
+		[Column(Storage="_ProductId", DbType="Char(10) NOT NULL", CanBeNull=false)]
+		public string ProductId
+		{
+			get
+			{
+				return this._ProductId;
+			}
+			set
+			{
+				if ((this._ProductId != value))
+				{
+					this._ProductId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductType", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string ProductType
+		{
+			get
+			{
+				return this._ProductType;
+			}
+			set
+			{
+				if ((this._ProductType != value))
+				{
+					this._ProductType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_FTId", DbType="VarChar(20)")]
+		public string FTId
+		{
+			get
+			{
+				return this._FTId;
+			}
+			set
+			{
+				if ((this._FTId != value))
+				{
+					this._FTId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CounterId", DbType="VarChar(20)")]
+		public string CounterId
+		{
+			get
+			{
+				return this._CounterId;
+			}
+			set
+			{
+				if ((this._CounterId != value))
+				{
+					this._CounterId = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Price", DbType="Money")]
+		public System.Nullable<decimal> Price
+		{
+			get
+			{
+				return this._Price;
+			}
+			set
+			{
+				if ((this._Price != value))
+				{
+					this._Price = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_CreateDate", DbType="DateTime")]
+		public System.Nullable<System.DateTime> CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this._CreateDate = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Status", DbType="Int")]
+		public System.Nullable<int> Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Location", DbType="VarChar(20)")]
+		public string Location
+		{
+			get
+			{
+				return this._Location;
+			}
+			set
+			{
+				if ((this._Location != value))
+				{
+					this._Location = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_DiscountType", DbType="Int")]
+		public System.Nullable<int> DiscountType
+		{
+			get
+			{
+				return this._DiscountType;
+			}
+			set
+			{
+				if ((this._DiscountType != value))
+				{
+					this._DiscountType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_MainType", DbType="VarChar(20)")]
+		public string MainType
+		{
+			get
+			{
+				return this._MainType;
+			}
+			set
+			{
+				if ((this._MainType != value))
+				{
+					this._MainType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_SubType", DbType="VarChar(50)")]
+		public string SubType
+		{
+			get
+			{
+				return this._SubType;
+			}
+			set
+			{
+				if ((this._SubType != value))
+				{
+					this._SubType = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductNick", DbType="VarChar(20)")]
+		public string ProductNick
+		{
+			get
+			{
+				return this._ProductNick;
+			}
+			set
+			{
+				if ((this._ProductNick != value))
+				{
+					this._ProductNick = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_Hotted", DbType="Bit")]
+		public System.Nullable<bool> Hotted
+		{
+			get
+			{
+				return this._Hotted;
+			}
+			set
+			{
+				if ((this._Hotted != value))
+				{
+					this._Hotted = value;
+				}
+			}
+		}
+		
+		[Column(Storage="_ImgSrc", DbType="VarChar(40)")]
+		public string ImgSrc
+		{
+			get
+			{
+				return this._ImgSrc;
+			}
+			set
+			{
+				if ((this._ImgSrc != value))
+				{
+					this._ImgSrc = value;
 				}
 			}
 		}

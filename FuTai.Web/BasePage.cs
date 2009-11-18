@@ -44,5 +44,6 @@ namespace FuTai.Web
                 Session["CurrentUser"] = null;
             }
         }
+
     }
 }

@@ -287,7 +287,10 @@ function maketicket(id,ticketid)
         }
     }
     else
-        alert("请先登录！");
+    {
+        alert("请先登录或注册福泰网络会员！");
+        location="/LoginRegister.aspx?type=handshow";
+    }
 }
 function checkdatabase(id)  //数据库验证
 {

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 14.375" name="FuTaiDB">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 14.375" name="FuTaiDB">
   <DataContextMoniker Name="/FuTaiDBDataContext" />
   <nestedChildShapes>
     <classShape Id="b3319a16-e337-4a38-9096-85d4210bd737" absoluteBounds="0.75, 0.75, 2, 2.9659244791666666">
@@ -50,10 +50,10 @@
         <elementListCompartment Id="7fe72086-d070-45ed-abf6-f4cd551e6d50" absoluteBounds="0.76500000000000057, 9.21, 1.9700000000000002, 2.574544270833333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ed995a6e-8447-43d2-84ea-3cbf3fbe8e92" absoluteBounds="9.75, 0.75, 2, 2.9659244791666666">
+    <classShape Id="ed995a6e-8447-43d2-84ea-3cbf3fbe8e92" absoluteBounds="10, 0.75, 2, 3.1345442708333331">
       <DataClassMoniker Name="/FuTaiDBDataContext/Product" />
       <nestedChildShapes>
-        <elementListCompartment Id="9474bf2e-cc05-4195-b4c0-acbf6da9c6d6" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.4059244791666665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="9474bf2e-cc05-4195-b4c0-acbf6da9c6d6" absoluteBounds="10.015, 1.21, 1.9700000000000002, 2.574544270833333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="882abe9c-922e-4c74-97a2-12759c0c37a7" absoluteBounds="9.75, 4.75, 2, 2.7973046875000023">

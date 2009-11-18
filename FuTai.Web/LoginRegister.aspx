@@ -224,7 +224,7 @@
                                     登录密码：
                                 </td>
                                 <td>
-                                    <input type="password" name="textfield2" id="textfield2" onkeydown="TxtLogin(event)"  />
+                                    <input type="password" name="textfield2" id="textfield2" style="width:127px" onkeydown="TxtLogin(event)"  />
                                 </td>
                             </tr>
                             <tr>
@@ -279,7 +279,7 @@
                                 </td>
                                 <td>
                                     <p>
-                                        <input name="textfield4" type="password" id="textfield4" style="width:149px" maxlength="30"  />
+                                        <input name="textfield4" type="password" id="textfield4" style="width:127px" maxlength="30"  />
                                     </p>
                                     <p class="grayfont1">
                                         密码由英文字母、数字、符号组成，长度6-30位。</p>
@@ -291,7 +291,7 @@
                                     <br />
                                 </td>
                                 <td>
-                                    <input name="textfield5" type="password" id="textfield5" style="width:149px" maxlength="30" />
+                                    <input name="textfield5" type="password" id="textfield5" style="width:127px" maxlength="30" />
                                     <span class="grayfont1">请再次输入密码。</span>
                                 </td>
                             </tr>
@@ -331,7 +331,7 @@
                             </tr>
                             <tr>
                                 <td colspan="2" align="center">
-                                    <input type="button" name="button3" id="button3" class="btn1Style" value=" 创建用户 " />
+                                    <input type="button" name="button3" id="button3" class="btn1Style" value=" 创建用户 " /> &nbsp;&nbsp;&nbsp;&nbsp; <a href="DetailedRegister.aspx">使用高级注册</a>
                                 </td>
                             </tr>
                         </table>

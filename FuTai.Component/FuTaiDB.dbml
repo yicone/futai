@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Database Name="FuTai" Class="FuTaiDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=FuTai;Persist Security Info=True;User ID=sa" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString6" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=FuTai;Persist Security Info=True;User ID=sa" SettingsObjectName="FuTai.Component.Properties.Settings" SettingsPropertyName="FuTaiConnectionString5" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Diamond" Member="Diamond">
     <Type Name="Diamond">
       <Column Name="DiamondID" Type="System.String" DbType="Char(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -124,6 +124,7 @@
       <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="ProductNick" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="Hotted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ImgSrc" Type="System.String" DbType="varchar(40)" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.RingBracket" Member="RingBracket">
@@ -269,26 +270,6 @@
       <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.search_SearchByType" Method="SearchByType">
-    <Parameter Name="MType" Parameter="mType" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="SType" Parameter="sType" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="Hotted" Parameter="hotted" Type="System.Boolean" DbType="Bit" />
-    <ElementType Name="search_SearchByTypeResult1">
-      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
-      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MainType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="ProductNick" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="Hotted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.search_SearchDiamondRing" Method="SearchDiamondRing">
     <Parameter Name="Price1" Parameter="price1" Type="System.Decimal" DbType="Decimal" />
     <Parameter Name="Price2" Parameter="price2" Type="System.Decimal" DbType="Decimal" />
@@ -430,6 +411,27 @@
       <Column Name="Price0" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="Price1" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.search_SearchByType" Method="SearchByType">
+    <Parameter Name="MType" Parameter="mType" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="SType" Parameter="sType" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Hotted" Parameter="hotted" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="search_SearchByTypeResult">
+      <Column Name="ProductId" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ProductType" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="FTId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CounterId" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="DiscountType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MainType" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SubType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ProductNick" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Hotted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ImgSrc" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
     </ElementType>
   </Function>
 </Database>

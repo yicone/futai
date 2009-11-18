@@ -6,7 +6,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>福泰珠宝</title>
+    <title>福泰珠宝--值得信赖的钻石专家</title>
+    <meta name="keywords" content="钻石，钻石价格，钻石品牌，真钻石，翡翠，红宝石，蓝宝石，福泰，福泰珠宝，上海福泰，黄金，千足金，金，铂金，珠宝，首饰，戒指，钻戒" />
+    <meta name="description" content="福泰珠宝为您提供在网络中值得信赖的钻石，翡翠，有色宝石，黄金铂金首饰，双证保证百年承诺打造网络钻石，黄金铂金首饰消费的新浪潮。钻石镶嵌首饰比市场价格SELL50%。" />
     <link type="text/css" rel="stylesheet" href="/style/style.css" />
     <link type="text/css" rel="stylesheet" href="/style/index.css" />
 

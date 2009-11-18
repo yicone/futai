@@ -30,5 +30,34 @@ namespace FuTai.Web
             Singleton<UserBll>.Instance.Register(email, passowrd, passwordAnswer, passwordQuestion,
                 birthDate, sex, trueName, nickName,phone);
         }
+
+
+        [AjaxMethod]
+        public static bool CheckEmailExists(string email)
+        {
+            var exists = Singleton<UserBll>.Instance.CheckEmailExists(email);
+            return exists;
+        }
+
+        [AjaxMethod]
+        public static bool CheckNicknameExists(string nickname)
+        {
+            bool exists = Singleton<UserBll>.Instance.CheckNicknameExists(nickname);
+            return exists;
+        }
+
+        [AjaxMethod]
+        public static bool Login(string emailOrNickname, string password)
+        {
+            string Ip = HttpContext.Current.Request.UserHostAddress;
+            User user = Singleton<UserBll>.Instance.Login(emailOrNickname, password, Ip);
+            if (user != null)
+            {
+                HttpContext.Current.Session["CurrentUser"] = user;
+                return true;
+            }
+
+            return false;
+        }
     }
 }
