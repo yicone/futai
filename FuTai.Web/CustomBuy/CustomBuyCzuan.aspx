@@ -195,13 +195,13 @@
                     <input name="textfield3" type="text" id="CarHi" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh()" />
                     </label>(克拉范围：0.23~2.100)</td>
                     <th>净度</th>
-                    <td><input type="checkbox" name="checkbox11" id="checkbox11" onclick="CustomOpt.SetClarityHigh('SI1',this)" />
+                    <td><input type="checkbox" name="checkbox11" id="checkbox11" onclick="CustomOpt.SetClarityHigh('SI1|SI2',this)" />
 SI
-  <input type="checkbox" name="checkbox11" id="checkbox12" onclick="CustomOpt.SetClarityHigh('VS1',this)" />
+  <input type="checkbox" name="checkbox11" id="checkbox12" onclick="CustomOpt.SetClarityHigh('VS1|VS2',this)" />
 VS
-<input type="checkbox" name="checkbox11" id="checkbox13" onclick="CustomOpt.SetClarityHigh('VVS2',this)" />
+<input type="checkbox" name="checkbox11" id="checkbox13" onclick="CustomOpt.SetClarityHigh('VVS2|VVS1',this)" />
 WS
-<input type="checkbox" name="checkbox11" id="checkbox14" onclick="CustomOpt.SetClarityHigh('VS2',this)" />
+<input type="checkbox" name="checkbox11" id="checkbox14" onclick="CustomOpt.SetClarityHigh('IF',this)" />
 IF
 <input type="checkbox" name="checkbox11" id="checkbox15" onclick="CustomOpt.SetClarityHigh('FL',this)" />
 FL</td>
@@ -251,10 +251,10 @@ EX</td>
   <area shape="rect" coords="223,0,258,43" href="javascript:CustomOpt.SetColor('D')" />
 </map>
 <map name="JD" id="JD">
-  <area shape="rect" coords="9,1,59,43" href="javascript:CustomOpt.SetClarity('SI1')" />
-  <area shape="rect" coords="59,1,108,43" href="javascript:CustomOpt.SetClarity('VS1')" />
-  <area shape="rect" coords="108,1,157,43" href="javascript:CustomOpt.SetClarity('VVS2')" />
-    <area shape="rect" coords="157,1,208,42" href="javascript:CustomOpt.SetClarity('VS2')" />
+  <area shape="rect" coords="9,1,59,43" href="javascript:CustomOpt.SetClarity('SI1|SI2')" />
+  <area shape="rect" coords="59,1,108,43" href="javascript:CustomOpt.SetClarity('VS1|VS2')" />
+  <area shape="rect" coords="108,1,157,43" href="javascript:CustomOpt.SetClarity('VVS1|VVS2')" />
+    <area shape="rect" coords="157,1,208,42" href="javascript:CustomOpt.SetClarity('IF')" />
     <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetClarity('FL')" />
 </map>
 <map name="qie" id="qie">

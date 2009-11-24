@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -45,5 +46,31 @@ namespace FuTai.Web
             }
         }
 
+        [AjaxMethod]
+        public ArrayList GetCarList()
+        {
+            if (Session != null && Session["CarList"] != null)
+            {
+                return (ArrayList)Session["CarList"];
+            }
+            return null;
+        }
+
+        [AjaxMethod]
+        public void DelCarList(string pid)
+        {
+            ArrayList CarList = (ArrayList)Session["CarList"];
+            if (CarList != null)
+            {
+                foreach (string[] srr in CarList)
+                {
+                    if (srr[1] == pid)
+                        CarList.Remove(srr);
+
+                    break;
+                }
+                Session["CarList"] = CarList;
+            }
+        }
     }
 }

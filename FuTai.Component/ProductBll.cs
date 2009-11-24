@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Web;
 using System.Collections;
 
 namespace FuTai.Component
@@ -148,6 +149,47 @@ namespace FuTai.Component
             }
 
             return result;
+        }
+        public bool AddLItem(string proid)
+        {
+            var q = from d in DataContext.Product
+                        where d.ProductId == proid
+                        select d;
+
+            var item = q.SingleOrDefault();
+            bool hasPro = false;
+
+            if (HttpContext.Current.Session["CarList"] == null)
+            {
+                ArrayList Sal = new ArrayList();
+                string proprice = item.Price.Value.ToString();
+                string[] temparr = new string[] { item.ImgSrc, item.ProductId, "1", proprice };
+                Sal.Add(temparr);
+                HttpContext.Current.Session["CarList"] = Sal;
+            }
+            else
+            {
+                ArrayList Sal = (ArrayList)HttpContext.Current.Session["CarList"];
+                bool flag = false;
+                foreach (string[] key in Sal)
+                {
+                    if (key[1] == proid)
+                    {
+                        key[2] = (int.Parse(key[2]) + 1).ToString();
+                        flag = true;
+                        hasPro = true;
+                        break;
+                    }
+                }
+                if (!flag)
+                {
+                    string proprice = item.Price.Value.ToString();
+                    string[] temparr = { item.ImgSrc, item.ProductId, "1", proprice };
+                    Sal.Add(temparr);
+                }
+                HttpContext.Current.Session["CarList"] = Sal;
+            }
+            return hasPro;
         }
     }
 }

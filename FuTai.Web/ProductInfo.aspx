@@ -80,6 +80,15 @@
                     alert(result.error.Message);
                 }
             }
+            function AddCarList(proid) {
+                var hasPro = MyAjax.AddListItem(proid);
+                if (!hasPro.value)
+                {
+                    var num = parseInt($("#CarListNum").text()) + 1;
+                    $("#CarListNum").text(num);
+                }
+                alert("该产品已加入购物车");
+            }
     </script>
 
 </asp:Content>
@@ -123,7 +132,7 @@
                       <br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="button2" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
+  <input type="button" name="button2" id="button2" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="button3" class="btn1Style" value=" 重新选择 " onclick="location='ProductList.aspx?productType=Jewel'" />
 </p>
@@ -334,7 +343,7 @@
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="button9" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
+  <input type="button" name="button2" id="button9" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="button10" class="btn1Style" value=" 重新选择 " onclick="location='ProductList.aspx?productType=RingBracket'" />
 </p>
@@ -435,7 +444,7 @@
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="button7" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
+  <input type="button" name="button2" id="button7" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="button8" class="btn1Style" value=" 重新选择 " onclick="location='ProductList.aspx?productType=DiamondRing'" />
 </p>
@@ -537,7 +546,7 @@
 <br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="button11" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
+  <input type="button" name="button2" id="button11" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="button12" class="btn1Style" value=" 重新选择 " onclick="location='ProductList.aspx?productType=PairRing'" />
 </p>
@@ -610,7 +619,7 @@
 <br /><br /><br /><br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="button5" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
+  <input type="button" name="button2" id="button5" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="button6" class="btn1Style" value=" 重新选择 " onclick="location='ProductList.aspx?productType=DiamondOrnament'" />
 </p>
@@ -689,7 +698,7 @@
 <br /><br />
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="button1" class="btn2Style" value=" 放入购物车 " onclick="alert('暂未开放')" />
+  <input type="button" name="button2" id="button1" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="button4" class="btn1Style" value=" 重新选择 " onclick="location='ProductList.aspx?productType=GoldOrnament'" />
 </p>

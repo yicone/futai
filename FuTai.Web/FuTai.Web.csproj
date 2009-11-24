@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -129,6 +129,13 @@
     <Compile Include="Controls\ucLeft.ascx.designer.cs">
       <DependentUpon>ucLeft.ascx</DependentUpon>
     </Compile>
+    <Compile Include="CustomBuy\CarList.aspx.cs">
+      <DependentUpon>CarList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomBuy\CarList.aspx.designer.cs">
+      <DependentUpon>CarList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomBuy\CustomBuyCzt.aspx.cs">
       <DependentUpon>CustomBuyCzt.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -142,13 +149,6 @@
     </Compile>
     <Compile Include="CustomBuy\CustomBuyCzuan.aspx.designer.cs">
       <DependentUpon>CustomBuyCzuan.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="CustomBuy\CustomPay.aspx.cs">
-      <DependentUpon>CustomPay.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CustomBuy\CustomPay.aspx.designer.cs">
-      <DependentUpon>CustomPay.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomBuy\SearchMethod.aspx.cs">
       <DependentUpon>SearchMethod.aspx</DependentUpon>
@@ -403,7 +403,6 @@
     <Content Include="Controls\ucLeft.ascx" />
     <Content Include="CustomBuy\CustomBuyCzt.aspx" />
     <Content Include="CustomBuy\CustomBuyCzuan.aspx" />
-    <Content Include="CustomBuy\CustomPay.aspx" />
     <Content Include="HighLevelProduct.aspx" />
     <Content Include="Img.xml" />
     <Content Include="js\CustomSear.js" />
@@ -421,6 +420,7 @@
     <Content Include="Controls\ucCaptcha.ascx" />
     <Content Include="Controls\ucComment.ascx" />
     <Content Include="Controls\ucDataTable.ascx" />
+    <Content Include="CustomBuy\CarList.aspx" />
     <Content Include="DetailedRegister.aspx" />
     <Content Include="images\02.jpg" />
     <Content Include="images\03.jpg" />
@@ -490,9 +490,9 @@
     <Content Include="images\olkf_title.gif" />
     <Content Include="images\olkf_title.jpg" />
     <Content Include="images\olkf_zsx2title.gif" />
-    <Content Include="images\productImg\nophotos.jpg" />
-    <Content Include="images\productImg\nophotos_S1.jpg" />
-    <Content Include="images\productImg\nophotos_S2.jpg" />
+    <Content Include="images\productimg\nophotos.jpg" />
+    <Content Include="images\productimg\nophotos_S1.jpg" />
+    <Content Include="images\productimg\nophotos_S2.jpg" />
     <Content Include="images\product_img.jpg" />
     <Content Include="images\R0950.jpg" />
     <Content Include="images\SearchNew.jpg" />
@@ -569,18 +569,18 @@
     <Content Include="images\myaccount_table.gif" />
     <Content Include="images\norimg.jpg" />
     <Content Include="images\nowimg.jpg" />
-    <Content Include="images\productImg\AB3864.jpg" />
-    <Content Include="images\productImg\AB3864_S1.jpg" />
-    <Content Include="images\productImg\AB3864_S2.jpg" />
-    <Content Include="images\productImg\AB3866.jpg" />
-    <Content Include="images\productImg\AB3866_S1.jpg" />
-    <Content Include="images\productImg\AB3866_S2.jpg" />
-    <Content Include="images\productImg\AB3884.jpg" />
-    <Content Include="images\productImg\AB3884_S1.jpg" />
-    <Content Include="images\productImg\AB3884_S2.jpg" />
-    <Content Include="images\productImg\AB4118.jpg" />
-    <Content Include="images\productImg\AB4118_S1.jpg" />
-    <Content Include="images\productImg\AB4118_S2.jpg" />
+    <Content Include="images\productimg\AB3864.jpg" />
+    <Content Include="images\productimg\AB3864_S1.jpg" />
+    <Content Include="images\productimg\AB3864_S2.jpg" />
+    <Content Include="images\productimg\AB3866.jpg" />
+    <Content Include="images\productimg\AB3866_S1.jpg" />
+    <Content Include="images\productimg\AB3866_S2.jpg" />
+    <Content Include="images\productimg\AB3884.jpg" />
+    <Content Include="images\productimg\AB3884_S1.jpg" />
+    <Content Include="images\productimg\AB3884_S2.jpg" />
+    <Content Include="images\productimg\AB4118.jpg" />
+    <Content Include="images\productimg\AB4118_S1.jpg" />
+    <Content Include="images\productimg\AB4118_S2.jpg" />
     <Content Include="images\school_boxbg.jpg" />
     <Content Include="images\school_dataimg1.jpg" />
     <Content Include="images\school_dataimg2.jpg" />

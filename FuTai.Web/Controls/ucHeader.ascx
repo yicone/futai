@@ -1,20 +1,18 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucHeader.ascx.cs" Inherits="FuTai.Web.Controls.ucHeader" %>
 <script type="text/javascript">
     $(function() {
-        if (GetFile()=="HandShow")
-            $("#linkLogin").attr('href','/LoginRegister.aspx?type=handshow');
-            
+        if (GetFile() == "HandShow")
+            $("#linkLogin").attr('href', '/LoginRegister.aspx?type=handshow');
+
         $('#btnSearch').click(function() {
             var productType = $('#selectProduct').val();
             var price1 = $('#selectPrice option:selected').attr('price1');
             var price2 = $('#selectPrice option:selected').attr('price2');
-            if (productType == "Diamond") 
-            {
+            if (productType == "Diamond") {
                 var urlFormat = "/CustomBuy/CustomBuyCzuan.aspx?productType={0}&price1={1}&price2={2}";
                 var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
             }
-            else
-            {
+            else {
                 var urlFormat = "/ProductList.aspx?productType={0}&price1={1}&price2={2}";
                 var url = urlFormat.format(productType, price1 ? price1 : '', price2 ? price2 : '');
             }
@@ -25,16 +23,28 @@
         if (!r.error) {
             var user = r.value;
             if (user) {
-                IsLogin=true;
+                IsLogin = true;
                 GetUserAcc(user.Authority);
                 $('#linkLogin').text('欢迎你, ' + user.NickName).attr('href', '/');
                 $('#linkLogon').text('注销').attr('href', '/LogoutPage.aspx').attr('id', 'linkLogout');
             }
             else
-                IsLogin=false;
-                
+                IsLogin = false;
+
         }
-    
+
+        var cr = BaseAjax.GetCarList();
+        if (!cr.error) {
+            var crlist = cr.value;
+            if (crlist) {
+                var num = crlist.length.toString();
+                $("#CarListNum").text(num);
+
+            }
+            else
+                $("#CarListNum").text("0");
+        }
+
         $('#linkLogout').click(function() {
             var r = BaseAjax.Logout();
             if (!r.error) {
@@ -68,7 +78,7 @@
         <img height="70" width="200" src="/images/logo.jpg" /></div>
     <div class="userMenu">
         <p>
-            <a id="linkLogin" href="/LoginRegister.aspx">登录</a>|<a id="linkLogon" href="/LoginRegister.aspx">注册</a>|<a href="javascript:alert('暂未开放！')">我的帐户</a>|<a href="javascript:alert('暂未开放！')">购物车</a>|<a
+            <a id="linkLogin" href="/LoginRegister.aspx">登录</a>|<a id="linkLogon" href="/LoginRegister.aspx">注册</a>|<a href="javascript:alert('暂未开放！')">我的帐户</a>|<a href="/CustomBuy/CarList.aspx" target="_blank">购物车</a>|<a
                 href="javascript:alert('暂未开放！')">个性定制订单查询</a>|<a href="/NewIntro/NewExperience.aspx?type=Help" target="_blank">帮助中心</a>|<a href="/NewIntro/NewExperience.aspx" target="_blank">体验中心</a></p>
     </div>
     <div class="bookNum">
@@ -88,8 +98,8 @@
         <li><a id="About" href="/About.aspx">关于福泰</a></li>
     </ul>
     <p class="cartInfo">
-        购物车中<br />
-        有000件商品</p>
+        <a href="/CustomBuy/CarList.aspx" target="_blank" style="color:white">购物车</a>中<br />
+        有<span id="CarListNum">0</span>件商品</p>
     <div class="clearfix">
     </div>
     <div class="searchBox">

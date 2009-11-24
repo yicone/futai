@@ -162,9 +162,9 @@ namespace FuTai.Web.CustomBuy
                             for (int i = 0; i < ConArr.Length; i++)
                             {
                                 if (i == ConArr.Length - 1)
-                                    SqlWord.Append(string.Format("{0}='{1}') And ",Key,ConArr[i].ToString()));
+                                    SqlWord.Append(string.Format("{0}='{1}') And ", Key, ConArr[i].ToString()));
                                 else
-                                    SqlWord.Append(string.Format("{0}='{1}' OR ",Key,ConArr[i].ToString()));
+                                    SqlWord.Append(string.Format("{0}='{1}' OR ", Key, ConArr[i].ToString()));
                             }
                         }
                     }

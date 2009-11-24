@@ -149,15 +149,15 @@ var CustomOpt = {
     SetCaratHigh: function() {
         if (!this.CheckCarat())
             return false;
-            
-        this.CaratL = $("#CarLow").val(); 
+
+        this.CaratL = $("#CarLow").val();
         this.CaratH = $("#CarHi").val();
         CustomMak.Search(this);
     },
     CheckCarat: function() {
         var CL = parseFloat($("#CarLow").val());
         var CH = parseFloat($("#CarHi").val());
-        if (!isNaN(CH) && !isNaN(CL) && CH > CL && CH<=2.100 && CL>=0.230)
+        if (!isNaN(CH) && !isNaN(CL) && CH > CL && CH <= 2.100 && CL >= 0.230)
             return true;
         else
             return false;
@@ -182,8 +182,8 @@ var CustomOpt = {
     SetPricetHigh: function() {
         if (!this.CheckPrice())
             return false;
-            
-        this.PriceL = $("#PriceLow").val(); 
+
+        this.PriceL = $("#PriceLow").val();
         this.PriceH = $("#PriceHigh").val();
         CustomMak.Search(this);
     },
@@ -254,10 +254,14 @@ var CustomOpt = {
             return val;
         else {
             var Trr = val.split("|");
+            var ConArr = con.split("|");
             for (var i = 0; i < Trr.length; i++) {
-                if (Trr[i] == con) {
-                    Trr.splice(i, 1);
-                    break;
+                for (var j = 0; j < ConArr.length; j++) {
+                    if (Trr[i] == ConArr[j]) {
+                        Trr.splice(i, 1);
+                        i -= 1;
+                        break;
+                    }
                 }
             }
             return Trr.join("|");

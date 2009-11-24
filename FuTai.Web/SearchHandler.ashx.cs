@@ -150,5 +150,12 @@ namespace FuTai.Web
             var result = Singleton<UserBll>.Instance.CheckIP(id.ToString(), ip);
             return result;
         }
+
+        [AjaxPro.AjaxMethod]
+        public static object AddListItem(string proid)
+        {
+             var result=Singleton<ProductBll>.Instance.AddLItem(proid);
+             return result;
+        }
     }
 }
