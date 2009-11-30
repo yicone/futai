@@ -150,6 +150,24 @@
       <div class="hr"></div>
 </asp:PlaceHolder>
 <asp:PlaceHolder ID="Ph_SecondSub" runat="server" Visible="false">
+      <script type="text/javascript">
+        $(document).ready(function(){  
+            var Price1=getUrlParam("price1");
+            var Price2=getUrlParam("price2");
+            if (Price1!=null && Price2!=null && !isNaN(Price1) && !isNaN(Price2) && Price2>Price1)
+            {
+                CustomOpt.PriceL=Price1;
+                CustomOpt.PriceH=Price2;
+                CustomMak.Search(CustomOpt);
+            }
+            else
+            {
+                CustomOpt.PriceL=0;
+                CustomOpt.PriceH=545000;
+                CustomMak.Search(CustomOpt);
+            }
+        });
+    </script>
       <uc1:ucLeft ID="ucLeft2" runat="server" />
    	  <div class="inner_main">
       <p class="Pstep" runat="server" align="right"><img src="../images/custom_step1.jpg" /></p>

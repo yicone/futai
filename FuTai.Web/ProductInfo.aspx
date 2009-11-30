@@ -1,4 +1,4 @@
-﻿%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master"
+﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master"
     CodeBehind="ProductInfo.aspx.cs" Inherits="FuTai.Web.ProductInfo" %>
 
 <%@ Register Src="/Controls/ucLeft.ascx" TagName="ucLeft" TagPrefix="uc1" %>
