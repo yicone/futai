@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master"
+﻿%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/SiteMaster.Master"
     CodeBehind="ProductInfo.aspx.cs" Inherits="FuTai.Web.ProductInfo" %>
 
 <%@ Register Src="/Controls/ucLeft.ascx" TagName="ucLeft" TagPrefix="uc1" %>
@@ -80,8 +80,15 @@
                     alert(result.error.Message);
                 }
             }
-            function AddCarList(proid) {
+            function AddCarList(proid,proid2) {
                 var hasPro = MyAjax.AddListItem(proid);
+                if (proid2) {
+                    var hasPro2 = MyAjax.AddListItem(proid2);
+                    if (!hasPro2.value) {
+                        var num = parseInt($("#CarListNum").text()) + 1;
+                        $("#CarListNum").text(num);
+                    }
+                }
                 if (!hasPro.value)
                 {
                     var num = parseInt($("#CarListNum").text()) + 1;
@@ -246,7 +253,7 @@
                   <p>&nbsp;</p>
                   <p>
                     <a href="/ProductList.aspx?productType=RingBracket&IsCustom=true&Diamond={$T.info.Product.ProductId}" class="JieTuo">选择戒托</a>
-                    <input type="button" name="button3" id="Submit3" class="btn1Style" value="给商品留言" onclick="alert('暂未开放')" style="vertical-align:middle" />
+                    <input type="button" name="button3" id="button13" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.info.Product.ProductId}')" style="vertical-align:middle" />
                     <input type="button" name="button2" id="Submit4" class="btn1Style" value="联系福泰顾问" onclick="alert('暂未开放')" style="vertical-align:middle" />
                   </p>
                     </td>
@@ -768,7 +775,7 @@
 编号：{$T.ringinfo.Product.ProductId}，产地：{$T.ringinfo.Product.Location}，款式：{$T.ringinfo.ConProduct.Style}，材质：{$T.ringinfo.ConProduct.MetalType}
 <div class="inner_hr2"></div>
 <p align="center">
-  <input type="button" name="button2" id="Submit8" class="btn2Style" value=" 放入购物车 " onclick="alert('即将推出')" />
+  <input type="button" name="button2" id="Submit8" class="btn2Style" value=" 放入购物车 " onclick="AddCarList('{$T.diamondinfo.Product.ProductId}','{$T.ringinfo.Product.ProductId}')" />
   &nbsp;
   <input type="button" name="button3" id="Submit9" class="btn1Style" value=" 重新选择 " onclick="location='/ProductList.aspx?productType=RingBracket&IsCustom=true&Diamond={$T.diamondinfo.Product.ProductId}'" />
 </p>
