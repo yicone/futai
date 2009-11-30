@@ -163,7 +163,7 @@ namespace FuTai.Component
             {
                 ArrayList Sal = new ArrayList();
                 string proprice = item.Price.Value.ToString();
-                string[] temparr = new string[] { item.ImgSrc, item.ProductId, "1", proprice };
+                string[] temparr = new string[] { item.ImgSrc, item.ProductId, "1", proprice,item.DiscountType.ToString() };
                 Sal.Add(temparr);
                 HttpContext.Current.Session["CarList"] = Sal;
             }
@@ -184,7 +184,7 @@ namespace FuTai.Component
                 if (!flag)
                 {
                     string proprice = item.Price.Value.ToString();
-                    string[] temparr = { item.ImgSrc, item.ProductId, "1", proprice };
+                    string[] temparr = { item.ImgSrc, item.ProductId, "1", proprice,item.DiscountType.ToString() };
                     Sal.Add(temparr);
                 }
                 HttpContext.Current.Session["CarList"] = Sal;
