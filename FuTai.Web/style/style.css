@@ -394,3 +394,9 @@ border:1px solid #BEAC8D; font-size:12px;
 {
 	 line-height:18px;
 }
+
+.FloatDiamond{ position:absolute; width:148px; border:1px solid #74572d; padding-left:21px; padding-right:21px; padding-top:18px; padding-bottom:18px; color:#434343; left:100px; background:white}
+.FloatDiamond p.line{ line-height:18px; padding-bottom:5px ; border-bottom:1px dashed #beac8d}
+.FloatDiamond .pt10{ padding-top:8px}
+
+.FloatDiamond .Far{ position:absolute; left:-17px; top:100px}

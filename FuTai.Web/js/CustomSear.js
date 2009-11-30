@@ -1,4 +1,20 @@
-﻿var CustomMak = {
+﻿function showDiaInfo(obj,clean,color,cut,polish,sym,dis,price, id,tid) {
+    if ($("#" + id).get(0)) {
+        $("#" + id).show();
+    }
+    else {
+        var offset = $("#" + tid).offset();
+        var DisCount = parseFloat(parseInt(dis) / 100);
+        $("body").append('<div class="FloatDiamond" id="' + id + '"><img src="/images/far.gif"class="Far"/><p class="line">证书编号：<span class="redfont1">GIA</span></p><p class="line pt10">市场参考价：' + parseInt(price) + '元<br/>今日福泰价：<span class="redfont1">' + parseInt(price * DisCount) + '元</span></p><p class="line pt10">克拉重量：' + obj + '<br/>切工：' + cut + '<br/>颜色：' + color + '<br/>净度：' + clean + '<br/>对称性：' + sym + '<br/>抛光：' + polish + '<br/>形状：<br/>刻面：<br/>荧光：</p><p class="pt10"><a href="#"class="redfont1">+显示比例</a></p></div>');
+        $("#" + id).css("top", offset.top-100 + "px").css("left", offset.left+130 + "px");
+    }
+}
+function hideinfo(id) {
+    if ($("#" + id).get(0)) {
+        $("#" + id).hide();
+    }
+}
+var CustomMak = {
     Search: function(Opt, Page) {
         this.ShowLoading();
         var Carat = Opt.CaratL == null ? null : (Opt.CaratL + "-" + Opt.CaratH);
@@ -19,7 +35,7 @@
 
                         $target.html("<tr><th>选择</th><th>货号</th><th>重量</th><th>净度</th><th>颜色</th><th>切工</th><th>抛光</th><th>对称</th><th>证书</th><th>市场价</th><th>福泰价</th><th>明细</th></tr>");
                         $("Mes", msg).each(function(i) {
-                            var html = "<tr><td><input type='checkbox' name='checkbox' id='Cbox" + i + "' /></td><td>" + $("id", this).text() + "</td>";
+                        var html = "<tr id='tr" + i + "' onmouseover='showDiaInfo(" + $("weight", this).text() + ",\"" + $("clean", this).text() + "\",\"" + $("color", this).text() + "\",\"" + $("cut", this).text() + "\",\"" + $("polish", this).text() + "\",\"" + $("sym", this).text() + "\",\"" + $("Discount", this).text() + "\",\"" + $("price", this).text() + "\",\"info" + i + "\",\"tr" + i + "\")' onmouseout='hideinfo(\"info" + i + "\")'><td><input type='checkbox' name='checkbox' id='Cbox" + i + "' /></td><td>" + $("id", this).text() + "</td>";
                             html += "<td>" + $("weight", this).text() + "</td>";
                             html += "<td>" + $("clean", this).text() + "</td>";
                             html += "<td>" + $("color", this).text() + "</td>";
