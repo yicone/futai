@@ -39,6 +39,8 @@
                 {
                     _pageNo+=1;
                     var pageBegin=(_pageNo-1)*_pageSize;
+                    $("#count1").html(_pageNo+"/"+_pageCount);
+                    $("#count2").html(_pageNo+"/"+_pageCount);
                     renderTemplate('handshow-list', { 'showList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize});
                 }
                 else
@@ -50,6 +52,8 @@
                 {
                     _pageNo-=1;
                     var pageBegin=(_pageNo-1)*_pageSize;
+                    $("#count1").html(_pageNo+"/"+_pageCount);
+                    $("#count2").html(_pageNo+"/"+_pageCount);
                     renderTemplate('handshow-list', { 'showList': _productList, 'pageBegin': pageBegin, 'pageSize': _pageSize});
                 }
                 else
@@ -67,9 +71,9 @@
         <div class="box1">
           <h2><span><strong>真手绣</strong>：</span></h2>
           <div class="cont" style="padding-left:30px; padding-right:30px">
-            <p class="handshow_left_num">共有 <span class="redfont1" id="procount1">160</span> 件</p>
+            <p class="handshow_left_num">共有 <span class="redfont1" id="procount1"></span> 件</p>
           	  <ul class="PageSelect">
-          	    <li id="count1">1/50</li>
+          	    <li id="count1">1/1</li>
           	    <li><a href="javascript:showpage()"><img src="../images/pageselect_left.gif" /></a></li>
           	    <li><a href="javascript:showpage(true)"><img src="../images/pageselect_next.gif" /></a></li>
        	      </ul>
@@ -77,9 +81,9 @@
           	  <div id="handshow-list">
           	    <!--模板ING-->
           	  </div>
-          	   <p class="handshow_left_num">共有 <span class="redfont1" id="procount2">160</span> 件</p>
+          	   <p class="handshow_left_num">共有 <span class="redfont1" id="procount2"></span> 件</p>
               <ul class="PageSelect">
-          	    <li id="count2">1/50</li>
+          	    <li id="count2">1/1</li>
           	    <li><a href="javascript:showpage()"><img src="../images/pageselect_left.gif" /></a></li>
           	    <li><a href="javascript:showpage(true)"><img src="../images/pageselect_next.gif" /></a></li>
        	      </ul>
