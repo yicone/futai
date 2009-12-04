@@ -282,7 +282,17 @@ var CustomOpt = {
             }
             return Trr.join("|");
         }
+    },
+    SetKe:function(l,t,str,id)
+    {
+        $("#"+id+" span").html(str)
+        $("#"+id).css({"left":l+"px","top":t+"px"}).show();
+    },
+    SetBlock:function(l,t,id)
+    {
+        $("#"+id).css({"left":l+"px","top":t+"px"}).show();
     }
+    
 }
 
 function getUrlParam(name) 

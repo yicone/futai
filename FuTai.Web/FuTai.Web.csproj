@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -464,6 +464,8 @@
     <Content Include="images\diamondcard.jpg" />
     <Content Include="images\faq_a1.gif" />
     <Content Include="images\faq_q.gif" />
+    <Content Include="images\far.gif" />
+    <Content Include="images\far.jpg" />
     <Content Include="images\FTR0038.jpg" />
     <Content Include="images\ft_school_bg1.jpg" />
     <Content Include="images\ft_school_bg2.jpg" />
@@ -495,6 +497,7 @@
     <Content Include="images\productimg\nophotos_S2.jpg" />
     <Content Include="images\product_img.jpg" />
     <Content Include="images\R0950.jpg" />
+    <Content Include="images\redke.gif" />
     <Content Include="images\SearchNew.jpg" />
     <Content Include="images\series1_dataimg.jpg" />
     <Content Include="images\wrongbg.jpg" />
