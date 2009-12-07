@@ -88,7 +88,7 @@
     <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">切工</span>
-                <span class="Gf">Learn</span>
+                <a class="Gf" href="#" target="_blank">Learn</a>
         </td>
         <td width="80%"><img src="../images/XXbar_03.jpg" width="268" height="74" border="0" usemap="#qie" /></td>
       </tr>
@@ -118,7 +118,7 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">颜色</span>
-        <span class="Gf">Learn</span></td>
+        <a class="Gf" href="#" target="_blank">Learn</a></td>
         <td width="80%"><img src="../images/XXbar_01.jpg" width="268" height="74" border="0" usemap="#Color" /></td>
       </tr>
     </table>
@@ -138,7 +138,7 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">净度</span>
-        <span class="Gf">Learn</span></td>
+        <a class="Gf" href="#" target="_blank">Learn</a></td>
         <td width="80%"><img src="../images/XXbar_02.jpg" width="268" height="73" border="0" usemap="#JD" /></td>
       </tr>
     </table>

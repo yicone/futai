@@ -21,7 +21,7 @@ namespace FuTai.Web.CustomBuy
         {
             if (!IsPostBack)
             {
-                AjaxPro.Utility.RegisterTypeForAjax(typeof(LoginRegister));
+                AjaxPro.Utility.RegisterTypeForAjax(typeof(SearchHandler));
                 string Type = Request["productType"];
                 if (Type == "Diamond")
                 {

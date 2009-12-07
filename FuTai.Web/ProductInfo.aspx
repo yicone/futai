@@ -80,22 +80,6 @@
                     alert(result.error.Message);
                 }
             }
-            function AddCarList(proid,proid2) {
-                var hasPro = MyAjax.AddListItem(proid);
-                if (proid2) {
-                    var hasPro2 = MyAjax.AddListItem(proid2);
-                    if (!hasPro2.value) {
-                        var num = parseInt($("#CarListNum").text()) + 1;
-                        $("#CarListNum").text(num);
-                    }
-                }
-                if (!hasPro.value)
-                {
-                    var num = parseInt($("#CarListNum").text()) + 1;
-                    $("#CarListNum").text(num);
-                }
-                alert("该产品已加入购物车");
-            }
     </script>
 
 </asp:Content>
