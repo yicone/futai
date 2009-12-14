@@ -51,8 +51,8 @@ var CustomMak = {
                             $target.html($target.html() + html);
                         });
                         CustomMak.MakeSlipt(NowPage, Count);
-                        var SPage = NowPage * 10 - 9;
-                        var MPage = NowPage * 10;
+                        var SPage = NowPage * 15 - 14;
+                        var MPage = NowPage * 15;
                         MPage = MPage > Count ? Count : MPage;
                         $target.html($target.html() + '<tr><th colspan="12"align="right">总计产品共' + Count + '件 <span class="redfont1">当前：' + SPage + ' - ' + MPage + '件</span></th></tr>');
                     }
@@ -73,7 +73,7 @@ var CustomMak = {
         $("#LoadForm").css("padding-top", ($("#FuTaiZuan").height() + 40) / 4 + "px").show();
     },
     MakeSlipt: function(now, count) {
-        var MaxPage = Math.ceil(count / 10);
+        var MaxPage = Math.ceil(count / 15);
         $("#NowPage").text(now);
         $("#MPage").text(MaxPage);
         $("#NowPage2").text(now);

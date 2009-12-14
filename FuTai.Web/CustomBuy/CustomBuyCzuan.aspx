@@ -7,15 +7,198 @@
     <link type="text/css" rel="stylesheet" href="/style/custom.css" />
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
     <script type="text/javascript" src="../js/CustomSear.js"></script>
+    <script type="text/javascript" src="../js/jquery.dragndrop.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            if (getUrlParam("productType")=="Diamond" && getUrlParam("IsCustom")=="false")
+            if (getUrlParam("productType") == "Diamond" && getUrlParam("IsCustom") == "false")
                 $(".Pstep").hide();
+
+            var price1 = 0;
+            var price2 = 545000;
+            var cweight1 = 0.23;
+            var cweight2 = 2.1;
+            $("#Pricearr1").Drags({
+                onMove: function(e) {
+                    if (document.all)
+                        document.selection.empty();
+
+                    $("#Pricearr1").css("top", "310px");
+                    var left = parseInt($("#Pricearr1").css("left"));
+                    var left2 = parseInt($("#Pricearr2").css("left"));
+                    if (left < 100)
+                        $("#Pricearr1").css("left", "100px");
+                    if (left > (left2 - 55))
+                        $("#Pricearr1").css("left", (left2 - 55) + "px");
+
+                    left = parseInt($("#Pricearr1").css("left"));
+                    $("#pa1").css("left", (left - 50) + "px");
+                    price1 = GetPrice(left - 100, 600, 545000);
+                    $("#pa1").html(price1 + '元');
+
+                },
+                onDrop: function(e) {
+                    CustomOpt.SetPrice(price1, price2)
+                }
+            });
+            $("#Pricearr2").Drags({
+                onMove: function(e) {
+                    if (document.all)
+                        document.selection.empty();
+
+                    $("#Pricearr2").css("top", "310px");
+                    var left = parseInt($("#Pricearr2").css("left"));
+                    var left2 = parseInt($("#Pricearr1").css("left"));
+                    if (left > 700)
+                        $("#Pricearr2").css("left", "700px");
+                    if (left < (left2 + 55))
+                        $("#Pricearr2").css("left", (left2 + 55) + "px");
+
+                    left = parseInt($("#Pricearr2").css("left"));
+                    $("#pa2").css("left", (left - 50) + "px");
+                    price2 = GetPrice(left - 100, 600, 545000);
+                    $("#pa2").html(price2 + '元');
+                },
+                onDrop: function(e) {
+                    CustomOpt.SetPrice(price1, price2);
+                }
+            });
+            $("#PriceBar").click(function(e) {
+                var oposition = $(this).offset();
+                var pl = parseInt(oposition.left);
+                var left1 = parseInt($("#Pricearr1").css("left")) - 100;
+                var left2 = parseInt($("#Pricearr2").css("left")) - 100;
+                var bardis = e.clientX - pl - 10;
+                if (bardis < 0)
+                    bardis = 0;
+                if (bardis > 600)
+                    bardis = 600;
+
+                var d1 = Math.abs(left1 - bardis);
+                var d2 = Math.abs(left2 - bardis);
+                if (d1 < d2) {
+                    price1 = GetPrice(bardis, 600, 545000);
+                    if (bardis > left2 - 55)
+                        bardis = left2 - 55;
+
+                    $("#Pricearr1").css("left", bardis + 100 + "px");
+                    $("#pa1").css("left", (bardis + 50) + "px");
+                    $("#pa1").html(price1 + '元');
+                }
+                else {
+                    price2 = GetPrice(bardis, 600, 545000);
+                    if (bardis < left1 + 55)
+                        bardis = left1 + 55;
+
+                    $("#Pricearr2").css("left", bardis + 100 + "px");
+                    $("#pa2").css("left", (bardis + 50) + "px");
+                    $("#pa2").html(price2 + '元');
+                }
+                CustomOpt.SetPrice(price1, price2);
+            });
+
+            $("#Farr1").Drags({
+                onMove: function(e) {
+                    if (document.all)
+                        document.selection.empty();
+
+                    $("#Farr1").css("top", "87px");
+                    var left = parseInt($("#Farr1").css("left"));
+                    var left2 = parseInt($("#Farr2").css("left"));
+                    if (left < 100)
+                        $("#Farr1").css("left", "100px");
+                    if (left > (left2 - 22))
+                        $("#Farr1").css("left", (left2 - 22) + "px");
+
+                    left = parseInt($("#Farr1").css("left"));
+                    $("#ca1").css("left", (left - 50) + "px");
+                    cweight1 = GetWeight(left - 100, 250, 1.87);
+                    $("#ca1").html(cweight1);
+
+                },
+                onDrop: function(e) {
+                    CustomOpt.SetCarat(cweight1, cweight2);
+                }
+            });
+
+            $("#Farr2").Drags({
+                onMove: function(e) {
+                    if (document.all)
+                        document.selection.empty();
+
+                    $("#Farr2").css("top", "87px");
+                    var left = parseInt($("#Farr2").css("left"));
+                    var left2 = parseInt($("#Farr1").css("left"));
+                    if (left > 350)
+                        $("#Farr2").css("left", "350px");
+                    if (left < (left2 + 22))
+                        $("#Farr2").css("left", (left2 + 22) + "px");
+
+                    left = parseInt($("#Farr2").css("left"));
+                    $("#ca2").css("left", (left - 50) + "px");
+                    cweight2 = GetWeight(left - 100, 250, 1.87);
+                    $("#ca2").html(cweight2);
+
+                },
+                onDrop: function(e) {
+                    CustomOpt.SetCarat(cweight1, cweight2);
+                }
+            });
+            $("#Cart").click(function(e) {
+                var oposition = $(this).offset();
+                var pl = parseInt(oposition.left);
+                var left1 = parseInt($("#Farr1").css("left")) - 100;
+                var left2 = parseInt($("#Farr2").css("left")) - 100;
+                var bardis = e.clientX - pl - 10;
+                if (bardis < 0)
+                    bardis = 0;
+                if (bardis > 250)
+                    bardis = 250;
+
+                var d1 = Math.abs(left1 - bardis);
+                var d2 = Math.abs(left2 - bardis);
+                if (d1 < d2) {
+                    cweight1 = GetWeight(bardis, 250, 1.87);
+                    if (bardis > left2 - 22)
+                        bardis = left2 - 22;
+
+                    $("#Farr1").css("left", bardis + 100 + "px");
+                    $("#ca1").css("left", (bardis + 50) + "px");
+                    $("#ca1").html(cweight1);
+                }
+                else {
+                    cweight2 = GetWeight(bardis, 250, 1.87);
+                    if (bardis < left1 + 22)
+                        bardis = left1 + 22;
+
+                    $("#Farr2").css("left", bardis + 100 + "px");
+                    $("#ca2").css("left", (bardis + 50) + "px");
+                    $("#ca2").html(cweight2);
+                }
+                CustomOpt.SetCarat(cweight1, cweight2);
+            });
+
         });
+        function GetPrice(l, tl, tprice) {
+            var rpri = parseInt(l / tl * tprice);
+            return rpri;
+        }
+        function GetWeight(l, tl, tweight) {
+            var rw = l / tl * tweight * 100;
+            var rc = parseInt(rw);
+            var rpri = 0.23 + rc / 100;
+            var rvalue = formatFloat(rpri, 2);
+            return rvalue;
+        }
+        function formatFloat(src, pos) {
+
+            return Math.round(src * Math.pow(10, pos)) / Math.pow(10, pos);
+
+        }
+
     </script> 
     <style>
-        .FloatArr{ position:absolute; background:url(/Images/redke.gif) no-repeat center top; padding-top:60px; text-align:center; color:red; width:14px; display:none; font-size:12px; }
-        .FloatArr span { display:block; text-align:center; color:red; font-size:12px; position:absolute; bottom:-20px; left:-53px; width:120px}
+        .FloatArr{ position:absolute; background:url(/Images/redke.gif) no-repeat center top; height:100px; text-align:center; color:red; width:14px; display:none; font-size:12px }
+        span.price {  color:red; font-size:12px; display:block; width:120px; text-align:center; position:absolute;}
         .Gf{ background:#d0d0d0; color:#7d7d7d; display:block; text-align:center; width:47px}
         .newb{ border:1px solid #bcac92; background:url(/Images/newb.gif) repeat-x; text-align:center; color:white; font-size:14px; height:24px; padding-left:10px; padding-right:10px; *padding:0px; padding-top:0px; *padding-top:4px}
         .BM{ background:#74572d;  filter:alpha(opacity=50); opacity:0.5; width:49px; height:41px; position:absolute; display:none}
@@ -65,15 +248,22 @@
    	</div>
         	<div class="box1">
        	    <h2><p>搜不到您要的钻石? 福泰帮您<a href="#" class="redfont1">全球搜钻</a></p><span>站内搜钻</span></h2>
-                <div class="cont" style="position:relative">
+                <div class="cont" style="position:relative; padding-left:0px">
                     <div id="BlockMask1" class="BM"></div>
                     <div id="BlockMask2" class="BM"></div>
                     <div id="BlockMask3" class="BM"></div>
                     <div id="BlockMask4" class="BM"></div>
                     <div id="BlockMask5" class="BM"></div>
-                    <div id="Farr" class="FloatArr"><span></span></div>
-                    <div id="Farr2" class="FloatArr"><span></span></div>
-                	<table width="704" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <div id="Farr1" class="FloatArr" style="display:block;left:100px; top:87px;"></div>
+                    <div id="Farr2" class="FloatArr" style="display:block;left:350px; top:87px;"></div>
+                    <div id="Pricearr1" class="FloatArr" style="display:block;left:100px; top:310px;"></div>
+                    <div id="Pricearr2" class="FloatArr" style="display:block; left:700px; top:310px;"></div>
+                    <span id="pa1" class="price" style="top:370px; left:50px">0元</span>
+                    <span id="pa2" class="price" style="top:370px; left:650px;">545000元</span>
+                    <span id="ca1" class="price" style="top:145px; left:50px">0.23</span>
+                    <span id="ca2" class="price" style="top:145px; left:300px;">2.1</span>
+                    
+                	<table width="704" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-left:30px;*margin-left:11px">
   <tr>
     <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -88,9 +278,9 @@
     <td height="74" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">切工</span>
-                <a class="Gf" href="#" target="_blank">Learn</a>
+                <%--<a class="Gf" href="#" target="_blank">Learn</a>--%>
         </td>
-        <td width="80%"><img src="../images/XXbar_03.jpg" width="268" height="74" border="0" usemap="#qie" /></td>
+        <td width="80%"><img src="../images/XXbar_03.jpg" border="0" usemap="#qie" /></td>
       </tr>
     </table></td>
   </tr>
@@ -101,7 +291,7 @@
         <span class="tipname">克拉</span>
         <p style=" color:#74572d">单位：克拉</p>
         </td>
-        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" border="0" usemap="#KLK" /></td>
+        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" border="0" style="cursor:pointer" id="Cart" /></td>
       </tr>
     </table></td>
     <td width="50%" height="74" align="left" valign="top">
@@ -118,7 +308,7 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">颜色</span>
-        <a class="Gf" href="#" target="_blank">Learn</a></td>
+        <%--<a class="Gf" href="#" target="_blank">Learn</a>--%></td>
         <td width="80%"><img src="../images/XXbar_01.jpg" width="268" height="74" border="0" usemap="#Color" /></td>
       </tr>
     </table>
@@ -138,8 +328,8 @@
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="20%" valign="top"><span class="tipname">净度</span>
-        <a class="Gf" href="#" target="_blank">Learn</a></td>
-        <td width="80%"><img src="../images/XXbar_02.jpg" width="268" height="73" border="0" usemap="#JD" /></td>
+        <%--<a class="Gf" href="#" target="_blank">Learn</a>--%></td>
+        <td width="80%" style="border:none"><img src="../images/XXbar_02.jpg" width="268" height="73" style="border:none" border="0" usemap="#JD" /></td>
       </tr>
     </table>
     
@@ -157,7 +347,7 @@
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
         <td width="10%" valign="top"><span class="tipname">价格</span></td>
-        <td width="90%"><img src="../images/lxxbar_02.jpg" border="0" usemap="#Price" /></td>
+        <td width="90%"><img id="PriceBar" src="../images/lxxbar_02.jpg" border="0" style="cursor:pointer"/></td>
       </tr>
     </table>
     </td>
@@ -274,9 +464,9 @@ VG
 EX</td>
                   </tr>
                   <tr>
-                    <td colspan="4"><asp:Button ID="Change_Manel" runat="server" CssClass="btn1Style" Text="滑块输入搜索" OnClick="ChangeType" />&nbsp;&nbsp;
-                      <input type="button" name="button8" id="button16" class="btn1Style" value="重置" onclick="CustomOpt.InitPeoHigh()" />
-                    &nbsp;&nbsp;<input type="button" class="btn1Style" value="查看全部" onclick="CustomOpt.InitPeo();CustomMak.Search(CustomOpt);" /></td>
+                    <td colspan="4"><asp:Button ID="Change_Manel" runat="server" CssClass="newb" Text="滑块输入搜索" OnClick="ChangeType" />&nbsp;&nbsp;
+                      <input type="button" name="button8" id="button16" class="newb" value="重置" onclick="CustomOpt.InitPeoHigh()" />
+                    &nbsp;&nbsp;<input type="button" class="newb" value="查看全部" onclick="CustomOpt.InitPeo();CustomMak.Search(CustomOpt);" /></td>
                   </tr>
                 </table>
               </div>
@@ -289,41 +479,41 @@ EX</td>
       <div class="hr"></div>
 </asp:PlaceHolder>
 <map name="Color" id="Color">
-  <area shape="rect" coords="8,0,42,42" href="javascript:CustomOpt.SetColor('J');CustomOpt.SetBlock(118,169,'BlockMask5')" />
-  <area shape="rect" coords="42,1,80,42" href="javascript:CustomOpt.SetColor('I');CustomOpt.SetBlock(152,169,'BlockMask5')" />
-  <area shape="rect" coords="80,1,115,42" href="javascript:CustomOpt.SetColor('H');CustomOpt.SetBlock(187,169,'BlockMask5')" />
-  <area shape="rect" coords="115,0,153,42" href="javascript:CustomOpt.SetColor('G');CustomOpt.SetBlock(225,169,'BlockMask5')" />
-  <area shape="rect" coords="153,1,187,42" href="javascript:CustomOpt.SetColor('F');CustomOpt.SetBlock(260,169,'BlockMask5')" />
-  <area shape="rect" coords="187,0,223,42" href="javascript:CustomOpt.SetColor('E');CustomOpt.SetBlock(297,169,'BlockMask5')" />
-  <area shape="rect" coords="223,0,258,43" href="javascript:CustomOpt.SetColor('D');CustomOpt.SetBlock(332,169,'BlockMask5')" />
+  <area shape="rect" coords="8,0,42,42" href="javascript:CustomOpt.SetColor('J');CustomOpt.SetBlock(108,169,'BlockMask5')" />
+  <area shape="rect" coords="42,1,80,42" href="javascript:CustomOpt.SetColor('I');CustomOpt.SetBlock(142,169,'BlockMask5')" />
+  <area shape="rect" coords="80,1,115,42" href="javascript:CustomOpt.SetColor('H');CustomOpt.SetBlock(177,169,'BlockMask5')" />
+  <area shape="rect" coords="115,0,153,42" href="javascript:CustomOpt.SetColor('G');CustomOpt.SetBlock(215,169,'BlockMask5')" />
+  <area shape="rect" coords="153,1,187,42" href="javascript:CustomOpt.SetColor('F');CustomOpt.SetBlock(250,169,'BlockMask5')" />
+  <area shape="rect" coords="187,0,223,42" href="javascript:CustomOpt.SetColor('E');CustomOpt.SetBlock(287,169,'BlockMask5')" />
+  <area shape="rect" coords="223,0,258,43" href="javascript:CustomOpt.SetColor('D');CustomOpt.SetBlock(322,169,'BlockMask5')" />
 </map>
 <map name="JD" id="JD">
-  <area shape="rect" coords="208,0,258,41" href="javascript:CustomOpt.SetClarity('FL');CustomOpt.SetBlock(317,243,'BlockMask4')" />
-  <area shape="rect" coords="157,0,208,41" href="javascript:CustomOpt.SetClarity('IF');CustomOpt.SetBlock(267,243,'BlockMask4')" />
-  <area shape="rect" coords="108,0,157,42" href="javascript:CustomOpt.SetClarity('VVS1|VVS2');CustomOpt.SetBlock(217,243,'BlockMask4')" />
-    <area shape="rect" coords="59,0,108,42" href="javascript:CustomOpt.SetClarity('VS1|VS2');CustomOpt.SetBlock(168,243,'BlockMask4')" />
-    <area shape="rect" coords="9,0,59,42" href="javascript:CustomOpt.SetClarity('SI1|SI2');CustomOpt.SetBlock(118,243,'BlockMask4')" />
+  <area shape="rect" coords="208,0,258,41" href="javascript:CustomOpt.SetClarity('FL');CustomOpt.SetBlock(307,243,'BlockMask4')" />
+  <area shape="rect" coords="157,0,208,41" href="javascript:CustomOpt.SetClarity('IF');CustomOpt.SetBlock(257,243,'BlockMask4')" />
+  <area shape="rect" coords="108,0,157,42" href="javascript:CustomOpt.SetClarity('VVS1|VVS2');CustomOpt.SetBlock(207,243,'BlockMask4')" />
+    <area shape="rect" coords="59,0,108,42" href="javascript:CustomOpt.SetClarity('VS1|VS2');CustomOpt.SetBlock(158,243,'BlockMask4')" />
+    <area shape="rect" coords="9,0,59,42" href="javascript:CustomOpt.SetClarity('SI1|SI2');CustomOpt.SetBlock(108,243,'BlockMask4')" />
 </map>
 <map name="qie" id="qie">
-  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetCut('P');CustomOpt.SetBlock(470,21,'BlockMask1')" />
-  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetCut('F');CustomOpt.SetBlock(520,21,'BlockMask1')" />
-  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetCut('G');CustomOpt.SetBlock(570,21,'BlockMask1')" />
-	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetCut('VG');CustomOpt.SetBlock(619,21,'BlockMask1')" />
-    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetCut('EXCELLENT');CustomOpt.SetBlock(669,21,'BlockMask1')" />
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetCut('P');CustomOpt.SetBlock(460,21,'BlockMask1')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetCut('F');CustomOpt.SetBlock(510,21,'BlockMask1')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetCut('G');CustomOpt.SetBlock(560,21,'BlockMask1')" />
+	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetCut('VG');CustomOpt.SetBlock(609,21,'BlockMask1')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetCut('EXCELLENT');CustomOpt.SetBlock(659,21,'BlockMask1')" />
 </map>
 <map name="PaoLight" id="PaoLight">
-  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetPolishing('P');CustomOpt.SetBlock(470,97,'BlockMask2')" />
-  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetPolishing('F');CustomOpt.SetBlock(520,97,'BlockMask2')" />
-  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetPolishing('G');CustomOpt.SetBlock(570,97,'BlockMask2')" />
-	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetPolishing('VG');CustomOpt.SetBlock(619,97,'BlockMask2')" />
-    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetPolishing('EX');CustomOpt.SetBlock(669,97,'BlockMask2')" />
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetPolishing('P');CustomOpt.SetBlock(460,97,'BlockMask2')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetPolishing('F');CustomOpt.SetBlock(510,97,'BlockMask2')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetPolishing('G');CustomOpt.SetBlock(560,97,'BlockMask2')" />
+	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetPolishing('VG');CustomOpt.SetBlock(609,97,'BlockMask2')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetPolishing('EX');CustomOpt.SetBlock(659,97,'BlockMask2')" />
 </map>
 <map name="DC" id="DC">
-  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetSymmetry('P');CustomOpt.SetBlock(470,169,'BlockMask3')" />
-  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetSymmetry('F');CustomOpt.SetBlock(520,169,'BlockMask3')" />
-  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetSymmetry('G');CustomOpt.SetBlock(570,169,'BlockMask3')" />
-	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetSymmetry('VG');CustomOpt.SetBlock(619,169,'BlockMask3')" />
-    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetSymmetry('EX');CustomOpt.SetBlock(669,169,'BlockMask3')" />
+  <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetSymmetry('P');CustomOpt.SetBlock(460,169,'BlockMask3')" />
+  <area shape="rect" coords="59,2,109,42" href="javascript:CustomOpt.SetSymmetry('F');CustomOpt.SetBlock(510,169,'BlockMask3')" />
+  <area shape="rect" coords="108,2,160,42" href="javascript:CustomOpt.SetSymmetry('G');CustomOpt.SetBlock(560,169,'BlockMask3')" />
+	<area shape="rect" coords="160,2,209,42" href="javascript:CustomOpt.SetSymmetry('VG');CustomOpt.SetBlock(609,169,'BlockMask3')" />
+    <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetSymmetry('EX');CustomOpt.SetBlock(659,169,'BlockMask3')" />
 </map>
 <%--<map name="YD" id="YD">
   <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetFluorescence('N')" />
@@ -333,37 +523,13 @@ EX</td>
   <area shape="rect" coords="208,1,258,42" href="javascript:CustomOpt.SetFluorescence('VS')" />
 </map>--%>
 <map name="KLK" id="KLK">
-  <area shape="rect" coords="8,2,36,42" href="javascript:CustomOpt.SetCarat(0.23,0.33);CustomOpt.SetKe(120,87,'0.23-0.33','Farr')" />
-  <area shape="rect" coords="37,2,61,42" href="javascript:CustomOpt.SetCarat(0.34,0.63);CustomOpt.SetKe(150,87,'0.34-0.63','Farr')" />
-  <area shape="rect" coords="62,2,88,42" href="javascript:CustomOpt.SetCarat(0.64,1);CustomOpt.SetKe(180,87,'0.64-1','Farr')" />
-  <area shape="rect" coords="124,2,162,42" href="javascript:CustomOpt.SetCarat(1.34,1.68);CustomOpt.SetKe(245,87,'1.34-1.68','Farr')" />
-  <area shape="rect" coords="162,1,203,43" href="javascript:CustomOpt.SetCarat(1.69,2);CustomOpt.SetKe(285,87,'1.68-2','Farr')" />
-  <area shape="rect" coords="88,2,123,41" href="javascript:CustomOpt.SetCarat(1,1.33);CustomOpt.SetKe(210,87,'1-1.33','Farr')" />
-  <area shape="rect" coords="203,1,257,43" href="javascript:CustomOpt.SetCarat(2.01,2.10);CustomOpt.SetKe(330,87,'2-2.1','Farr')" />
-</map>
-
-<map name="Price" id="Price">
-<area shape="rect" coords="576,0,609,43" href="javascript:CustomOpt.SetPrice(500000,545000);CustomOpt.SetKe(700,310,'500000-545000','Farr2')" />
-<area shape="rect" coords="537,0,576,43" href="javascript:CustomOpt.SetPrice(475000,500000);CustomOpt.SetKe(664,310,'475000-500000','Farr2')"  />
-<area shape="rect" coords="502,0,537,42" href="javascript:CustomOpt.SetPrice(450000,475000);CustomOpt.SetKe(630,310,'450000-475000','Farr2')"  />
-<area shape="rect" coords="467,0,503,42" href="javascript:CustomOpt.SetPrice(425000,450000);CustomOpt.SetKe(599,310,'425000-450000','Farr2')"  />
-<area shape="rect" coords="441,0,467,43" href="javascript:CustomOpt.SetPrice(400000,425000);CustomOpt.SetKe(568,310,'400000-425000','Farr2')"  />
-<area shape="rect" coords="411,0,441,43" href="javascript:CustomOpt.SetPrice(375000,400000);CustomOpt.SetKe(540,310,'375000-400000','Farr2')"  />
-<area shape="rect" coords="385,0,411,42" href="javascript:CustomOpt.SetPrice(350000,375000);CustomOpt.SetKe(512,310,'350000-375000','Farr2')"  />
-<area shape="rect" coords="358,0,386,43" href="javascript:CustomOpt.SetPrice(325000,350000);CustomOpt.SetKe(486,310,'325000-350000','Farr2')"  />
-<area shape="rect" coords="333,0,359,43" href="javascript:CustomOpt.SetPrice(300000,325000);CustomOpt.SetKe(454,310,'300000-325000','Farr2')"  />
-<area shape="rect" coords="306,0,333,42" href="javascript:CustomOpt.SetPrice(275000,300000);CustomOpt.SetKe(423,310,'275000-300000','Farr2')"  />
-<area shape="rect" coords="280,0,306,42" href="javascript:CustomOpt.SetPrice(250000,275000);CustomOpt.SetKe(380,310,'250000-275000','Farr2')"  />
-<area shape="rect" coords="251,0,280,42" href="javascript:CustomOpt.SetPrice(225000,250000);CustomOpt.SetKe(345,310,'225000-250000','Farr2')"  />
-<area shape="rect" coords="227,0,252,42" href="javascript:CustomOpt.SetPrice(200000,225000);CustomOpt.SetKe(318,310,'200000-225000','Farr2')"  />
-<area shape="rect" coords="202,0,227,42" href="javascript:CustomOpt.SetPrice(175000,200000);CustomOpt.SetKe(293,310,'175000-200000','Farr2')"  />
-<area shape="rect" coords="174,0,202,42" href="javascript:CustomOpt.SetPrice(150000,175000);CustomOpt.SetKe(267,310,'150000-175000','Farr2')"  />
-<area shape="rect" coords="149,0,174,43" href="javascript:CustomOpt.SetPrice(125000,150000);CustomOpt.SetKe(240,310,'125000-150000','Farr2')"  />
-<area shape="rect" coords="122,0,150,42" href="javascript:CustomOpt.SetPrice(100000,125000);CustomOpt.SetKe(213,310,'100000-125000','Farr2')"  />
-<area shape="rect" coords="92,1,122,43" href="javascript:CustomOpt.SetPrice(75000,100000);CustomOpt.SetKe(194,310,'75000-100000','Farr2')"  />
-<area shape="rect" coords="62,1,92,43" href="javascript:CustomOpt.SetPrice(50000,75000);CustomOpt.SetKe(164,310,'50000-75000','Farr2')"  />
-<area shape="rect" coords="37,1,62,43" href="javascript:CustomOpt.SetPrice(25000,50000);CustomOpt.SetKe(147,310,'25000-50000','Farr2')"  />
-<area shape="rect" coords="9,1,37,43" href="javascript:CustomOpt.SetPrice(1410,25000);CustomOpt.SetKe(120,310,'1410-25000','Farr2')"  />
+  <area shape="rect" coords="8,2,36,42" href="javascript:CustomOpt.SetCarat(0.23,0.33);CustomOpt.SetKe(110,87,'0.23-0.33','Farr')" />
+  <area shape="rect" coords="37,2,61,42" href="javascript:CustomOpt.SetCarat(0.34,0.63);CustomOpt.SetKe(140,87,'0.34-0.63','Farr')" />
+  <area shape="rect" coords="62,2,88,42" href="javascript:CustomOpt.SetCarat(0.64,1);CustomOpt.SetKe(170,87,'0.64-1','Farr')" />
+  <area shape="rect" coords="124,2,162,42" href="javascript:CustomOpt.SetCarat(1.34,1.68);CustomOpt.SetKe(235,87,'1.34-1.68','Farr')" />
+  <area shape="rect" coords="162,1,203,43" href="javascript:CustomOpt.SetCarat(1.69,2);CustomOpt.SetKe(275,87,'1.68-2','Farr')" />
+  <area shape="rect" coords="88,2,123,41" href="javascript:CustomOpt.SetCarat(1,1.33);CustomOpt.SetKe(200,87,'1-1.33','Farr')" />
+  <area shape="rect" coords="203,1,257,43" href="javascript:CustomOpt.SetCarat(2.01,2.10);CustomOpt.SetKe(320,87,'2-2.1','Farr')" />
 </map>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="cphTemplate" runat="server">

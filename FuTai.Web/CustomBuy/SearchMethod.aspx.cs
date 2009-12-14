@@ -95,9 +95,9 @@ namespace FuTai.Web.CustomBuy
         }
         private string MakeString(Dictionary<string, string[]> consql)
         {
-            StringBuilder SqlWord = new StringBuilder("select top 10 DiamondId,Carat,Clarity,Color,Cut,Polish,Symmetry,Fluorescence,p.Price,p.DiscountType from Diamond Di INNER JOIN Product p ON Di.DiamondID=p.ProductId where ");
+            StringBuilder SqlWord = new StringBuilder("select top 15 DiamondId,Carat,Clarity,Color,Cut,Polish,Symmetry,Fluorescence,p.Price,p.DiscountType from Diamond Di INNER JOIN Product p ON Di.DiamondID=p.ProductId where ");
             string Pid = ((string[])consql["page"])[0];
-            string NotInCon = "DiamondId Not IN (select top " + (int.Parse(Pid) - 1) * 10 + " DiamondId from Diamond";
+            string NotInCon = "DiamondId Not IN (select top " + (int.Parse(Pid) - 1) * 15 + " DiamondId from Diamond";
             string TempCon="";
             if (consql.Count > 1)
             {
@@ -136,6 +136,7 @@ namespace FuTai.Web.CustomBuy
                 SqlWord.Append(" And ");
 
             SqlWord.Append(TempCon);
+            SqlWord.Append(" order by Carat");
 
 
             return SqlWord.ToString();
