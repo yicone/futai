@@ -14,7 +14,7 @@
                 $(".Pstep").hide();
 
             var price1 = 0;
-            var price2 = 545000;
+            var price2 = 200000;
             var cweight1 = 0.23;
             var cweight2 = 2.1;
             $("#Pricearr1").Drags({
@@ -32,7 +32,7 @@
 
                     left = parseInt($("#Pricearr1").css("left"));
                     $("#pa1").css("left", (left - 50) + "px");
-                    price1 = GetPrice(left - 100, 600, 545000);
+                    price1 = GetPrice(left - 100, 600, 200000);
                     $("#pa1").html(price1 + '元');
 
                 },
@@ -55,7 +55,7 @@
 
                     left = parseInt($("#Pricearr2").css("left"));
                     $("#pa2").css("left", (left - 50) + "px");
-                    price2 = GetPrice(left - 100, 600, 545000);
+                    price2 = GetPrice(left - 100, 600, 200000);
                     $("#pa2").html(price2 + '元');
                 },
                 onDrop: function(e) {
@@ -76,7 +76,7 @@
                 var d1 = Math.abs(left1 - bardis);
                 var d2 = Math.abs(left2 - bardis);
                 if (d1 < d2) {
-                    price1 = GetPrice(bardis, 600, 545000);
+                    price1 = GetPrice(bardis, 600, 200000);
                     if (bardis > left2 - 55)
                         bardis = left2 - 55;
 
@@ -85,7 +85,7 @@
                     $("#pa1").html(price1 + '元');
                 }
                 else {
-                    price2 = GetPrice(bardis, 600, 545000);
+                    price2 = GetPrice(bardis, 600, 200000);
                     if (bardis < left1 + 55)
                         bardis = left1 + 55;
 
@@ -101,7 +101,7 @@
                     if (document.all)
                         document.selection.empty();
 
-                    $("#Farr1").css("top", "87px");
+                    $("#Farr1").css("top", "236px");
                     var left = parseInt($("#Farr1").css("left"));
                     var left2 = parseInt($("#Farr2").css("left"));
                     if (left < 100)
@@ -125,7 +125,7 @@
                     if (document.all)
                         document.selection.empty();
 
-                    $("#Farr2").css("top", "87px");
+                    $("#Farr2").css("top", "236px");
                     var left = parseInt($("#Farr2").css("left"));
                     var left2 = parseInt($("#Farr1").css("left"));
                     if (left > 350)
@@ -254,14 +254,14 @@
                     <div id="BlockMask3" class="BM"></div>
                     <div id="BlockMask4" class="BM"></div>
                     <div id="BlockMask5" class="BM"></div>
-                    <div id="Farr1" class="FloatArr" style="display:block;left:100px; top:87px;"></div>
-                    <div id="Farr2" class="FloatArr" style="display:block;left:350px; top:87px;"></div>
+                    <div id="Farr1" class="FloatArr" style="display:block;left:100px; top:236px;"></div>
+                    <div id="Farr2" class="FloatArr" style="display:block;left:350px; top:236px;"></div>
                     <div id="Pricearr1" class="FloatArr" style="display:block;left:100px; top:310px;"></div>
                     <div id="Pricearr2" class="FloatArr" style="display:block; left:700px; top:310px;"></div>
                     <span id="pa1" class="price" style="top:370px; left:50px">0元</span>
-                    <span id="pa2" class="price" style="top:370px; left:650px;">545000元</span>
-                    <span id="ca1" class="price" style="top:145px; left:50px">0.23</span>
-                    <span id="ca2" class="price" style="top:145px; left:300px;">2.1</span>
+                    <span id="pa2" class="price" style="top:370px; left:650px;">200000元</span>
+                    <span id="ca1" class="price" style="top:294px; left:50px">0.23</span>
+                    <span id="ca2" class="price" style="top:294px; left:300px;">2.1</span>
                     
                 	<table width="704" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-left:30px;*margin-left:11px">
   <tr>
@@ -285,15 +285,15 @@
     </table></td>
   </tr>
   <tr>
-    <td width="50%" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <td width="50%" align="left" valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="20%" valign="top">
-        <span class="tipname">克拉</span>
-        <p style=" color:#74572d">单位：克拉</p>
-        </td>
-        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" border="0" style="cursor:pointer" id="Cart" /></td>
+        <td width="20%" valign="top"><span class="tipname">净度</span>
+        <%--<a class="Gf" href="#" target="_blank">Learn</a>--%></td>
+        <td width="80%" style="border:none"><img src="../images/XXbar_02.jpg" width="268" height="73" style="border:none" border="0" usemap="#JD" /></td>
       </tr>
-    </table></td>
+    </table>
+    </td>
     <td width="50%" height="74" align="left" valign="top">
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -327,9 +327,11 @@
     <td align="left" valign="top">
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td width="20%" valign="top"><span class="tipname">净度</span>
-        <%--<a class="Gf" href="#" target="_blank">Learn</a>--%></td>
-        <td width="80%" style="border:none"><img src="../images/XXbar_02.jpg" width="268" height="73" style="border:none" border="0" usemap="#JD" /></td>
+        <td width="20%" valign="top">
+        <span class="tipname">克拉</span>
+        <p style=" color:#74572d">单位：克拉</p>
+        </td>
+        <td width="80%"><img src="../images/lxxbar_01.jpg" width="267" height="74" border="0" style="cursor:pointer" id="Cart" /></td>
       </tr>
     </table>
     

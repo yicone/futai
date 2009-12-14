@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{84DFC28C-C386-47DD-86C3-ADD187C84119}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
@@ -149,6 +149,13 @@
     </Compile>
     <Compile Include="CustomBuy\CustomBuyCzuan.aspx.designer.cs">
       <DependentUpon>CustomBuyCzuan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomBuy\CustomPay.aspx.cs">
+      <DependentUpon>CustomPay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomBuy\CustomPay.aspx.designer.cs">
+      <DependentUpon>CustomPay.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomBuy\SearchMethod.aspx.cs">
       <DependentUpon>SearchMethod.aspx</DependentUpon>
@@ -421,7 +428,57 @@
     <Content Include="Controls\ucComment.ascx" />
     <Content Include="Controls\ucDataTable.ascx" />
     <Content Include="CustomBuy\CarList.aspx" />
+    <Content Include="CustomBuy\CustomPay.aspx" />
+    <Content Include="dataimg\37792.jpg" />
+    <Content Include="dataimg\50111.jpg" />
+    <Content Include="dataimg\61032.jpg" />
+    <Content Include="dataimg\61438.jpg" />
+    <Content Include="dataimg\89746.jpg" />
+    <Content Include="dataimg\90414.jpg" />
+    <Content Include="dataimg\93114.jpg" />
+    <Content Include="dataimg\96738.jpg" />
+    <Content Include="dataimg\97520.jpg" />
+    <Content Include="dataimg\98239.jpg" />
+    <Content Include="dataimg\999GZ04.jpg" />
+    <Content Include="dataimg\A0159.jpg" />
+    <Content Include="dataimg\A0184.jpg" />
+    <Content Include="dataimg\AB168.jpg" />
+    <Content Include="dataimg\AB3884.jpg" />
+    <Content Include="dataimg\AB4619.jpg" />
+    <Content Include="dataimg\AD1686AF5.jpg" />
+    <Content Include="dataimg\add_img01.jpg" />
+    <Content Include="dataimg\add_img03.jpg" />
+    <Content Include="dataimg\add_img1.jpg" />
+    <Content Include="dataimg\add_img5.jpg" />
+    <Content Include="dataimg\bei01.jpg" />
+    <Content Include="dataimg\custom_ad.jpg" />
+    <Content Include="dataimg\DB1419-W.jpg" />
+    <Content Include="dataimg\FC12305.jpg" />
+    <Content Include="dataimg\FTP0002-2.jpg" />
+    <Content Include="dataimg\FTR0027B.jpg" />
+    <Content Include="dataimg\FTR0037-2.jpg" />
+    <Content Include="dataimg\FTR0038.jpg" />
+    <Content Include="dataimg\FTR80001.jpg" />
+    <Content Include="dataimg\H33109.jpg" />
+    <Content Include="dataimg\H34067W.jpg" />
+    <Content Include="dataimg\HA4971B.jpg" />
+    <Content Include="dataimg\i_rnavimg1.jpg" />
+    <Content Include="dataimg\i_rnavimg2.jpg" />
+    <Content Include="dataimg\i_rnavimg3.jpg" />
+    <Content Include="dataimg\i_rnavimg4.jpg" />
+    <Content Include="dataimg\product_ad1.jpg" />
+    <Content Include="dataimg\product_img11.jpg" />
+    <Content Include="dataimg\QPE000039.jpg" />
+    <Content Include="dataimg\R0958.jpg" />
+    <Content Include="dataimg\RA1253.jpg" />
+    <Content Include="dataimg\RA2077.jpg" />
+    <Content Include="dataimg\SA580.jpg" />
+    <Content Include="dataimg\SE10743.jpg" />
+    <Content Include="dataimg\SE8361.jpg" />
+    <Content Include="dataimg\未标题-1副本.jpg" />
+    <Content Include="dataimg\未标题-2.jpg" />
     <Content Include="DetailedRegister.aspx" />
+    <Content Include="flash\MyMovie.swf" />
     <Content Include="images\02.jpg" />
     <Content Include="images\03.jpg" />
     <Content Include="images\04.jpg" />
@@ -508,6 +565,7 @@
     <Content Include="images\zsx_img1.gif" />
     <Content Include="images\zsx_img2.gif" />
     <Content Include="js\Cookie.js" />
+    <Content Include="js\jquery.dragndrop.js" />
     <Content Include="NewIntro\NewExperience.aspx" />
     <Content Include="OnLineService.aspx" />
     <Content Include="School\CustomMake.aspx" />
@@ -626,7 +684,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="flash\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
