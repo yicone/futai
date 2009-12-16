@@ -130,7 +130,7 @@ namespace FuTai.Web.CustomBuy
             {
                 NotInCon +=" where"+ TempCon;
             }
-            NotInCon += ")";
+            NotInCon += " order by Carat)";
             SqlWord.Append(NotInCon);
             if (TempCon != "")
                 SqlWord.Append(" And ");

@@ -1,4 +1,8 @@
-﻿function showDiaInfo(obj,clean,color,cut,polish,sym,dis,price, id,tid) {
+﻿var price1 = 0;
+var price2 = 200000;
+var cweight1 = 0.23;
+var cweight2 = 2.1;
+function showDiaInfo(obj,clean,color,cut,polish,sym,dis,price, id,tid) {
     if ($("#" + id).get(0)) {
         $("#" + id).show();
     }
@@ -309,6 +313,23 @@ var CustomOpt = {
         this.Fluorescence = null;
         this.Polishing = null;
         this.Symmetry = null;
+        $("#BlockMask1").hide();
+        $("#BlockMask2").hide();
+        $("#BlockMask3").hide();
+        $("#BlockMask4").hide();
+        $("#BlockMask5").hide();
+        $("#Farr1").css({"left":"100px","top":"236px"});
+        $("#Farr2").css({"left":"350px","top":"236px"});
+        $("#ca1").css({"left":"50px","top":"294px"}).html("0.23");
+        $("#ca2").css({"left":"300px","top":"294px"}).html("2.1");
+        $("#Pricearr1").css({"left":"100px","top":"310px"});
+        $("#Pricearr2").css({"left":"700px","top":"310px"});
+        $("#pa1").css({"left":"50px","top":"370px"}).html("0元");
+        $("#pa2").css({"left":"650px","top":"370px"}).html("200000元");
+        price1 = 0;
+        price2 = 200000;
+        cweight1 = 0.23;
+        cweight2 = 2.1;
     },
     InitPeoHigh: function() {
         $("input[type='checkbox']").attr("checked", false);

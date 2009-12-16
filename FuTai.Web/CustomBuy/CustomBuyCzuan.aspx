@@ -13,10 +13,7 @@
             if (getUrlParam("productType") == "Diamond" && getUrlParam("IsCustom") == "false")
                 $(".Pstep").hide();
 
-            var price1 = 0;
-            var price2 = 200000;
-            var cweight1 = 0.23;
-            var cweight2 = 2.1;
+            
             $("#Pricearr1").Drags({
                 onMove: function(e) {
                     if (document.all)
@@ -197,7 +194,7 @@
 
     </script> 
     <style>
-        .FloatArr{ position:absolute; background:url(/Images/redke.gif) no-repeat center top; height:100px; text-align:center; color:red; width:14px; display:none; font-size:12px }
+        .FloatArr{ position:absolute; background:url(/Images/redke.gif) no-repeat center top; height:80px; text-align:center; color:red; width:14px; display:none; font-size:12px }
         span.price {  color:red; font-size:12px; display:block; width:120px; text-align:center; position:absolute;}
         .Gf{ background:#d0d0d0; color:#7d7d7d; display:block; text-align:center; width:47px}
         .newb{ border:1px solid #bcac92; background:url(/Images/newb.gif) repeat-x; text-align:center; color:white; font-size:14px; height:24px; padding-left:10px; padding-right:10px; *padding:0px; padding-top:0px; *padding-top:4px}
