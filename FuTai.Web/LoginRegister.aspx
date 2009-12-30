@@ -163,6 +163,8 @@
                 if (success) {
                     if (getUrlParam("type")=="handshow")
                         location.href = "/HandSHow/HandShow.aspx";
+                    if (getUrlParam("type")=="make")
+                        location.href = "/CustomBuy/CarList.aspx?action=MakeTicket";
                     else
                         location.href = "/";
                 } else {
