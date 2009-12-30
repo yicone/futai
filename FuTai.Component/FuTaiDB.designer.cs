@@ -69,6 +69,9 @@ namespace FuTai.Component
     partial void InsertIpAddress(IpAddress instance);
     partial void UpdateIpAddress(IpAddress instance);
     partial void DeleteIpAddress(IpAddress instance);
+    partial void InsertOrder(Order instance);
+    partial void UpdateOrder(Order instance);
+    partial void DeleteOrder(Order instance);
     #endregion
 		
 		public FuTaiDBDataContext() : 
@@ -210,6 +213,14 @@ namespace FuTai.Component
 			get
 			{
 				return this.GetTable<IpAddress>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Order> Order
+		{
+			get
+			{
+				return this.GetTable<Order>();
 			}
 		}
 		
@@ -3941,6 +3952,428 @@ namespace FuTai.Component
 					this._LoginDate = value;
 					this.SendPropertyChanged("LoginDate");
 					this.OnLoginDateChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[Table(Name="dbo.[Order]")]
+	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _OrderId;
+		
+		private string _CuName;
+		
+		private bool _CuSex;
+		
+		private string _phone;
+		
+		private string _scity;
+		
+		private string _city;
+		
+		private string _maddress;
+		
+		private string _mcode;
+		
+		private string _speical;
+		
+		private string _UserEmail;
+		
+		private string _UserNick;
+		
+		private System.DateTime _CreateDate;
+		
+		private string _ProductName;
+		
+		private string _ProductNum;
+		
+		private string _productPrice;
+		
+		private string _productDis;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnOrderIdChanging(int value);
+    partial void OnOrderIdChanged();
+    partial void OnCuNameChanging(string value);
+    partial void OnCuNameChanged();
+    partial void OnCuSexChanging(bool value);
+    partial void OnCuSexChanged();
+    partial void OnphoneChanging(string value);
+    partial void OnphoneChanged();
+    partial void OnscityChanging(string value);
+    partial void OnscityChanged();
+    partial void OncityChanging(string value);
+    partial void OncityChanged();
+    partial void OnmaddressChanging(string value);
+    partial void OnmaddressChanged();
+    partial void OnmcodeChanging(string value);
+    partial void OnmcodeChanged();
+    partial void OnspeicalChanging(string value);
+    partial void OnspeicalChanged();
+    partial void OnUserEmailChanging(string value);
+    partial void OnUserEmailChanged();
+    partial void OnUserNickChanging(string value);
+    partial void OnUserNickChanged();
+    partial void OnCreateDateChanging(System.DateTime value);
+    partial void OnCreateDateChanged();
+    partial void OnProductNameChanging(string value);
+    partial void OnProductNameChanged();
+    partial void OnProductNumChanging(string value);
+    partial void OnProductNumChanged();
+    partial void OnproductPriceChanging(string value);
+    partial void OnproductPriceChanged();
+    partial void OnproductDisChanging(string value);
+    partial void OnproductDisChanged();
+    #endregion
+		
+		public Order()
+		{
+			OnCreated();
+		}
+		
+		[Column(Storage="_OrderId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int OrderId
+		{
+			get
+			{
+				return this._OrderId;
+			}
+			set
+			{
+				if ((this._OrderId != value))
+				{
+					this.OnOrderIdChanging(value);
+					this.SendPropertyChanging();
+					this._OrderId = value;
+					this.SendPropertyChanged("OrderId");
+					this.OnOrderIdChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CuName", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string CuName
+		{
+			get
+			{
+				return this._CuName;
+			}
+			set
+			{
+				if ((this._CuName != value))
+				{
+					this.OnCuNameChanging(value);
+					this.SendPropertyChanging();
+					this._CuName = value;
+					this.SendPropertyChanged("CuName");
+					this.OnCuNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CuSex", DbType="Bit NOT NULL")]
+		public bool CuSex
+		{
+			get
+			{
+				return this._CuSex;
+			}
+			set
+			{
+				if ((this._CuSex != value))
+				{
+					this.OnCuSexChanging(value);
+					this.SendPropertyChanging();
+					this._CuSex = value;
+					this.SendPropertyChanged("CuSex");
+					this.OnCuSexChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_phone", DbType="VarChar(15) NOT NULL", CanBeNull=false)]
+		public string phone
+		{
+			get
+			{
+				return this._phone;
+			}
+			set
+			{
+				if ((this._phone != value))
+				{
+					this.OnphoneChanging(value);
+					this.SendPropertyChanging();
+					this._phone = value;
+					this.SendPropertyChanged("phone");
+					this.OnphoneChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_scity", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string scity
+		{
+			get
+			{
+				return this._scity;
+			}
+			set
+			{
+				if ((this._scity != value))
+				{
+					this.OnscityChanging(value);
+					this.SendPropertyChanging();
+					this._scity = value;
+					this.SendPropertyChanged("scity");
+					this.OnscityChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_city", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string city
+		{
+			get
+			{
+				return this._city;
+			}
+			set
+			{
+				if ((this._city != value))
+				{
+					this.OncityChanging(value);
+					this.SendPropertyChanging();
+					this._city = value;
+					this.SendPropertyChanged("city");
+					this.OncityChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_maddress", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string maddress
+		{
+			get
+			{
+				return this._maddress;
+			}
+			set
+			{
+				if ((this._maddress != value))
+				{
+					this.OnmaddressChanging(value);
+					this.SendPropertyChanging();
+					this._maddress = value;
+					this.SendPropertyChanged("maddress");
+					this.OnmaddressChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_mcode", DbType="Char(10)")]
+		public string mcode
+		{
+			get
+			{
+				return this._mcode;
+			}
+			set
+			{
+				if ((this._mcode != value))
+				{
+					this.OnmcodeChanging(value);
+					this.SendPropertyChanging();
+					this._mcode = value;
+					this.SendPropertyChanged("mcode");
+					this.OnmcodeChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_speical", DbType="VarChar(1000)")]
+		public string speical
+		{
+			get
+			{
+				return this._speical;
+			}
+			set
+			{
+				if ((this._speical != value))
+				{
+					this.OnspeicalChanging(value);
+					this.SendPropertyChanging();
+					this._speical = value;
+					this.SendPropertyChanged("speical");
+					this.OnspeicalChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_UserEmail", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
+		public string UserEmail
+		{
+			get
+			{
+				return this._UserEmail;
+			}
+			set
+			{
+				if ((this._UserEmail != value))
+				{
+					this.OnUserEmailChanging(value);
+					this.SendPropertyChanging();
+					this._UserEmail = value;
+					this.SendPropertyChanged("UserEmail");
+					this.OnUserEmailChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_UserNick", DbType="VarChar(20) NOT NULL", CanBeNull=false)]
+		public string UserNick
+		{
+			get
+			{
+				return this._UserNick;
+			}
+			set
+			{
+				if ((this._UserNick != value))
+				{
+					this.OnUserNickChanging(value);
+					this.SendPropertyChanging();
+					this._UserNick = value;
+					this.SendPropertyChanged("UserNick");
+					this.OnUserNickChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_CreateDate", DbType="DateTime NOT NULL")]
+		public System.DateTime CreateDate
+		{
+			get
+			{
+				return this._CreateDate;
+			}
+			set
+			{
+				if ((this._CreateDate != value))
+				{
+					this.OnCreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._CreateDate = value;
+					this.SendPropertyChanged("CreateDate");
+					this.OnCreateDateChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductName", DbType="VarChar(1000) NOT NULL", CanBeNull=false)]
+		public string ProductName
+		{
+			get
+			{
+				return this._ProductName;
+			}
+			set
+			{
+				if ((this._ProductName != value))
+				{
+					this.OnProductNameChanging(value);
+					this.SendPropertyChanging();
+					this._ProductName = value;
+					this.SendPropertyChanged("ProductName");
+					this.OnProductNameChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_ProductNum", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string ProductNum
+		{
+			get
+			{
+				return this._ProductNum;
+			}
+			set
+			{
+				if ((this._ProductNum != value))
+				{
+					this.OnProductNumChanging(value);
+					this.SendPropertyChanging();
+					this._ProductNum = value;
+					this.SendPropertyChanged("ProductNum");
+					this.OnProductNumChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_productPrice", DbType="VarChar(1000) NOT NULL", CanBeNull=false)]
+		public string productPrice
+		{
+			get
+			{
+				return this._productPrice;
+			}
+			set
+			{
+				if ((this._productPrice != value))
+				{
+					this.OnproductPriceChanging(value);
+					this.SendPropertyChanging();
+					this._productPrice = value;
+					this.SendPropertyChanged("productPrice");
+					this.OnproductPriceChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_productDis", DbType="VarChar(500) NOT NULL", CanBeNull=false)]
+		public string productDis
+		{
+			get
+			{
+				return this._productDis;
+			}
+			set
+			{
+				if ((this._productDis != value))
+				{
+					this.OnproductDisChanging(value);
+					this.SendPropertyChanging();
+					this._productDis = value;
+					this.SendPropertyChanged("productDis");
+					this.OnproductDisChanged();
 				}
 			}
 		}
