@@ -4015,6 +4015,8 @@ namespace FuTai.Component
 		
 		private string _productDis;
 		
+		private bool _IsChecked;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -4051,6 +4053,8 @@ namespace FuTai.Component
     partial void OnproductPriceChanged();
     partial void OnproductDisChanging(string value);
     partial void OnproductDisChanged();
+    partial void OnIsCheckedChanging(bool value);
+    partial void OnIsCheckedChanged();
     #endregion
 		
 		public Order()
@@ -4198,7 +4202,7 @@ namespace FuTai.Component
 			}
 		}
 		
-		[Column(Storage="_mcode", DbType="Char(10)")]
+		[Column(Storage="_mcode", DbType="Char(20)")]
 		public string mcode
 		{
 			get
@@ -4374,6 +4378,26 @@ namespace FuTai.Component
 					this._productDis = value;
 					this.SendPropertyChanged("productDis");
 					this.OnproductDisChanged();
+				}
+			}
+		}
+		
+		[Column(Storage="_IsChecked", DbType="Bit NOT NULL")]
+		public bool IsChecked
+		{
+			get
+			{
+				return this._IsChecked;
+			}
+			set
+			{
+				if ((this._IsChecked != value))
+				{
+					this.OnIsCheckedChanging(value);
+					this.SendPropertyChanging();
+					this._IsChecked = value;
+					this.SendPropertyChanged("IsChecked");
+					this.OnIsCheckedChanged();
 				}
 			}
 		}

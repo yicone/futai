@@ -199,7 +199,7 @@
       <Column Name="scity" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="city" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
       <Column Name="maddress" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="mcode" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="mcode" Type="System.String" DbType="Char(20)" CanBeNull="true" />
       <Column Name="speical" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
       <Column Name="UserEmail" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
       <Column Name="UserNick" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
@@ -208,6 +208,7 @@
       <Column Name="ProductNum" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="productPrice" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
       <Column Name="productDis" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="IsChecked" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Function Name="dbo.product_InsertDiamond" Method="InsertDiamond">

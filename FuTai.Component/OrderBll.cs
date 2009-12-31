@@ -51,5 +51,62 @@ namespace FuTai.Component
                 dataContext.SubmitChanges();
             }
         }
+
+        public List<Order> SearchOrder(string mtype)
+        {
+            List<Order> rvalue = new List<Order>();
+            if (mtype == "no")
+            {
+                var q = from p in DataContext.Order
+                    where p.IsChecked == false
+                    orderby p.CreateDate descending
+                    select p;
+
+                rvalue = q == null ? rvalue : q.ToList();
+                return rvalue;
+            }
+            if (mtype == "yes")
+            {
+                var q = from p in DataContext.Order
+                    where p.IsChecked==true
+                    orderby p.CreateDate descending
+                    select p;
+
+                rvalue = q == null ? rvalue : q.ToList();
+                return rvalue;
+            }
+            if (mtype == "all")
+            {
+                var q = from p in DataContext.Order
+                    orderby p.CreateDate descending
+                    select p;
+
+                rvalue = q == null ? rvalue : q.ToList();
+                return rvalue;
+            }
+            return null;
+        }
+
+        public void TackOrder(int id,bool ticked)
+        {
+            using (var dataContext = DataContext)
+            {
+                Order order = dataContext.Order.First(c => c.OrderId == id);
+                order.IsChecked = ticked;
+
+                dataContext.SubmitChanges();
+            }
+        }
+
+        public void DelTack(int id)
+        {
+            using (var dataContext = DataContext)
+            {
+                Order order = dataContext.Order.First(c => c.OrderId == id);
+                dataContext.Order.DeleteOnSubmit(order);
+
+                dataContext.SubmitChanges();
+            }
+        }
     }
 }

@@ -90,7 +90,19 @@ namespace FuTai.Component
         public void UpdateUserInfo(string userId)
         { }
 
+        public User ManageLogin(string username, string password)
+        {
+            var q = from u in DataContext.User
+                    where (u.NickName == username && u.Password == password)
+                    select u;
 
+            if (q.Count() > 0)
+            {
+                return q.Single();
+            }
+            return null;
+
+        }
         public User Login(string emailOrNickname, string password,string ip)
         {
             bool isEmailAccount = (emailOrNickname.IndexOf('@') >= 0);
