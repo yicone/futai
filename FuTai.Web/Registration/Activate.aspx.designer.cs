@@ -9,8 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace FuTai.Web {
-    
-    
-    public partial class DetailedRegister {
+
+
+    public partial class Activate
+    {
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using System.Diagnostics;
 
 namespace FuTai.Component
 {
@@ -16,7 +17,7 @@ namespace FuTai.Component
 
     public class UserBll : BaseBll
     {
-        public void Register(string email, string nickname, string password)
+        public User Register(string email, string nickname, string password)
         {
             User user = new User()
                 {
@@ -24,7 +25,7 @@ namespace FuTai.Component
                     NickName = nickname,
                     Password = password,
                     Authority = (int)UserAuthority.Web,
-                    LoginDate=DateTime.Now
+                    LoginDate = DateTime.Now
                 };
 
             using (var context = BaseBll.DataContext)
@@ -33,10 +34,13 @@ namespace FuTai.Component
                 context.SubmitChanges();
             }
 
-            SendActiveCode(user.UserId);
+            string activeCode = InsertActiveCode(user.UserId);
+            MailHelper.SendActiveMail(user.UserName, user.Email, activeCode);
+
+            return user;
         }
 
-        public void Register(string email, string passowrd, string passwordAnswer, string passwordQuestion,
+        public User Register(string email, string passowrd, string passwordAnswer, string passwordQuestion,
             DateTime? birthDate, bool? sex, string userName, string nickName, string phone)
         {
             User user = new User()
@@ -51,7 +55,7 @@ namespace FuTai.Component
                 NickName = nickName,
                 Phone = phone,
                 Authority = (int)UserAuthority.Web,
-                LoginDate=DateTime.Now
+                LoginDate = DateTime.Now
             };
 
             using (var context = BaseBll.DataContext)
@@ -60,20 +64,80 @@ namespace FuTai.Component
                 context.SubmitChanges();
             }
 
-            SendActiveCode(user.UserId);
-        }
-
-        private void SendActiveCode(int? userId)
-        {
-            string activeCode = GenActiveCode(userId);
-
-            var user = GetUser(userId);
+            string activeCode = InsertActiveCode(user.UserId);
             MailHelper.SendActiveMail(user.UserName, user.Email, activeCode);
+
+            return user;
         }
 
-        public void ActiveUser(string userId, string activeCode)
+        /// <summary>
+        /// 产生激活码, 并发送激活邮件
+        /// </summary>
+        /// <param name="userId"></param>
+        public string InsertActiveCode(int userId)
         {
-            //todo: 询问激活码有效期
+            string activeCode = MakePassword(16, "an", userId);
+
+            RegisterCode code = new RegisterCode() 
+            {
+                UserId = userId,
+                RegisterCode1 = activeCode,
+                CreateDate = DateTime.Now
+            };
+
+            using (var context = BaseBll.DataContext)
+            {
+                context.RegisterCode.InsertOnSubmit(code);
+                context.SubmitChanges();
+            }
+
+            return activeCode;
+        }
+
+        public ActivateRegistrationResult ValidateActivatation(string activationCode, out User user)
+        {
+            user = null;
+            int lenUserId = int.Parse(activationCode[activationCode.Length - 1].ToString());
+
+            int id = int.Parse(activationCode.Substring(5, lenUserId));
+
+            using (var context = BaseBll.DataContext)
+            {
+                var u = from i in context.User
+                        where i.UserId == id
+                        select i;
+
+                if (u == null)
+                {
+                    return ActivateRegistrationResult.UserNotExist;
+                }
+                
+                user = u.SingleOrDefault();
+
+                var a = from r in context.RegisterCode
+                        where r.UserId == id 
+                            && r.RegisterCode1 == activationCode
+                        select r;
+
+                if (a.Count() > 0)
+                {
+                    var codeRecordList = a.ToList();
+                    bool success = codeRecordList.Exists(c => c.CreateDate > DateTime.Now.AddHours(-Config.ActivateHourLimit));
+                    return (success) ? ActivateRegistrationResult.Success : ActivateRegistrationResult.Timeout;
+                }
+            }
+            return ActivateRegistrationResult.Failure;
+        }
+
+        public void ActivateRegistration(User user)
+        {
+            using (var context = BaseBll.DataContext)
+            {
+                context.User.Attach(user);
+                user.UserName = "123";
+                user.HasActivated = true;
+                context.SubmitChanges();
+            }
         }
 
         public void ChangePassword(string userId, string oldPassword, string newPassword)
@@ -103,22 +167,36 @@ namespace FuTai.Component
             return null;
 
         }
-        public User Login(string emailOrNickname, string password,string ip)
+        public User Login(string emailOrNickname, string password, string ip)
         {
             bool isEmailAccount = (emailOrNickname.IndexOf('@') >= 0);
 
-            var q = from u in DataContext.User
-                    where (isEmailAccount ? u.Email : u.NickName) == emailOrNickname && u.Password==password
+            IQueryable<User> q;
+            if (isEmailAccount)
+            {
+                q = from u in DataContext.User
+                    where u.Email == emailOrNickname
+                            && u.Password == password
+                            && u.HasActivated == true
                     select u;
+            }
+            else
+            {
+                q = from u in DataContext.User
+                    where u.NickName == emailOrNickname
+                            && u.Password == password
+                            && u.HasActivated == true
+                    select u;
+            }
 
             if (q.Count() > 0)
             {
 
                 //todo:取消投票限制
-                MakeLoginTime(isEmailAccount,emailOrNickname,ip);
+                MakeLoginTime(isEmailAccount, emailOrNickname, ip);
 
                 //todo:写入登录时间
-                User nowuser = DataContext.User.First( e => (isEmailAccount?e.Email : e.NickName) ==emailOrNickname);
+                User nowuser = DataContext.User.First(e => (isEmailAccount ? e.Email : e.NickName) == emailOrNickname);
                 nowuser.LoginDate = Convert.ToDateTime(DateTime.Now);
                 DataContext.SubmitChanges();
                 return q.Single();
@@ -128,13 +206,13 @@ namespace FuTai.Component
             return null;
         }
 
-        public void MakeLoginTime(bool isEmail,string emailornick,string ip)
+        public void MakeLoginTime(bool isEmail, string emailornick, string ip)
         {
             using (var datacontext = BaseBll.DataContext)
             {
                 User nowuser = datacontext.User.First(e => (isEmail ? e.Email : e.NickName) == emailornick);
                 if (nowuser.LoginDate.ToString("yy/MM/dd").CompareTo(DateTime.Now.ToString("yy/MM/dd")) != 0)
-                { 
+                {
                     //清空所有投票限制记录
                     nowuser.Ticket = "";
 
@@ -179,10 +257,7 @@ namespace FuTai.Component
             return user;
         }
 
-        public static string GenActiveCode(int? userId)
-        {
-            return null;
-        }
+        
 
         public static string GenPassword(int? userId)
         {
@@ -215,9 +290,9 @@ namespace FuTai.Component
         public bool DBCheck(int uid, int tid)
         {
             User user = DataContext.User.First(d => d.UserId == uid);
-            
+
             string ticketcol = user.Ticket;
-            bool rvalue=true;
+            bool rvalue = true;
             if (ticketcol != null)
             {
                 string[] ticketarr = ticketcol.Split(',');
@@ -241,7 +316,7 @@ namespace FuTai.Component
                     select r;
             List<IpAddress> ipcol = new List<IpAddress>();
             ipcol = q.ToList();
-            
+
             bool rvalue = true;
 
             if (ipcol.Count != 0)
@@ -261,6 +336,86 @@ namespace FuTai.Component
             }
 
             return rvalue;
+        }
+
+        private string MakePassword(int pwdLen, string type, int userId)
+        {
+            char[] arrUserId = userId.ToString().ToCharArray();
+            string pwd = MakePassword(pwdLen, type);
+            char[] arrPwd = pwd.ToCharArray();
+            int lenUserId = arrUserId.Length;
+
+            for (int i = 0; i < lenUserId; i++)
+            {
+                int index = 5 + i;
+                arrPwd[index] = arrUserId[i];
+            }
+
+            arrPwd[pwdLen - 1] = char.Parse(lenUserId.ToString());
+
+            pwd = new string(arrPwd);
+            return pwd;
+        }
+
+        /// <summary>  
+        /// 产生随机码  
+        /// http://blog.csdn.net/xxzsky/archive/2009/10/12/4658279.aspx
+        /// </summary>  
+        /// <param name="pwdLen">产生多少位码</param>  
+        /// <param name="type">随机码类型(u大写,l小写,a大小写混合,n数字,un大写+数字,ln小写+数字,an大小写混合+数字)</param>  
+        /// <returns></returns>  
+        private string MakePassword(int pwdLen, string type)
+        {
+            string randomNumStr = "123456789";
+            string randomStr = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+            Random rnd = new Random();
+            string strPwd = string.Empty;
+            for (int i = 0; i < pwdLen; i++)
+            {
+                switch (type.ToLower())
+                {
+                    //产生大写随机码  
+                    case "u":
+                        //strPwd += Convert.ToString((char)rnd.Next(65, 91));  
+                        strPwd += randomStr[rnd.Next(26, 52)].ToString();
+                        break;
+                    //产生小写随机码  
+                    case "l":
+                        strPwd += randomStr[rnd.Next(26)].ToString();
+                        break;
+                    //产生大小写随机码  
+                    case "a":
+                        strPwd += randomStr[rnd.Next(52)].ToString();
+                        break;
+                    //产生数字写随机码  
+                    case "n":
+                        strPwd += randomNumStr[rnd.Next(randomNumStr.Length)].ToString();
+                        break;
+                    //产生大写+数字随机码  
+                    case "un":
+                        strPwd += rnd.Next(2) == 1 ? randomStr[rnd.Next(26, 52)].ToString() : randomNumStr[rnd.Next(randomNumStr.Length)].ToString();
+                        break;
+                    //产生小写+数字随机码  
+                    case "ln":
+                        strPwd += rnd.Next(2) == 1 ? randomStr[rnd.Next(26)].ToString() : randomNumStr[rnd.Next(randomNumStr.Length)].ToString();
+                        break;
+                    //产生大小写+数字随机码  
+                    case "an":
+                        strPwd += rnd.Next(2) == 1 ? randomStr[rnd.Next(52)].ToString() : randomNumStr[rnd.Next(randomNumStr.Length)].ToString();
+                        break;
+
+                }
+            }
+
+            return strPwd;
+        }
+
+        public enum ActivateRegistrationResult
+        {
+            Success,
+            UserNotExist,
+            Timeout,
+            Failure
         }
     }
 }

@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FuTai.Web {
+namespace FuTai.Web.Registration {
     
     
-    public partial class DetailedRegister {
+    public partial class ActivateSuccess {
     }
 }

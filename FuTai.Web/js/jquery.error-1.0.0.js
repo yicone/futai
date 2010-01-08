@@ -1,4 +1,4 @@
-﻿var Error = function(inputId, errId, accross) {
+﻿var Error = function(inputId, errId, accross, defaultHeight) {
     this.inputId = inputId;
     this.accross = accross;
 
@@ -18,14 +18,24 @@
         }
         else {
             $errEle = $('<div></div>');
-
         }
 
-        $errEle.addClass('TipBox2');
-        $errEle.height(height);
-        $errEle.css('position', 'absolute');
+        $errEle.css('border', 'solid 1px #E17D7E');
+        $errEle.css('padding', '0px 5px 0px 25px');
+        $errEle.css('font-size', '12px');
+        $errEle.css('background', '#FEEAE3 url(/images/wrongbg.gif) no-repeat 5px');
 
-        $errEle.css('line-height', height + 'px');
+        $errEle.css('position', 'absolute');
+        $errEle.css('white-space', 'nowrap'); //ie6-hack
+
+        if (!defaultHeight) {
+            $errEle.height(height);
+            $errEle.css('line-height', height + 'px');
+        }
+        else {
+            $errEle.height(defaultHeight);
+            $errEle.css('line-height', defaultHeight + 'px');
+        }
 
         $errEle.hide();
         $input.after($errEle);

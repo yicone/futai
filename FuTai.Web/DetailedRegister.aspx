@@ -4,15 +4,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="cphHead" runat="server">
     <link type="text/css" rel="stylesheet" href="/style/inner.css" />
     <link type="text/css" rel="stylesheet" href="/style/custom.css" />
-    <style type="text/css">
-        .TipBox2
-        {
-            border: solid 1px #E17D7E;
-            padding: 0px 1px 0px 25px;
-            font-size: 12px;
-            background: #FEEAE3 url(images/wrongbg.gif) no-repeat 5px 0px;
-        }
-    </style>
 
     <script type="text/javascript" src="/js/jquery.error-1.0.0.js "></script>
 

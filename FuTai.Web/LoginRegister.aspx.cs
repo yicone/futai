@@ -2,6 +2,7 @@
 using AjaxPro;
 using FuTai.Component;
 using System.Web;
+using FuTai.Component.Template;
 
 namespace FuTai.Web
 {
@@ -23,7 +24,16 @@ namespace FuTai.Web
         [AjaxMethod]
         public static void Register(string email, string nickname, string password)
         {
-            Singleton<UserBll>.Instance.Register(email, nickname, password);
+            try
+            {
+                Singleton<UserBll>.Instance.Register(email, nickname, password);
+            }
+            catch (Exception ex)
+            {
+                LogHelper.LogException(ex);
+                throw;
+            }
+
         }
 
         [AjaxMethod]

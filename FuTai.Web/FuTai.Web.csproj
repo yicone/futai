@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxPro.2, Version=9.2.17.1, Culture=neutral, PublicKeyToken=4735ae9824c7d3ec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FuTai.Component\ThirdLib\AjaxPro.2.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FuTai.Component\ThirdLib\log4net.dll</HintPath>
@@ -209,6 +205,34 @@
     <Compile Include="OnLineService.aspx.designer.cs">
       <DependentUpon>OnLineService.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Registration\ActivateFailure.aspx.cs">
+      <DependentUpon>ActivateFailure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration\ActivateFailure.aspx.designer.cs">
+      <DependentUpon>ActivateFailure.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\Activate.aspx.cs">
+      <DependentUpon>Activate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration\Activate.aspx.designer.cs">
+      <DependentUpon>Activate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\ActivateSuccess.aspx.cs">
+      <DependentUpon>ActivateSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration\ActivateSuccess.aspx.designer.cs">
+      <DependentUpon>ActivateSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\CheckEmail.aspx.cs">
+      <DependentUpon>CheckEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration\CheckEmail.aspx.designer.cs">
+      <DependentUpon>CheckEmail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="School\Ceif.aspx.cs">
       <DependentUpon>Ceif.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -302,6 +326,10 @@
     <ProjectReference Include="..\FuTai.Component\FuTai.Component.csproj">
       <Project>{5084CE4B-31F6-495D-9774-9DB1435EBFD3}</Project>
       <Name>FuTai.Component</Name>
+    </ProjectReference>
+    <ProjectReference Include="E:\wangxinguang\My Documents\Downloads\ajaxpro-46947\AjaxPro\AjaxPro.csproj">
+      <Project>{9AD42568-07A4-4D8B-9C6D-1FD54683EF4B}</Project>
+      <Name>AjaxPro</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -568,6 +596,10 @@
     <Content Include="js\jquery.dragndrop.js" />
     <Content Include="NewIntro\NewExperience.aspx" />
     <Content Include="OnLineService.aspx" />
+    <Content Include="Registration\ActivateFailure.aspx" />
+    <Content Include="Registration\Activate.aspx" />
+    <Content Include="Registration\ActivateSuccess.aspx" />
+    <Content Include="Registration\CheckEmail.aspx" />
     <Content Include="School\CustomMake.aspx" />
     <Content Include="style\experience.css" />
     <Content Include="CustomBuy\SearchMethod.aspx" />
@@ -680,6 +712,7 @@
     <Content Include="SearchHigh.aspx" />
     <Content Include="UserAccount.xml" />
     <Content Include="Captcha.ashx" />
+    <None Include="images\productimg\Thumbs.db" />
     <None Include="sql\create_db.sql" />
   </ItemGroup>
   <ItemGroup>
