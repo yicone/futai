@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AjaxPro.2, Version=9.2.17.1, Culture=neutral, PublicKeyToken=4735ae9824c7d3ec, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\FuTai.Component\ThirdLib\AjaxPro.2.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\FuTai.Component\ThirdLib\log4net.dll</HintPath>
@@ -119,6 +115,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AjaxPro\AjaxPro.csproj">
+      <Project>{9AD42568-07A4-4D8B-9C6D-1FD54683EF4B}</Project>
+      <Name>AjaxPro</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FuTai.Component\FuTai.Component.csproj">
       <Project>{5084CE4B-31F6-495D-9774-9DB1435EBFD3}</Project>
       <Name>FuTai.Component</Name>

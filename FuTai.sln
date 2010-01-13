@@ -16,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		维护.sql = 维护.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxPro", "E:\wangxinguang\My Documents\Downloads\ajaxpro-46947\AjaxPro\AjaxPro.csproj", "{9AD42568-07A4-4D8B-9C6D-1FD54683EF4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AjaxPro", "AjaxPro\AjaxPro.csproj", "{9AD42568-07A4-4D8B-9C6D-1FD54683EF4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
