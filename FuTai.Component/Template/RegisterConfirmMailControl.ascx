@@ -2,8 +2,8 @@
     Inherits="FuTai.Component.Template.RegisterConfirmMailControl" %>
 <div class="ii gt" id=":53">
     您好，请点击下面的链接进行用户注册确认：<br />
-    <a target="_blank" href="http://dev.futai.com/registration/activate.aspx?id=<%= this.ActiveCode %>">
-        http://dev.futai.com/<wbr />registration/activate.aspx?<wbr />id=<wbr /><%= this.ActiveCode %></a><br />
+    <a target="_blank" href="http://localhost:3017/registration/activate.aspx?id=<%= this.ActiveCode %>">
+        http://localhost:3017/<wbr />registration/activate.aspx?<wbr />id=<wbr /><%= this.ActiveCode %></a><br />
     <br />
     <br />
     <a target="_blank" href="http://www.futaizhubao.com">福泰珠宝</a><br />

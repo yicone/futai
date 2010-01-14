@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FuTai.Web.Registration
 {
-    public partial class ActivateSuccess : System.Web.UI.Page
+    public partial class ActivateSuccess :BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

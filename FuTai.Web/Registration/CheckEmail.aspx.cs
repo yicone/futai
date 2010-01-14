@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FuTai.Web.Registration
 {
-    public partial class CheckEmail : System.Web.UI.Page
+    public partial class CheckEmail : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

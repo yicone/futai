@@ -110,9 +110,11 @@
                 var result = BaseAjax.Register(email, password, passwordAnswer, passwordQuestion,birthDate, sex, userName, nickName, phone);
                 if (!result.error)
                 {
-                    alert("恭喜您注册成功!您将自动登录到福泰钻石");
-                    BaseAjax.Login(email, password);
-                    location.href="/Default.aspx";
+                    $("#ph_Reg").hide();
+                    $("#ph_Suceed").show();
+                    //alert("恭喜您注册成功!您将自动登录到福泰钻石");
+                    //BaseAjax.Login(email, password);
+                    //location.href="/Default.aspx";
                 }
                 else
                     alert(result.error.Message);
@@ -125,7 +127,19 @@
     <div class="custom_main1">
         <div class="hr">
         </div>
-        <div style="margin: 0pt auto; width: 600px;">
+        <div id="ph_Suceed" style="display:none">
+			<div class="reg_leftbox loginSuc">
+                <div class="box1 cartBox">
+                    <h2>
+                        <span>恭喜您，您已经成功注册！</span></h2>
+                    <div class="cont">
+                        
+						<p style="padding-top:50px">认证邮件已发送到您的注册邮箱，请查收邮件并点击认证链接。</p>
+                  </div>
+                </div>
+            </div>
+		</div>
+        <div id="ph_Reg" style="margin: 0pt auto; width: 600px;">
             <div class="box1 cartBox">
                 <h2>
                     <span>新用户注册：</span></h2>

@@ -120,25 +120,10 @@
                 {
                     $("#ph_Login").hide();
                     $("#ph_Suceed").show();
-                    BaseAjax.Login(email, password);
-					$("#CTime").text("5");
-					setTimeout("TimeCount()",1000);
+                    //BaseAjax.Login(email, password);
                 }
             }
         }
-		function TimeCount()
-		{
-			var Tc=parseInt($("#CTime").text());
-			if (Tc<=0)
-			{
-			    location.href = "/Registration/CheckEmail.aspx";
-				return false;
-			}
-						
-			Tc-=1;
-			$("#CTime").text(Tc);
-			setTimeout("TimeCount()",1000);
-		}
         function login() {
             var emailOrNickname = $.trim($('#textfield').val());
             var password = $.trim($('#textfield2').val());
@@ -179,11 +164,10 @@
 			<div class="reg_leftbox loginSuc">
                 <div class="box1 cartBox">
                     <h2>
-                        <span>恭喜你注册成功！</span></h2>
+                        <span>恭喜您，您已经成功注册！</span></h2>
                     <div class="cont">
                         
-						<p>恭喜您成功注册为福泰会员！<br />
-<a href="/Default.aspx">请点击这里跳转到福泰内页，或等待<span id="CTime"></span>秒自动跳转</a></p>
+						<p style="padding-top:50px">认证邮件已发送到您的注册邮箱，请查收邮件并点击认证链接。</p>
                   </div>
                 </div>
             </div>

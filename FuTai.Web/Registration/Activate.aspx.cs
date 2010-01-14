@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace FuTai.Web
 {
-    public partial class Activate : System.Web.UI.Page
+    public partial class Activate :BasePage
     {
         protected string RegisterCode
         {
@@ -31,7 +31,7 @@ namespace FuTai.Web
                 {
                     Debug.Assert(user != null);
                     Singleton<UserBll>.Instance.ActivateRegistration(user);
-                    Response.Redirect("/Registration/ActivateFailure.aspx");
+                    Response.Redirect("/Registration/ActivateSuccess.aspx");
                 }
                 else
                 {
@@ -41,7 +41,7 @@ namespace FuTai.Web
                     }
                     else
                     {
-                        Response.Redirect("/Registration/ActivateSuccess.aspx");
+                        Response.Redirect("/Registration/ActivateFailure.aspx");
                     }
                 }
             }

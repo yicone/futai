@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace FuTai.Web.Registration
 {
-    public partial class ActivateFailure : System.Web.UI.Page
+    public partial class ActivateFailure : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
