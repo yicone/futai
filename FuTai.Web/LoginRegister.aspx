@@ -110,6 +110,11 @@
                 return false;
             }
             
+            $("#Sending").show();
+            setTimeout("SendMail('"+email+"','"+ nickname+"','"+ password+"')",500);
+        }
+        function SendMail(email, nickname, password)
+        {
             var pass = validateLogon();
             if (pass) {
                 var r = BaseAjax.Register(email, nickname, password);
@@ -117,7 +122,8 @@
                     alert(r.error.Message);
                 }
                 else
-                {
+                { 
+                    $("#Sending").hide();
                     $("#ph_Login").hide();
                     $("#ph_Suceed").show();
                     //BaseAjax.Login(email, password);
@@ -160,6 +166,12 @@
     <div class="custom_main1">
         <p class="cartStep">
             结算步骤：<span class="redfont1">登录/注册</span> &gt; 填写收获信息 &gt; 支付 &gt; 订购成功</p>
+        <div id="Sending" class="relative" style="display:none">
+            <div style="border:1px solid #68553a; width:250px; height:70px; line-height:70px; position:absolute; text-align:center; left:350px; top:120px; background:white; font-size:12px; color:#68553a">
+                认证邮件发送中...
+            </div>
+            
+        </div>
 		<div id="ph_Suceed" style="display:none">
 			<div class="reg_leftbox loginSuc">
                 <div class="box1 cartBox">

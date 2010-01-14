@@ -8,20 +8,31 @@
     <script type="text/javascript" src="/js/jquery.error-1.0.0.js "></script>
 
     <script type="text/javascript">
+            var email;
+            var password;
+            var password2;
+            var passwordAnswer;
+            var passwordQuestion;
+            var birthDate;
+            var sex;
+            var userName;
+            var nickName;
+            var phone;
         $(document).ready(function() {
+        
             $('#user_register').click(function() {
 
-                var email = $('#email').val();
-                var password = $('#password').val();
-                var password2 = $('#password2').val();
-                var passwordAnswer = $('#passwordAnswer').val();
-                var passwordQuestion = $('#passwordQuestion').val();
-                var birthDate =new Date($('#birthYear').val(),$('#birthMonth').val(),$('#birthDate').val());
+                email = $('#email').val();
+                password = $('#password').val();
+                password2 = $('#password2').val();
+                passwordAnswer = $('#passwordAnswer').val();
+                passwordQuestion = $('#passwordQuestion').val();
+                birthDate =new Date($('#birthYear').val(),$('#birthMonth').val(),$('#birthDate').val());
                 
-                var sex = $('#sex').val()=="true"?true:false;
-                var userName = $('#userName').val();
-                var nickName = $('#nickName').val();
-                var phone = $('#phone').val();
+                sex = $('#sex').val()=="true"?true:false;
+                userName = $('#userName').val();
+                nickName = $('#nickName').val();
+                phone = $('#phone').val();
 
                 if (!email) {
                     $('#email').error('请输入E-mail地址');
@@ -106,10 +117,17 @@
                     $('#phone').error('联系电话格式错误');
                     return false;
                 }
-
+                $("#Sending").show();
+                setTimeout("smail()",500);
+            });
+        });
+        
+            function smail()
+            {
                 var result = BaseAjax.Register(email, password, passwordAnswer, passwordQuestion,birthDate, sex, userName, nickName, phone);
                 if (!result.error)
                 {
+                    $("#Sending").hide();
                     $("#ph_Reg").hide();
                     $("#ph_Suceed").show();
                     //alert("恭喜您注册成功!您将自动登录到福泰钻石");
@@ -118,14 +136,19 @@
                 }
                 else
                     alert(result.error.Message);
-            });
-        });
+            }
     </script>
 
 </asp:Content>
 <asp:content id="Content2" contentplaceholderid="cphContent" runat="server">
     <div class="custom_main1">
         <div class="hr">
+        </div>
+        <div id="Sending" class="relative" style="display:none">
+            <div style="border:1px solid #68553a; width:250px; height:70px; line-height:70px; position:absolute; text-align:center; left:350px; top:120px; background:white; font-size:12px; color:#68553a">
+                认证邮件发送中...
+            </div>
+            
         </div>
         <div id="ph_Suceed" style="display:none">
 			<div class="reg_leftbox loginSuc">
