@@ -108,7 +108,7 @@
 
                     left = parseInt($("#Farr1").css("left"));
                     $("#ca1").css("left", (left - 50) + "px");
-                    cweight1 = GetWeight(left - 100, 250, 1.87);
+                    cweight1 = GetWeight(left - 100, 250, 9.77);
                     $("#ca1").html(cweight1);
 
                 },
@@ -132,7 +132,7 @@
 
                     left = parseInt($("#Farr2").css("left"));
                     $("#ca2").css("left", (left - 50) + "px");
-                    cweight2 = GetWeight(left - 100, 250, 1.87);
+                    cweight2 = GetWeight(left - 100, 250, 9.77);
                     $("#ca2").html(cweight2);
 
                 },
@@ -154,7 +154,7 @@
                 var d1 = Math.abs(left1 - bardis);
                 var d2 = Math.abs(left2 - bardis);
                 if (d1 < d2) {
-                    cweight1 = GetWeight(bardis, 250, 1.87);
+                    cweight1 = GetWeight(bardis, 250, 9.77);
                     if (bardis > left2 - 22)
                         bardis = left2 - 22;
 
@@ -163,7 +163,7 @@
                     $("#ca1").html(cweight1);
                 }
                 else {
-                    cweight2 = GetWeight(bardis, 250, 1.87);
+                    cweight2 = GetWeight(bardis, 250, 9.77);
                     if (bardis < left1 + 22)
                         bardis = left1 + 22;
 
@@ -258,9 +258,9 @@
                     <span id="pa1" class="price" style="top:370px; left:50px">0元</span>
                     <span id="pa2" class="price" style="top:370px; left:650px;">200000元</span>
                     <span id="ca1" class="price" style="top:294px; left:50px">0.23</span>
-                    <span id="ca2" class="price" style="top:294px; left:300px;">2.1</span>
+                    <span id="ca2" class="price" style="top:294px; left:300px;">10</span>
                     
-                	<table width="704" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-left:30px;*margin-left:11px">
+                	<table width="704" border="0" align="center" cellpadding="0" cellspacing="0" style="margin-left:30px;margin-left:8px \9;*margin-left:11px">
   <tr>
     <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -429,7 +429,7 @@
                         <input name="textfield2" type="text" id="CarLow" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh()" />
                     到
                     <input name="textfield3" type="text" id="CarHi" size="5" maxlength="5" onblur="CustomOpt.SetCaratHigh()" />
-                    </label>(克拉范围：0.23~2.100)</td>
+                    </label>(克拉范围：0.23~10)</td>
                     <th>净度</th>
                     <td><input type="checkbox" name="checkbox11" id="checkbox11" onclick="CustomOpt.SetClarityHigh('SI1|SI2',this)" />
 SI
