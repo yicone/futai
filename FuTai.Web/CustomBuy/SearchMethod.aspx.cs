@@ -108,7 +108,7 @@ namespace FuTai.Web.CustomBuy
                         if (Key == "Carat" || Key == "Price")   //克拉、价格
                         {
                             char[] spl = { '-' };
-                            TempCon += " " + Key + ">='" + ((string[])consql[Key])[0].ToString().Split(spl)[0] + "' And " + Key + "<='" + ((string[])consql[Key])[0].ToString().Split(spl)[1] + "' And";
+                            TempCon += " CAST(" + Key + " AS float)>=" + ((string[])consql[Key])[0].ToString().Split(spl)[0] + " And CAST(" + Key + " AS float)<=" + ((string[])consql[Key])[0].ToString().Split(spl)[1] + " And";
                         }
                         else
                         {
@@ -154,7 +154,7 @@ namespace FuTai.Web.CustomBuy
                         if (Key == "Carat" || Key == "Price")   //克拉、价格
                         {
                             char[] spl = { '-' };
-                            SqlWord.Append(Key + ">='" + ((string[])consql[Key])[0].ToString().Split(spl)[0] + "' And " + Key + "<='" + ((string[])consql[Key])[0].ToString().Split(spl)[1] + "' And ");
+                            SqlWord.Append("CAST("+Key + " AS float)>=" + ((string[])consql[Key])[0].ToString().Split(spl)[0] + " And CAST(" + Key + " AS float)<=" + ((string[])consql[Key])[0].ToString().Split(spl)[1] + " And ");
                         }
                         else
                         {

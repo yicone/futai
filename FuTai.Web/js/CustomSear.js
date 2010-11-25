@@ -1,5 +1,5 @@
 ﻿var price1 = 0;
-var price2 = 200000;
+var price2 = 1000000;
 var cweight1 = 0.23;
 var cweight2 = 10;
 function showDiaInfo(obj,clean,color,cut,polish,sym,dis,price, id,tid) {
@@ -325,9 +325,9 @@ var CustomOpt = {
         $("#Pricearr1").css({"left":"100px","top":"310px"});
         $("#Pricearr2").css({"left":"700px","top":"310px"});
         $("#pa1").css({"left":"50px","top":"370px"}).html("0元");
-        $("#pa2").css({"left":"650px","top":"370px"}).html("200000元");
+        $("#pa2").css({"left":"650px","top":"370px"}).html("1000000元");
         price1 = 0;
-        price2 = 200000;
+        price2 = 1000000;
         cweight1 = 0.23;
         cweight2 = 10;
     },

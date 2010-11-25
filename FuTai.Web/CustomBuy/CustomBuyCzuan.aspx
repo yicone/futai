@@ -29,7 +29,7 @@
 
                     left = parseInt($("#Pricearr1").css("left"));
                     $("#pa1").css("left", (left - 50) + "px");
-                    price1 = GetPrice(left - 100, 600, 200000);
+                    price1 = GetPrice(left - 100, 600, 1000000);
                     $("#pa1").html(price1 + '元');
 
                 },
@@ -52,7 +52,7 @@
 
                     left = parseInt($("#Pricearr2").css("left"));
                     $("#pa2").css("left", (left - 50) + "px");
-                    price2 = GetPrice(left - 100, 600, 200000);
+                    price2 = GetPrice(left - 100, 600, 1000000);
                     $("#pa2").html(price2 + '元');
                 },
                 onDrop: function(e) {
@@ -73,7 +73,7 @@
                 var d1 = Math.abs(left1 - bardis);
                 var d2 = Math.abs(left2 - bardis);
                 if (d1 < d2) {
-                    price1 = GetPrice(bardis, 600, 200000);
+                    price1 = GetPrice(bardis, 600, 1000000);
                     if (bardis > left2 - 55)
                         bardis = left2 - 55;
 
@@ -82,7 +82,7 @@
                     $("#pa1").html(price1 + '元');
                 }
                 else {
-                    price2 = GetPrice(bardis, 600, 200000);
+                    price2 = GetPrice(bardis, 600, 1000000);
                     if (bardis < left1 + 55)
                         bardis = left1 + 55;
 
@@ -487,11 +487,11 @@ EX</td>
   <area shape="rect" coords="223,0,258,43" href="javascript:CustomOpt.SetColor('D');CustomOpt.SetBlock(322,169,'BlockMask5')" />
 </map>
 <map name="JD" id="JD">
-  <area shape="rect" coords="208,0,258,41" href="javascript:CustomOpt.SetClarity('FL');CustomOpt.SetBlock(307,243,'BlockMask4')" />
-  <area shape="rect" coords="157,0,208,41" href="javascript:CustomOpt.SetClarity('IF');CustomOpt.SetBlock(257,243,'BlockMask4')" />
-  <area shape="rect" coords="108,0,157,42" href="javascript:CustomOpt.SetClarity('VVS1|VVS2');CustomOpt.SetBlock(207,243,'BlockMask4')" />
-    <area shape="rect" coords="59,0,108,42" href="javascript:CustomOpt.SetClarity('VS1|VS2');CustomOpt.SetBlock(158,243,'BlockMask4')" />
-    <area shape="rect" coords="9,0,59,42" href="javascript:CustomOpt.SetClarity('SI1|SI2');CustomOpt.SetBlock(108,243,'BlockMask4')" />
+  <area shape="rect" coords="208,0,258,41" href="javascript:CustomOpt.SetClarity('FL');CustomOpt.SetBlock(307,95,'BlockMask4')" />
+  <area shape="rect" coords="157,0,208,41" href="javascript:CustomOpt.SetClarity('IF');CustomOpt.SetBlock(257,95,'BlockMask4')" />
+  <area shape="rect" coords="108,0,157,42" href="javascript:CustomOpt.SetClarity('VVS1|VVS2');CustomOpt.SetBlock(207,95,'BlockMask4')" />
+    <area shape="rect" coords="59,0,108,42" href="javascript:CustomOpt.SetClarity('VS1|VS2');CustomOpt.SetBlock(158,95,'BlockMask4')" />
+    <area shape="rect" coords="9,0,59,42" href="javascript:CustomOpt.SetClarity('SI1|SI2');CustomOpt.SetBlock(108,95,'BlockMask4')" />
 </map>
 <map name="qie" id="qie">
   <area shape="rect" coords="8,1,59,42" href="javascript:CustomOpt.SetCut('P');CustomOpt.SetBlock(460,21,'BlockMask1')" />
